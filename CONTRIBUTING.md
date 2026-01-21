@@ -1,3 +1,16 @@
+# ⚠️⚠️⚠️ STOP TRANSLATION! ⚠️⚠️⚠️
+We are preparing the casket of reveries 2.0 now. So please wait until 2.0 release!
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
 # 🌍 Join the Translation Team
 
 First and foremost, I want to extend my deepest gratitude to every contributor who's willing to help translate this modpack. Your efforts are what make this project accessible to players worldwide, breaking down language barriers and bringing our community closer together.
