@@ -43,7 +43,7 @@ public class CustomQuestOverlayRenderer {
     public static final ResourceLocation QUEST_ARROW_ICON = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "textures/gui/quest_arrow.png");
     public static double QUEST_INDICATOR_MIN_DISTANCE = 5.0D;
     private static final int QUEST_ICON_SIZE = 12;
-    private static final int QUEST_EDGE_MARGIN = 80;
+    private static final int QUEST_EDGE_MARGIN = 60;
     private static TCRQuestManager.Quest currentQuest;
     private static ResourceLocation currentQuestIcon;
     private static final List<QuestIndicatorInfo> QUEST_INDICATOR_INFOS = new ArrayList<>();
@@ -61,7 +61,6 @@ public class CustomQuestOverlayRenderer {
         float lastArrowCenterX;
         float lastArrowCenterY;
         float arrowAngle;
-        float lastArrowAngle;
         String distanceText;
     }
 
@@ -170,11 +169,9 @@ public class CustomQuestOverlayRenderer {
         RenderSystem.enableBlend();
         guiGraphics.setColor(1.0f, 1.0f, 1.0f, 1.0f);
 
-        float t = partialTick;
-
         for (QuestIndicatorInfo info : QUEST_INDICATOR_INFOS) {
-            float iconX = Mth.lerp(t, info.lastIconX, info.iconX);
-            float iconY = Mth.lerp(t, info.lastIconY, info.iconY);
+            float iconX = Mth.lerp(partialTick, info.lastIconX, info.iconX);
+            float iconY = Mth.lerp(partialTick, info.lastIconY, info.iconY);
 
             guiGraphics.blit(info.icon, (int) iconX, (int) iconY, 0, 0, QUEST_ICON_SIZE, QUEST_ICON_SIZE, QUEST_ICON_SIZE, QUEST_ICON_SIZE);
 
@@ -186,13 +183,12 @@ public class CustomQuestOverlayRenderer {
             guiGraphics.pose().popPose();
 
             if (info.drawArrow) {
-                float arrowCenterX = Mth.lerp(t, info.lastArrowCenterX, info.arrowCenterX);
-                float arrowCenterY = Mth.lerp(t, info.lastArrowCenterY, info.arrowCenterY);
-                float arrowAngle = Mth.lerp(t, info.lastArrowAngle, info.arrowAngle);
+                float arrowCenterX = Mth.lerp(partialTick, info.lastArrowCenterX, info.arrowCenterX);
+                float arrowCenterY = Mth.lerp(partialTick, info.lastArrowCenterY, info.arrowCenterY);
 
                 guiGraphics.pose().pushPose();
                 guiGraphics.pose().translate(arrowCenterX, arrowCenterY, 0.0F);
-                guiGraphics.pose().mulPose(Axis.ZP.rotationDegrees(arrowAngle));
+                guiGraphics.pose().mulPose(Axis.ZP.rotationDegrees(info.arrowAngle));
                 guiGraphics.blit(QUEST_ARROW_ICON, -QUEST_ICON_SIZE / 2, -QUEST_ICON_SIZE / 2 - QUEST_ICON_SIZE, 0, 0, QUEST_ICON_SIZE, QUEST_ICON_SIZE, QUEST_ICON_SIZE, QUEST_ICON_SIZE);
                 guiGraphics.pose().popPose();
             }
@@ -262,13 +258,11 @@ public class CustomQuestOverlayRenderer {
             info.lastIconY = old.iconY;
             info.lastArrowCenterX = old.arrowCenterX;
             info.lastArrowCenterY = old.arrowCenterY;
-            info.lastArrowAngle = old.arrowAngle;
         } else {
             info.lastIconX = info.iconX;
             info.lastIconY = info.iconY;
             info.lastArrowCenterX = info.arrowCenterX;
             info.lastArrowCenterY = info.arrowCenterY;
-            info.lastArrowAngle = info.arrowAngle;
         }
     }
 
@@ -282,7 +276,7 @@ public class CustomQuestOverlayRenderer {
         Vec3 camPos = camera.getPosition();
         Vec3 targetPos = Vec3.atCenterOf(pos);
 
-        double distance = camPos.distanceTo(targetPos);
+        double distance = localPlayer.position().distanceTo(targetPos);
         if (distance < QUEST_INDICATOR_MIN_DISTANCE) {
             return null;
         }
@@ -343,21 +337,25 @@ public class CustomQuestOverlayRenderer {
             return null;
         }
 
-        double cx = nx;
-        double cy = ny;
-        double maxAbs = Math.max(Math.abs(cx), Math.abs(cy));
-        if (maxAbs < 1.0e-3) {
-            cx = 0.0;
-            cy = -1.0;
+        double dx = nx;
+        double dy = -ny;
+        double len = Math.sqrt(dx * dx + dy * dy);
+        if (len < 1.0e-3) {
+            dx = 0.0;
+            dy = -1.0;
+            len = 1.0;
         } else {
-            cx /= maxAbs;
-            cy /= maxAbs;
+            dx /= len;
+            dy /= len;
         }
 
-        int edgeX = (int) ((cx * 0.5 + 0.5) * screenWidth);
-        int edgeY = (int) ((-cy * 0.5 + 0.5) * screenHeight);
-        edgeX = Mth.clamp(edgeX, QUEST_EDGE_MARGIN, screenWidth - QUEST_EDGE_MARGIN);
-        edgeY = Mth.clamp(edgeY, QUEST_EDGE_MARGIN, screenHeight - QUEST_EDGE_MARGIN);
+        double a = (screenWidth  / 2.0) - QUEST_EDGE_MARGIN;
+        double b = (screenHeight / 2.0) - QUEST_EDGE_MARGIN;
+        double denom = (dx * dx) / (a * a) + (dy * dy) / (b * b);
+        double t = denom > 1.0e-6 ? 1.0 / Math.sqrt(denom) : 0.0;
+
+        int edgeX = (int) Math.round(centerX + dx * t);
+        int edgeY = (int) Math.round(centerY + dy * t);
 
         int iconX = edgeX - QUEST_ICON_SIZE / 2;
         int iconY = edgeY - QUEST_ICON_SIZE / 2;

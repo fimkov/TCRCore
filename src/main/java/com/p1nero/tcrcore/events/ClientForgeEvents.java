@@ -38,7 +38,7 @@ public class ClientForgeEvents {
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event){
-        if(Minecraft.getInstance().player != null) {
+        if(Minecraft.getInstance().player != null && event.phase == TickEvent.Phase.END) {
             CustomQuestOverlayRenderer.tick(Minecraft.getInstance().player);
         }
     }
