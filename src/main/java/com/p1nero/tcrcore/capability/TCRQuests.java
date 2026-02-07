@@ -8,7 +8,6 @@ import net.minecraft.core.BlockPos;
 
 public class TCRQuests {
 
-    //First Join
     public static Quest TALK_TO_AINE_1;
     public static Quest TALK_TO_CHRONOS_1;
     public static Quest TALK_TO_FERRY_GIRL_1;

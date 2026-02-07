@@ -71,8 +71,6 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
     @Nullable
     private Player tradingPlayer;
     private MerchantOffers offers = new MerchantOffers();
-    private final MerchantOffers offersWeapon = new MerchantOffers();
-    private final MerchantOffers offersArmor = new MerchantOffers();
     private final MerchantOffers offersArtifact = new MerchantOffers();
     private final List<Item> rareItems;
 
@@ -110,8 +108,6 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
 
     private void initMerchant() {
         offers.clear();
-        offersArmor.clear();
-        offersWeapon.clear();
         offersArtifact.clear();
         offersArtifact.add(new MerchantOffer(
                 new ItemStack(Items.ENDER_EYE, 1),
@@ -155,7 +151,6 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
                 PlayerDataManager.ferryGirlTalked.put(player, true);
             }
             CompoundTag tag = new CompoundTag();
-            tag.putBoolean("boat", PlayerDataManager.boatGet.get(serverPlayer));
             tag.putBoolean("nether_dim_unlock", PlayerDataManager.netherEntered.get(player));
             tag.putBoolean("end_dim_unlock", PlayerDataManager.endEntered.get(player));
             this.sendDialogTo(serverPlayer, tag);
@@ -177,75 +172,8 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
         DialogueScreenBuilder treeBuilder = new DialogueScreenBuilder(this, TCRCoreMod.MOD_ID);
         DialogueComponentBuilder dBuilder = treeBuilder.getComponentBuildr();
 
-//        if(!compoundTag.getBoolean("boat")) {
-//            DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
-//            //你是何人
-//            DialogNode ans1 = new DialogNode(dBuilder.ans(3, ModGameOptions.SAIL_KEY.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD)), dBuilder.optWithBrackets(1))
-//                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 3));
-//
-////            //武器
-////            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
-////            //盔甲
-////            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
-//            //技能
-//            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
-//                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
-//                        LocalPlayerPatch localPlayerPatch = ClientEngine.getInstance().getPlayerPatch();
-//                        if(localPlayerPatch != null) {
-//                            Minecraft.getInstance().setScreen(new SkillTreeScreen(localPlayerPatch));
-//                        }
-//                    }));
-//            //饰品
-//            DialogNode ans7 = new DialogNode.FinalNode(dBuilder.optWithBrackets(9), 7);
-//            root.addChild(ans1)
-////                    .addChild(ans2)
-////                    .addChild(ans3)
-//                    .addChild(ans7)
-//                    .addChild(ans4);
-//            root.addLeaf(dBuilder.optWithBrackets(10), 8);
-//            return treeBuilder.buildWith(root);
-//        } else {
-            DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));//开场白 | 返回
-            //你是何人
-            DialogNode ans1 = new DialogNode(dBuilder.ans(1), dBuilder.optWithBrackets(1))
-                    .addChild(root);
+            DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.optWithBrackets(0));
 
-//            //武器
-//            DialogNode ans2 = new DialogNode.FinalNode(dBuilder.optWithBrackets(2), 1);
-//            //盔甲
-//            DialogNode ans3 = new DialogNode.FinalNode(dBuilder.optWithBrackets(3), 2);
-            //技能
-            DialogNode ans4 = new DialogNode(dBuilder.ans(5, I18n.get("item.epicskills.ability_stone"), I18n.get("item.epicskills.ability_stone"), EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage()), dBuilder.optWithBrackets(4))
-                    .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(5), -1, (s) -> {
-                        LocalPlayerPatch localPlayerPatch = EpicFightCapabilities.getEntityPatch(Minecraft.getInstance().player, LocalPlayerPatch.class);
-                        if(localPlayerPatch != null) {
-                            Minecraft.getInstance().setScreen(new SkillTreeScreen(localPlayerPatch));
-                        }
-                    }));
-            //饰品
-            DialogNode ans7 = new DialogNode.FinalNode(dBuilder.optWithBrackets(9), 7);
-
-            root.addChild(ans1)
-//                    .addChild(ans2)
-//                    .addChild(ans3)
-                    .addChild(ans7)
-                    .addChild(ans4);
-
-            if(compoundTag.getBoolean("nether_dim_unlock")) {
-                DialogNode ans5 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(6))
-                        .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 5))
-                        .addChild(root);
-                root.addChild(ans5);
-            }
-
-            if(compoundTag.getBoolean("end_dim_unlock")) {
-                DialogNode ans6 = new DialogNode(dBuilder.ans(4), dBuilder.optWithBrackets(7))
-                        .addChild(new DialogNode.FinalNode(dBuilder.optWithBrackets(8), 6))
-                        .addChild(root);
-                root.addChild(ans6);
-            }
-
-            root.addLeaf(dBuilder.optWithBrackets(10), 8);
 
             return treeBuilder.buildWith(root);
 //        }
@@ -253,17 +181,8 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
 
     @Override
     public void handleNpcInteraction(ServerPlayer serverPlayer, int i) {
-        if(i == 5) {
-            //传送地狱
-            ServerLevel level = serverPlayer.server.getLevel(Level.NETHER);
-            serverPlayer.changeDimension(level, new SafeNetherTeleporter());
-        }
-        if(i == 6) {
-            //传送末地
-            ServerLevel level = serverPlayer.server.getLevel(Level.END);
-            serverPlayer.changeDimension(level);
-        }
-        if(i == 8) {
+
+        if(i == 1) {
             if(PlayerDataManager.wayStoneInteracted.get(serverPlayer)){
                 //传送主世界
                 ServerLevel level = serverPlayer.server.getLevel(Level.OVERWORLD);
@@ -271,23 +190,6 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
             } else {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("need_to_unlock_waystone").withStyle(ChatFormatting.RED), false);
             }
-        }
-        if(i == 3) {
-            if(!PlayerDataManager.boatGet.get(serverPlayer)) {
-                ItemUtil.addItemEntity(serverPlayer, ForgeRegistries.ITEMS.getValue(ResourceLocation.parse("smallships:oak_cog")).getDefaultInstance());
-                PlayerDataManager.boatGet.put(serverPlayer, true);
-            }
-        }
-
-        //武器
-        if(i == 1) {
-            offers.addAll(offersWeapon);
-            startTrade(serverPlayer);
-        }
-        //盔甲
-        if(i == 2) {
-            offers.addAll(offersArmor);
-            startTrade(serverPlayer);
         }
 
         if(i == 7) {

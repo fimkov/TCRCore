@@ -24,7 +24,6 @@ public class PlayerDataManager {
     public static BoolData chonosTalked = new BoolData("chonosTalked", false);
     public static BoolData ferryGirlTalked = new BoolData("ferryGirlTalked", false);
     public static BoolData wraithonKilled = new BoolData("wraithonKilled", false);
-    public static BoolData boatGet = new BoolData("boat_get", false);
     public static BoolData letterGet = new BoolData("letterGet", false);
     public static BoolData tudigongGiftGet = new BoolData("tudigongGiftGet", false);
     public static BoolData arteriusKilled = new BoolData("arteriusKilled", false);
