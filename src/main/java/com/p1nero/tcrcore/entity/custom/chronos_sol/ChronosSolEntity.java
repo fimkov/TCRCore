@@ -143,10 +143,11 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
 
         //-1:继续
         //-2:结束对话
-        DialogNode root = new DialogNode(dBuilder.ans(0));//冒险可还顺利？
+        DialogNode root = new DialogNode(dBuilder.ans(0), dBuilder.opt(-3));//冒险可还顺利？
 
         DialogNode aboutThisWorld = new DialogNode(dBuilder.ans(1), dBuilder.opt(0))
                 .addChild(new DialogNode(dBuilder.ans(2), dBuilder.opt(-1))
+                        .addChild(root)
                         .addLeaf(dBuilder.opt(-2)));
 
         DialogNode aboutAine = new DialogNode(dBuilder.ans(3), dBuilder.opt(1, TCREntities.AINE_IRIS.get().getDescription()))
@@ -164,6 +165,7 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             //你是何人
             DialogNode aboutMe = new DialogNode(dBuilder.ans(7, TCREntities.CHRONOS_SOL.get().getDescription()), dBuilder.opt(4))
                     .addChild(new DialogNode(dBuilder.ans(8), dBuilder.opt(5))
+                            .addChild(root)
                             .addLeaf(dBuilder.opt(-2)));
             //关于接下来的行动
             DialogNode aboutNext = new DialogNode(dBuilder.ans(9), dBuilder.opt(6))

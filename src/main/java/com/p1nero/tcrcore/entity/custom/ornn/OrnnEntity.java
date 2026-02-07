@@ -8,6 +8,9 @@ import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRQuestManager;
+import com.p1nero.tcrcore.capability.TCRQuests;
+import com.p1nero.tcrcore.entity.TCREntities;
+import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -19,11 +22,15 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.SmithingMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.Merchant;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.item.trading.MerchantOffers;
@@ -40,6 +47,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
+import yesman.epicfight.world.item.EpicFightItems;
 
 public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, Merchant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
@@ -85,13 +93,75 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         StreamDialogueScreenBuilder treeBuilder = new StreamDialogueScreenBuilder(this, TCRCoreMod.MOD_ID);
         DialogueComponentBuilder dBuilder = treeBuilder.getComponentBuildr();
         DialogNode root = new DialogNode(dBuilder.ans(0));
+        DialogNode aboutChronos = new DialogNode(dBuilder.ans(2), dBuilder.opt(1, TCREntities.CHRONOS_SOL.get().getDescription()))
+                .addLeaf(dBuilder.opt(-2));
+        DialogNode aboutFerryGirl = new DialogNode(dBuilder.ans(3), dBuilder.opt(1, TCREntities.FERRY_GIRL.get().getDescription()))
+                .addLeaf(dBuilder.opt(-2));
+        DialogNode smithHelp = new DialogNode.FinalNode(dBuilder.opt(2), 1);
+        if(currentQuest.equals(TCRQuests.TALK_TO_ORNN_1)) {
+            DialogNode whoAreU = new DialogNode(dBuilder.ans(1), dBuilder.opt(0))
+                    .addLeaf(dBuilder.opt(-2));
+            DialogNode firstMeetGift = new DialogNode(dBuilder.ans(4), dBuilder.opt(3))
+                    .addLeaf(dBuilder.opt(4), 2)
+                    .addLeaf(dBuilder.opt(5), 3)
+                    .addLeaf(dBuilder.opt(6), 4)
+                    .addLeaf(dBuilder.opt(7), 5)
+                    .addLeaf(dBuilder.opt(8), 6)
+                    .addLeaf(dBuilder.opt(9), 7);
 
-        return null;
+            if(PlayerDataManager.chonosTalked.get(localPlayer)) {
+                root.addChild(aboutChronos);
+            }
+            if(PlayerDataManager.ferryGirlTalked.get(localPlayer)) {
+                root.addChild(aboutFerryGirl);
+            }
+
+            root.addChild(whoAreU)
+                    .addChild(firstMeetGift);
+        } else {
+            if(PlayerDataManager.chonosTalked.get(localPlayer)) {
+                root.addChild(aboutChronos);
+            }
+            if(PlayerDataManager.ferryGirlTalked.get(localPlayer)) {
+                root.addChild(aboutFerryGirl);
+            }
+            root.addChild(smithHelp);
+            root.addLeaf(dBuilder.opt(-2));
+        }
+        return treeBuilder.buildWith(root);
     }
 
     @Override
     public void handleNpcInteraction(ServerPlayer serverPlayer, int i) {
+        if(i == 1) {
+            serverPlayer.openMenu(new SimpleMenuProvider((p_277304_, p_277305_, p_277306_) ->
+                    new SmithingMenu(p_277304_, p_277305_, ContainerLevelAccess.create(serverPlayer.level(), this.getOnPos())), Component.translatable("container.upgrade")));
+        }
 
+        if(i == 2) {
+            ItemUtil.addItemEntity(serverPlayer, EpicFightItems.IRON_DAGGER.get().getDefaultInstance());
+        }
+        if(i == 3) {
+            ItemUtil.addItemEntity(serverPlayer, Items.IRON_SWORD.getDefaultInstance());
+        }
+        if(i == 4) {
+            ItemUtil.addItemEntity(serverPlayer, EpicFightItems.GOLDEN_LONGSWORD.get().getDefaultInstance());
+        }
+        if(i == 5) {
+            ItemUtil.addItemEntity(serverPlayer, EpicFightItems.GOLDEN_TACHI.get().getDefaultInstance());
+        }
+        if(i == 6) {
+            ItemUtil.addItemEntity(serverPlayer, EpicFightItems.GOLDEN_SPEAR.get().getDefaultInstance());
+        }
+        if(i == 7) {
+            ItemUtil.addItemEntity(serverPlayer, EpicFightItems.WOODEN_GREATSWORD.get().getDefaultInstance());
+        }
+
+        //领了礼物才算结束
+        if(i >= 2 && i <=7) {
+            TCRQuests.TALK_TO_ORNN_1.finish(serverPlayer);
+        }
+        this.setConversingPlayer(null);
     }
 
     @Override

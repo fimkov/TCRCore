@@ -264,6 +264,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(EntityType.VILLAGER, 2, "[叽里咕噜说什么呢？]");
         this.addDialogOption(EntityType.VILLAGER, 3, "[为什么和村民就语言不通了...]");
 
+        this.addDialogOption(TCREntities.CHRONOS_SOL.get(), -3, "返回");
         this.addDialogOption(TCREntities.CHRONOS_SOL.get(), -2, "结束对话");
         this.addDialogOption(TCREntities.CHRONOS_SOL.get(), -1, "继续");
         this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 0, "阁下，冒险可还顺利？");
@@ -297,6 +298,25 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.AINE_IRIS.get(), 2, "§a关于时装");
         this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 3, "看！我这身新衣服！漂亮吧？来到这个世界，也应该换一套新的行头才行！给，你也快换上吧！");
         this.addDialogOption(TCREntities.AINE_IRIS.get(), 3, "§a领取");
+
+        this.addDialogOption(TCREntities.ORNN.get(), -2, "结束对话");
+        this.addDialogOption(TCREntities.ORNN.get(), -1, "继续");
+        this.addDialogAnswer(TCREntities.ORNN.get(), 0, "火焰的温度、钢铁的韧性——这两样东西能解决世上大多数问题。");
+        this.addDialogOption(TCREntities.ORNN.get(), 0, "你是何人？");
+        this.addDialogAnswer(TCREntities.ORNN.get(), 1, "吾乃半神，主掌锻造与工艺，为圣殿铸神兵。黑潮来袭之前，本以为老夫所铸神兵天下无敌。现在想来，可笑，可笑。");
+        this.addDialogOption(TCREntities.ORNN.get(), 1, "关于%s");
+        this.addDialogAnswer(TCREntities.ORNN.get(), 2, "守望者大人实在令人捉摸不透，但遵从她的安排便是。");
+        this.addDialogAnswer(TCREntities.ORNN.get(), 3, "那小姑娘倒比老夫自在，老夫再也没法回到故土了。");
+        this.addDialogOption(TCREntities.ORNN.get(), 2, "§6锻造委托");
+        this.addDialogOption(TCREntities.ORNN.get(), 3, "§a见面礼");
+        this.addDialogAnswer(TCREntities.ORNN.get(), 4, "这是一些边角碎料所铸成的，你暂且拿去防身吧。");
+        this.addDialogOption(TCREntities.ORNN.get(), 4, "铁匕首");
+        this.addDialogOption(TCREntities.ORNN.get(), 5, "铁剑");
+        this.addDialogOption(TCREntities.ORNN.get(), 6, "金长剑");
+        this.addDialogOption(TCREntities.ORNN.get(), 7, "金太刀");
+        this.addDialogOption(TCREntities.ORNN.get(), 8, "金长矛");
+        this.addDialogOption(TCREntities.ORNN.get(), 9, "金大剑");
+
 
         this.addDialogAnswer(TCREntities.FERRY_GIRL.get(), 0, "阁下，好久不见！");
         this.addDialogAnswer(TCREntities.FERRY_GIRL.get(), 1, "阁下忘了我么？我是圣殿摆渡人，为众人指点迷津。阁下如有奇珍异宝，可与我瞧瞧，小女子可提取忆质，将其化为宝具！当你踏足过§c地狱§f或§d末地§f后，我也可以送你一程。");
