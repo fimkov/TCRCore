@@ -310,6 +310,7 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
                 this.level().playSound(null, this.blockPosition(), SoundEvents.TURTLE_EGG_HATCH, SoundSource.NEUTRAL, 1.0F, 1.0F);
             }
             ItemUtil.addItemEntity(serverPlayer, ModItems.BOOK_OF_DRAGONS.get().getDefaultInstance());
+            ItemUtil.addItemEntity(serverPlayer, TCRItems.DRAGON_BALL.get().getDefaultInstance());
             TCRQuests.TAME_DRAGON.start(serverPlayer, false);
         }
 
