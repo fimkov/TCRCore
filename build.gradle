@@ -380,10 +380,10 @@ dependencies {
 //    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
 //    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
 
-//    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
-//    runtimeOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")//FIXME runData时需注释掉
-//    runtimeOnly fg.deobf("curse.maven:citadel-331936:7476570")//FIXME runData时需注释掉
-//    runtimeOnly fg.deobf("curse.maven:domestication-innovation-whitelist-1447219:7540479")//FIXME runData时需注释掉
+    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
+    runtimeOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")//FIXME runData时需注释掉
+    runtimeOnly fg.deobf("curse.maven:citadel-331936:7476570")//FIXME runData时需注释掉
+    runtimeOnly fg.deobf("curse.maven:domestication-innovation-whitelist-1447219:7540479")//FIXME runData时需注释掉
     compileOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")
     compileOnly fg.deobf("curse.maven:citadel-331936:7476570")
     compileOnly fg.deobf("curse.maven:domestication-innovation-whitelist-1447219:7540479")

@@ -9,16 +9,21 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public class DragonBallItem extends SimpleDescriptionItem {
+import java.util.List;
 
-    public DragonBallItem(Properties properties) {
+public class DragonFluteItem extends SimpleDescriptionItem {
+
+    public DragonFluteItem(Properties properties) {
         super(properties, false);
     }
 
@@ -48,7 +53,8 @@ public class DragonBallItem extends SimpleDescriptionItem {
             livingEntity.load(tag);
             livingEntity.setPos(spawnPos);
             level.addFreshEntity(livingEntity);
-            itemStack.setHoverName(Component.translatable(itemStack.getDescriptionId()));
+            tag.remove("entity");
+            tag.remove("owner_name");
         }
     }
 
@@ -57,8 +63,23 @@ public class DragonBallItem extends SimpleDescriptionItem {
         CompoundTag tag = itemStack.getOrCreateTag();
         tag.putString("entity", EntityType.getKey(entity.getType()).toString());
         entity.saveWithoutId(tag);
-        itemStack.setHoverName(itemStack.getDisplayName().copy().append(Component.literal("[")).append(entity.getDisplayName()).append(Component.literal("]")));
+        if(entity instanceof OwnableEntity ownableEntity && ownableEntity.getOwner() instanceof Player player) {
+            tag.putString("owner_name", player.getGameProfile().getName());
+        }
         entity.discard();
     }
 
+    @Override
+    public void appendHoverText(@NotNull ItemStack itemStack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag flag) {
+        super.appendHoverText(itemStack, level, list, flag);
+        CompoundTag tag = itemStack.getOrCreateTag();
+        if(tag.contains("entity")) {
+            EntityType.byString(tag.getString("entity")).ifPresent(entityType ->
+                    list.add(TCRCoreMod.getInfo("containing_dragon", entityType.getDescription())));
+        }
+        if(tag.contains("owner_name")) {
+            String ownerName = tag.getString("owner_name");
+            list.add(TCRCoreMod.getInfo("dragon_owner", ownerName));
+        }
+    }
 }

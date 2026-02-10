@@ -48,5 +48,11 @@ public class TCRQuests {
                 .withIcon(SIDE_QUEST_1)
                 .descParam(TCREntities.FERRY_GIRL.get().getDescription(), ModItems.BOOK_OF_DRAGONS.get().getDescription());
 
+        TAME_DRAGON_BACK_TO_FERRY_GIRL = TCRQuestManager.create("tame_dragon_back_to_ferry_girl")
+                .shortDescParam(TCREntities.FERRY_GIRL.get().getDescription())
+                .descParam(TCREntities.FERRY_GIRL.get().getDescription(), TCREntities.FERRY_GIRL.get().getDescription())
+                .withIcon(SIDE_QUEST_1)
+                .withTrackingPos(new BlockPos(WorldUtil.FERRY_GIRL_POS.above(1)), TCRDimensions.SANCTUM_LEVEL_KEY);
+
     }
 }

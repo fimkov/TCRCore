@@ -13,6 +13,7 @@ import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
@@ -62,6 +63,15 @@ public class TCRQuestManager {
         return PlayerDataManager.currentQuestId.get(player) != EMPTY.id;
     }
 
+    public static boolean hasQuest(Player player, Quest quest) {
+        return getQuests(player).contains(quest);
+    }
+
+    public static List<Quest> getQuests(Player player) {
+        TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(player);
+        return tcrPlayer.getCurrentQuests();
+    }
+
     public static void startQuest(ServerPlayer player, Quest quest) {
         startQuest(player, quest, true);
     }
@@ -84,9 +94,14 @@ public class TCRQuestManager {
         }
     }
 
+
     public static void finishQuest(ServerPlayer player, Quest quest) {
+        finishQuest(player, quest, false);
+    }
+
+    public static void finishQuest(ServerPlayer player, Quest quest, boolean force) {
         int currentQuestId = PlayerDataManager.currentQuestId.getInt(player);
-        if (quest.getId() != currentQuestId) {
+        if (!force && quest.getId() != currentQuestId) {
             return;
         }
         TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(player);
@@ -104,10 +119,15 @@ public class TCRQuestManager {
         if(quest.getTrackingPos() != null && quest.getDimension().equals(player.level().dimension())) {
             WaypointUtil.removeWaypoint(player, TCRCoreMod.getInfoKey("quest_map_mark"), quest.getTrackingPos());
         }
+        playFinishSound(player, quest);
     }
 
-    public static void playFinishSound(ServerPlayer player) {
-        player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.END_PORTAL_SPAWN), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+    public static void playFinishSound(ServerPlayer player, Quest quest) {
+        SoundEvent soundEvent = SoundEvents.PLAYER_LEVELUP;
+        if(quest.finishSound != null) {
+            soundEvent = quest.finishSound;
+        }
+        player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(soundEvent), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
     }
 
     /**
@@ -145,6 +165,7 @@ public class TCRQuestManager {
         private ResourceLocation icon;
         private BlockPos trackingPos;
         private ResourceKey<Level> dimension;
+        private SoundEvent finishSound;
 
         //id统一管理
         private Quest(int id, String key) {
@@ -182,8 +203,17 @@ public class TCRQuestManager {
             TCRQuestManager.finishQuest(player, this);
         }
 
+        public void finish(ServerPlayer player, boolean force) {
+            TCRQuestManager.finishQuest(player, this, force);
+        }
+
         public boolean isFinished(ServerPlayer serverPlayer) {
             return TCRQuestManager.hasFinished(serverPlayer, this);
+        }
+
+        @Nullable
+        public SoundEvent getFinishSound() {
+            return finishSound;
         }
 
         @Nullable
@@ -191,6 +221,7 @@ public class TCRQuestManager {
             return icon;
         }
 
+        @Nullable
         public BlockPos getTrackingPos() {
             return trackingPos;
         }
@@ -217,6 +248,11 @@ public class TCRQuestManager {
 
         public int getId() {
             return id;
+        }
+
+        public Quest withFinishSound(SoundEvent sound) {
+            this.finishSound = sound;
+            return this;
         }
 
         public Quest withIcon(ResourceLocation icon) {

@@ -40,7 +40,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         StartScreenHandler.onGenerateEN(this);
         BanPortalScreenHandler.onGenerateEN(this);
 
-         this.addTCRItemInfo(net.blay09.mods.waystones.item.ModItems.warpStone, "Click the §6[Scroll]§r button in the inventory to teleport to activated waystones!");
+        this.addTCRItemInfo(net.blay09.mods.waystones.item.ModItems.warpStone, "Click the §6[Scroll]§r button in the inventory to teleport to activated waystones!");
         this.addTCRItemInfo("§cWarning! This item may cause important items to be sucked into the backpack and become invalid!", net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get(), net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get(), net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.PICKUP_UPGRADE.get());
         this.addTCRItemInfo(ItemRegistry.BOTTLE_OF_BLOOD.get(), "Brewed using §c[Crystallized Blood Marrow]§r, a drop from §d[Nehemoth]§r");
         this.addTCRItemInfo(EFNItem.DEEPDARK_HEART.get(), "Obtained by defeating the §2[Warden]§r or §2[Captain Cornelia]§r");
@@ -66,8 +66,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
 
-        this.add(TCRItems.DRAGON_BALL.get(), "Dragon Ball");
-        this.addItemUsageInfo(TCRItems.DRAGON_BALL.get(), "Right-click to capture a dragon; right-click again to release it.");
+        this.add(TCRItems.DRAGON_FLUTE.get(), "Dragon Flute");
+        this.addItemUsageInfo(TCRItems.DRAGON_FLUTE.get(), "Right-click to capture a dragon; right-click again to release it.");
         this.add(TCRItems.RESONANCE_STONE.get(), "Resonance Stone");
         this.addItemUsageInfo(TCRItems.RESONANCE_STONE.get(), "Can resonate with the location of the Angel's seal");
         this.add(TCRItems.CORE_FLINT.get(), "Core Flint");
@@ -88,6 +88,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "It bears an ancient oracle hinting at the locations of scattered embers. Show it to the The Sanctuary Keeper in the The Sanctuary; it might aid your adventure!");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§cIn multiplayer mode, do not occupy other players'! Everyone must submit their own!", 2);
 
+        this.addInfo("containing_dragon", "Type: [%s]");
+        this.addInfo("dragon_owner", "Owner: [%s]");
         this.addInfo("only_work_on_dragon", "Only can capture dragon.");
         this.addInfo("quest_map_mark", "Quest Pos");
         this.addInfo("map_pos_marked_press_to_open", "Labeled location, press [%s] to view the map.");

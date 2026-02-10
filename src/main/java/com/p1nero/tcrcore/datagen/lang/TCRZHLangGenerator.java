@@ -36,6 +36,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.TALK_TO_ORNN_1, "序章", "和%s对话", "在%s的建议下，先去武库找%s武装一下我们自己吧！充分的武装才能保证我们顺利的冒险！");
 
         this.addQuest(TCRQuests.TAME_DRAGON, "驯龙之章", "将龙养大", "%s送给了你一条龙，现在，按[%s]上说的办法，将它养成年吧！龙，可是帝王之征！");
+        this.addQuest(TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL, "驯龙之章", "和%s对话", "经过你精心呵护，龙已长大成年。%s之前说过，在龙养大后她有宝具要赠与我们。快回去找%s看看吧！");
 
         this.addEffect(TCREffects.INVULNERABLE, "无敌");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "灵魂火");
@@ -74,8 +75,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
 
-        this.add(TCRItems.DRAGON_BALL.get(), "龙之球");
-        this.addItemUsageInfo(TCRItems.DRAGON_BALL.get(), "右键可收服龙，再次右键可释放龙。");
+        this.add(TCRItems.DRAGON_FLUTE.get(), "龙之笛");
+        this.addItemUsageInfo(TCRItems.DRAGON_FLUTE.get(), "右键可收服龙，再次右键可释放龙。");
         this.add(TCRItems.RESONANCE_STONE.get(), "共鸣石");
         this.addItemUsageInfo(TCRItems.RESONANCE_STONE.get(), "可与使徒封印的位置共鸣。");
         this.add(TCRItems.CORE_FLINT.get(), "炉心火石");
@@ -96,6 +97,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c多人模式请勿占据他人任务道具！每人都需各自提交！", 2);
 
+        this.addInfo("containing_dragon", "物种：[%s]");
+        this.addInfo("dragon_owner", "主人：[%s]");
         this.addInfo("only_work_on_dragon", "龙之球仅能作用于龙");
         this.addInfo("quest_map_mark", "任务点");
         this.addInfo("map_pos_marked_press_to_open", "已标记地点，按 [%s] 查看地图");
@@ -318,7 +321,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.ORNN.get(), 4, "这是一些边角碎料所铸成的，你暂且拿去防身吧。");
         this.addDialogOption(TCREntities.ORNN.get(), 4, "%s");;
 
-        this.addDialogOption(TCREntities.FERRY_GIRL.get(), -3, "继续");
+        this.addDialogOption(TCREntities.FERRY_GIRL.get(), -3, "返回");
         this.addDialogOption(TCREntities.FERRY_GIRL.get(), -2, "结束对话");
         this.addDialogOption(TCREntities.FERRY_GIRL.get(), -1, "继续");
         this.addDialogAnswer(TCREntities.FERRY_GIRL.get(), 0, "你好，阁下，有什么可以帮助您的吗？");
@@ -332,6 +335,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.FERRY_GIRL.get(), 4, "§6见面礼");
         this.addDialogAnswer(TCREntities.FERRY_GIRL.get(), 4, "一份微薄的礼物，还望阁下笑纳。此灵宠孵化成年之后，可日行万里，希望对阁下主世界之旅有所帮助！§6当阁下将灵宠养大后，再来找我吧。");
         this.addDialogOption(TCREntities.FERRY_GIRL.get(), 5, "§6选择[%s§6]");
+        this.addDialogOption(TCREntities.FERRY_GIRL.get(), 6, "§6我已将龙养大");
+        this.addDialogAnswer(TCREntities.FERRY_GIRL.get(), 5, "看来小家伙和阁下相处很愉快呢！这些礼物还请阁下收下！阁下可在图鉴中查看它们的用法。相信小家伙们可以给阁下的战斗带来更多的乐趣！");
+        this.addDialogOption(TCREntities.FERRY_GIRL.get(), 7, "收下");
 
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 0, "异界之人，你为何来此？");
         this.addDialogAnswer(NFIEntities.ARTERIUS.get(), 1, "哈哈哈，守望者将烈焰之眼托付于我，为的是避免落入不义之人手中。即使是她老人家亲自来了，也得过我这关！我倒是要看看，你有没有这个能耐！");

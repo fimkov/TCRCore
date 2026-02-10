@@ -1,12 +1,13 @@
 package com.p1nero.tcrcore.entity.custom.ferry_girl;
 
 import artifacts.item.ArtifactItem;
+import com.github.alexthe668.domesticationinnovation.server.block.DIBlockRegistry;
+import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.entity.custom.IEntityNpc;
 import com.p1nero.dialog_lib.api.entity.goal.LookAtConservingPlayerGoal;
 import com.p1nero.dialog_lib.client.screen.DialogueScreen;
-import com.p1nero.dialog_lib.client.screen.builder.DialogueScreenBuilder;
 import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
@@ -15,28 +16,23 @@ import com.p1nero.tcrcore.capability.TCRQuests;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.events.OverworldVillageTeleporter;
 import com.p1nero.tcrcore.events.PlayerEventListeners;
-import com.p1nero.tcrcore.events.SafeNetherTeleporter;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
-import com.yesman.epicskills.client.gui.screen.SkillTreeScreen;
-import com.yesman.epicskills.client.input.EpicSkillsKeyMappings;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.magister.bookofdragons.entity.ModEntities;
 import net.magister.bookofdragons.entity.base.dragon.DragonBase;
-import net.magister.bookofdragons.entity.util.DragonType;
 import net.magister.bookofdragons.entity.util.DragonVariantConfig;
+import net.magister.bookofdragons.event.DragonDiscoveryEventHandler;
 import net.magister.bookofdragons.item.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
@@ -71,12 +67,8 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
-import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
-import yesman.epicfight.world.capabilities.EpicFightCapabilities;
-import yesman.epicfight.world.item.EpicFightItems;
 
 import java.util.List;
-import java.util.UUID;
 
 public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEntity, Merchant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
@@ -217,6 +209,15 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
         if (currentQuest.equals(TCRQuests.TALK_TO_FERRY_GIRL_1)) {
             root.addChild(whoAreU);
         }
+
+        //将龙养大
+        if(currentQuest.equals(TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL)) {
+            DialogNode tameDragonFinish = new DialogNode(dBuilder.ans(5), dBuilder.opt(6))
+                    .addLeaf(dBuilder.opt(7), 10);
+            root.addChild(tameDragonFinish);
+            return treeBuilder.buildWith(root);
+        }
+
         if (PlayerDataManager.chonosTalked.get(localPlayer)) {
             root.addChild(aboutChronos);
         }
@@ -300,9 +301,14 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
 
                     dragonBase.setVariant(inheritedVariant);
                     dragonBase.tame(serverPlayer);
-
                     dragonBase.setAge(-24000);
                     dragonBase.startSpawnAnimation();
+                    dragonBase.setTamingRitualCompleted(true);
+                    dragonBase.setAwaitingTamingRitual(false);
+                    dragonBase.setTamingRitualTimer(0);
+                    dragonBase.setCommand(2);
+                    dragonBase.addAffection(serverPlayer.getUUID(), 10);
+                    DragonDiscoveryEventHandler.onDragonTamed(serverPlayer, dragonBase);
                 }
 
                 babyDragon.moveTo(serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), this.random.nextFloat() * 360.0F, 0.0F);
@@ -310,8 +316,16 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
                 this.level().playSound(null, this.blockPosition(), SoundEvents.TURTLE_EGG_HATCH, SoundSource.NEUTRAL, 1.0F, 1.0F);
             }
             ItemUtil.addItemEntity(serverPlayer, ModItems.BOOK_OF_DRAGONS.get().getDefaultInstance());
-            ItemUtil.addItemEntity(serverPlayer, TCRItems.DRAGON_BALL.get().getDefaultInstance());
+            ItemUtil.addItemEntity(serverPlayer, TCRItems.DRAGON_FLUTE.get().getDefaultInstance());
             TCRQuests.TAME_DRAGON.start(serverPlayer, false);
+            PlayerDataManager.ferryGirlGiftGet.put(serverPlayer, true);
+        }
+
+        //将龙养大
+        if(i == 10) {
+            ItemUtil.addItemEntity(serverPlayer, DIItemRegistry.COLLAR_TAG.get().getDefaultInstance());
+            ItemUtil.addItemEntity(serverPlayer, DIBlockRegistry.WHITE_PET_BED.get().asItem().getDefaultInstance());
+            TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL.finish(serverPlayer);
         }
 
         this.setConversingPlayer(null);

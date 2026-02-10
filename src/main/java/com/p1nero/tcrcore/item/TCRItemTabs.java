@@ -28,7 +28,7 @@ public class TCRItemTabs {
                 output.accept(TCRItems.VOID_CORE.get());
                 output.accept(TCRItems.ABYSS_CORE.get());
                 output.accept(TCRItems.PROOF_OF_ADVENTURE.get());
-                output.accept(TCRItems.DRAGON_BALL.get());
+                output.accept(TCRItems.DRAGON_FLUTE.get());
                 output.accept(TCRItems.RESONANCE_STONE.get());
                 output.accept(TCRItems.CORE_FLINT.get());
             }).build());

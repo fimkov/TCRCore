@@ -41,7 +41,7 @@ public class CustomQuestOverlayRenderer {
     public static final ResourceLocation TASK_ICON = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "textures/gui/quest_icon.png");
     public static final ResourceLocation QUEST_ARROW_ICON = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "textures/gui/quest_arrow.png");
     public static double QUEST_INDICATOR_MIN_DISTANCE = 5.0D;
-    private static final int QUEST_ICON_SIZE = 12;
+    private static final int QUEST_ICON_SIZE = 8;
     private static final int QUEST_EDGE_MARGIN = 60;
     private static TCRQuestManager.Quest currentQuest;
     private static ResourceLocation currentQuestIcon;
@@ -182,7 +182,7 @@ public class CustomQuestOverlayRenderer {
             int textWidth = minecraft.font.width(info.distanceText);
             guiGraphics.pose().pushPose();
             guiGraphics.pose().translate(iconX + QUEST_ICON_SIZE / 2.0F, iconY + QUEST_ICON_SIZE + 4.0F, 0.0F);
-            guiGraphics.pose().scale(0.7F, 0.7F, 0.7F);
+            guiGraphics.pose().scale(0.6F, 0.6F, 0.6F);
             guiGraphics.drawString(minecraft.font, info.distanceText, -textWidth / 2, 0, 0xFFFFFFFF, true);
             guiGraphics.pose().popPose();
 
