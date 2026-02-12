@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smithing_transform",
     "addition": {
-        "item": "epicfight:iron_longsword"
+        "item": "efn:deepdark_heart"
     },
     "base": {
         "item": "epicfight:iron_longsword"
@@ -10,6 +10,6 @@
         "item": "efn:nf_dual_sword"
     },
     "template": {
-        "item": "efn:deepdark_heart"
+        "item": "ba_bt:core_golem_eye"
     }
 }

@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smithing_transform",
     "addition": {
-        "item": "minecraft:clock"
+        "item": "minecraft:blue_ice"
     },
     "base": {
         "item": "epicfight:iron_dagger"

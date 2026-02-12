@@ -1,13 +1,13 @@
 {
     "type": "minecraft:smithing_transform",
     "addition": {
-        "item": "efn:duskfire_ingot"
+        "item": "minecraft:ghast_tear"
     },
     "base": {
-        "item": "epicfight:netherite_greatsword"
+        "item": "epicfight:netherite_tachi"
     },
     "result": {
-        "item": "efn:ruinsgreatsword"
+        "item": "efn:kusabimaru"
     },
     "template": {
         "item": "ba_bt:nether_golem_eye"

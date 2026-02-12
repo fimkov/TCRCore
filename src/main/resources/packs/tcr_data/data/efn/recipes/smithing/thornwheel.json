@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+        "item": "create:cogwheel"
+    },
+    "base": {
+        "item": "magistuarmory:netherite_heavywarhammer"
+    },
+    "result": {
+        "item": "efn:thornwheel"
+    },
+    "template": {
+        "item": "ba_bt:sky_golem_eye"
+    }
+}

@@ -5,7 +5,7 @@
 	group: ""
 	icon: "tcrcore:ancient_oracle_fragment"
 	id: "252FC81556BE3D4B"
-	order_index: 7
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -407,6 +407,94 @@
 			}]
 			x: 4.0d
 			y: 8.0d
+		}
+		{
+			description: ["{ftbquests.chapter.522B859BEE1EDD88.quest5237705525294358869.description1}"]
+			icon: "armourers_workshop:skin-library-global"
+			icon_scale: 2.0d
+			id: "750E0B18BC9E9588"
+			rewards: [{
+				id: "2FA3B8F1F2634893"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "59444E5C93BAC211"
+				item: "armourers_workshop:skin-library-global"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -12.0d
+		}
+		{
+			dependency_requirement: "one_started"
+			description: [
+				"{ftbquests.chapter.522B859BEE1EDD88.quest348391678466111360.description1}"
+				""
+				"{ftbquests.chapter.522B859BEE1EDD88.quest348391678466111360.description2}"
+			]
+			icon: "armourers_workshop:skin-library"
+			icon_scale: 2.0d
+			id: "39230C6C55DDF6D7"
+			rewards: [{
+				id: "234EBCB22E5127B6"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "1E3882E4BD586574"
+				item: "armourers_workshop:skin-library"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -12.0d
+		}
+		{
+			description: ["{ftbquests.chapter.522B859BEE1EDD88.quest7469604769731266141.description1}"]
+			icon: "armourers_workshop:skinning-table"
+			icon_scale: 2.0d
+			id: "271FDED5E61F990E"
+			rewards: [{
+				id: "15DC219A922F0F62"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "16B6F031E0876ABC"
+				item: "armourers_workshop:skinning-table"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -12.0d
+		}
+		{
+			can_repeat: true
+			dependency_requirement: "one_started"
+			description: ["{ftbquests.chapter.522B859BEE1EDD88.quest9076002229603668648.rich_description1}{ftbquests.chapter.522B859BEE1EDD88.quest9076002229603668648.rich_description2}{ftbquests.chapter.522B859BEE1EDD88.quest9076002229603668648.rich_description3}"]
+			icon: "armourers_workshop:skin-template"
+			id: "6E2FB0C755D9544F"
+			optional: true
+			rewards: [{
+				id: "7C9B18788F4FDE31"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "23461D096F761169"
+				item: "armourers_workshop:skin-template"
+				type: "item"
+			}]
+			title: "{item.armourers_workshop.skin-template}"
+			x: 8.0d
+			y: -12.0d
 		}
 	]
 	title: "{ftbquests.chapter.252FC81556BE3D4B.title}"
