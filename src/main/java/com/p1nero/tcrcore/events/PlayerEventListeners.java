@@ -12,7 +12,7 @@ import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.CSTipPacket;
-import com.p1nero.tcrcore.network.packet.clientbound.OpenStartScreenPacket;
+import com.p1nero.tcrcore.network.packet.clientbound.OpenCustomDialogPacket;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayItemPickupParticlePacket;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayTitlePacket;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
@@ -140,7 +140,7 @@ public class PlayerEventListeners {
                 ItemUtil.addItem(serverPlayer, Items.BREAD, 32);
                 ItemUtil.addItem(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 1);
 
-                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new OpenStartScreenPacket(), serverPlayer);
+                PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new OpenCustomDialogPacket(OpenCustomDialogPacket.GAME_START), serverPlayer);
                 TCRQuests.TALK_TO_AINE_0.start(serverPlayer);
                 TCRQuests.TALK_TO_CHRONOS_0.start(serverPlayer);
 
@@ -369,6 +369,18 @@ public class PlayerEventListeners {
                 if (serverPlayer.serverLevel().players().size() <= 1) {
                     TCRDimSaveData.get(serverPlayer.getServer().getLevel(event.getTo())).setBossKilled(false);
                 }
+                //和安聊聊幻境
+                if(!TCRQuests.TALK_TO_AINE_CLOUDLAND.isFinished(serverPlayer)){
+                    TCRQuests.TALK_TO_AINE_CLOUDLAND.start(serverPlayer);
+                    PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new OpenCustomDialogPacket(OpenCustomDialogPacket.FIRST_ENTER_CLOUDLAND), serverPlayer);
+                }
+            }
+            //处理使用共鸣石
+            if(event.getTo().equals(Level.OVERWORLD)) {
+                if(TCRQuestManager.hasQuest(serverPlayer, TCRQuests.GO_TO_OVERWORLD_OCEAN)) {
+                    TCRQuests.GO_TO_OVERWORLD_OCEAN.finish(serverPlayer, true);
+                    TCRQuests.USE_OCEAN_RESONANCE_STONE.start(serverPlayer);
+                }
             }
             updateHealth(serverPlayer, event.getFrom());
             updateHealth(serverPlayer, event.getTo());
@@ -423,7 +435,11 @@ public class PlayerEventListeners {
     public static void onPlayerReadyPickupItem(EntityItemPickupEvent event) {
         if(event.getEntity() instanceof ServerPlayer player) {
             //未完成过前置时则不能捡起
-            if(!TCRQuests.USE_RESONANCE_STONE_1.isFinished(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get())) {
+            if(!TCRQuests.USE_LAND_RESONANCE_STONE.isFinished(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get())) {
+                player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                event.setCanceled(true);
+            }
+            if(!TCRQuests.USE_OCEAN_RESONANCE_STONE.isFinished(player) && event.getItem().getItem().is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
                 player.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
                 event.setCanceled(true);
             }
@@ -443,64 +459,26 @@ public class PlayerEventListeners {
             //持有任务时捡起来才推进进度
             if(TCRQuestManager.hasQuest(player, TCRQuests.GET_DESERT_EYE) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get())) {
                 giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get());
-                PlayerDataManager.stormEyeGotten.put(player, true);
+                PlayerDataManager.desertEyeGotten.put(player, true);
                 //完成收回眼睛的任务
                 TCRQuests.GET_DESERT_EYE.finish(player, true);
                 TCRQuests.TALK_TO_CHRONOS_1.start(player);
             }
-
-            if (!PlayerDataManager.stormEyeGotten.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get())) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get());
-                PlayerDataManager.stormEyeGotten.put(player, true);
-            }
-
-            if (!PlayerDataManager.abyssEyeGotten.get(player) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
+            //持有任务时捡起来才推进进度
+            if(TCRQuestManager.hasQuest(player, TCRQuests.GET_OCEAN_EYE) && itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get())) {
                 giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get());
                 PlayerDataManager.abyssEyeGotten.put(player, true);
+                //完成收回眼睛的任务
+                TCRQuests.GET_OCEAN_EYE.finish(player, true);
+                TCRQuests.TALK_TO_CHRONOS_3.start(player);
             }
 
-            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get()) && !PlayerDataManager.flameEyeGotten.get(player)) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.FLAME_EYE.get());
-                PlayerDataManager.flameEyeGotten.put(player, true);
-            }
-
-            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get()) && !PlayerDataManager.cursedEyeGotten.get(player)) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get());
-                PlayerDataManager.cursedEyeGotten.put(player, true);
-            }
-
-            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get()) && !PlayerDataManager.desertEyeGotten.get(player)) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get());
-                PlayerDataManager.desertEyeGotten.put(player, true);
-            }
-
-            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get()) && !PlayerDataManager.voidEyeGotten.get(player)) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.VOID_EYE.get());
-                PlayerDataManager.voidEyeGotten.put(player, true);
-            }
-
-            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get()) && !PlayerDataManager.mechEyeGotten.get(player)) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get());
-                PlayerDataManager.mechEyeGotten.put(player, true);
-            }
-
-            if (itemStack.is(com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get()) && !PlayerDataManager.monstEyeGotten.get(player)) {
-                player.displayClientMessage(TCRCoreMod.getInfo("time_to_altar"), true);
-                giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.MONSTROUS_EYE.get());
-                PlayerDataManager.monstEyeGotten.put(player, true);
-            }
 
             if (itemStack.is(AquamiraeItems.SHELL_HORN.get()) && !PlayerDataManager.abyssEyeGotten.get(player)) {
                 giveOracleEffect(player, AquamiraeItems.SHELL_HORN.get());
             }
 
+            //捡起百兵图后
             if(itemStack.is(TCRItems.MYSTERIOUS_WEAPONS.get()) && !TCRQuestManager.hasFinished(player, TCRQuests.TALK_TO_ORNN_1)) {
                 giveOracleEffect(player, TCRItems.MYSTERIOUS_WEAPONS.get());
                 TCRQuests.TALK_TO_ORNN_1.start(player, true);

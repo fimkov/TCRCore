@@ -1,4 +1,4 @@
-package com.p1nero.tcrcore.client.gui.dialog;
+package com.p1nero.tcrcore.dialog.custom.handler.no_entity;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -25,16 +25,16 @@ public class ScreenDialogueBuilder {
         defaultOptFormats.addAll(List.of(formatting));
     }
 
-    public Component ans(int id) {
-        Component ans = screenAns(modId, name, id);
+    public Component ans(int id, Object... objects) {
+        Component ans = screenAns(modId, name, id, objects);
         if (!defaultAnsFormats.isEmpty()) {
             return ans.copy().withStyle(defaultAnsFormats.toArray(new ChatFormatting[]{}));
         }
         return ans;
     }
 
-    public Component opt(int id) {
-        Component opt = screenOpt(modId, name, id);
+    public Component opt(int id, Object... objects) {
+        Component opt = screenOpt(modId, name, id, objects);
         if (!defaultOptFormats.isEmpty()) {
             return opt.copy().withStyle(defaultOptFormats.toArray(new ChatFormatting[]{}));
         }
@@ -50,11 +50,11 @@ public class ScreenDialogueBuilder {
         return Component.translatable("screen." + modId + "." + name);
     }
 
-    public static Component screenAns(String modId, String name, int id) {
-        return Component.translatable("screen." + modId + ".ans." + name + "_" + id);
+    public static Component screenAns(String modId, String name, int id, Object... objects) {
+        return Component.translatable("screen." + modId + ".ans." + name + "_" + id, objects);
     }
 
-    public static Component screenOpt(String modId, String name, int id) {
-        return Component.translatable("screen." + modId + ".opt." + name + "_" + id);
+    public static Component screenOpt(String modId, String name, int id, Object... objects) {
+        return Component.translatable("screen." + modId + ".opt." + name + "_" + id, objects);
     }
 }

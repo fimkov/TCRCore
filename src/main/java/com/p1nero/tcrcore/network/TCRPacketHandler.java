@@ -41,9 +41,8 @@ public class TCRPacketHandler {
         register(RefreshClientQuestsPacket.class, RefreshClientQuestsPacket::decode);
 
         register(OpenEndScreenPacket.class, OpenEndScreenPacket::decode);
-        register(OpenStartScreenPacket.class, OpenStartScreenPacket::decode);
+        register(OpenCustomDialogPacket.class, OpenCustomDialogPacket::decode);
         register(PlayItemPickupParticlePacket.class, PlayItemPickupParticlePacket::decode);
-        register(OpenBanPortalScreenPacket.class, OpenBanPortalScreenPacket::decode);
     }
 
     private static <MSG extends BasePacket> void register(final Class<MSG> packet, Function<FriendlyByteBuf, MSG> decoder) {

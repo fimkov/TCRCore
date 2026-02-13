@@ -94,15 +94,20 @@ public class TCRQuestManager {
         }
     }
 
-
-    public static void finishQuest(ServerPlayer player, Quest quest) {
-        finishQuest(player, quest, false);
+    /**
+     * @return 是否成功移除
+     */
+    public static boolean finishQuest(ServerPlayer player, Quest quest) {
+        return finishQuest(player, quest, false);
     }
 
-    public static void finishQuest(ServerPlayer player, Quest quest, boolean force) {
+    /**
+     * @return 是否成功移除
+     */
+    public static boolean finishQuest(ServerPlayer player, Quest quest, boolean force) {
         int currentQuestId = PlayerDataManager.currentQuestId.getInt(player);
         if (!force && quest.getId() != currentQuestId) {
-            return;
+            return false;
         }
         TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(player);
         tcrPlayer.finishQuest(quest);
@@ -120,6 +125,7 @@ public class TCRQuestManager {
             WaypointUtil.removeWaypoint(player, TCRCoreMod.getInfoKey("quest_map_mark"), quest.getTrackingPos());
         }
         playFinishSound(player, quest);
+        return true;
     }
 
     public static void playFinishSound(ServerPlayer player, Quest quest) {
@@ -199,12 +205,18 @@ public class TCRQuestManager {
             TCRQuestManager.startQuest(player, this, changeCurrentTask);
         }
 
-        public void finish(ServerPlayer player) {
-            TCRQuestManager.finishQuest(player, this);
+        /**
+         * @return 是否成功移除
+         */
+        public boolean finish(ServerPlayer player) {
+            return TCRQuestManager.finishQuest(player, this);
         }
 
-        public void finish(ServerPlayer player, boolean force) {
-            TCRQuestManager.finishQuest(player, this, force);
+        /**
+         * @return 是否成功移除
+         */
+        public boolean finish(ServerPlayer player, boolean force) {
+            return TCRQuestManager.finishQuest(player, this, force);
         }
 
         public boolean isFinished(ServerPlayer serverPlayer) {

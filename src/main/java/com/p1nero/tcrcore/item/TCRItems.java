@@ -35,22 +35,22 @@ public class TCRItems {
 
     public static final RegistryObject<Item> LAND_RESONANCE_STONE = REGISTRY.register("land_resonance_stone",
             () -> new LandResonanceStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(), ResourceLocation.parse(WorldUtil.LAND_GOLEM), 114, Level.OVERWORLD.location(), (serverPlayer) ->
-                    TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_RESONANCE_STONE_1) || serverPlayer.isCreative(),
+                    TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_LAND_RESONANCE_STONE) || serverPlayer.isCreative(),
                     ((pos, serverPlayer) -> {
                         WaypointUtil.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.DESERT_EYE.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.LAND_GOLEM)))), pos, WaypointColor.YELLOW);
-                        TCRQuests.USE_RESONANCE_STONE_1.finish(serverPlayer, true);
+                        TCRQuests.USE_LAND_RESONANCE_STONE.finish(serverPlayer, true);
                         TCRQuests.GET_DESERT_EYE.start(serverPlayer);
                     }))
     );
 
     public static final RegistryObject<Item> OCEAN_RESONANCE_STONE = REGISTRY.register("ocean_resonance_stone",
-            () -> new ResonanceStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(), ResourceLocation.parse(WorldUtil.LAND_GOLEM), 114, Level.OVERWORLD.location(), (serverPlayer) ->
-                    TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_RESONANCE_STONE_1),
+            () -> new ResonanceStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(), ResourceLocation.parse(WorldUtil.OCEAN_GOLEM), 63, Level.OVERWORLD.location(), (serverPlayer) ->
+                    TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_OCEAN_RESONANCE_STONE),
                     ((pos, serverPlayer) ->
                     {
-                        WaypointUtil.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.ABYSS_EYE.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.OCEAN_GOLEM)))), pos, WaypointColor.AQUA);
-                        TCRQuests.USE_RESONANCE_STONE_1.finish(serverPlayer, true);
-                        TCRQuests.GET_DESERT_EYE.start(serverPlayer);
+                        WaypointUtil.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.ABYSS_EYE.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.OCEAN_GOLEM)))), pos, WaypointColor.BLUE);
+                        TCRQuests.USE_OCEAN_RESONANCE_STONE.finish(serverPlayer, true);
+                        TCRQuests.GET_OCEAN_EYE.start(serverPlayer);
                     }))
     );
 

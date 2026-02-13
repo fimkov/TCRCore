@@ -1,4 +1,4 @@
-package com.p1nero.tcrcore.client.gui.dialog;
+package com.p1nero.tcrcore.dialog.custom.handler;
 
 import com.p1nero.dialog_lib.client.screen.builder.StreamDialogueScreenBuilder;
 import com.p1nero.tcrcore.TCRCoreMod;

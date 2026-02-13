@@ -1,4 +1,4 @@
-package com.p1nero.tcrcore.dialog;
+package com.p1nero.tcrcore.dialog.extension;
 
 import com.p1nero.dialog_lib.api.entity.EntityDialogueExtension;
 import com.p1nero.dialog_lib.api.entity.IEntityDialogueExtension;

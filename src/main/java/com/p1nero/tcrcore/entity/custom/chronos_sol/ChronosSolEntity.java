@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.entity.custom.chronos_sol;
 
+import com.github.L_Ender.cataclysm.init.ModItems;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.entity.custom.IEntityNpc;
@@ -173,20 +174,22 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             DialogNode aboutNext = new DialogNode(dBuilder.ans(9), dBuilder.opt(6))
                     .addChild(new DialogNode(dBuilder.ans(10), dBuilder.opt(-1))
                             .addChild(new DialogNode(dBuilder.ans(11, TCREntities.ORNN.get().getDescription().copy().withStyle(ChatFormatting.GOLD), TCREntities.FERRY_GIRL.get().getDescription().copy().withStyle(ChatFormatting.GOLD)), dBuilder.opt(-1))
-                                    .addLeaf(dBuilder.opt(-2), 1)));
+                                    .addLeaf(dBuilder.opt(-4, TCRItems.LAND_RESONANCE_STONE.get().getDescription()), 1)));
 
             root.addChild(aboutMe)
                     .addChild(aboutThisWorld)
                     .addChild(aboutNext);
         } else if(TCRQuests.TALK_TO_CHRONOS_1.equals(currentQuest)) {
             //提交沙漠眼
-            root = new DialogNode(dBuilder.ans(12))
-                    .addChild(new DialogNode(dBuilder.ans(13), dBuilder.opt(7))
+            root = new DialogNode(dBuilder.ans(12, ModItems.DESERT_EYE.get().getDescription()))
+                    .addChild(new DialogNode(dBuilder.ans(13), dBuilder.opt(7, ModItems.DESERT_EYE.get().getDescription()))
                             .addChild(new DialogNode(dBuilder.ans(14), dBuilder.opt(-1))
                                     .addChild(new DialogNode(dBuilder.ans(15), dBuilder.opt(-1))
                                             .addLeaf(dBuilder.opt(-2), 2))));
         } else if(TCRQuests.TALK_TO_CHRONOS_2.equals(currentQuest)) {
             //充能完毕，去开始领海洋共鸣石
+            root = new DialogNode(dBuilder.ans(16))
+                    .addLeaf(dBuilder.opt(-4, TCRItems.OCEAN_RESONANCE_STONE.get().getDescription()), 3);
         } else {
             //默认的情况
 
@@ -214,7 +217,7 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             TCRQuests.TALK_TO_CHRONOS_0.finish(player);
             TCRQuests.TALK_TO_FERRY_GIRL_0.start(player);
             TCRQuests.TALK_TO_ORNN_0.start(player);
-            ItemUtil.addItem(player, TCRItems.LAND_RESONANCE_STONE.get(), 1, true);
+            ItemUtil.addItemEntity(player, TCRItems.LAND_RESONANCE_STONE.get(), 1, ChatFormatting.YELLOW.getColor());
             PlayerDataManager.chonosTalked.put(player, true);
         }
 
@@ -232,6 +235,13 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
 
             TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(player);
             tcrPlayer.startWaitingResonanceStoneCharge(player);
+        }
+
+        //领海洋眼
+        if(code == 3) {
+            TCRQuests.TALK_TO_CHRONOS_2.finish(player);
+            ItemUtil.addItemEntity(player, TCRItems.OCEAN_RESONANCE_STONE.get(), 1, ChatFormatting.BLUE.getColor());
+            TCRQuests.GO_TO_OVERWORLD_OCEAN.start(player);
         }
 
         this.setConversingPlayer(null);

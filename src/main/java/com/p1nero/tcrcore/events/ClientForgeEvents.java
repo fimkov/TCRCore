@@ -6,10 +6,8 @@ import com.p1nero.dialog_lib.client.screen.DialogueScreen;
 import com.p1nero.dialog_lib.events.ClientNpcEntityDialogueEvent;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.client.gui.*;
-import com.p1nero.tcrcore.client.gui.dialog.HandleArteriusDialog;
-import com.p1nero.tcrcore.client.gui.dialog.HandleIronGolemDialog;
-import com.p1nero.tcrcore.client.gui.dialog.HandleSkrytheEntityDialog;
-import com.p1nero.tcrcore.client.gui.dialog.HandleVillagerDialog;
+import com.p1nero.tcrcore.dialog.custom.handler.HandleIronGolemDialog;
+import com.p1nero.tcrcore.dialog.custom.handler.HandleVillagerDialog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.LevelLoadingScreen;
 import net.minecraft.network.chat.Component;
@@ -24,8 +22,6 @@ import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.saksolm.monsterexpansion.entity.custom.AbstractLargeMonster;
-import net.shelmarow.nightfall_invade.entity.spear_knight.Arterius;
 
 import java.util.Optional;
 
@@ -88,12 +84,6 @@ public class ClientForgeEvents {
         }
         if(event.getSelf() instanceof IronGolem ironGolem) {
             HandleIronGolemDialog.openDialogScreen(ironGolem, event.getLocalPlayer(), event.getServerData());
-        }
-        if(event.getSelf() instanceof AbstractLargeMonster<?, ?> abstractLargeMonster) {
-            HandleSkrytheEntityDialog.openDialogScreen(abstractLargeMonster, event.getLocalPlayer(), event.getServerData());
-        }
-        if(event.getSelf() instanceof Arterius arterius) {
-            HandleArteriusDialog.openDialogScreen(arterius, event.getLocalPlayer(), event.getServerData());
         }
     }
 

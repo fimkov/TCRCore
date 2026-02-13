@@ -11,6 +11,7 @@ import net.magister.bookofdragons.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 
 public class TCRQuests {
 
@@ -45,7 +46,7 @@ public class TCRQuests {
     public static Quest TAME_DRAGON_BACK_TO_FERRY_GIRL;
 
     //前往获取大地之眼
-    public static Quest USE_RESONANCE_STONE_1;
+    public static Quest USE_LAND_RESONANCE_STONE;
     public static Quest GET_DESERT_EYE;
     public static Quest TALK_TO_CHRONOS_1;
     //奇美拉支线
@@ -55,6 +56,13 @@ public class TCRQuests {
 
     //获取海洋眼
     public static Quest TALK_TO_CHRONOS_2;
+    //前往主世界-海洋眼
+    public static Quest GO_TO_OVERWORLD_OCEAN;
+    public static Quest USE_OCEAN_RESONANCE_STONE;
+    public static Quest GET_OCEAN_EYE;
+    public static Quest TALK_TO_CHRONOS_3;
+    //呱呱支线
+    public static Quest RIBBITS_QUEST;
 
     public static void init() {
 
@@ -115,6 +123,9 @@ public class TCRQuests {
                 .withTrackingPos(new BlockPos(WorldUtil.GODNESS_STATUE_POS), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         TALK_TO_AINE_CLOUDLAND = TCRQuestManager.create("talk_to_aine_cloudland")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(TCREntities.AINE_IRIS.get().getDescription())
+                .descParam(TCREntities.AINE_IRIS.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.AINE_POS.above(2)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         TALK_TO_AINE_0 = TCRQuestManager.create("talk_to_aine_0")
@@ -142,13 +153,13 @@ public class TCRQuests {
                 .withIcon(SIDE_QUEST_1)
                 .withTrackingPos(new BlockPos(WorldUtil.FERRY_GIRL_POS.above(1)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
-        USE_RESONANCE_STONE_1 = TCRQuestManager.create("use_resonance_stone_1")
+        USE_LAND_RESONANCE_STONE = TCRQuestManager.create("use_land_resonance_stone")
                 .shortDescParam(TCRItems.LAND_RESONANCE_STONE.get().getDescription())
                 .descParam(TCRItems.LAND_RESONANCE_STONE.get().getDescription());
 
         GET_DESERT_EYE = TCRQuestManager.create("get_desert_eye")
                 .shortDescParam(com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get().getDescription())
-                .descParam(TCRItems.LAND_RESONANCE_STONE.get().getDescription(), com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get().getDescription(), com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get().getDescription());
+                .descParam(TCRItems.LAND_RESONANCE_STONE.get().getDescription(), com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get().getDescription(), com.github.L_Ender.cataclysm.init.ModItems.DESERT_EYE.get().getDescription(), Items.SPAWNER.getDescription());
 
         BONE_CHIMERA_QUEST = TCRQuestManager.create("bone_chimera_quest")
                 .withIcon(SIDE_QUEST_1)
@@ -169,6 +180,21 @@ public class TCRQuests {
         TALK_TO_CHRONOS_2 = TCRQuestManager.create("talk_to_chronos_2")
                 .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
                 .descParam(TCRItems.RESONANCE_STONE.get().getDescription(), TCREntities.CHRONOS_SOL.get().getDescription())
+                .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
+
+        GO_TO_OVERWORLD_OCEAN = TCRQuestManager.create("go_to_overworld_ocean")
+                .descParam(TCRItems.RESONANCE_STONE.get().getDescription());
+
+        USE_OCEAN_RESONANCE_STONE = TCRQuestManager.create("use_ocean_resonance_stone")
+                .shortDescParam(TCRItems.OCEAN_RESONANCE_STONE.get().getDescription())
+                .descParam(TCRItems.OCEAN_RESONANCE_STONE.get().getDescription());
+
+        GET_OCEAN_EYE = TCRQuestManager.create("get_ocean_eye")
+                .shortDescParam(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get().getDescription(), TCRItems.OCEAN_RESONANCE_STONE.get().getDescription(), com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get().getDescription(), Items.SPAWNER.getDescription());
+
+        TALK_TO_CHRONOS_3 = TCRQuestManager.create("talk_to_chronos_3")
+                .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
+                .descParam(com.github.L_Ender.cataclysm.init.ModItems.ABYSS_EYE.get().getDescription(), TCREntities.CHRONOS_SOL.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
     }

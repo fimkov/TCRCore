@@ -33,6 +33,7 @@ public class TCRItemModelProvider extends ItemModelProvider {
         simpleItem(TCRItems.DRAGON_FLUTE);
         simpleItem(TCRItems.MYSTERIOUS_WEAPONS);
         simpleItem(TCRItems.LAND_RESONANCE_STONE);
+        simpleItem(TCRItems.OCEAN_RESONANCE_STONE);
     }
 
     // Thank you kaupenjoe & El_Redstoniano!

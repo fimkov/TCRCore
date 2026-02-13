@@ -82,8 +82,8 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
             return null;
         }
         TCRQuestManager.Quest currentQuest = TCRQuestManager.getCurrentQuest(localPlayer);
-        StreamDialogueScreenBuilder treeBuilder = new StreamDialogueScreenBuilder(this, TCRCoreMod.MOD_ID);
-        DialogueComponentBuilder dBuilder = treeBuilder.getComponentBuildr();
+        StreamDialogueScreenBuilder dialogueScreenBuilder = new StreamDialogueScreenBuilder(this, TCRCoreMod.MOD_ID);
+        DialogueComponentBuilder dBuilder = dialogueScreenBuilder.getComponentBuildr();
 
         //-1继续
         //-2结束对话
@@ -107,7 +107,15 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
             DialogNode aboutSkin = new DialogNode(dBuilder.ans(3), dBuilder.opt(2))
                     .addLeaf(dBuilder.opt(3), 1);
             root.addChild(aboutSkin);
-        } else {
+        } else if(currentQuest.equals(TCRQuests.TALK_TO_AINE_CLOUDLAND)) {
+            dialogueScreenBuilder.start(dBuilder.opt(4, localPlayer.getDisplayName()))
+                    .addOption(5, 5)
+                    .addOption(-1, 6)
+                    .addOption(-1, 7)
+                    .addOption(-1, 8)
+                    .addFinalOption(-2, 2);
+            return dialogueScreenBuilder.build();
+        } else  {
             if(PlayerDataManager.chonosTalked.get(localPlayer)) {
                 root.addChild(aboutChronos);
                 root.addChild(aboutThisWorld);
@@ -115,7 +123,7 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
             }
         }
 
-        return treeBuilder.buildWith(root);
+        return dialogueScreenBuilder.buildWith(root);
     }
 
     @Override
@@ -127,6 +135,9 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
             ItemUtil.addItemEntity(serverPlayer, ModItems.SKIN_LIBRARY.get().getDefaultInstance());
             ItemUtil.addItemEntity(serverPlayer, ModItems.SKINNING_TABLE.get().getDefaultInstance());
             TCRQuests.TALK_TO_AINE_0.finish(serverPlayer);
+        }
+        if(i == 2) {
+            TCRQuests.TALK_TO_AINE_CLOUDLAND.finish(serverPlayer);
         }
         this.setConversingPlayer(null);
     }

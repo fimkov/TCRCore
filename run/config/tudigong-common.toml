@@ -1,5 +1,5 @@
 #Tell player how to summon TuDi when first meet TuDiTemple. This config will be set to false if the tutorial has finished.
-guide_mode = false
+guide_mode = true
 #Whether to spawn the cloud guider
 spawn_guider = true
 #Whether to generate TuDiTemple in villages

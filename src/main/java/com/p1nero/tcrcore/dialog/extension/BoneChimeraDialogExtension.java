@@ -1,4 +1,4 @@
-package com.p1nero.tcrcore.dialog;
+package com.p1nero.tcrcore.dialog.extension;
 
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.Bone_Chimera_Entity;
 import com.github.dodo.dodosmobs.init.ModEntities;

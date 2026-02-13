@@ -6,8 +6,8 @@ import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.client.TCRKeyMappings;
-import com.p1nero.tcrcore.client.gui.dialog.BanPortalScreenHandler;
-import com.p1nero.tcrcore.client.gui.dialog.StartScreenHandler;
+import com.p1nero.tcrcore.dialog.custom.handler.no_entity.FirstEnterCloudlandScreenHandler;
+import com.p1nero.tcrcore.dialog.custom.handler.no_entity.StartScreenHandler;
 import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
@@ -28,6 +28,13 @@ public class TCRENLangGenerator extends TCRLangProvider {
     @Override
     protected void addTranslations() {
 
+        this.add("travelerstitles.minecraft.overworld", "Overworld");
+        this.add("travelerstitles.aether.the_aether", "The Aether");
+        this.add("travelerstitles.minecraft.the_nether", "The Nether");
+        this.add("travelerstitles.minecraft.the_nether.color", "750909");
+        this.add("travelerstitles.minecraft.the_end", "The End");
+        this.add("travelerstitles.minecraft.the_end.color", "4f219e");
+
         this.addEffect(TCREffects.INVULNERABLE, "Invulnerable");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "Soul Fire");
 
@@ -37,7 +44,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addBiome(TCRBiomes.AIR, "Void Region");
 
         StartScreenHandler.onGenerateEN(this);
-        BanPortalScreenHandler.onGenerateEN(this);
+        FirstEnterCloudlandScreenHandler.onGenerateEN(this);
 
         this.add("item.domesticationinnovation.collar_tag.tcr_info", "It allows for special enchantments to be applied to pets.");
         this.addTCRItemInfo(net.blay09.mods.waystones.item.ModItems.warpStone, "Click the §6[Scroll]§r button in the inventory to teleport to activated waystones!");
@@ -72,6 +79,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.DRAGON_FLUTE.get(), "Right-click to capture a dragon; right-click again to release it.");
         this.add(TCRItems.RESONANCE_STONE.get(), "Resonance Stone");
         this.add(TCRItems.LAND_RESONANCE_STONE.get(), "Land Resonance Stone");
+        this.add(TCRItems.OCEAN_RESONANCE_STONE.get(), "Ocean Resonance Stone");
         this.addInfo("resonance_stone_usage", "Can resonate with the location of the Angel's seal");
         this.add(TCRItems.CORE_FLINT.get(), "Core Flint");
         this.addItemUsageInfo(TCRItems.CORE_FLINT.get(), "Use on an Obsidian Frame to open a Nether Portal.");

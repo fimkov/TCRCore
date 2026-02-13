@@ -255,14 +255,14 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
 
         if (i == 2) {
             if (PlayerDataManager.wayStoneInteracted.get(serverPlayer)) {
+                //后续的搞到PlayerDimensionChanged事件来
+                if (currentQuest.equals(TCRQuests.TALK_TO_FERRY_GIRL_0)) {
+                    TCRQuests.TALK_TO_FERRY_GIRL_0.finish(serverPlayer);//先清理任务标记点，再传去主世界
+                    TCRQuests.USE_LAND_RESONANCE_STONE.start(serverPlayer);
+                }
                 //传送主世界
                 ServerLevel level = serverPlayer.server.getLevel(Level.OVERWORLD);
                 serverPlayer.changeDimension(level, new OverworldVillageTeleporter());
-                //后续的搞到PlayerDimensionChanged事件来
-                if (currentQuest.equals(TCRQuests.TALK_TO_FERRY_GIRL_0)) {
-                    TCRQuests.TALK_TO_FERRY_GIRL_0.finish(serverPlayer);
-                    TCRQuests.USE_RESONANCE_STONE_1.start(serverPlayer);
-                }
             } else {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("need_to_unlock_waystone").withStyle(ChatFormatting.RED), false);
             }

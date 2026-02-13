@@ -5,11 +5,14 @@ import com.p1nero.tcrcore.capability.PlayerDataManager;
 import com.p1nero.tcrcore.capability.TCRPlayer;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.loading.FMLEnvironment;
+import org.apache.commons.lang3.SystemUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,16 +25,11 @@ public class ItemEvents {
 
     @SubscribeEvent
     public static void onItemDesc(ItemTooltipEvent event) {
-        if (eyes.contains(event.getItemStack().getItem()) && event.getEntity() != null) {
-            event.getToolTip().add(TCRCoreMod.getInfo("time_to_altar").withStyle(ChatFormatting.GRAY));
-            event.getToolTip().add(TCRCoreMod.getInfo("time_to_ask_godness_statue"));
-            if(event.getItemStack().hasTag() && event.getItemStack().getOrCreateTag().contains(TCRPlayer.PLAYER_NAME)) {
-                String playerName = event.getItemStack().getOrCreateTag().getString(TCRPlayer.PLAYER_NAME);
-                event.getToolTip().add(Component.literal("——" + playerName).withStyle(ChatFormatting.AQUA));
-            }
+
+        //F3+H按不了，气笑了
+        if(!FMLEnvironment.production && SystemUtils.IS_OS_MAC) {
+            event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));
         }
-        //TODO delete
-//        event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));
         if(additionalInfoItems.contains(event.getItemStack().getItem())) {
             event.getToolTip().add(1, Component.translatable(event.getItemStack().getItem().getDescriptionId() + ".tcr_info"));
         }

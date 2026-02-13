@@ -6,19 +6,26 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Player;
 
-public record OpenStartScreenPacket() implements BasePacket {
+public record OpenCustomDialogPacket(int id) implements BasePacket {
+    public static final int GAME_START = 0;
+    public static final int FIRST_ENTER_CLOUDLAND = 1;
     @Override
     public void encode(FriendlyByteBuf buf) {
+        buf.writeInt(id);
     }
 
-    public static OpenStartScreenPacket decode(FriendlyByteBuf buf) {
-        return new OpenStartScreenPacket();
+    public static OpenCustomDialogPacket decode(FriendlyByteBuf buf) {
+        return new OpenCustomDialogPacket(buf.readInt());
     }
 
     @Override
     public void execute(Player playerEntity) {
         if (Minecraft.getInstance().player != null && Minecraft.getInstance().level != null) {
-            DistHelper.runClient(() -> TCRClientHandler::openStartScreen);
+            switch (id) {
+                case GAME_START -> DistHelper.runClient(() -> TCRClientHandler::openStartScreen);
+                case FIRST_ENTER_CLOUDLAND -> DistHelper.runClient(() -> TCRClientHandler::openFirstEnterCloudlandScreen);
+            }
+
         }
     }
 }
