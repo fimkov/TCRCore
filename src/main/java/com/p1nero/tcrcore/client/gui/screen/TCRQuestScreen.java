@@ -18,6 +18,7 @@ import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Objects;
 
 public class TCRQuestScreen extends Screen {
 
@@ -25,6 +26,8 @@ public class TCRQuestScreen extends Screen {
 
     private static TCRQuestManager.Quest selectedQuest; // 当前真正追踪的任务
     private static TCRQuestManager.Quest uiSelectedQuest; // UI 中当前高亮的任务
+
+    private static Button startTrackingButton;
 
     private final LocalPlayer player;
 
@@ -104,8 +107,21 @@ public class TCRQuestScreen extends Screen {
         int centerX = this.width / 2;
         int startButtonX = centerX - buttonWidth - 8;
         int exitButtonX = centerX + 8;
-        this.addRenderableWidget(Button.builder(TCRCoreMod.getInfo("start_tracking_quest"), button -> this.startTrackingSelectedQuest()).bounds(startButtonX, buttonY, buttonWidth, buttonHeight).build());
+        startTrackingButton = Button.builder(TCRCoreMod.getInfo("start_tracking_quest"), button -> this.handleStartTrackingSelectedQuest()).bounds(startButtonX, buttonY, buttonWidth, buttonHeight).build();
+        this.addRenderableWidget(startTrackingButton);
         this.addRenderableWidget(Button.builder(TCRCoreMod.getInfo("exit_quest_screen"), button -> this.onClose()).bounds(exitButtonX, buttonY, buttonWidth, buttonHeight).build());
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(startTrackingButton != null) {
+            if(Objects.equals(selectedQuest, uiSelectedQuest)) {
+                startTrackingButton.setMessage(TCRCoreMod.getInfo("cancel_tracking_quest"));
+            } else {
+                startTrackingButton.setMessage(TCRCoreMod.getInfo("start_tracking_quest"));
+            }
+        }
     }
 
     public void setSelectedQuest(TCRQuestManager.Quest quest) {
@@ -397,7 +413,13 @@ public class TCRQuestScreen extends Screen {
         }
     }
 
-    private void startTrackingSelectedQuest() {
+    private void handleStartTrackingSelectedQuest() {
+        //针对已追踪的就取消追踪
+        if(uiSelectedQuest.equals(selectedQuest)) {
+            selectedQuest = TCRQuestManager.EMPTY;
+            PlayerDataManager.currentQuestId.put(player, selectedQuest.getId());
+            return;
+        }
         if (player == null || uiSelectedQuest == null || isEmptyQuest(uiSelectedQuest)) {
             return;
         }

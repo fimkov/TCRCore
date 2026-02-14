@@ -112,6 +112,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("please_use_custom_flint_and_steel", "Please use [%s] to spawn portal");
         this.addInfo("exit_quest_screen", "Exit");
         this.addInfo("start_tracking_quest", "Select");
+        this.addInfo("cancel_tracking_quest", "Stop");
         this.addInfo("no_quest", "No Quest");
         this.addInfo("tracking_quest", " [☆Tracking]");
         this.addInfo("require_item_to_wake", "Require [%s]...");

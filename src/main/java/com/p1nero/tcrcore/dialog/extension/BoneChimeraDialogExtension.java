@@ -62,5 +62,6 @@ public class BoneChimeraDialogExtension implements IEntityDialogueExtension<Bone
             boneChimeraEntity.getPersistentData().putBoolean("fighting", true);
             TCRQuests.BONE_CHIMERA_QUEST.finish(serverPlayer, true);
         }
+        removeConservingPlayer(boneChimeraEntity);
     }
 }

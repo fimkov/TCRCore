@@ -57,15 +57,15 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.TALK_TO_ORNN_0, "序章", "和%s对话", "在%s的建议下，先去武库找%s武装一下我们自己吧！充分的武装才能保证我们顺利的冒险！");
 
         //驯龙支线
-        this.addQuest(TCRQuests.TAME_DRAGON, "驯龙之章", "将龙养大", "%s送给了你一条龙，现在，按[%s]上说的办法，将它养成年吧！龙，可是帝王之征！\n\n§a[任务奖励]: [%s] [%s]");
-        this.addQuest(TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL, "驯龙之章", "和%s对话", "经过你精心呵护，龙已长大成年。%s之前说过，在龙养大后她有宝具要赠与我们。快回去找%s看看吧！\n\n§a[任务奖励]: [%s] [%s]");
+        this.addQuest(TCRQuests.TAME_DRAGON, "驯龙之章", "将龙养大", "%s送给了你一条龙，现在，按[%s]上说的办法，将它养成年吧！龙，可是帝王之征！\n\n§a[任务奖励]: §f[%s] [%s]");
+        this.addQuest(TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL, "驯龙之章", "和%s对话", "经过你精心呵护，龙已长大成年。%s之前说过，在龙养大后她有宝具要赠与我们。快回去找%s看看吧！\n\n§a[任务奖励]: §f[%s] [%s]");
 
         //主线·沙漠之眼
         this.addQuest(TCRQuests.USE_LAND_RESONANCE_STONE, "大地之章", "使用[%s]", "你终于来到了传说中的Overworld。在这里将会遇到什么样的冒险呢？快使用[%s]吧！它将指引我们寻回第一颗眼睛。");
         this.addQuest(TCRQuests.GET_DESERT_EYE, "大地之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！\n\n§a[提示]:[%s§a]可能藏匿于方块之中！\n\n§4[注意]：若获取后无法完成任务，请尝试关闭可能自动拾取物品的插件，并扔出去后重新拾取！");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_1, "大地之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
         //奇美拉支线
-        this.addQuest(TCRQuests.BONE_CHIMERA_QUEST, "大地之章", "前往[%s]", "[%s]似乎为我们标记了一个另一个地点，说不定有什么奇遇，快去看看吧！\n\n§a[任务奖励]: [%s]");
+        this.addQuest(TCRQuests.BONE_CHIMERA_QUEST, "大地之章", "前往[%s]", "[%s]似乎为我们标记了一个另一个地点，说不定有什么奇遇，快去看看吧！\n\n§a[任务奖励]: §f[%s§f]");
         this.addQuest(TCRQuests.TALK_TO_ORNN_1, "大地之章", "和%s对话", "从[%s]身上获得了[%s]。上面到底记载了什么秘密？带回主城找%s看看吧！");
 
         //主线·深渊之眼
@@ -75,8 +75,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.GET_OCEAN_EYE, "海洋之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！\n\n§a[提示]:[%s§a]可能藏匿于方块之中！ \n\n§4[注意]：若获取后无法完成任务，请尝试关闭可能自动拾取物品的插件，并扔出去后重新拾取！");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_3, "海洋之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
 
-        this.addQuest(TCRQuests.RIBBITS_QUEST, "海洋之章", "探索[%s]", "[%s]似乎为我们标记了一个另一个地点，说不定有什么奇遇，快去看看吧！\n\n§a[任务奖励]: [%s] [%s]\n\n§6[推荐优先完成]");
-        this.addQuest(TCRQuests.GIVE_AMETHYST_BLOCK_TO_RIBBITS, "海洋之章", "将[%s]交给%s", "看来想要打探更多关于[%s]的线索，需要与%s们做个交易才行。收集好12个[%s]就回去找它们吧！\n\n§a[任务奖励]: [%s] [%s]\n\n§6[推荐优先完成]");
+        this.addQuest(TCRQuests.RIBBITS_QUEST, "海洋之章", "探索[%s]", "[%s]似乎为我们标记了一个另一个地点，说不定有什么奇遇，快去看看吧！\n\n§a[任务奖励]: §f[%s] [%s]\n\n§6[推荐优先完成]");
+        this.addQuest(TCRQuests.GIVE_AMETHYST_BLOCK_TO_RIBBITS, "海洋之章", "将[%s]交给%s", "看来想要打探更多关于[%s]的线索，需要与%s们做个交易才行。收集好12个[%s]就回去找它们吧！\n\n§a[任务奖励]: §f[%s] [%s]\n\n§6[推荐优先完成]");
 
         this.addEffect(TCREffects.INVULNERABLE, "无敌");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "灵魂火");
@@ -154,7 +154,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("press_to_show_quest_ui", "按 %s 键查看任务列表");
         this.addInfo("please_use_custom_flint_and_steel", "请使用[%s]开启地狱传送门");
         this.addInfo("exit_quest_screen", "退出");
-        this.addInfo("start_tracking_quest", "追踪");
+        this.addInfo("start_tracking_quest", "开始追踪");
+        this.addInfo("cancel_tracking_quest", "停止追踪");
         this.addInfo("no_quest", "暂无任务");
         this.addInfo("tracking_quest", " [☆追踪中]");
         this.addInfo("require_item_to_wake", "需要[%s]以唤醒...");

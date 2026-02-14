@@ -62,6 +62,8 @@ public class RibbitDialogExtension implements IEntityDialogueExtension<RibbitEnt
             senderData.putBoolean("hasAmethyst", true);
             senderData.putInt("amethystCount", player.getMainHandItem().getCount());
         }
+        boolean canTrade = currentTalking.isAlive() && !currentTalking.isBaby() && !currentTalking.isTrading() && !currentTalking.isSleeping() && !currentTalking.getOffers().isEmpty();
+        senderData.putBoolean("canTrade", canTrade);
         return senderData;
     }
 
@@ -71,10 +73,14 @@ public class RibbitDialogExtension implements IEntityDialogueExtension<RibbitEnt
         DialogueComponentBuilder builder = new DialogueComponentBuilder(ribbitEntity, TCRCoreMod.MOD_ID);
         boolean hasAmethyst = compoundTag.getBoolean("hasAmethyst");
         int count = compoundTag.getInt("amethystCount");
+        boolean canTrade = compoundTag.getBoolean("canTrade");
         DialogNode root = new DialogNode(builder.ans(0))
                 .addLeaf(builder.opt(0))
-                .addLeaf(builder.opt(1))
-                .addLeaf(builder.opt(2), 2);
+                .addLeaf(builder.opt(1));
+
+        if(canTrade) {
+            root.addLeaf(builder.opt(2), 2);
+        }
 
         if(TCRQuestManager.hasQuest(localPlayer, TCRQuests.RIBBITS_QUEST)) {
             DialogNode aboutEye = new DialogNode(builder.ans(1), builder.opt(3, ModItems.ABYSS_EYE.get().getDescription()))
@@ -115,6 +121,7 @@ public class RibbitDialogExtension implements IEntityDialogueExtension<RibbitEnt
         }
         if(i == 2) {
             //开始交易
+            ribbitEntity.getOffers();
             ribbitEntity.setTradingPlayer(player);
             ribbitEntity.openTradingScreen(player, ribbitEntity.getDisplayName(), 0);
         }
@@ -122,6 +129,7 @@ public class RibbitDialogExtension implements IEntityDialogueExtension<RibbitEnt
             TCRQuests.RIBBITS_QUEST.finish(player, true);
             TCRQuests.GIVE_AMETHYST_BLOCK_TO_RIBBITS.start(player);
         }
+        removeConservingPlayer(ribbitEntity);
     }
 
 }

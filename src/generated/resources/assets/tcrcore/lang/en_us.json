@@ -108,6 +108,7 @@
   "info.tcr.can_not_do_this_too_early": "§6You are not destined to do this.",
   "info.tcr.can_not_enter_before_finish": "§6You are not destined to enter this cloudland.",
   "info.tcr.can_not_enter_dim": "It seems you have not yet gained the divine approval to enter... §6Continue collecting embers§r to receive more oracles!",
+  "info.tcr.cancel_tracking_quest": "Stop",
   "info.tcr.captain_start_heal": "§cCornelia started healing! Increase your damage!",
   "info.tcr.click_to_return": "§a[Click to return]",
   "info.tcr.cloud_follow_me": "§6[Magic Cloud]: §fHi, follow me!",
