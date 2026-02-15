@@ -28,7 +28,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import yesman.epicfight.api.client.forgeevent.PatchedRenderersEvent;
 import yesman.epicfight.api.client.model.Meshes;
-import yesman.epicfight.client.renderer.patched.entity.PCustomHumanoidEntityRenderer;
 import yesman.epicfight.client.renderer.patched.entity.PHumanoidRenderer;
 import yesman.epicfight.client.renderer.patched.entity.PIronGolemRenderer;
 
@@ -42,7 +41,7 @@ public class ClientModEvents {
         EntityRenderers.register(TCREntities.CHRONOS_SOL.get(), ChronosSolGeoRenderer::new);
         EntityRenderers.register(TCREntities.FERRY_GIRL.get(), FerryGirlGeoRenderer::new);
         EntityRenderers.register(TCREntities.ORNN.get(), OrnnlGeoRenderer::new);
-        EntityRenderers.register(TCREntities.AINE_IRIS.get(), AineIrisRenderer::new);
+        EntityRenderers.register(TCREntities.AINE.get(), AineIrisRenderer::new);
         EntityRenderers.register(TCREntities.TUTORIAL_GOLEM.get(), TutorialGolemRenderer::new);
 
         BlockTooltipHandler.registerBlockTooltip(TCRBlocks.ABYSS_ALTAR_BLOCK,

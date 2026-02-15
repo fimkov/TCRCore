@@ -238,7 +238,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCREntities.CHRONOS_SOL.get(), "Chronos Sol");
         this.add(TCREntities.FERRY_GIRL.get(), "Ferry girl");
         this.add(TCREntities.ORNN.get(), "Old Ornn");
-        this.add(TCREntities.AINE_IRIS.get(), "Aine");
+        this.add(TCREntities.AINE.get(), "Aine");
         this.add(TCREntities.TUTORIAL_GOLEM.get(), "Training Golem");
 
         this.add(TCRBossEntities.LEVIATHAN_HUMANOID.get(), "Thalassa Mare");

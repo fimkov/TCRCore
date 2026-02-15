@@ -19,6 +19,7 @@ public class PlayerDataManager {
     public static DoubleData stage = new DoubleData("stage", 0);
     public static DoubleData currentQuestId = new DoubleData("currentQuestId", 0);
 
+    public static BoolData magicLearned = new BoolData("magicLearned", false);
     public static BoolData aineTalked = new BoolData("aineTalked", false);
     public static BoolData ornnTalked = new BoolData("ornnTalked", false);
     public static BoolData chonosTalked = new BoolData("chonosTalked", false);

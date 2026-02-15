@@ -23,6 +23,7 @@ import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsSkillTrees;
 import com.yesman.epicskills.skilltree.SkillTree;
 import com.yesman.epicskills.world.capability.SkillTreeProgression;
+import io.redspace.ironsspellbooks.IronsSpellbooks;
 import net.blay09.mods.waystones.block.ModBlocks;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
@@ -107,6 +108,12 @@ public class PlayerEventListeners {
 
             if (namespace.equals("minecraft") && path.equals("recipes/transportation/oak_boat")) {
                 PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(PlayTitlePacket.RIPTIDE_TUTORIAL), player);
+            }
+
+            if(namespace.equals(IronsSpellbooks.MODID) && path.equals("irons_spellbooks/make_arcane_anvil")) {
+                PlayerDataManager.magicLearned.put(player, true);
+                TCRQuests.TRY_TO_LEARN_MAGIC.finish(player, true);
+                TCRQuests.TALK_TO_AINE_MAGIC_2.start(player);
             }
 
         }
@@ -472,13 +479,16 @@ public class PlayerEventListeners {
                 giveOracleEffect(player, com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get());
                 PlayerDataManager.cursedEyeGotten.put(player, true);
                 TCRQuests.GET_CURSED_EYE.finish(player, true);
-                TCRQuests.TALK_TO_CHRONOS_5.start(player);
                 if(!PlayerDataManager.cursedEyeActivated.get(player)) {
                     TCRQuests.PUT_CURSED_EYE_ON_ALTAR.start(player);
                 }
                 if(!PlayerDataManager.cursedEyeBlessed.get(player)) {
                     TCRQuests.BLESS_ON_THE_GODNESS_STATUE.start(player);
                 }
+                if(!PlayerDataManager.magicLearned.get(player)) {
+                    TCRQuests.TALK_TO_AINE_MAGIC.start(player);
+                }
+                TCRQuests.TALK_TO_CHRONOS_5.start(player);
             }
 
             if (itemStack.is(AquamiraeItems.SHELL_HORN.get()) && !PlayerDataManager.abyssEyeGotten.get(player)) {

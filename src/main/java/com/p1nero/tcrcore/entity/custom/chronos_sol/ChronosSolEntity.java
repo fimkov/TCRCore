@@ -150,7 +150,7 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
                         .addChild(root)
                         .addLeaf(dBuilder.opt(-2)));
 
-        DialogNode aboutAine = new DialogNode(dBuilder.ans(3), dBuilder.opt(1, TCREntities.AINE_IRIS.get().getDescription()))
+        DialogNode aboutAine = new DialogNode(dBuilder.ans(3), dBuilder.opt(1, TCREntities.AINE.get().getDescription()))
                 .addLeaf(dBuilder.opt(-2));
 
         DialogNode aboutFerryGirl = new DialogNode(dBuilder.ans(4), dBuilder.opt(2, TCREntities.FERRY_GIRL.get().getDescription()))

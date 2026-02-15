@@ -65,8 +65,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.GET_DESERT_EYE, "大地之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！\n\n§a[提示]:[%s§a]可能藏匿于方块之中！\n\n§4[注意]：若获取后无法完成任务，请尝试关闭可能自动拾取物品的插件，并扔出去后重新拾取！");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_1, "大地之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
         //奇美拉支线
-        this.addQuest(TCRQuests.BONE_CHIMERA_QUEST, "大地之章", "前往[%s]", "[%s]似乎为我们标记了一个另一个地点，说不定有什么奇遇，快去看看吧！\n\n§a[任务奖励]: §f[%s§f]");
-        this.addQuest(TCRQuests.TALK_TO_ORNN_1, "大地之章", "和%s对话", "从[%s]身上获得了[%s]。上面到底记载了什么秘密？带回主城找%s看看吧！");
+        this.addQuest(TCRQuests.BONE_CHIMERA_QUEST, "神兵之章", "前往[%s]", "[%s]似乎为我们标记了一个另一个地点，说不定有什么奇遇，快去看看吧！\n\n§a[任务奖励]: §f[%s§f]");
+        this.addQuest(TCRQuests.TALK_TO_ORNN_1, "神兵之章", "和%s对话", "从[%s]身上获得了[%s]。上面到底记载了什么秘密？带回主城找%s看看吧！");
 
         //主线·深渊之眼
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_2, "海洋之章", "和%s对话", "经过漫长的等待，%s已完成充能。快回去找%s吧！她在圣殿里等你。");
@@ -84,6 +84,14 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.GO_TO_OVERWORLD_CURSED, "灵魂之章", "前往Overworld", "你意外地从[%s]中获得了[%s]散落的位置，快前去Overworld寻回它吧！[%s]将为我们指引它的位置。");
         this.addQuest(TCRQuests.USE_CURSED_RESONANCE_STONE, "灵魂之章", "使用[%s]", "你意外地从[%s]中获得了[%s]散落的位置，快前去Overworld寻回它吧！[%s]将为我们指引它的位置。");
         this.addQuest(TCRQuests.GET_CURSED_EYE, "灵魂之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！\n\n§a[提示]:§f探索以寻找召唤[%s]的线索！");
+        this.addQuest(TCRQuests.TALK_TO_CHRONOS_5, "灵魂之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
+
+        //铁魔法支线
+        this.addQuest(TCRQuests.TALK_TO_AINE_MAGIC, "魔法之章", "和%s对话", "[%s]掉落了神秘的%s，或许掌握魔法的%s能为我们解读上面的秘密！");
+
+        //主线·巨兽之眼
+        this.addQuest(TCRQuests.TALK_TO_CHRONOS_6, "巨兽之章", "和%s对话", "经过漫长的等待，%s已完成充能。快回去找%s吧！她在圣殿里等你。");
+
 
         this.addEffect(TCREffects.INVULNERABLE, "无敌");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "灵魂火");
@@ -289,7 +297,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.add(TCREntities.CHRONOS_SOL.get(), "羲轮｜Chronos Sol");
         this.add(TCREntities.FERRY_GIRL.get(), "摆渡人");
-        this.add(TCREntities.AINE_IRIS.get(), "安");
+        this.add(TCREntities.AINE.get(), "安");
         this.add(TCREntities.ORNN.get(), "老奥恩");
         this.add(TCREntities.TUTORIAL_GOLEM.get(), "训练傀儡");
 
@@ -363,29 +371,31 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 20, "这是...%s？！");
         this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 21, "既然如此，这份记忆便可以让共鸣石提前恢复魔力，吾这就将回响注入共鸣石之中，阁下务必把祂的火种收回！");
 
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), -2, "结束对话");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), -1, "继续");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 0, "%s, 你来了！我正在阅读这个世界的智库");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 0, "关于%s");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 1, "你已经和那个女人打过招呼啦？她应该就是这里的老大了，看来要解决这里的问题，我们暂时只能按她的话做了。");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 1, "关于这个世界");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 2, "你已经听过那女人讲的故事了吧？但是真是假，还得真正的踏上旅程才知道。来之前可说好了，要靠你自己的力量找回失去的记忆！加油，我会一直在你身边，做你坚强的后盾！");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 2, "§a关于时装");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 3, "看！我这身新衣服！漂亮吧？来到这个世界，也应该换一套新的行头才行！给，你也快换上吧！");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 3, "§a领取");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 4, "%s，有事找我？");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 5, "§a关于幻境");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 5, "幻境（Cloudland）？我找找...");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 6, "嗯...根据智库记载的资料，和我的经验来看，你所接触祭坛后进入的幻境，应该是使徒（Angel）们原先的精神世界，受到黑潮侵蚀后所融合的结果。");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 6, "精神世界？");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 7, "嗯，或许在幻境深处可以找到使徒（Angel）们的映射，并借此获取它们的力量！");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 8, "在幻境中探索看看吧！说不定会有不小的收获，也许还可以获取宝贵的忆质材料！");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 7, "§a关于[%s§a]");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 9, "这是...特殊的忆质呢，似乎记载了一个团体的记忆，而不是某个生命的记忆。让我们看看其中有什么秘密吧！");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 10, "！！");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 11, "上面记载了可妮莉亚船长(Captain Cornelia)的冒险故事，并且从记忆来看，灵魂使徒(Soul Angel) %s 被黑潮侵蚀后，就附身在可妮莉亚船长(Captain Cornelia)身上！快把这份解读的记忆给%s看看吧！");
-        this.addDialogOption(TCREntities.AINE_IRIS.get(), 8, "%s? %s?");
-        this.addDialogAnswer(TCREntities.AINE_IRIS.get(), 12, "灵魂之使徒，%s，掌管亡者之世界。可妮莉亚船长(Captain Cornelia)的船队则是世界闻名的远洋船队，受到黑潮的诅咒，和[%s]一起永远困在了那片寒冰迷宫！");
+        this.addDialogOption(TCREntities.AINE.get(), -4, "§6法术淬灵");
+        this.addDialogOption(TCREntities.AINE.get(), -3, "§6法术交易");
+        this.addDialogOption(TCREntities.AINE.get(), -2, "结束对话");
+        this.addDialogOption(TCREntities.AINE.get(), -1, "继续");
+        this.addDialogAnswer(TCREntities.AINE.get(), 0, "%s, 你来了！我正在阅读这个世界的智库");
+        this.addDialogOption(TCREntities.AINE.get(), 0, "关于%s");
+        this.addDialogAnswer(TCREntities.AINE.get(), 1, "你已经和那个女人打过招呼啦？她应该就是这里的老大了，看来要解决这里的问题，我们暂时只能按她的话做了。");
+        this.addDialogOption(TCREntities.AINE.get(), 1, "关于这个世界");
+        this.addDialogAnswer(TCREntities.AINE.get(), 2, "你已经听过那女人讲的故事了吧？但是真是假，还得真正的踏上旅程才知道。来之前可说好了，要靠你自己的力量找回失去的记忆！加油，我会一直在你身边，做你坚强的后盾！");
+        this.addDialogOption(TCREntities.AINE.get(), 2, "§a关于时装");
+        this.addDialogAnswer(TCREntities.AINE.get(), 3, "看！我这身新衣服！漂亮吧？来到这个世界，也应该换一套新的行头才行！给，你也快换上吧！");
+        this.addDialogOption(TCREntities.AINE.get(), 3, "§a领取");
+        this.addDialogAnswer(TCREntities.AINE.get(), 4, "%s，有事找我？");
+        this.addDialogOption(TCREntities.AINE.get(), 5, "§a关于幻境");
+        this.addDialogAnswer(TCREntities.AINE.get(), 5, "幻境（Cloudland）？我找找...");
+        this.addDialogAnswer(TCREntities.AINE.get(), 6, "嗯...根据智库记载的资料，和我的经验来看，你所接触祭坛后进入的幻境，应该是使徒（Angel）们原先的精神世界，受到黑潮侵蚀后所融合的结果。");
+        this.addDialogOption(TCREntities.AINE.get(), 6, "精神世界？");
+        this.addDialogAnswer(TCREntities.AINE.get(), 7, "嗯，或许在幻境深处可以找到使徒（Angel）们的映射，并借此获取它们的力量！");
+        this.addDialogAnswer(TCREntities.AINE.get(), 8, "在幻境中探索看看吧！说不定会有不小的收获，也许还可以获取宝贵的忆质材料！");
+        this.addDialogOption(TCREntities.AINE.get(), 7, "§a关于[%s§a]");
+        this.addDialogAnswer(TCREntities.AINE.get(), 9, "这是...特殊的忆质呢，似乎记载了一个团体的记忆，而不是某个生命的记忆。让我们看看其中有什么秘密吧！");
+        this.addDialogAnswer(TCREntities.AINE.get(), 10, "！！");
+        this.addDialogAnswer(TCREntities.AINE.get(), 11, "上面记载了可妮莉亚船长(Captain Cornelia)的冒险故事，并且从记忆来看，灵魂使徒(Soul Angel) %s 被黑潮侵蚀后，就附身在可妮莉亚船长(Captain Cornelia)身上！快把这份解读的记忆给%s看看吧！");
+        this.addDialogOption(TCREntities.AINE.get(), 8, "%s? %s?");
+        this.addDialogAnswer(TCREntities.AINE.get(), 12, "灵魂之使徒，%s，掌管亡者之世界。可妮莉亚船长(Captain Cornelia)的船队则是世界闻名的远洋船队，受到黑潮的诅咒，和[%s]一起永远困在了那片寒冰迷宫！");
 
         this.addDialogOption(TCREntities.ORNN.get(), -2, "结束对话");
         this.addDialogOption(TCREntities.ORNN.get(), -1, "继续");

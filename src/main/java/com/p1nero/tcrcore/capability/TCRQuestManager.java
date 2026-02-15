@@ -219,8 +219,8 @@ public class TCRQuestManager {
             return TCRQuestManager.finishQuest(player, this, force);
         }
 
-        public boolean isFinished(ServerPlayer serverPlayer) {
-            return TCRQuestManager.hasFinished(serverPlayer, this);
+        public boolean isFinished(Player player) {
+            return TCRQuestManager.hasFinished(player, this);
         }
 
         @Nullable

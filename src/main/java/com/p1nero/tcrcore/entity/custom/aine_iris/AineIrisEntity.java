@@ -103,8 +103,6 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
 
         DialogNode enterDim;//TODO 进入轮回绝境
 
-        DialogNode enchantment;//TODO 法术淬灵
-
         if(currentQuest.equals(TCRQuests.TALK_TO_AINE_0)) {
             if(PlayerDataManager.chonosTalked.get(localPlayer)) {
                 root.addChild(aboutChronos);
@@ -130,11 +128,19 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
                     .addOption(dBuilder.opt(8, AquamiraeEntities.CAPTAIN_CORNELIA.get().getDescription(), TCRBossEntities.MALEDICTUS_HUMANOID.get().getDescription()), dBuilder.ans(12, TCRBossEntities.MALEDICTUS_HUMANOID.get().getDescription(), com.github.L_Ender.cataclysm.init.ModItems.CURSED_EYE.get().getDescription()))
                     .addFinalOption(-2, 4);
             return dialogueScreenBuilder.build();
+        } else if(TCRQuests.TALK_TO_AINE_MAGIC.equals(currentQuest)) {
+
+        } else if(TCRQuests.TALK_TO_AINE_MAGIC_2.equals(currentQuest)) {
+            //TODO 送点法术礼物
         } else {
             if(PlayerDataManager.chonosTalked.get(localPlayer)) {
                 root.addChild(aboutChronos);
                 root.addChild(aboutThisWorld);
                 root.addLeaf(dBuilder.opt(-2));
+            }
+            if(TCRQuests.TRY_TO_LEARN_MAGIC.isFinished(localPlayer)) {
+                root.addLeaf(dBuilder.opt(-3), 5);
+                root.addLeaf(dBuilder.opt(-4), 6);
             }
         }
 
@@ -175,6 +181,13 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
         if(code == 4) {
             TCRQuests.TALK_TO_AINE_ECHO.finish(serverPlayer);
             TCRQuests.TALK_TO_CHRONOS_4.start(serverPlayer);
+        }
+
+        if(code == 5) {
+            //TODO 法术交易
+        }
+        if(code == 6) {
+            //TODO 法术淬灵（打开奥术铁砧）
         }
 
         this.setConversingPlayer(null);

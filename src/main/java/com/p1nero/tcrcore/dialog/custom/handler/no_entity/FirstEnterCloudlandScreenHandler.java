@@ -27,7 +27,7 @@ public class FirstEnterCloudlandScreenHandler {
         screenBuilder.setCustomTitle(Component.literal("").append(localPlayer.getDisplayName().copy().withStyle(ChatFormatting.AQUA)).append(": \n"));
 
         screenBuilder.start(builder.ans(0))
-                        .addOption(builder.opt(0), builder.ans(1, ModItems.warpStone.getDescription(), TCREntities.AINE_IRIS.get().getDescription()))
+                        .addOption(builder.opt(0), builder.ans(1, ModItems.warpStone.getDescription(), TCREntities.AINE.get().getDescription()))
                                 .addFinalOption(builder.opt(1));
 
         Minecraft.getInstance().setScreen(screenBuilder.build());
