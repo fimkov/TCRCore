@@ -71,8 +71,11 @@ public class TCRAdvancementData extends ForgeAdvancementProvider {
             //ftb解锁武器和盔甲
             Advancement unlock_weapon_armor_book = registerAdvancement(root, "unlock_weapon_armor_book", FrameType.CHALLENGE, TCRItems.MYSTERIOUS_WEAPONS.get(), false, false, true);
 
-            //ftb解锁附魔书和boss
+            //ftb解锁魔法和boss
             Advancement unlock_magic_and_boss = registerAdvancement(root, "unlock_magic_and_boss", FrameType.CHALLENGE, TCRItems.NECROMANCY_SCROLL.get(), false, false, true);
+
+            //ftb解锁轮回绝境图鉴
+            Advancement unlock_epic_boss = registerAdvancement(root, "unlock_epic_boss", FrameType.CHALLENGE, TCRItems.WITHER_SOUL_STONE.get(), false, false, true);
 
         }
 

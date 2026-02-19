@@ -282,6 +282,14 @@ public class LivingEntityEventListeners {
                 }
             }
 
+            if (livingEntity instanceof WitherBoss) {
+                if (!PlayerDataManager.mechEyeGotten.get(player)) {
+                    ItemUtil.addItemEntity(player, ModItems.MECH_EYE.get(), 1, ChatFormatting.GOLD.getColor().intValue());
+                    ItemUtil.addItemEntity(player, TCRItems.WITHER_SOUL_STONE.get(), 1, ChatFormatting.GOLD.getColor().intValue());
+                    player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
+                }
+            }
+
         });
 
         if (livingEntity.level() instanceof ServerLevel serverLevel) {

@@ -33,6 +33,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("travelerstitles.minecraft.the_nether.color", "750909");
         this.add("travelerstitles.minecraft.the_end", "The End");
         this.add("travelerstitles.minecraft.the_end.color", "4f219e");
+        this.add("travelerstitles.pbf1.sanctum_of_the_battle1", "Infinite Samsara");
 
         this.addEffect(TCREffects.INVULNERABLE, "Invulnerable");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "Soul Fire");

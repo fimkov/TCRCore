@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbilityStoneItem.class)
-public class AbilityStoneItemMixin {
+public class AbilityStoneItemClientMixin {
 
     @Inject(method = "use", at = @At("TAIL"))
     private void tcr$use(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {

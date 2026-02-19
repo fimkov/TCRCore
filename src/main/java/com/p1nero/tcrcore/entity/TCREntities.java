@@ -2,7 +2,7 @@ package com.p1nero.tcrcore.entity;
 
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.entity.custom.CustomColorItemEntity;
-import com.p1nero.tcrcore.entity.custom.aine_iris.AineIrisEntity;
+import com.p1nero.tcrcore.entity.custom.aine_iris.AineEntity;
 import com.p1nero.tcrcore.entity.custom.ferry_girl.FerryGirlEntity;
 import com.p1nero.tcrcore.entity.custom.chronos_sol.ChronosSolEntity;
 import com.p1nero.tcrcore.entity.custom.ornn.OrnnEntity;
@@ -35,8 +35,8 @@ public class TCREntities {
     public static final RegistryObject<EntityType<FerryGirlEntity>> FERRY_GIRL = register("ferry_girl",
             EntityType.Builder.of(FerryGirlEntity::new, MobCategory.CREATURE).sized(0.6f, 1.9f).fireImmune());
 
-    public static final RegistryObject<EntityType<AineIrisEntity>> AINE = register("aine",
-            EntityType.Builder.of(AineIrisEntity::new, MobCategory.CREATURE).sized(0.8f, 3.0F).fireImmune());
+    public static final RegistryObject<EntityType<AineEntity>> AINE = register("aine",
+            EntityType.Builder.of(AineEntity::new, MobCategory.CREATURE).sized(0.8f, 3.0F).fireImmune());
 
     public static final RegistryObject<EntityType<OrnnEntity>> ORNN = register("ornn",
             EntityType.Builder.of(OrnnEntity::new, MobCategory.CREATURE).sized(4f, 4f).fireImmune());

@@ -103,6 +103,14 @@ public class TCRQuests {
     //主线·毁灭之章
     public static Quest GET_WITHER_EYE;
     public static Quest TALK_TO_CHRONOS_10;
+    public static Quest TALK_TO_AINE_SAMSARA;
+
+    //主线·天域之章
+    public static Quest TALK_TO_CHRONOS_11;
+    public static Quest GO_TO_AETHER;
+    public static Quest USE_AETHER_RESONANCE_STONE;
+    public static Quest GET_STORM_EYE;
+    public static Quest TALK_TO_CHRONOS_12;
 
     public static void init() {
 
@@ -347,6 +355,11 @@ public class TCRQuests {
         TALK_TO_CHRONOS_10 = TCRQuestManager.create("talk_to_chronos_10")
                 .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
+
+        TALK_TO_AINE_SAMSARA = TCRQuestManager.create("talk_to_aine_samsara")
+                .shortDescParam(TCREntities.AINE.get().getDescription())
+                .descParam(TCREntities.CHRONOS_SOL.get().getDescription(), TCRItems.WITHER_SOUL_STONE.get().getDescription(), Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1"), Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1"), TCREntities.AINE.get().getDescription())
+                .withTrackingPos(new BlockPos(WorldUtil.AINE_POS.above(2)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
     }
 }

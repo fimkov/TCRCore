@@ -35,6 +35,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add("travelerstitles.minecraft.the_nether.color", "750909");
         this.add("travelerstitles.minecraft.the_end", "记忆中的终界");
         this.add("travelerstitles.minecraft.the_end.color", "4f219e");
+        this.add("travelerstitles.pbf1.sanctum_of_the_battle1", "轮回绝境");
 
         this.addQuest(TCRQuests.WAIT_RESONANCE_STONE_CHARGE, "间章", "等待[%s]充能", "[%s]的能量已经耗尽，重新充能需要一段时间。在充能完成之前先去做点别的事吧！\n\n§6[注意]：若不想等待，可使用\"/time add\"命令将时间增加6000。");
         this.addQuest(TCRQuests.PUT_DESERT_EYE_ON_ALTAR, "间章", "将[%s]置于祭坛上", "[%s]已经寻回，快将它归位到圣殿长廊的祭坛上吧！");
@@ -108,6 +109,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         //主线·死亡之章
         this.addQuest(TCRQuests.GET_WITHER_EYE, "毁灭之章", "寻回[%s]", "海船墓地回响的研究有进展了！我们必须启动古老的召唤仪式，将死亡使徒唤回！快按%s所说的，召唤[%s]，夺回[%s]吧！");
+        this.addQuest(TCRQuests.TALK_TO_CHRONOS_10, "毁灭之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
+        this.addQuest(TCRQuests.TALK_TO_AINE_SAMSARA, "间章", "和%s对话", "%s告诉我们，[%s]是打开[%s]的钥匙。[%s]究竟有什么秘密？快去找%s问问吧！");
 
         //        this.addQuest(TCRQuests., "", "", "");
 
@@ -401,9 +404,11 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 30, "我们必须举行召唤仪式，将祂从冥河中解救出来！");
         this.addDialogOption(TCREntities.CHRONOS_SOL.get(), 11, "召唤仪式？");
         this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 31, "阁下可曾在地狱见到[%s]？将[%s]以T形排列，再在上方摆上三个[%s]，即可召唤！");
-        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 32, "");
-        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 33, "");
-        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 34, "");
+        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 32, "[%s]？此乃死亡使徒体内力量汇集而成的精华，可以打开[%s]的大门！");
+        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 33, "但吾已无力为阁下开启[%s]，或许需要借助魔女阁下的力量，才能激发其中的魔力，打开轮回之门。");
+        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 34, "在共鸣石完成充能之前，阁下先去找%s看看[%s]吧！");
+        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 35, "");
+        this.addDialogAnswer(TCREntities.CHRONOS_SOL.get(), 36, "");
 
         this.addDialogOption(TCREntities.AINE.get(), -4, "§6法术淬灵");
         this.addDialogOption(TCREntities.AINE.get(), -3, "§6法术交易");
@@ -454,7 +459,14 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.AINE.get(), 15, "祂们似乎都认识我");
         this.addDialogAnswer(TCREntities.AINE.get(), 28, "说什么胡话，怎么会有这种事？我看是你最近冒险太累出幻觉了吧，你也该注意多多休息！");
         this.addDialogOption(TCREntities.AINE.get(), 16, "我是认真的");
+        this.addDialogOption(TCREntities.AINE.get(), 17, "%s？");
         this.addDialogAnswer(TCREntities.AINE.get(), 29, "好啦好啦，等我们归还了所有的神之眼，一切问题一定都能得到解答的！");
+        this.addDialogAnswer(TCREntities.AINE.get(), 30, "嗯...智库里说，注入恶魂之泪，就可以激活它，打开[%s]的传送门！");
+        this.addDialogAnswer(TCREntities.AINE.get(), 31, "[%s]是介于冥界和主世界之间的地带，在[%s]内，我们可以借助召唤祭坛，觐见往昔的使徒");
+        this.addDialogAnswer(TCREntities.AINE.get(), 32, "或许我们可以进去瞧瞧，说不定可以从记忆中获取祂们的力量！");
+        this.addDialogAnswer(TCREntities.AINE.get(), 33, "");
+        this.addDialogAnswer(TCREntities.AINE.get(), 34, "");
+        this.addDialogAnswer(TCREntities.AINE.get(), 35, "");
 
         this.addDialogOption(TCREntities.ORNN.get(), -2, "结束对话");
         this.addDialogOption(TCREntities.ORNN.get(), -1, "继续");

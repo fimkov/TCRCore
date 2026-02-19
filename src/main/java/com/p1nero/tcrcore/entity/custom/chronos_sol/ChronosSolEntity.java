@@ -229,7 +229,7 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             root = new DialogNode(dBuilder.ans(16))
                     .addLeaf(dBuilder.opt(-4, TCRItems.CORE_RESONANCE_STONE.get().getDescription()), 7);
         } else if(TCRQuests.TALK_TO_CHRONOS_7.equals(currentQuest)) {
-            //找回烈焰眼
+            //已找回烈焰眼
             treeBuilder.start(dBuilder.ans(12, ModItems.FLAME_EYE.get().getDescription()))
                     .addOption(dBuilder.opt(7, ModItems.FLAME_EYE.get().getDescription()), dBuilder.ans(23))
                     .addFinalOption(-2, 8);
@@ -243,14 +243,22 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
                     .addFinalOption(dBuilder.opt(-4, TCRItems.CORE_FLINT.get().getDescription()), 9);
             return treeBuilder.build();
         } else if(TCRQuests.TALK_TO_CHRONOS_9.equals(currentQuest)) {
-            //找回凋零眼
+            //出发找回凋零眼
             treeBuilder.start(28)
                     .addOption(dBuilder.opt(10), dBuilder.ans(29, TCRBossEntities.HARBINGER_HUMANOID.get().getDescription()))
                     .addOption(dBuilder.opt(-1), dBuilder.ans(30))
                     .addOption(dBuilder.opt(11), dBuilder.ans(31, Items.SOUL_SAND.getDescription(), Items.SOUL_SAND.getDescription(), Items.WITHER_SKELETON_SKULL.getDescription()))
                     .addFinalOption(-2, 10);
             return treeBuilder.build();
-        }  else {
+        } else if(TCRQuests.TALK_TO_CHRONOS_10.equals(currentQuest)) {
+            //已找回凋零眼
+            treeBuilder.start(dBuilder.ans(12, ModItems.MECH_EYE.get().getDescription()))
+                    .addOption(dBuilder.opt(8, TCRItems.WITHER_SOUL_STONE.get().getDescription()), dBuilder.ans(32, TCRItems.WITHER_SOUL_STONE.get().getDescription(), Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1")))
+                    .addOption(dBuilder.opt(-1), dBuilder.ans(33, Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1")))
+                    .addOption(dBuilder.opt(-1), dBuilder.ans(34, TCREntities.AINE.get().getDescription(), TCRItems.WITHER_SOUL_STONE.get().getDescription()))
+                    .addFinalOption(-2, 11);
+            return treeBuilder.build();
+        } else {
             //默认的情况
 
             if(PlayerDataManager.aineTalked.get(localPlayer)) {
@@ -360,6 +368,14 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
         if(code == 10) {
             TCRQuests.TALK_TO_CHRONOS_9.finish(player);
             TCRQuests.GET_WITHER_EYE.start(player);
+        }
+
+        //凋零任务结束，开轮回绝境
+        if(code == 11) {
+            TCRQuests.TALK_TO_CHRONOS_10.finish(player);
+            TCRQuests.TALK_TO_AINE_SAMSARA.start(player);
+            TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(player);
+            tcrPlayer.startWaitingResonanceStoneCharge(player);
         }
 
         this.setConversingPlayer(null);

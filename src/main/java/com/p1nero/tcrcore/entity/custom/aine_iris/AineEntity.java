@@ -63,7 +63,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEntity, Merchant {
+public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, Merchant {
     protected static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
@@ -73,7 +73,7 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
     private Player tradingPlayer;
     private MerchantOffers offers = new MerchantOffers();
 
-    public AineIrisEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
+    public AineEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
     }
 
@@ -193,6 +193,14 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
 
             root.addChild(easy)
                     .addChild(hard);
+        } else if(TCRQuests.TALK_TO_AINE_SAMSARA.equals(currentQuest)) {
+            //打开轮回绝境
+            return dialogueScreenBuilder.start(dBuilder.ans(24))
+                    .addOption(dBuilder.opt(7, TCRItems.WITHER_SOUL_STONE.get().getDescription()), dBuilder.ans(30))
+                    .addOption(dBuilder.opt(17, Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1")), dBuilder.ans(31, Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1"), Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1")))
+                    .addOption(-1, 32)
+                    .addFinalOption(-2, 10)
+                    .build();
         } else {
             if(PlayerDataManager.chonosTalked.get(localPlayer)) {
                 root.addChild(aboutChronos);
@@ -249,6 +257,7 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
             TCRQuests.TALK_TO_AINE_MAGIC.finish(serverPlayer);
             TCRQuests.TRY_TO_LEARN_MAGIC.start(serverPlayer);
             TCRAdvancementData.finishAdvancement("unlock_magic_and_boss", serverPlayer);
+            PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(PlayTitlePacket.UNLOCK_NEW_CHAPTER), serverPlayer);
         }
 
         if(code == 6) {
@@ -271,6 +280,12 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
         if(code == 9) {
             //闲聊
             TCRQuests.TALK_TO_AINE_1.finish(serverPlayer);
+        }
+
+        if(code == 10) {
+            TCRQuests.TALK_TO_AINE_SAMSARA.finish(serverPlayer);
+            TCRAdvancementData.finishAdvancement("unlock_epic_boss", serverPlayer);
+            PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(PlayTitlePacket.UNLOCK_NEW_CHAPTER), serverPlayer);
         }
 
         this.setConversingPlayer(null);
@@ -299,7 +314,7 @@ public class AineIrisEntity extends PathfinderMob implements IEntityNpc, GeoEnti
         controllers.add(new AnimationController<>(this, this::deployAnimController));
     }
 
-    protected <E extends AineIrisEntity> PlayState deployAnimController(final AnimationState<E> state) {
+    protected <E extends AineEntity> PlayState deployAnimController(final AnimationState<E> state) {
         return state.setAndContinue(IDLE);
     }
 

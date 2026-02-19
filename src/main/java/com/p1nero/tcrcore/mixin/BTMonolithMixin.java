@@ -55,6 +55,7 @@ public abstract class BTMonolithMixin extends Entity {
                         this.setEyeSlotDisplayed();
                     }
                     this.increaseKeyCount(player, hand);
+                    this.increaseKeyCount(player, hand);//简化为用一个钥匙就好，以防漏钥匙= =
                     cir.setReturnValue(InteractionResult.sidedSuccess(this.getCommandSenderWorld().isClientSide()));
                 }
             }
