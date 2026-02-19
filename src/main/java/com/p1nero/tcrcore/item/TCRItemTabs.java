@@ -33,6 +33,8 @@ public class TCRItemTabs {
                 output.accept(TCRItems.LAND_RESONANCE_STONE.get());
                 output.accept(TCRItems.OCEAN_RESONANCE_STONE.get());
                 output.accept(TCRItems.CURSED_RESONANCE_STONE.get());
+                output.accept(TCRItems.NETHER_RESONANCE_STONE.get());
+                output.accept(TCRItems.SKY_RESONANCE_STONE.get());
                 output.accept(TCRItems.CORE_RESONANCE_STONE.get());
                 output.accept(TCRItems.MYSTERIOUS_WEAPONS.get());
                 output.accept(TCRItems.NECROMANCY_SCROLL.get());

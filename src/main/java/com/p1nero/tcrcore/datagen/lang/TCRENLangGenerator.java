@@ -83,6 +83,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.CURSED_RESONANCE_STONE.get(), "Cursed Resonance Stone");
         this.add(TCRItems.CORE_RESONANCE_STONE.get(), "Core Resonance Stone");
         this.add(TCRItems.NETHER_RESONANCE_STONE.get(), "Nether Resonance Stone");
+        this.add(TCRItems.SKY_RESONANCE_STONE.get(), "Aether Resonance Stone");
         this.addInfo("resonance_stone_usage", "Can resonate with the location of the Angel's seal");
         this.add(TCRItems.CORE_FLINT.get(), "Core Flint");
         this.addItemUsageInfo(TCRItems.CORE_FLINT.get(), "Use on an Obsidian Frame to open a Nether Portal.");

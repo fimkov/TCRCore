@@ -316,6 +316,13 @@ public class PlayerEventListeners {
                     }
                 }
 
+                if (event.getDimension() == AetherDimensions.AETHER_LEVEL) {
+                    if (!(TCRQuests.GO_TO_AETHER.isFinished(serverPlayer) || TCRQuestManager.hasQuest(serverPlayer, TCRQuests.GO_TO_AETHER))) {
+                        event.setCanceled(true);
+                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("can_not_do_this_too_early"), true);
+                    }
+                }
+
                 if (event.getDimension() == Level.END) {
                     if (!PlayerDataManager.canEnterEnd.get(serverPlayer)) {
                         event.setCanceled(true);

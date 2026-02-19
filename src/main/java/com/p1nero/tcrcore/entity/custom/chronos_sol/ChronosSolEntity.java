@@ -258,6 +258,9 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
                     .addOption(dBuilder.opt(-1), dBuilder.ans(34, TCREntities.AINE.get().getDescription(), TCRItems.WITHER_SOUL_STONE.get().getDescription()))
                     .addFinalOption(-2, 11);
             return treeBuilder.build();
+        } else if(TCRQuests.TALK_TO_CHRONOS_11.equals(currentQuest)) {
+            //充能完去领天域共鸣石
+
         } else {
             //默认的情况
 

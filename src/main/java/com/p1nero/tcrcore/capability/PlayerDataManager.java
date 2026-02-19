@@ -16,8 +16,9 @@ import java.util.Set;
 
 public class PlayerDataManager {
     private final static Set<String> EXISTING_ID = new HashSet<>();
-    public static DoubleData stage = new DoubleData("stage", 0);
     public static DoubleData currentQuestId = new DoubleData("currentQuestId", 0);
+
+    public static BoolData divineFragmentGotten = new BoolData("divineFragmentGotten", false);
 
     public static BoolData aineTalked = new BoolData("aineTalked", false);
     public static BoolData ornnTalked = new BoolData("ornnTalked", false);
@@ -25,9 +26,7 @@ public class PlayerDataManager {
     public static BoolData ferryGirlTalked = new BoolData("ferryGirlTalked", false);
     public static BoolData ferryGirlGiftGet = new BoolData("ferryGirlGiftGet", false);
     public static BoolData wraithonKilled = new BoolData("wraithonKilled", false);
-    public static BoolData letterGet = new BoolData("letterGet", false);
     public static BoolData tudigongGiftGet = new BoolData("tudigongGiftGet", false);
-    public static BoolData arteriusKilled = new BoolData("arteriusKilled", false);
     public static BoolData canEnterNether = new BoolData("canEnterNether", false);
     public static BoolData canEnterEnd = new BoolData("canEnterEnd", false);
     public static BoolData swordSoaringUnlocked = new BoolData("sword_soaring_avoid_unlocked", false);
@@ -41,17 +40,16 @@ public class PlayerDataManager {
     public static BoolData locked = new BoolData("locked", false);
     public static BoolData tutorial_passed = new BoolData("tutorial_passed", false);
     public static BoolData weapon_innate_used = new BoolData("weapon_innate_used", false);
-    public static BoolData mapMarked = new BoolData("map_marked", false);//是否标记过地图了，省的二次搜索地图浪费
 
     //是否获取过
-    public static BoolData stormEyeGotten = new BoolData("storm_eye_gotton", false);
-    public static BoolData flameEyeGotten = new BoolData("flame_eye_gotton", false);
-    public static BoolData abyssEyeGotten = new BoolData("abyss_eye_gotton", false);
-    public static BoolData cursedEyeGotten = new BoolData("cursed_eye_gotton", false);
-    public static BoolData desertEyeGotten = new BoolData("desert_eye_gotton", false);
-    public static BoolData mechEyeGotten = new BoolData("mech_eye_gotton", false);
-    public static BoolData voidEyeGotten = new BoolData("void_eye_gotton", false);
-    public static BoolData monstEyeGotten = new BoolData("monst_eye_gotton", false);
+    public static BoolData stormEyeGotten = new BoolData("storm_eye_gotten", false);
+    public static BoolData flameEyeGotten = new BoolData("flame_eye_gotten", false);
+    public static BoolData abyssEyeGotten = new BoolData("abyss_eye_gotten", false);
+    public static BoolData cursedEyeGotten = new BoolData("cursed_eye_gotten", false);
+    public static BoolData desertEyeGotten = new BoolData("desert_eye_gotten", false);
+    public static BoolData mechEyeGotten = new BoolData("mech_eye_gotten", false);
+    public static BoolData voidEyeGotten = new BoolData("void_eye_gotten", false);
+    public static BoolData monstEyeGotten = new BoolData("monst_eye_gotten", false);
 
     //是否击败过里面的boss
     public static BoolData stormEyeKilled = new BoolData("storm_eye_killed", false);
@@ -82,30 +80,6 @@ public class PlayerDataManager {
     public static BoolData mechEyeActivated = new BoolData("mechEyeActivated", false);
     public static BoolData monstEyeActivated = new BoolData("monstEyeActivated", false);
     public static BoolData voidEyeActivated = new BoolData("voidEyeActivated", false);
-
-    public static boolean canGetInvite(Player player) {
-        return mechEyeGotten.get(player) && monstEyeGotten.get(player) && voidEyeGotten.get(player);
-    }
-
-    public static boolean canGetInviteTip(Player player) {
-        return mechEyeKilled.get(player) && monstEyeKilled.get(player) && voidEyeKilled.get(player);
-    }
-
-    public static boolean isAllEyeGet(Player player) {
-        return stormEyeGotten.get(player)
-                && flameEyeGotten.get(player)
-                && abyssEyeGotten.get(player)
-                && cursedEyeGotten.get(player)
-                && desertEyeGotten.get(player);
-    }
-
-    public static boolean isAllAltarKilled(Player player) {
-        return stormEyeKilled.get(player)
-                && flameEyeKilled.get(player)
-                && abyssEyeKilled.get(player)
-                && cursedEyeKilled.get(player)
-                && desertEyeKilled.get(player);
-    }
 
     public static void putData(Player player, String key, double value) {
         getTCRPlayer(player).putDouble(key, value);

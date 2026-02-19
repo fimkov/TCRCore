@@ -228,6 +228,9 @@ public class TCRPlayer {
         }
     }
 
+    /**
+     * 传送石冷却，6000tick后再完成充能
+     */
     private void handleResonanceStoneCooldown(ServerPlayer serverPlayer) {
         if(!resonanceStoneInCooldown) {
             return;
@@ -248,6 +251,10 @@ public class TCRPlayer {
             //开启地狱章
             if(PlayerDataManager.flameEyeGotten.get(serverPlayer) && !TCRQuests.TALK_TO_CHRONOS_8.isFinished(serverPlayer)) {
                 TCRQuests.TALK_TO_CHRONOS_8.start(serverPlayer);
+            }
+            //开天堂章
+            if(PlayerDataManager.stormEyeGotten.get(serverPlayer) && !TCRQuests.TALK_TO_CHRONOS_11.isFinished(serverPlayer)) {
+                TCRQuests.TALK_TO_CHRONOS_11.start(serverPlayer);
             }
             resonanceStoneInCooldown = false;
         }

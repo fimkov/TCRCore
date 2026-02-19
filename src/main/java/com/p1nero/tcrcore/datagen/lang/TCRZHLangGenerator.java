@@ -107,11 +107,17 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.GET_MONST_EYE, "地狱之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！ \n\n§a[提示]：建议装备[%s]");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_9, "地狱之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
 
-        //主线·死亡之章
+        //主线·毁灭之章
         this.addQuest(TCRQuests.GET_WITHER_EYE, "毁灭之章", "寻回[%s]", "海船墓地回响的研究有进展了！我们必须启动古老的召唤仪式，将死亡使徒唤回！快按%s所说的，召唤[%s]，夺回[%s]吧！");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_10, "毁灭之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
         this.addQuest(TCRQuests.TALK_TO_AINE_SAMSARA, "间章", "和%s对话", "%s告诉我们，[%s]是打开[%s]的钥匙。[%s]究竟有什么秘密？快去找%s问问吧！");
 
+        //主线·天域之章
+        this.addQuest(TCRQuests.TALK_TO_CHRONOS_11, "天域之章", "和%s对话", "经过漫长的等待，%s已完成充能。快回去找%s吧！她在圣殿里等你。");
+        this.addQuest(TCRQuests.GO_TO_AETHER, "天域之章", "前往Aether", "以生命之源（%s）浇灌%s所筑之框，即可开启天堂之门！");
+        this.addQuest(TCRQuests.USE_AETHER_RESONANCE_STONE, "天域之章", "使用[%s]", "收集神之眼的旅途至今，仅剩天域使徒（Sky Angel），和虚无使徒（Void Angel）的神之眼尚未归还...");
+        this.addQuest(TCRQuests.GET_STORM_EYE, "天域之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！");
+        this.addQuest(TCRQuests.TALK_TO_CHRONOS_12, "天域之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
         //        this.addQuest(TCRQuests., "", "", "");
 
         this.addEffect(TCREffects.INVULNERABLE, "无敌");
@@ -162,6 +168,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.CURSED_RESONANCE_STONE.get(), "诅咒共鸣石");
         this.add(TCRItems.CORE_RESONANCE_STONE.get(), "炉心共鸣石");
         this.add(TCRItems.NETHER_RESONANCE_STONE.get(), "地狱共鸣石");
+        this.add(TCRItems.SKY_RESONANCE_STONE.get(), "天域共鸣石");
         this.addInfo("resonance_stone_usage", "可与使徒封印的位置共鸣。");
         this.add(TCRItems.CORE_FLINT.get(), "炉心火石");
         this.addItemUsageInfo(TCRItems.CORE_FLINT.get(), "在黑曜石框架上使用，可打开地狱之门。");

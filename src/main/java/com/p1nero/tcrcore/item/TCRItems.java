@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.item;
 
+import com.aetherteam.aether.data.resources.registries.AetherDimensions;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.L_Ender.cataclysm.items.The_Incinerator;
 import com.p1nero.tcrcore.TCRCoreMod;
@@ -84,6 +85,17 @@ public class TCRItems {
                         WaypointUtil.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.MONSTROUS_EYE.get().getDescription(), Component.translatable("structure.nightfall_invade.gate_of_disaster")), pos, WaypointColor.DARK_RED);
                         TCRQuests.USE_NETHER_RESONANCE_STONE.finish(serverPlayer, true);
                         TCRQuests.GET_MONST_EYE.start(serverPlayer);
+                    }))
+    );
+
+    public static final RegistryObject<Item> SKY_RESONANCE_STONE = REGISTRY.register("sky_resonance_stone",
+            () -> new ResonanceStoneItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(), ResourceLocation.parse(WorldUtil.SKY_GOLEM), 35, AetherDimensions.AETHER_LEVEL, (serverPlayer) ->
+                    TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_AETHER_RESONANCE_STONE),
+                    ((pos, serverPlayer) ->
+                    {
+                        WaypointUtil.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.STORM_EYE.get().getDescription(), Component.translatable("structure.lost_aether_content.platinum_dungeon")), pos, WaypointColor.AQUA);
+                        TCRQuests.USE_AETHER_RESONANCE_STONE.finish(serverPlayer, true);
+                        TCRQuests.GET_STORM_EYE.start(serverPlayer);
                     }))
     );
 

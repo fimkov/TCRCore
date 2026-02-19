@@ -18,6 +18,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 
 public class TCRQuests {
 
@@ -110,6 +111,7 @@ public class TCRQuests {
     public static Quest GO_TO_AETHER;
     public static Quest USE_AETHER_RESONANCE_STONE;
     public static Quest GET_STORM_EYE;
+    public static Quest TALK_TO_SKY_GOLEM;
     public static Quest TALK_TO_CHRONOS_12;
 
     public static void init() {
@@ -354,12 +356,34 @@ public class TCRQuests {
 
         TALK_TO_CHRONOS_10 = TCRQuestManager.create("talk_to_chronos_10")
                 .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
+                .descParam(com.github.L_Ender.cataclysm.init.ModItems.MECH_EYE.get().getDescription().copy().withStyle(ChatFormatting.GOLD), TCREntities.CHRONOS_SOL.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         TALK_TO_AINE_SAMSARA = TCRQuestManager.create("talk_to_aine_samsara")
                 .shortDescParam(TCREntities.AINE.get().getDescription())
                 .descParam(TCREntities.CHRONOS_SOL.get().getDescription(), TCRItems.WITHER_SOUL_STONE.get().getDescription(), Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1"), Component.translatable("travelerstitles.pbf1.sanctum_of_the_battle1"), TCREntities.AINE.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.AINE_POS.above(2)), TCRDimensions.SANCTUM_LEVEL_KEY);
+
+        TALK_TO_CHRONOS_11 = TCRQuestManager.create("talk_to_chronos_11")
+                .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
+                .descParam(TCRItems.RESONANCE_STONE.get().getDescription(), TCREntities.CHRONOS_SOL.get().getDescription())
+                .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
+
+        GO_TO_AETHER = TCRQuestManager.create("go_to_aether")
+                .descParam(Blocks.WATER.getName().withStyle(ChatFormatting.BLUE), Blocks.GLOWSTONE.getName().withStyle(ChatFormatting.YELLOW));
+
+        USE_AETHER_RESONANCE_STONE = TCRQuestManager.create("use_aether_resonance_stone")
+                .shortDescParam(TCRItems.SKY_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
+                .descParam(TCRItems.SKY_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.AQUA), com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA));
+
+        GET_STORM_EYE = TCRQuestManager.create("get_storm_eye")
+                .shortDescParam(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
+                .descParam(TCRItems.SKY_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.AQUA), com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA), com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA));
+
+        TALK_TO_CHRONOS_12 = TCRQuestManager.create("talk_to_chronos_12")
+                .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
+                .descParam(com.github.L_Ender.cataclysm.init.ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA), TCREntities.CHRONOS_SOL.get().getDescription())
+                .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
     }
 }
