@@ -109,7 +109,6 @@ public class LivingEntityEventListeners {
                     event.setCanceled(true);
                 }
             });
-
         }
 
         //重生保护

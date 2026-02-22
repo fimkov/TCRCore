@@ -3,6 +3,7 @@ package com.p1nero.tcrcore.datagen.lang;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.dodo.dodosmobs.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
+import com.p1nero.p1nero_ec.effect.PECEffects;
 import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
@@ -124,6 +125,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.addEffect(TCREffects.INVULNERABLE, "无敌");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "灵魂火");
+        this.addEffect(PECEffects.SOUL_INCINERATOR, "灵魂火");
 
         this.add("epicfight.skill_slot.passive4", "被动4");
         this.add("epicfight.skill_slot.passive5", "被动5");

@@ -1,34 +1,52 @@
 package com.p1nero.tcrcore.gameassets;
 
+import com.hm.efn.gameasset.animations.EFNGreatSwordAnimations;
+import com.p1nero.p1nero_ec.gameassets.PECSkills;
 import com.p1nero.tcrcore.TCRCoreMod;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import yesman.epicfight.api.animation.LivingMotions;
+import yesman.epicfight.api.collider.MultiOBBCollider;
 import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
 import yesman.epicfight.gameasset.Animations;
 import yesman.epicfight.gameasset.ColliderPreset;
+import yesman.epicfight.gameasset.EpicFightSounds;
+import yesman.epicfight.particle.EpicFightParticles;
 import yesman.epicfight.world.capabilities.item.CapabilityItem;
 import yesman.epicfight.world.capabilities.item.RangedWeaponCapability;
 import yesman.epicfight.world.capabilities.item.TridentCapability;
+import yesman.epicfight.world.capabilities.item.WeaponCapability;
 
 import java.util.function.Function;
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TCRWeaponPresets {
 
-    public static final Function<Item, CapabilityItem.Builder> TRIDENT = (item) -> RangedWeaponCapability.builder().zoomInType(CapabilityItem.ZoomInType.USE_TICK)
-            .addAnimationsModifier(LivingMotions.IDLE, Animations.BIPED_IDLE)
-            .addAnimationsModifier(LivingMotions.WALK, Animations.BIPED_WALK)
-            .addAnimationsModifier(LivingMotions.AIM, Animations.BIPED_JAVELIN_AIM)
-            .addAnimationsModifier(LivingMotions.SHOT, Animations.BIPED_JAVELIN_THROW)
-            .constructor(TridentCapability::new).collider(ColliderPreset.SPEAR)
-            .category(CapabilityItem.WeaponCategories.TRIDENT);
+    public static final Function<Item, CapabilityItem.Builder> THE_INCINERATOR = (item) ->
+            WeaponCapability.builder().category(CapabilityItem.WeaponCategories.GREATSWORD)
+                    .styleProvider((entityPatch) -> CapabilityItem.Styles.TWO_HAND)
+                    .collider(new MultiOBBCollider(3, 0.6, 0.6, 1.8F, 0.0F, 0.0F, -1.3F))
+                    .swingSound(EpicFightSounds.WHOOSH_BIG.get())
+                    .hitSound(EpicFightSounds.BLADE_HIT.get())
+                    .hitParticle(EpicFightParticles.HIT_BLADE.get())
+                    .canBePlacedOffhand(false)
+                    .innateSkill(CapabilityItem.Styles.TWO_HAND, (itemStack -> TCRSkills.THE_INCINERATOR_INNATE))
+                    .newStyleCombo(CapabilityItem.Styles.TWO_HAND,
+                            EFNGreatSwordAnimations.NG_GREATSWORD_AUTO1,
+                            EFNGreatSwordAnimations.NG_GREATSWORD_AUTO2,
+                            EFNGreatSwordAnimations.NG_GREATSWORD_AUTO3,
+                            EFNGreatSwordAnimations.NG_GREATSWORD_DASH,
+                            EFNGreatSwordAnimations.NG_GREATSWORD_AIRSLASH)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.BLOCK, Animations.GREATSWORD_GUARD)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.IDLE, EFNGreatSwordAnimations.NG_GREATSWORD_IDLE)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.WALK, EFNGreatSwordAnimations.NG_GREATSWOED_WALK)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.RUN, EFNGreatSwordAnimations.NG_GREATSWORD_RUN);
 
 
     @SubscribeEvent
     public static void register(WeaponCapabilityPresetRegistryEvent event) {
-        event.getTypeEntry().put(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "trident"), TRIDENT);
+        event.getTypeEntry().put(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "the_incinerator"), THE_INCINERATOR);
     }
 }

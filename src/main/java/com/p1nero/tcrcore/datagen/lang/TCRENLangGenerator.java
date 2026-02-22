@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.datagen.lang;
 
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.hm.efn.registries.EFNItem;
+import com.p1nero.p1nero_ec.effect.PECEffects;
 import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
@@ -38,6 +39,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addEffect(TCREffects.INVULNERABLE, "Invulnerable");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "Soul Fire");
+        this.addEffect(PECEffects.SOUL_INCINERATOR, "Soul Fire");
 
         this.add("epicfight.skill_slot.passive4", "Passive 4");
         this.add("epicfight.skill_slot.passive5", "Passive 5");

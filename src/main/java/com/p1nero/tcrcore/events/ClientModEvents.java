@@ -9,6 +9,7 @@ import com.p1nero.tcrcore.block.client.AltarBlockRenderer;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
 import com.p1nero.tcrcore.client.gui.BlockTooltipHandler;
 import com.p1nero.tcrcore.client.item_renderer.RenderDualBokken;
+import com.p1nero.tcrcore.client.item_renderer.RenderTheIncinerator;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.entity.custom.aine_iris.AineIrisRenderer;
 import com.p1nero.tcrcore.entity.custom.fake_npc.fake_sky_golem.FakeSkyGolemRenderer;
@@ -99,5 +100,6 @@ public class ClientModEvents {
     @SubscribeEvent
     public static void registerItemRenderer(PatchedRenderersEvent.RegisterItemRenderer event) {
         event.addItemRenderer(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "dual_bokken"), RenderDualBokken::new);
+        event.addItemRenderer(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "incinerator"), RenderTheIncinerator::new);
     }
 }

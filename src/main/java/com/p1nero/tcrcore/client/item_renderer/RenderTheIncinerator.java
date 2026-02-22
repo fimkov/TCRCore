@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.client.item_renderer;
 
 import com.google.gson.JsonElement;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.p1nero.p1nero_ec.effect.PECEffects;
 import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.item.TCRItems;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -13,6 +14,7 @@ import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 public class RenderTheIncinerator extends RenderItemBase {
     private final ItemStack blue;
+
     public RenderTheIncinerator(JsonElement jsonElement) {
         super(jsonElement);
         blue = TCRItems.THE_INCINERATOR_SOUL.get().getDefaultInstance();
@@ -20,7 +22,8 @@ public class RenderTheIncinerator extends RenderItemBase {
 
     @Override
     public void renderItemInHand(ItemStack stack, LivingEntityPatch<?> entityPatch, InteractionHand hand, OpenMatrix4f[] poses, MultiBufferSource buffer, PoseStack poseStack, int packedLight, float partialTicks) {
-        ItemStack toUse = entityPatch.getOriginal().hasEffect(TCREffects.SOUL_INCINERATOR.get()) ? blue : stack;
+        ItemStack toUse = (entityPatch.getOriginal().hasEffect(PECEffects.SOUL_INCINERATOR.get()) || entityPatch.getOriginal().hasEffect(TCREffects.SOUL_INCINERATOR.get())) ? blue : stack;
         super.renderItemInHand(toUse, entityPatch, hand, poses, buffer, poseStack, packedLight, partialTicks);
     }
+
 }

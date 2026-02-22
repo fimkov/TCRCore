@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.mixin;
 
 import com.github.L_Ender.cataclysm.items.Ignitium_Armor;
+import com.p1nero.p1nero_ec.effect.PECEffects;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.effect.TCREffects;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class Ignitium_ArmorMixin {
     @Inject(method = "getArmorTexture", at = @At("HEAD"), cancellable = true, remap = false)
     private void tcr$getTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type, CallbackInfoReturnable<String> cir) {
-        if(entity instanceof LivingEntity living && living.hasEffect(TCREffects.SOUL_INCINERATOR.get())) {
+        if(entity instanceof LivingEntity living && (living.hasEffect(TCREffects.SOUL_INCINERATOR.get()) || living.hasEffect(PECEffects.SOUL_INCINERATOR.get()))) {
             cir.setReturnValue(TCRCoreMod.MOD_ID + ":textures/armor/ignitium_soul_armor" + (slot == EquipmentSlot.LEGS ? "_legs.png" : ".png"));
         }
     }
