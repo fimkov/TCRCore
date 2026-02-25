@@ -11,7 +11,7 @@
         }
     ],
     "inputs": [
-        { "ingredient": { "item": "cataclysm:cursium_ingot" }, "count": 9 },
+        { "ingredient": { "item": "cataclysm:cursium_ingot" }, "count": 3 },
         { "ingredient": { "item": "cataclysm:strange_key" }, "count": 3 },
         { "ingredient": { "item": "quark:soul_bead" }, "count": 1 },
         { "ingredient": { "item": "irons_spellbooks:frozen_bone" }, "count": 11 },

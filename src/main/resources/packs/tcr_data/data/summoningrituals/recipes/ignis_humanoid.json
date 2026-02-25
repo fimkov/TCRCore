@@ -11,7 +11,7 @@
         }
     ],
     "inputs": [
-        { "ingredient": { "item": "cataclysm:ignitium_ingot" }, "count": 3 },
+        { "ingredient": { "item": "cataclysm:ignitium_ingot" }, "count": 1 },
         { "ingredient": { "item": "cataclysm:burning_ashes" }, "count": 3 },
         { "ingredient": { "item": "create:blaze_burner" }, "count": 1 },
         { "ingredient": { "item": "create:blaze_cake" }, "count": 1 },

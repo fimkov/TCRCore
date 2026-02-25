@@ -11,7 +11,7 @@
         }
     ],
     "inputs": [
-        { "ingredient": { "item": "cataclysm:essence_of_the_storm" }, "count": 3 },
+        { "ingredient": { "item": "cataclysm:essence_of_the_storm" }, "count": 1 },
         { "ingredient": { "item": "cataclysm:lacrima" }, "count": 3 },
         { "ingredient": { "item": "minecraft:conduit" }, "count": 1 },
         { "ingredient": { "item": "supplementaries:wind_vane" }, "count": 1 }
