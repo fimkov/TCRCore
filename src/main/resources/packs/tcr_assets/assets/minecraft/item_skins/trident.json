@@ -10,11 +10,6 @@
     },
     "transforms": {
     	"mainhand": {
-	    	"Tool_R": {
-	    		"translation": [0, 0.0, -0.5],
-	    		"rotation": [-90, 0, 0],
-	    		"scale": [1, 1, 1]
-	    	},
 	    	"Chest": {
 	    		"translation": [0.2, 0.2, 0.1],
 	    		"rotation": [0, -45, -45],
