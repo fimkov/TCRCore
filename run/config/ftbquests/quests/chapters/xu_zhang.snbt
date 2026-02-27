@@ -69,12 +69,12 @@
 		}
 		{
 			description: [
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description1}"
+				"{ftbquests.chapter.xu_zhang.quest7487272814909384521.description1}"
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description2}"
+				"{ftbquests.chapter.xu_zhang.quest7487272814909384521.description2}"
 				""
 				""
-				"{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.description3}"
+				"{ftbquests.chapter.xu_zhang.quest7487272814909384521.description3}"
 			]
 			icon: {
 				Count: 1
@@ -90,10 +90,10 @@
 				xp: 1
 			}]
 			shape: "rsquare"
-			subtitle: "{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.subtitle}"
+			subtitle: "{ftbquests.chapter.xu_zhang.quest7487272814909384521.subtitle}"
 			tasks: [{
 				id: "5293E10F1D65A447"
-				title: "{ftbquests.chapter.5A7C68B10CEA5C38.quest7487272814909384521.task.5950346987720516679.title}"
+				title: "{ftbquests.chapter.xu_zhang.quest7487272814909384521.task.5950346987720516679.title}"
 				type: "checkmark"
 			}]
 			x: -2.5d
