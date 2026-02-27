@@ -193,7 +193,7 @@
 			size: 1.5d
 			tasks: [{
 				entity: "tcr_bosses:maledictus_humanoid"
-				icon: "tcrcore:divine_fragment"
+				icon: "tcrcore:soul_fragment"
 				id: "262AD844244140AB"
 				type: "kill"
 				value: 1L
