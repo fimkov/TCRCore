@@ -19,7 +19,7 @@ public class StoneOfReincarnationItem extends SimpleDescriptionItem{
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
-        if(player instanceof ServerPlayer serverPlayer) {
+        if(player instanceof ServerPlayer serverPlayer && hand == InteractionHand.MAIN_HAND) {
             PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new OpenCustomDialogPacket(OpenCustomDialogPacket.RESET_GAME), serverPlayer);
         }
         return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);

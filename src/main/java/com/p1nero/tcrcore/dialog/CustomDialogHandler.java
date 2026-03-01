@@ -36,6 +36,9 @@ public class CustomDialogHandler {
                 PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(PlayTitlePacket.OPEN_BACKPACK_TUTORIAL), serverPlayer);
             }
             if(event.getId().getPath().equals("reset_game") && event.getInteractId() != 0) {
+                if(!serverPlayer.isCreative()) {
+                    serverPlayer.getMainHandItem().shrink(1);
+                }
                 //二阶段，单人模式则开wom游戏规则，清理数据，回出生点
                 if(serverPlayer.server.isSingleplayer()) {
                     serverPlayer.server.getGameRules().getRule(WOMGamerules.SPAWN_STONGER_MOB_OVER_DISTANCE).set(true, serverPlayer.server);

@@ -1,5 +1,7 @@
 package com.p1nero.tcrcore.events;
 
+import com.almostreliable.summoningrituals.Registration;
+import com.almostreliable.summoningrituals.altar.AltarRenderer;
 import com.ao.tcrmeshes.TCRMeshes;
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
@@ -161,6 +163,8 @@ public class ClientModEvents {
         event.registerBlockEntityRenderer(TCRBlockEntities.MONST_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.VOID_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
         event.registerBlockEntityRenderer(TCRBlockEntities.MECH_ALTAR_BLOCK_ENTITY.get(), AltarBlockRenderer::new);
+
+        event.registerBlockEntityRenderer(Registration.ALTAR_ENTITY.get(), AltarRenderer::new);
     }
 
 
