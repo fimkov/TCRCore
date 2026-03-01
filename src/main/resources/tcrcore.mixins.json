@@ -63,10 +63,10 @@
     "VillagerMixin",
     "WOMChestLootTableMixin",
     "WOMDropLootTableMixin",
+    "WOMLivingEntityEventsMixin",
     "WraithonEntityMixin"
   ],
   "client": [
-    "PonderLocalizationMixin",
     "AbilityStoneItemClientMixin",
     "AltarRendererMixin",
     "AquamiraeClientMixin",
@@ -80,6 +80,7 @@
     "LogoRendererMixin",
     "MimicBossBarMixin",
     "PanoramaRendererMixin",
+    "PonderLocalizationMixin",
     "SkillTreeScreenAccessor",
     "SkillTreeScreenMixin",
     "TitleScreenMixin",

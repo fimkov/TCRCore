@@ -261,6 +261,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "上面写着古老的神谕，暗示了火种散落的地方。回主城给守望者看看吧，说不定对冒险有帮助！");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c多人模式请勿占据他人任务道具！每人都需各自提交！", 2);
 
+        this.addInfo("quest_updated","当前追踪的任务已更新！");
         this.addInfo("i18n_pack", "国际化翻译包，感谢所有译者！");
         this.addInfo("can_not_dodge", "Boss攻击将无视闪避！");
         this.addInfo("can_not_guard", "Boss攻击将无视防御！");

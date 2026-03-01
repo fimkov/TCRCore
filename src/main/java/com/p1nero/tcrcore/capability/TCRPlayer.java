@@ -46,6 +46,8 @@ import java.util.UUID;
 
 public class TCRPlayer {
     public static final String PLAYER_NAME = "player_name";
+    private int sardine;
+    public static int SARDINE_COUNT;
     private CompoundTag data = new CompoundTag();
     private double healthAdder = 0;
     private int tickAfterBossDieLeft;
@@ -95,6 +97,20 @@ public class TCRPlayer {
         resonanceStoneStartTime = overworld.getDayTime();//防止玩家使用add
         resonanceStoneInCooldown = true;
         TCRQuests.WAIT_RESONANCE_STONE_CHARGE.start(serverPlayer);
+    }
+
+    public void setSardine(int sardine) {
+        this.sardine = sardine;
+    }
+
+    public int getSardine() {
+        return sardine;
+    }
+
+    public static void updateSardineCount(ServerPlayer serverPlayer) {
+        if(serverPlayer.server.isSingleplayer()) {
+            SARDINE_COUNT = TCRCapabilityProvider.getTCRPlayer(serverPlayer).sardine;
+        }
     }
 
     public void setTickAfterBless(int tickAfterBless) {
@@ -166,7 +182,7 @@ public class TCRPlayer {
         for (int i = 0; i < finishedQuests.size(); i++) {
             tag.putInt("finished_quest_" + i, finishedQuests.get(i));
         }
-
+        tag.putInt("sardine", sardine);
         return tag;
     }
 
@@ -191,6 +207,7 @@ public class TCRPlayer {
             int id = tag.getInt(key);
             finishedQuests.add(id);
         }
+        sardine = tag.getInt("sardine");
     }
 
     public void copyFrom(TCRPlayer old) {
@@ -202,6 +219,7 @@ public class TCRPlayer {
         this.tickAfterBless = old.tickAfterBless;
         this.currentQuests = old.currentQuests;
         this.finishedQuests = old.finishedQuests;
+        this.sardine = old.sardine;
     }
 
     public void clear() {
@@ -254,6 +272,7 @@ public class TCRPlayer {
                     if(quest.getTrackingPos() != null && quest.getTrackingPos().closerThan(targetPos, 5)) {
                         TCRQuestManager.setCurrentQuest(serverPlayer, quest);
                         EntityUtil.playLocalSound(serverPlayer, SoundEvents.EXPERIENCE_ORB_PICKUP);
+                        serverPlayer.displayClientMessage(TCRCoreMod.getInfo("quest_updated").withStyle(ChatFormatting.GOLD), true);
                         break;
                     }
                 }

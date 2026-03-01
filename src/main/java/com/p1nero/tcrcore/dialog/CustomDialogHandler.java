@@ -39,13 +39,12 @@ public class CustomDialogHandler {
                 if(!serverPlayer.isCreative()) {
                     serverPlayer.getMainHandItem().shrink(1);
                 }
-                //二阶段，单人模式则开wom游戏规则，清理数据，回出生点
+                //二阶段，清理数据，回出生点
+
+                int newSardine = TCRCapabilityProvider.clearPlayerData(serverPlayer);
                 if(serverPlayer.server.isSingleplayer()) {
-                    serverPlayer.server.getGameRules().getRule(WOMGamerules.SPAWN_STONGER_MOB_OVER_DISTANCE).set(true, serverPlayer.server);
-                    serverPlayer.server.getGameRules().getRule(WOMGamerules.STONGER_MOB_DROP_EMERALDS).set(true, serverPlayer.server);
-                    serverPlayer.server.getGameRules().getRule(WOMGamerules.STONGER_MOB_GIVE_MORE_EXP).set(true, serverPlayer.server);
+                    TCRPlayer.SARDINE_COUNT = newSardine;
                 }
-                TCRCapabilityProvider.clearPlayerData(serverPlayer);
                 PlayerEventListeners.handleFirstJoin(serverPlayer);
             }
         }

@@ -31,6 +31,7 @@ import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.wintercogs.beyonddimensions.Api.DataBase.DimensionsNet;
+import com.wintercogs.beyonddimensions.Api.DataBase.Stack.ItemStackKey;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsSkillTrees;
 import com.yesman.epicskills.skilltree.SkillTree;
@@ -139,12 +140,13 @@ public class PlayerEventListeners {
     public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         Player player = event.getEntity();
         if (player instanceof ServerPlayer serverPlayer) {
+            TCRCapabilityProvider.syncPlayerDataToClient(serverPlayer);
+            TCRPlayer.updateSardineCount(serverPlayer);
             handleFirstJoin(serverPlayer);
         }
     }
 
     public static void handleFirstJoin(ServerPlayer serverPlayer) {
-        TCRCapabilityProvider.syncPlayerDataToClient(serverPlayer);
         if (!PlayerDataManager.firstJoint.get(serverPlayer)) {
             serverPlayer.setRespawnPosition(TCRDimensions.SANCTUM_LEVEL_KEY, new BlockPos(WorldUtil.START_POS), 90, true, false);
             ServerLevel targetLevel = serverPlayer.server.getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
@@ -164,12 +166,13 @@ public class PlayerEventListeners {
             addSkill(serverPlayer, EFNSkills.EFN_PARRY, SkillSlots.GUARD);
             addSkill(serverPlayer, DPRSkills.STAMINA1, SkillSlots.PASSIVE1);
 
-            addBeyondDimensionNet(serverPlayer);
+            DimensionsNet net = addBeyondDimensionNet(serverPlayer);
 
             ItemUtil.addItem(serverPlayer, Items.LANTERN, 1);
             ItemUtil.addItem(serverPlayer, Items.BREAD, 32);
             ItemUtil.addItem(serverPlayer, EpicSkillsItems.ABILIITY_STONE.get(), 1);
-            ItemUtil.addItem(serverPlayer, com.wintercogs.beyonddimensions.Item.ModItems.XP_EXCHANGE_ITEM.get(), 1);
+
+            net.getUnifiedStorage().insert(new ItemStackKey(com.wintercogs.beyonddimensions.Item.ModItems.XP_EXCHANGE_ITEM.get().getDefaultInstance()), 1, false);
 
             PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new OpenCustomDialogPacket(OpenCustomDialogPacket.GAME_START), serverPlayer);
             TCRQuests.TALK_TO_AINE_0.start(serverPlayer);
@@ -189,13 +192,14 @@ public class PlayerEventListeners {
         PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new CSTipPacket(), serverPlayer);
     }
 
-    public static void addBeyondDimensionNet(ServerPlayer player) {
+    public static DimensionsNet addBeyondDimensionNet(ServerPlayer player) {
         DimensionsNet net = DimensionsNet.getNetFromPlayer(player);
         if (net != null) {
-            return;
+            return net;
         }
         DimensionsNet.createNewNetForPlayer(player, Long.MAX_VALUE, Integer.MAX_VALUE);
         player.serverLevel().playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.BEACON_ACTIVATE, SoundSource.PLAYERS, 0.8F, 1.0F);
+        return DimensionsNet.getNetFromPlayer(player);
     }
 
     public static void addSkill(ServerPlayer player, Skill skill, SkillSlot slot) {

@@ -57,7 +57,7 @@ public class TCRDimensions {
                     1.0,                        // 正常坐标缩放
                     true,                       // 床安全
                     true,                      // 重生锚有效
-                    32,                        // 最低Y层
+                    0,                        // 最低Y层
                     320,                        // 总高度
                     256,                        // 逻辑高度
                     BlockTags.INFINIBURN_OVERWORLD,
@@ -76,7 +76,7 @@ public class TCRDimensions {
                         1.0,                        // 正常坐标缩放
                         true,                       // 床安全
                         false,                      // 重生锚有效
-                        32,                        // 最低Y层
+                        0,                        // 最低Y层
                         320,                        // 总高度
                         256,                        // 逻辑高度
                         BlockTags.INFINIBURN_OVERWORLD,

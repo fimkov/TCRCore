@@ -392,7 +392,7 @@ dependencies {
     compileOnly(jarJar("io.github.steveplays28:noisium:2.3.0")) {
         jarJar.ranged(it, "[2.3.0,)")
     }
-//    implementation fg.deobf("curse.maven:in-control-257356:7436213")
+
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
     compileOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))
 //    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
