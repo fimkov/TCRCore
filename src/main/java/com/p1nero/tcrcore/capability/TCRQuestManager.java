@@ -21,10 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import xaero.common.minimap.waypoints.WaypointVisibilityType;
 import xaero.hud.minimap.waypoint.WaypointColor;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class TCRQuestManager {
@@ -84,6 +81,10 @@ public class TCRQuestManager {
     public static List<Quest> getQuests(Player player) {
         TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(player);
         return tcrPlayer.getCurrentQuests();
+    }
+
+    public static Collection<Quest> getAllQuests() {
+        return QUEST_MAP.values();
     }
 
     public static void startQuest(ServerPlayer player, Quest quest) {

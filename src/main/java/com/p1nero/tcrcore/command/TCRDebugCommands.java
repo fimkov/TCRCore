@@ -15,10 +15,12 @@ import net.minecraft.network.chat.Component;
 public class TCRDebugCommands {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+        StringArgumentType quests = StringArgumentType.string();
+        quests.getExamples().addAll(TCRQuestManager.getAllQuests().stream().map((TCRQuestManager.Quest::getKey)).toList());
         dispatcher.register(Commands.literal(TCRCoreMod.MOD_ID).requires((commandSourceStack) -> commandSourceStack.hasPermission(2))
                 .then(Commands.literal("debug")
                         .then(Commands.literal("addQuest")
-                                .then(Commands.argument("quest_id", StringArgumentType.string())
+                                .then(Commands.argument("quest_id", quests)
                                         .executes((context) -> {
                                             if(context.getSource().getPlayer() != null){
                                                 TCRQuestManager.Quest quest = TCRQuestManager.getQuestByKey(StringArgumentType.getString(context, "quest_id"));
@@ -34,7 +36,7 @@ public class TCRDebugCommands {
                                 )
                         )
                         .then(Commands.literal("finishQuest")
-                                .then(Commands.argument("quest_id", StringArgumentType.string())
+                                .then(Commands.argument("quest_id", quests)
                                         .executes((context) -> {
                                             if(context.getSource().getPlayer() != null){
                                                 TCRQuestManager.Quest quest = TCRQuestManager.getQuestByKey(StringArgumentType.getString(context, "quest_id"));
