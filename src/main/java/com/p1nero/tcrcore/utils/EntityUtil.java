@@ -41,6 +41,9 @@ public class EntityUtil {
                 executor.setDeltaMovement(Vec3.ZERO);
                 target.setDeltaMovement(Vec3.ZERO);
                 executor.teleportTo(frontPos.x, frontPos.y, frontPos.z);
+                if(target.distanceTo(executor) > 3) {
+                    target.teleportTo(frontPos.x, frontPos.y, frontPos.z);
+                }
                 TickTaskManager.addTask(target.getUUID(), new ExecutionTask(executor, target, executionType, executionType.totalTick()){
                     @Override
                     public void onFinish() {
@@ -54,7 +57,7 @@ public class EntityUtil {
 
     private static Vec3 calculateExecutionPosition(LivingEntity target, Vec3 offset) {
         float yaw = target.getYRot();
-        double rad = Math.toRadians((double)yaw);
+        double rad = Math.toRadians(yaw);
         double forwardX = -Math.sin(rad);
         double forwardZ = Math.cos(rad);
         double rightX = Math.cos(rad);

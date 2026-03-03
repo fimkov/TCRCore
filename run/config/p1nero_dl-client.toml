@@ -19,4 +19,6 @@ faded_background = true
 #对话框宽度
 #Range: > 100
 dialog_width = 300
+#是否在对话时隐藏[HUD]
+disable_hud_in_dialog = true
 

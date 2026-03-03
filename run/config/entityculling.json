@@ -17,13 +17,7 @@
     "tcrcore:mech_altar_block_entity",
     "tcrcore:void_altar_block_entity",
     "tcrcore:monst_altar_block_entity",
-    "summoningrituals:altar",
-    "ba_bt:l_spawner",
-    "ba_bt:o_spawner",
-    "ba_bt:c_spawner",
-    "ba_bt:n_spawner",
-    "ba_bt:e_spawner",
-    "ba_bt:s_spawner"
+    "summoningrituals:altar"
   ],
   "entityWhitelist": [
     "botania:mana_burst",
