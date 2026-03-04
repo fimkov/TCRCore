@@ -3,14 +3,19 @@ package com.p1nero.tcrcore.mixin;
 import com.p1nero.tcrcore.capability.TCRQuestManager;
 import com.p1nero.tcrcore.capability.TCRQuests;
 import com.p1nero.tcrcore.item.TCRItems;
+import com.p1nero.tcrcore.utils.EntityUtil;
 import net.magister.bookofdragons.entity.base.dragon.DragonBase;
+import net.magister.bookofdragons.entity.util.DragonNeedsSystem;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.ContainerListener;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.spongepowered.asm.mixin.Mixin;
@@ -30,19 +35,32 @@ public abstract class DragonBaseMixin extends TamableAnimal implements GeoEntity
     @Shadow(remap = false)
     public abstract int getGrowthProgress();
 
+    @Shadow(remap = false)
+    public abstract DragonNeedsSystem getNeedsSystem();
+
     protected DragonBaseMixin(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
         super(p_21803_, p_21804_);
     }
 
     /**
-     * 调试养大用
+     * 简化养大流程，任何食物都可以喂
      */
     @Inject(method = "mobInteract", at = @At("TAIL"))
     private void tcr$mobInteract(Player pPlayer, InteractionHand pHand, CallbackInfoReturnable<InteractionResult> cir) {
-        if(pPlayer.getMainHandItem().is(TCRItems.DIVINE_FRAGMENT.get())) {
+        ItemStack mainHand = pPlayer.getMainHandItem();
+        if(!pPlayer.level().isClientSide && mainHand.is(TCRItems.DIVINE_FRAGMENT.get())) {
             this.setGrowthProgress(this.getGrowthProgress() + 6000);
-            if(!pPlayer.isLocalPlayer()) {
-                pPlayer.getMainHandItem().shrink(1);
+            if(!pPlayer.isCreative()) {
+                mainHand.shrink(1);
+            }
+        }
+        FoodProperties foodProperties = mainHand.getItem().getFoodProperties(mainHand, pPlayer);
+        if(pPlayer instanceof ServerPlayer serverPlayer && foodProperties != null) {
+            this.setGrowthProgress(this.getGrowthProgress() + foodProperties.getNutrition() * 200);
+            EntityUtil.playLocalSound(serverPlayer, SoundEvents.GENERIC_EAT);
+            this.getNeedsSystem().setFoodLevel(0);
+            if(!pPlayer.isCreative()) {
+                mainHand.shrink(1);
             }
         }
     }

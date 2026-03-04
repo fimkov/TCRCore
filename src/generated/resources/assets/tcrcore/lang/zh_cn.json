@@ -674,7 +674,7 @@
   "tcrcore.quest.talk_to_sky_golem.desc": "%s似乎...没有完全消散，祂似乎恢复了神智，和%s交流看看吧！",
   "tcrcore.quest.talk_to_sky_golem.short_desc": "和%s对话",
   "tcrcore.quest.talk_to_sky_golem.title": "天域之章",
-  "tcrcore.quest.tame_dragon.desc": "%s送给了你一条龙，现在，按[%s]上说的办法，将它养成年吧！龙，可是帝王之征！\n\n§a[任务奖励]: §f[%s] [%s]",
+  "tcrcore.quest.tame_dragon.desc": "%s送给了你一条龙，现在，按[%s]上说的办法，将它养成年吧！任何食物都可以喂养你的龙！龙，可是帝王之征！\n\n§a[任务奖励]: §f[%s] [%s]",
   "tcrcore.quest.tame_dragon.short_desc": "将龙养大",
   "tcrcore.quest.tame_dragon.title": "驯龙之章",
   "tcrcore.quest.tame_dragon_back_to_ferry_girl.desc": "经过你精心呵护，龙已长大成年。%s之前说过，在龙养大后她有宝具要赠与我们。快回去找%s看看吧！\n\n§a[任务奖励]: §f[%s] [%s]",

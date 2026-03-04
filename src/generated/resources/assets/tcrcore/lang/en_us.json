@@ -674,7 +674,7 @@
   "tcrcore.quest.talk_to_sky_golem.desc": "%s seems... not entirely dissipated. It appears to have regained consciousness. Try talking to %s!",
   "tcrcore.quest.talk_to_sky_golem.short_desc": "Talk to %s",
   "tcrcore.quest.talk_to_sky_golem.title": "Sky Chapter",
-  "tcrcore.quest.tame_dragon.desc": "%s gave you a dragon. Now, follow the method described in [%s] to raise it to adulthood! A dragon is a symbol of kingship!\n\n§a[Quest Reward]: §f[%s] [%s]",
+  "tcrcore.quest.tame_dragon.desc": "%s gave you a dragon. Now, follow the method described in [%s] to raise it to adulthood! You can feed your dragon any foods! A dragon is a symbol of kingship!\n\n§a[Quest Reward]: §f[%s] [%s]",
   "tcrcore.quest.tame_dragon.short_desc": "Raise the dragon to adulthood",
   "tcrcore.quest.tame_dragon.title": "Dragon-Taming Chapter",
   "tcrcore.quest.tame_dragon_back_to_ferry_girl.desc": "With your careful care, the dragon has grown to adulthood. %s mentioned earlier that she would give us a treasure once the dragon is grown. Hurry back to %s to see!\n\n§a[Quest Reward]: §f[%s] [%s]",

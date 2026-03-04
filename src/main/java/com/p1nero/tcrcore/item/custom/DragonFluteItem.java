@@ -1,15 +1,18 @@
 package com.p1nero.tcrcore.item.custom;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import net.magister.bookofdragons.advancement.ModAdvancementTriggers;
 import net.magister.bookofdragons.entity.base.dragon.DragonBase;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.OwnableEntity;
+import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -29,7 +32,21 @@ public class DragonFluteItem extends SimpleDescriptionItem {
 
     public @NotNull InteractionResult useOn(UseOnContext onContext) {
         if (!onContext.getLevel().isClientSide) {
-            releaseEntity(onContext.getItemInHand(), onContext.getLevel(), onContext.getClickLocation());
+            Player pPlayer = onContext.getPlayer();
+            LivingEntity livingEntity = releaseEntity(onContext.getItemInHand(), onContext.getLevel(), onContext.getClickLocation());
+            if(livingEntity instanceof DragonBase dragonBase && pPlayer != null && dragonBase.canBeMountedBy(pPlayer)) {
+                boolean ridingSuccess = pPlayer.startRiding(dragonBase);
+                if (ridingSuccess) {
+                    dragonBase.setTarget(null);
+                    dragonBase.getNavigation().stop();
+                    if (dragonBase.getPathfindingManager() != null) {
+                        dragonBase.getPathfindingManager().clearAllWaypoints();
+                    }
+                    dragonBase.goalSelector.getRunningGoals().forEach(WrappedGoal::stop);
+                    dragonBase.targetSelector.getRunningGoals().forEach(WrappedGoal::stop);
+                }
+
+            }
         }
         return super.useOn(onContext);
     }
@@ -46,7 +63,8 @@ public class DragonFluteItem extends SimpleDescriptionItem {
         return super.interactLivingEntity(itemStack, player, entity, hand);
     }
 
-    public void releaseEntity(ItemStack itemStack, Level level, Vec3 spawnPos) {
+    @Nullable
+    public LivingEntity releaseEntity(ItemStack itemStack, Level level, Vec3 spawnPos) {
         CompoundTag tag = itemStack.getOrCreateTag();
         EntityType<?> entityType = EntityType.byString(tag.getString("entity")).orElse(null);
         if (entityType != null && entityType.create(level) instanceof LivingEntity livingEntity) {
@@ -55,7 +73,9 @@ public class DragonFluteItem extends SimpleDescriptionItem {
             level.addFreshEntity(livingEntity);
             tag.remove("entity");
             tag.remove("owner_name");
+            return livingEntity;
         }
+        return null;
     }
 
     public void saveToItem(ItemStack itemStack, LivingEntity entity) {

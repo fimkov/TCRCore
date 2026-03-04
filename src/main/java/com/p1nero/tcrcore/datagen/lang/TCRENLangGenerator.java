@@ -103,7 +103,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.TALK_TO_ORNN_0, "Prologue", "Talk to %s", "On %s's suggestion, go to the armory to equip yourself with %s! Proper equipment will ensure a smooth adventure!");
 
         // Dragon Taming Side Quest
-        this.addQuest(TCRQuests.TAME_DRAGON, "Dragon-Taming Chapter", "Raise the dragon to adulthood", "%s gave you a dragon. Now, follow the method described in [%s] to raise it to adulthood! A dragon is a symbol of kingship!\n\n§a[Quest Reward]: §f[%s] [%s]");
+        this.addQuest(TCRQuests.TAME_DRAGON, "Dragon-Taming Chapter", "Raise the dragon to adulthood", "%s gave you a dragon. Now, follow the method described in [%s] to raise it to adulthood! You can feed your dragon any foods! A dragon is a symbol of kingship!\n\n§a[Quest Reward]: §f[%s] [%s]");
         this.addQuest(TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL, "Dragon-Taming Chapter", "Talk to %s", "With your careful care, the dragon has grown to adulthood. %s mentioned earlier that she would give us a treasure once the dragon is grown. Hurry back to %s to see!\n\n§a[Quest Reward]: §f[%s] [%s]");
 
         // Main Quest · Desert Eye
