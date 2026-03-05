@@ -24,14 +24,22 @@
 	quests: [
 		{
 			description: [
-				""
-				""
-				""
-				""
-				""
-				""
-				""
-				""
+				"{ftbquests.chapter.xu_zhang.quest711034741643803066.description1}"
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description2}"
+                ""
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description3}"
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description4}"
+                ""
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description5}"
+                ""
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description6}"
+                ""
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description7}"
+                ""
+                "{ftbquests.chapter.xu_zhang.quest711034741643803066.description8}"
+                ""
+                ""
+                ""
 				"{ftbquests.chapter.xu_zhang.quest9DE1A548EA3F9BA.description1}"
 				""
 				"{ftbquests.chapter.xu_zhang.quest9DE1A548EA3F9BA.description2}"
@@ -59,6 +67,7 @@
 				"{ftbquests.chapter.xu_zhang.quest9DE1A548EA3F9BA.description13}"
 				"{ftbquests.chapter.xu_zhang.quest9DE1A548EA3F9BA.description14}"
 				""
+				"{ftbquests.chapter.xu_zhang.quest711034741643803066.description15}"
 			]
 			icon: "cataclysm:strange_key"
 			icon_scale: 2.0d
