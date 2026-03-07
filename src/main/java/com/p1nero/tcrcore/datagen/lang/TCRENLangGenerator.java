@@ -266,6 +266,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.addInfo("only_work_on_dragon", "Only work on Dragon!");
         this.addInfo("creative_may_lost_progress", "Warning: Defeating the boss in Creative Mode will not progress the game!");
         this.addInfo("exit_spectator_in_pbf1", "Press [%s] to exit Spectator Mode and return to the Sanctum.");
         this.addInfo("cataclysm_humanoid_drop_desc", "Dropped at [%s] by defeating [%s]");
@@ -285,7 +286,6 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("resonance_stone_working", "[%s] Resonating... Please wait patiently...");
         this.addInfo("containing_dragon", "Type: [%s]");
         this.addInfo("dragon_owner", "Owner: [%s]");
-        this.addInfo("only_work_on_dragon", "Only can capture dragon.");
         this.addInfo("quest_map_mark", "Quest Pos");
         this.addInfo("map_pos_marked_press_to_open", "Labeled location, press [%s] to view the map.");
         this.addInfo("press_to_open_skill_tree", "Press %s to open Skill Tree");

@@ -25,6 +25,7 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRStructures;
+import com.wintercogs.beyonddimensions.common.init.BDItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
@@ -93,6 +94,7 @@ public class TCRCoreMod {
             PlayerEventListeners.illegalItems.add(UAItems.BURNING_SOUL.get());
             PlayerEventListeners.illegalItems.add(AquamiraeItems.DIVIDER.get());
             PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
+            PlayerEventListeners.illegalItems.add(BDItems.NET_FEEDER_ITEM.get());
 
             LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(
                     BTEntityType.BT_CULTIST.get(),

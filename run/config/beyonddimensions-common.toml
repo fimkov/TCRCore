@@ -33,4 +33,6 @@ interface_usable_capacity = 27
 #存储UI搜索按钮值 (除非你知道你在做什么，否则不要手动修改)
 #Allowed Values: ENABLED, DISABLED, SORT_DEFAULT, SORT_QUANTITY, SORT_NAME, SORT_MODID, SORT_INSERTED_TIME, SORT_MODIFIED_TIME
 ui_second_sort_button = "SORT_MODIFIED_TIME"
+#是否允许EMI获取维度网络内全部物品信息
+emi_allow_network_storage_info = false
 

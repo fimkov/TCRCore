@@ -264,6 +264,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神谕残卷");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.addInfo("only_work_on_dragon", "只能对龙类使用！");
         this.addInfo("creative_may_lost_progress", "警告！创造模式下击败boss将无法推进游戏进度！");
         this.addInfo("exit_spectator_in_pbf1", "按[%s]以退出观察者模式并回到主城");
         this.addInfo("cataclysm_humanoid_drop_desc", "于[%s]击败[%s]掉落");
@@ -283,7 +284,6 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("resonance_stone_working", "[%s]共鸣中...请耐心等待...");
         this.addInfo("containing_dragon", "物种：[%s]");
         this.addInfo("dragon_owner", "主人：[%s]");
-        this.addInfo("only_work_on_dragon", "龙之球仅能作用于龙");
         this.addInfo("quest_map_mark", "任务点");
         this.addInfo("map_pos_marked_press_to_open", "已标记地点，按 [%s] 查看地图");
         this.addInfo("press_to_open_skill_tree", "按下 %s 以打开技能树");

@@ -267,7 +267,7 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onCurioEquip(CurioEquipEvent event) {
         if (illegalItems.contains(event.getStack().getItem())) {
-            if (event.getEntity() instanceof Player player && (!PlayerDataManager.finalBossKilled.get(player) || event.getStack().is(UAItems.STARVED_WOLF_SKULL.get()))) {
+            if (event.getEntity() instanceof Player player && !player.isCreative()) {
                 player.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
                 event.setResult(Event.Result.DENY);
             }
@@ -285,8 +285,7 @@ public class PlayerEventListeners {
             }
             if (event.player instanceof ServerPlayer serverPlayer) {
                 ItemStack mainHandItem = serverPlayer.getMainHandItem();
-                if (illegalItems.contains(mainHandItem.getItem()) && !PlayerDataManager.finalBossKilled.get(serverPlayer)) {
-                    serverPlayer.drop(mainHandItem.copy(), true);
+                if (illegalItems.contains(mainHandItem.getItem()) && !serverPlayer.isCreative()) {
                     mainHandItem.shrink(1);
                     serverPlayer.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
                 }

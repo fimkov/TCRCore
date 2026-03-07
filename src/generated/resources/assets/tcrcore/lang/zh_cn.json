@@ -373,7 +373,7 @@
   "info.tcr.no_quest": "暂无任务",
   "info.tcr.nothing_happen_after_bless": "§d无事发生...看来该[神之眼]已经祈福过了",
   "info.tcr.on_full_set": "套装效果",
-  "info.tcr.only_work_on_dragon": "龙之球仅能作用于龙",
+  "info.tcr.only_work_on_dragon": "只能对龙类使用！",
   "info.tcr.open_backpack_tutorial": "按下 [%s] 以打开随身空间",
   "info.tcr.parry_tutorial": "按下§6[%s§6]§f以进行格挡",
   "info.tcr.pec_weapon_lock": "武器技能已锁定！在[%s]击败[%s]以解锁！",
