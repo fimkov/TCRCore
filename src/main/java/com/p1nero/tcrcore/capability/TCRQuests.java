@@ -271,8 +271,9 @@ public class TCRQuests {
                         ModItems.ABYSS_EYE.get().getDescription().copy().withStyle(ChatFormatting.BLUE));
 
         GET_OCEAN_EYE = TCRQuestManager.create("get_ocean_eye")
-                .shortDescParam(ModItems.ABYSS_EYE.get().getDescription().copy().withStyle(ChatFormatting.BLUE),
-                        TCRItems.OCEAN_RESONANCE_STONE.get().getDescription(),
+                .shortDescParam(ModItems.ABYSS_EYE.get().getDescription().copy().withStyle(ChatFormatting.BLUE))
+                .descParam(TCRItems.OCEAN_RESONANCE_STONE.get().getDescription(),
+                        ModItems.ABYSS_EYE.get().getDescription().copy().withStyle(ChatFormatting.BLUE),
                         ModItems.ABYSS_EYE.get().getDescription().copy().withStyle(ChatFormatting.BLUE),
                         Items.SPAWNER.getDescription());
 
