@@ -23,7 +23,11 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [""]
+			description: [
+				"{ftbquests.chapter.zhuang_bei.quest7301166028169305205.description1}"
+				""
+				"{ftbquests.chapter.zhuang_bei.quest7301166028169305205.description2}"
+			]
 			hide_dependency_lines: true
 			hide_dependent_lines: true
 			icon: "fantasy_armor:moon_crystal"
@@ -37,20 +41,21 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest6552F3D1C32E5C75.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest7301166028169305205.subtitle}"
 			tasks: [{
 				advancement: "tcrcore:unlock_weapon_armor_book"
 				criterion: ""
 				id: "46DA77E11452FCE7"
-				title: "{ftbquests.chapter.zhuang_bei.quest6552F3D1C32E5C75.task.5105524936170208487.title}"
+				title: "{ftbquests.chapter.zhuang_bei.quest7301166028169305205.task.5105524936170208487.title}"
 				type: "advancement"
 			}]
-			title: "{ftbquests.chapter.zhuang_bei.quest6552F3D1C32E5C75.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest7301166028169305205.title}"
 			x: 0.0d
 			y: 3.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.zhuang_bei.quest8905345727084916768.description1}"]
 			icon_scale: 1.5d
 			id: "7B9624C198F07020"
 			rewards: [{
@@ -60,7 +65,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest7B9624C198F07020.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest8905345727084916768.subtitle}"
 			tasks: [
 				{
 					id: "1FD49B33CBF8DA91"
@@ -151,12 +156,13 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest7B9624C198F07020.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest8905345727084916768.title}"
 			x: 3.0d
 			y: -7.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.zhuang_bei.quest5383589744301195021.description1}"]
 			icon_scale: 1.5d
 			id: "4AB65A5955823F0D"
 			rewards: [{
@@ -166,7 +172,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest4AB65A5955823F0D.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest5383589744301195021.subtitle}"
 			tasks: [
 				{
 					id: "7567149FA5516BB9"
@@ -213,12 +219,13 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest4AB65A5955823F0D.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest5383589744301195021.title}"
 			x: 0.0d
 			y: -7.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.zhuang_bei.quest423285769789054440.description1}"]
 			icon_scale: 1.5d
 			id: "05DFD02A3AC11DE8"
 			rewards: [{
@@ -228,7 +235,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest5DFD02A3AC11DE8.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest423285769789054440.subtitle}"
 			tasks: [
 				{
 					id: "1281FC7F70B4E6B7"
@@ -319,7 +326,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest5DFD02A3AC11DE8.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest423285769789054440.title}"
 			x: -3.0d
 			y: -7.0d
 		}
@@ -341,7 +348,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest5433D8210E45724B.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest6067430759483142731.subtitle}"
 			tasks: [
 				{
 					id: "15E38B29E15B1684"
@@ -388,12 +395,13 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest5433D8210E45724B.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest6067430759483142731.title}"
 			x: 0.0d
 			y: -0.75d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
+			description: ["{ftbquests.chapter.zhuang_bei.quest1691663356384465641.description1}"]
 			icon: {
 				Count: 1
 				id: "fromtheshadows:diabolium_helmet"
@@ -410,7 +418,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest1779FEDC1CD752E9.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest1691663356384465641.subtitle}"
 			tasks: [
 				{
 					id: "7CA52384A2948395"
@@ -457,7 +465,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest1779FEDC1CD752E9.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest1691663356384465641.title}"
 			x: -2.25d
 			y: 0.75d
 		}
@@ -479,7 +487,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest17F1EC5A58E17BD3.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest1725420005041994707.subtitle}"
 			tasks: [
 				{
 					id: "786B2CCB8E28EBA8"
@@ -515,7 +523,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest17F1EC5A58E17BD3.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest1725420005041994707.title}"
 			x: 2.25d
 			y: 0.75d
 		}
@@ -537,7 +545,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest3CB062BCA9BD0FEC.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest4373103800617865196.subtitle}"
 			tasks: [
 				{
 					id: "0CA15BC3816C2B49"
@@ -562,7 +570,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest3CB062BCA9BD0FEC.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest4373103800617865196.title}"
 			x: 2.0d
 			y: -3.0d
 		}
@@ -584,7 +592,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest66B95BDCAFA07D10.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest7402048465957584144.subtitle}"
 			tasks: [
 				{
 					id: "54AB2623AF09B530"
@@ -631,7 +639,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest66B95BDCAFA07D10.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest7402048465957584144.title}"
 			x: -5.0d
 			y: -3.0d
 		}
@@ -653,7 +661,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest54C39AAE680800C8.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest6107895593504866504.subtitle}"
 			tasks: [
 				{
 					id: "063FF3ADA25F3176"
@@ -700,7 +708,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest54C39AAE680800C8.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest6107895593504866504.title}"
 			x: -2.0d
 			y: -3.0d
 		}
@@ -722,7 +730,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest374137744E10EF8C.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest3981524518237695884.subtitle}"
 			tasks: [
 				{
 					id: "5501F1611A85B204"
@@ -769,7 +777,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest374137744E10EF8C.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest3981524518237695884.title}"
 			x: -3.75d
 			y: 3.0d
 		}
@@ -791,7 +799,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest2FEA17DDB5B78674.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest3452598305336821364.subtitle}"
 			tasks: [
 				{
 					id: "29F882141AA57A7F"
@@ -838,7 +846,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest2FEA17DDB5B78674.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest3452598305336821364.title}"
 			x: -6.0d
 			y: 3.0d
 		}
@@ -860,7 +868,7 @@
 			}]
 			shape: "none"
 			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhuang_bei.questB54A04300D37937.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest816453642098014519.subtitle}"
 			tasks: [{
 				id: "4349764666256787"
 				item: {
@@ -886,7 +894,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest275F6F276BCB8C38.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest2837108505369611320.subtitle}"
 			tasks: [{
 				id: "7ECDE01560E3861C"
 				item: "mowziesmobs:wrought_helmet"
@@ -907,7 +915,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest1D1BBCB1583DFAA8.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest2097477521346788008.subtitle}"
 			tasks: [{
 				id: "256A1FD0A1839A43"
 				item: "mowziesmobs:sol_visage"
@@ -927,7 +935,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest6C3093F5277339EE.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest7795893636116462062.subtitle}"
 			tasks: [
 				{
 					id: "4645C533EE3AFA22"
@@ -1002,7 +1010,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest6C3093F5277339EE.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest7795893636116462062.title}"
 			x: 9.0d
 			y: 3.0d
 		}
@@ -1024,7 +1032,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest3ECC6B589E42DF72.subtitle}"
+			subtitle: "{ftbquests.chapter.zhuang_bei.quest4525109753956982642.subtitle}"
 			tasks: [
 				{
 					id: "5F2708D29535EC41"
@@ -1071,7 +1079,7 @@
 					type: "item"
 				}
 			]
-			title: "{ftbquests.chapter.zhuang_bei.quest3ECC6B589E42DF72.title}"
+			title: "{ftbquests.chapter.zhuang_bei.quest4525109753956982642.title}"
 			x: 4.5d
 			y: 3.0d
 		}

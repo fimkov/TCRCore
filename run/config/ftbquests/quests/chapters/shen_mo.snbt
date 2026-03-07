@@ -408,6 +408,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
+			subtitle: "{ftbquests.chapter.shen_mo.quest1B626D8CAC2DC5F6.subtitle}"
 			tasks: [{
 				entity: "bosses_of_mass_destruction:gauntlet"
 				icon: "bosses_of_mass_destruction:blazing_eye"

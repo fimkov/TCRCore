@@ -51,7 +51,6 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [""]
 			icon: {
 				Count: 1
 				id: "fromtheshadows:thirst_for_blood"
@@ -113,11 +112,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [
-				""
-				""
-				"{ftbquests.chapter.wu_qi.quest5465744286518435450.description1}"
-			]
+			description: ["{ftbquests.chapter.wu_qi.quest5465744286518435450.description1}"]
 			icon: "efn:meen_spear"
 			icon_scale: 1.5d
 			id: "4BDA3978470D5E7A"
@@ -166,7 +161,6 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: ["{ftbquests.chapter.wu_qi.quest4807562247735743917.description1}"]
 			icon_scale: 1.5d
 			id: "42B7E4648BDE15AD"
 			rewards: [{
@@ -376,7 +370,6 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: ["{ftbquests.chapter.wu_qi.quest1696022313405171865.description1}"]
 			hide_dependency_lines: false
 			hide_dependent_lines: true
 			icon: "efn:ruinsgreatsword"
@@ -401,13 +394,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [
-				"{ftbquests.chapter.wu_qi.quest8446857425516070955.description1}"
-				""
-				"{ftbquests.chapter.wu_qi.quest8446857425516070955.description2}"
-				""
-				"[\"\",{\"translate\":\"ftbquests.chapter.wu_qi.quest8446857425516070955.rich_description1\"},{\"underlined\":1,\"translate\":\"ftbquests.chapter.wu_qi.quest8446857425516070955.rich_description2\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"032062CBCDEC3C85\"}}]"
-			]
+			description: ["{ftbquests.chapter.wu_qi.quest8446857425516070955.description1}"]
 			icon_scale: 1.5d
 			id: "753944133C41882B"
 			rewards: [{
@@ -436,11 +423,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [
-				""
-				""
-				"{ftbquests.chapter.wu_qi.quest6948876923325267382.description1}"
-			]
+			description: ["{ftbquests.chapter.wu_qi.quest6948876923325267382.description1}"]
 			icon: "efn:nf_dual_sword"
 			icon_scale: 1.5d
 			id: "606F5EBEBAB63DB6"
@@ -463,11 +446,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			description: [
-				""
-				""
-				"{ftbquests.chapter.wu_qi.quest3746410661820674281.description1}"
-			]
+			description: ["{ftbquests.chapter.wu_qi.quest3746410661820674281.description1}"]
 			icon_scale: 1.5d
 			id: "33FDECA5C88EB0E9"
 			rewards: [{
@@ -916,6 +895,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.wu_qi.quest970201556921326311.description1}"]
 			icon: "cataclysm:gauntlet_of_guard"
 			icon_scale: 2.0d
 			id: "04A38D08B97A07B0"
@@ -985,6 +965,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.wu_qi.quest970201556921326311.description1}"]
 			icon: "cataclysm:the_annihilator"
 			icon_scale: 2.0d
 			id: "4A769401A7590B3F"
@@ -1066,6 +1047,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.wu_qi.quest970201556921326311.description1}"]
 			icon: {
 				Count: 1
 				id: "cataclysm:infernal_forge"
@@ -1225,6 +1207,7 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
+			description: ["{ftbquests.chapter.wu_qi.quest970201556921326311.description1}"]
 			icon_scale: 2.0d
 			id: "74F850F3C8C76ED4"
 			rewards: [{
