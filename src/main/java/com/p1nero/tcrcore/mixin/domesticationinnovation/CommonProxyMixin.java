@@ -22,7 +22,7 @@ public class CommonProxyMixin {
         remap = false
     )
     private void tcr$onInteractWithEntity(PlayerInteractEvent.EntityInteract event, CallbackInfo ci) {
-        if (event.getItemStack().is(DIItemRegistry.COLLAR_TAG.get()) && event.getTarget() instanceof DragonBase) {
+        if (event.getItemStack().is(DIItemRegistry.COLLAR_TAG.get()) && !(event.getTarget() instanceof DragonBase)) {
             event.getEntity().displayClientMessage(TCRCoreMod.getInfo("only_work_on_dragon").withStyle(ChatFormatting.RED), true);
             ci.cancel();
         }

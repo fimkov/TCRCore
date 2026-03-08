@@ -1,0 +1,6 @@
+{
+    "pack": {
+        "description": "修改idas，仅在idas安装时生效",
+        "pack_format": 15
+    }
+}
