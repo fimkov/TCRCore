@@ -145,6 +145,17 @@
           }
         ]
       }
+      {
+        "discipline": "Penerjemah",
+        "titles": [
+          {
+            "title": "",
+            "names": [
+              "Fura"
+            ]
+          }
+        ]
+      },
     ]
   },
   {
@@ -180,4 +191,5 @@
         ]
       }
     ]
+
   },
