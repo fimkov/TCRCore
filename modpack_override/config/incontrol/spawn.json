@@ -149,6 +149,26 @@
         "result": "deny"
     },
     {
+        "mob": [
+            "wom:hollow"
+        ],
+        "mincount": {
+            "amount": 6,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "wom:saulomonk"
+        ],
+        "mincount": {
+            "amount": 6,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
         "dimension": [
             "minecraft:overworld",
             "minecraft:the_nether",
@@ -172,36 +192,6 @@
         "mincount": {
             "amount": 39,
             "passive": true,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
-            "wom:lycanth"
-        ],
-        "mincount": {
-            "amount": 3,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
-            "wom:hollow"
-        ],
-        "mincount": {
-            "amount": 3,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
-            "wom:saulomonk"
-        ],
-        "mincount": {
-            "amount": 3,
             "perplayer": true
         },
         "result": "deny"

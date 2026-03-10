@@ -1,12 +1,19 @@
 buildscript {
     ext.kotlin_version = '2.2.0'
     repositories {
-        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
         maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven {
+            // 阿里云镜像，方便国内开发
+            url = uri("https://maven.aliyun.com/repository/public/")
+        }
         mavenCentral()
     }
     dependencies {
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '[6.0.16,6.2)', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7.+'
     }
 }
 
@@ -17,7 +24,12 @@ plugins {
     id("me.modmuss50.mod-publish-plugin") version "1.1.0"
 }
 
+apply plugin: 'eclipse'
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'java'
+apply plugin: 'idea'
 
 group = mod_group_id
 
@@ -205,7 +217,8 @@ dependencies {
 //    implementation fg.deobf("libs:pbf:1.1.0")
     implementation fg.deobf("curse.maven:p1neros-primal-arena-dimension-1369741:7147163")
     implementation fg.deobf("curse.maven:summoningrituals-671040:5446506")
-    implementation fg.deobf("libs:WeaponsOfMiracles:2.0.11")
+    implementation fg.deobf("libs:ef_spell_hud:1.1.0")
+    implementation fg.deobf("libs:WeaponsOfMiracles:2.0.11:")
 //    implementation ("curse.maven:preloading-tricks-1372086:7210447")
 //    implementation fg.deobf("curse.maven:accelerated-rendering-1314021:7196153")
 
@@ -226,28 +239,30 @@ dependencies {
     implementation fg.deobf("libs:p1nero_bow:20.13.1.4")
     implementation fg.deobf("curse.maven:p1neros-epic-x-cataclysm-1325059:7692539")
     implementation fg.deobf("libs:epicfightx:1.1.0")
-    implementation fg.deobf("libs:ares_hud:1.0.0")
     implementation fg.deobf("libs:better_trident_model:1.0.0")
     implementation fg.deobf("curse.maven:sword-soaring-1011068:7305158")
     implementation fg.deobf("curse.maven:epic-fight-dodge-parry-reward-1304607:7685159")
     implementation fg.deobf("curse.maven:epic-fight-avalon-1268823:7619938")
-    implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7706756")
+//    implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7695342")
+    implementation fg.deobf("libs:p1neros-dialogue-lib:2.2.1")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
 
     implementation fg.deobf("libs:EpicFight-Nightfall:3.0.5")
-    implementation fg.deobf("curse.maven:combat-evolution-1377795:7708585")
+    implementation fg.deobf("curse.maven:nightfall-invade-1362602:7366440")
+    implementation fg.deobf("curse.maven:combat-evolution-1377795:7647549")
     implementation fg.deobf("libs:tcr_bosses:1.0.0")
     implementation fg.deobf("libs:tcrmeshes:1.0.0")
-    implementation fg.deobf("curse.maven:epic-fight-the-mimic-1360684:7717502")
+    implementation fg.deobf("libs:mimic:1.0.0")
 
     //铁魔法
     implementation fg.deobf("curse.maven:playeranimator-658587:4587214")
-    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:7691158")
+    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:7605614")
     implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-scroll-description-1454137:7576978")
     implementation fg.deobf("curse.maven:epic-fight-skillbook-description-1454141:7629226")
 
 //    implementation fg.deobf("curse.maven:shoulder-surfing-reloaded-243190:6993788")
-    implementation fg.deobf("curse.maven:better-lock-on-1339577:7717444")
+    
+    implementation fg.deobf("curse.maven:better-lock-on-1339577:7613473")
 
     implementation fg.deobf("curse.maven:default-options-232131:6972483")
 
@@ -335,6 +350,7 @@ dependencies {
     //结构类
     implementation fg.deobf("curse.maven:ati-structures-964608:6730813")
     implementation fg.deobf("curse.maven:integrated-stronghold-815548:6095052")
+    implementation fg.deobf("curse.maven:integrated-villages-661376:6701488")
     implementation fg.deobf("libs:idas_forge:1.12.1")
     implementation fg.deobf("libs:supplementaries:3.1.41")
     implementation fg.deobf("curse.maven:integrated-api-817709:6369317")
@@ -365,7 +381,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:sophisticated-backpacks-422301:6246607")
 
     //真背包
-    implementation fg.deobf("curse.maven:beyond-dimensions-1222890:7719949")
+    implementation fg.deobf("curse.maven:beyond-dimensions-1222890:7649365")
 
     implementation fg.deobf("curse.maven:trashslot-235577:6319121")
 
@@ -389,13 +405,15 @@ dependencies {
         jarJar.ranged(it, "[2.3.0,)")
     }
 
-    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
-    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
-    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
-
-    runtimeOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")
+//    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
     compileOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))
+//    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
+//    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
+
+    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
+    runtimeOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")//FIXME runData时需注释掉
+    runtimeOnly fg.deobf("curse.maven:domestication-innovation-whitelist-1447219:7540479")//FIXME runData时需注释掉
+
     runtimeOnly fg.deobf("curse.maven:citadel-331936:7476570")
     compileOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")
     compileOnly fg.deobf("curse.maven:citadel-331936:7476570")
@@ -502,8 +520,17 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
 
+// 让 idea 主动下载前置库的源码和 Javadoc
+// 新版本 idea 默认不会下载这两个，这虽然加快了构建速度，但是不方便调试
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
 
-def getFullModVersion() {
+
+    def getFullModVersion() {
     return "${mod_version}-mc${minecraft_version}-forge"
 }
 
