@@ -78,7 +78,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("travelerstitles.minecraft.the_nether.color", "750909");
         this.add("travelerstitles.minecraft.the_end", "The End");
         this.add("travelerstitles.minecraft.the_end.color", "4f219e");
-        this.add("travelerstitles.pbf1.Sanctum_of_the_battle1", "Infinite Samsara");
+        this.add("travelerstitles.pbf1.sanctum_of_the_battle1", "Infinite Samsara");
 
         this.addBiome(TCRBiomes.AIR, "");
         this.addBiome(TCRBiomes.REAL, "");
