@@ -435,8 +435,8 @@ dependencies {
     implementation fg.deobf("curse.maven:libipn-679177:5208511")
     implementation fg.deobf("curse.maven:kotlin-for-forge-351264:5402061")
 
-    implementation fg.deobf("curse.maven:xaeros-world-map-317780:6212636")//大地图
-    implementation fg.deobf("curse.maven:xaeros-minimap-263420:6306152")//小地图
+    compileOnly fg.deobf("curse.maven:xaeros-world-map-317780:6212636")//大地图
+    compileOnly fg.deobf("curse.maven:xaeros-minimap-263420:6306152")//小地图
 
     implementation fg.deobf("curse.maven:journeymap-32274:5789363")//旅行地图
 

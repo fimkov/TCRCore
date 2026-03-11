@@ -420,7 +420,7 @@ public class TCRQuestScreen extends Screen {
             PlayerDataManager.currentQuestId.put(player, selectedQuest.getId());
             return;
         }
-        if (player == null || uiSelectedQuest == null || isEmptyQuest(uiSelectedQuest)) {
+        if (player == null || isEmptyQuest(uiSelectedQuest)) {
             return;
         }
         selectedQuest = uiSelectedQuest;

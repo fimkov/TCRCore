@@ -29,20 +29,19 @@ public class CustomDialogHandler {
 
     @SubscribeEvent
     public static void onCustomDialog(ServerCustomInteractEvent event) {
-        if(Objects.equals(event.getModId(), TCRCoreMod.MOD_ID)) {
+        if (Objects.equals(event.getModId(), TCRCoreMod.MOD_ID)) {
             ServerPlayer serverPlayer = event.getServerPlayer();
-            if(event.getId().getPath().equals("start_screen")) {
+            if (event.getId().getPath().equals("start_screen")) {
                 PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(PlayTitlePacket.OPEN_BACKPACK_TUTORIAL), serverPlayer);
-            }
-            if(event.getId().getPath().equals("reset_game") && event.getInteractId() != 0) {
-                if(!serverPlayer.isCreative()) {
+            } else if (event.getId().getPath().equals("reset_game") && event.getInteractId() != 0) {
+                if (!serverPlayer.isCreative()) {
                     serverPlayer.getMainHandItem().shrink(1);
                 }
                 //二阶段，清理数据，回出生点
 
                 int newSardine = TCRCapabilityProvider.clearPlayerData(serverPlayer);
                 TCRAdvancementData.revokeAllAdvancement(serverPlayer);
-                if(serverPlayer.server.isSingleplayer()) {
+                if (serverPlayer.server.isSingleplayer()) {
                     TCRPlayer.SARDINE_COUNT = newSardine;
                 }
                 PlayerEventListeners.handleFirstJoin(serverPlayer);

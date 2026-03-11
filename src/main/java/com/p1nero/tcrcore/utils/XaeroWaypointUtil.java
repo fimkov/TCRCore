@@ -3,8 +3,8 @@ package com.p1nero.tcrcore.utils;
 import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
-import com.p1nero.tcrcore.network.packet.clientbound.AddWaypointPacket;
-import com.p1nero.tcrcore.network.packet.clientbound.RemoveWaypointPacket;
+import com.p1nero.tcrcore.network.packet.clientbound.AddXaeroWaypointPacket;
+import com.p1nero.tcrcore.network.packet.clientbound.RemoveXaeroWaypointPacket;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @SuppressWarnings("deprecation")
-public class WaypointUtil {
+public class XaeroWaypointUtil {
 
     public static void sendWaypoint(ServerPlayer player, String key, Component displayName, BlockPos pos, WaypointColor color) {
         sendWaypoint(player, key, displayName, pos, color, WaypointVisibilityType.LOCAL);
@@ -43,11 +43,11 @@ public class WaypointUtil {
     }
 
     public static void sendWaypoint(ServerPlayer player, String key, Component displayName, BlockPos pos, WaypointColor color, WaypointVisibilityType type) {
-        PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new AddWaypointPacket(key, displayName, pos, color, type), player);
+        PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new AddXaeroWaypointPacket(key, displayName, pos, color, type), player);
     }
 
     public static void removeWaypoint(ServerPlayer player, String key, BlockPos pos) {
-        PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new RemoveWaypointPacket(key, pos), player);
+        PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new RemoveXaeroWaypointPacket(key, pos), player);
     }
 
     @OnlyIn(Dist.CLIENT)

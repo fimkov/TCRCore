@@ -8,7 +8,6 @@ import com.p1nero.tcrcore.network.packet.serverbound.ExecuteRiptidePacket;
 import com.p1nero.tcrcore.network.packet.serverbound.ExitSpectatorPacket;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
@@ -24,9 +23,14 @@ public class TCRPacketHandler {
     private static int index;
 
     public static synchronized void register() {
-        if(TCRCoreMod.isIsXaeroLoaded()) {
-            register(AddWaypointPacket.class, AddWaypointPacket::decode);
-            register(RemoveWaypointPacket.class, RemoveWaypointPacket::decode);
+        if(TCRCoreMod.isXaeroMapLoaded()) {
+            register(AddXaeroWaypointPacket.class, AddXaeroWaypointPacket::decode);
+            register(RemoveXaeroWaypointPacket.class, RemoveXaeroWaypointPacket::decode);
+        }
+
+        if(TCRCoreMod.isJourneyMapLoaded()) {
+            register(AddJourneyMapWaypointPacket.class, AddJourneyMapWaypointPacket::decode);
+            register(RemoveJourneyWaypointPacket.class, RemoveJourneyWaypointPacket::decode);
         }
 
         register(PlayTitlePacket.class, PlayTitlePacket::decode);

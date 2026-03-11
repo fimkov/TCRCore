@@ -97,6 +97,7 @@ key_key.shouldersurfing.toggle_x_offset_presets:key.keyboard.unknown:NONE
 key_key.shouldersurfing.toggle_y_offset_presets:key.keyboard.unknown:NONE
 key_key.shouldersurfing.toggle_z_offset_presets:key.keyboard.unknown:NONE
 key_fdlib.key.end_cutscene:key.keyboard.unknown:NONE
+key_key.journeymap.map_toggle_alt:key.keyboard.m
 key_gui.xaero_minimap_settings:key.keyboard.unknown:NONE
 key_gui.xaero_zoom_in:key.keyboard.keypad.add:NONE
 key_gui.xaero_zoom_out:key.keyboard.keypad.subtract:NONE

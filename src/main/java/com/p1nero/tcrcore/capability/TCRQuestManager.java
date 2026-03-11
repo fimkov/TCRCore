@@ -4,7 +4,8 @@ import com.p1nero.fast_tpa.network.PacketRelay;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.RefreshClientQuestsPacket;
-import com.p1nero.tcrcore.utils.WaypointUtil;
+import com.p1nero.tcrcore.utils.XaeroWaypointUtil;
+import dev.ftb.mods.ftbquests.quest.Quest;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -105,8 +106,10 @@ public class TCRQuestManager {
         tcrPlayer.syncToClient(player);
         PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new RefreshClientQuestsPacket(), player);
         //大地图标点，仅大地图可见
-        if(quest.getTrackingPos() != null && quest.getDimension().equals(player.level().dimension()) && TCRCoreMod.isIsXaeroLoaded()) {
-            WaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("quest_map_mark"), quest.getTrackingPos(), WaypointColor.GOLD, WaypointVisibilityType.WORLD_MAP_LOCAL);
+        if(quest.getTrackingPos() != null && quest.getDimension().equals(player.level().dimension())) {
+            if(TCRCoreMod.isXaeroMapLoaded()) {
+                XaeroWaypointUtil.sendWaypoint(player, TCRCoreMod.getInfoKey("quest_map_mark"), quest.getTrackingPos(), WaypointColor.GOLD, WaypointVisibilityType.WORLD_MAP_LOCAL);
+            }
         }
     }
 
@@ -143,8 +146,8 @@ public class TCRQuestManager {
         PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new RefreshClientQuestsPacket(), player);
         //移除大地图标点
         if(quest.getTrackingPos() != null && quest.getDimension().equals(player.level().dimension())) {
-            if(TCRCoreMod.isIsXaeroLoaded()) {
-                WaypointUtil.removeWaypoint(player, TCRCoreMod.getInfoKey("quest_map_mark"), quest.getTrackingPos());
+            if(TCRCoreMod.isXaeroMapLoaded()) {
+                XaeroWaypointUtil.removeWaypoint(player, TCRCoreMod.getInfoKey("quest_map_mark"), quest.getTrackingPos());
             }
         }
         playFinishSound(player, quest);

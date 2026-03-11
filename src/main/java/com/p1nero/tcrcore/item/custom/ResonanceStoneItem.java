@@ -89,7 +89,7 @@ public class ResonanceStoneItem extends Item {
                         tcrPlayer.playDirectionParticle(player.getEyePosition(), new Vec3(pos.getX(), player.getEyeY(), pos.getZ()));
                         itemStack.shrink(1);
                         serverPlayer.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(EpicSkillsSounds.GAIN_ABILITY_POINTS.get()), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
-                        if(!TCRCoreMod.isIsXaeroLoaded()) {
+                        if(!TCRCoreMod.isXaeroMapLoaded() && !TCRCoreMod.isJourneyMapLoaded()) {
                             ResonanceStoneItem.handleNoXaeroMap(Component.literal(targetStructure.toString()), pos, serverPlayer);
                         }
                         callback.accept(pos, serverPlayer);
@@ -131,7 +131,7 @@ public class ResonanceStoneItem extends Item {
                         .withClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/tp @s " + pos.getX() + finalS + pos.getZ()))
                         .withHoverEvent(new HoverEvent(net.minecraft.network.chat.HoverEvent.Action.SHOW_TEXT, Component.translatable("chat.coordinates.tooltip"))));
 
-        serverPlayer.displayClientMessage(Component.literal("Xaero Map not loaded. Failed to mark pos!").withStyle(ChatFormatting.RED), false);
+        serverPlayer.displayClientMessage(Component.literal("Map not loaded. Failed to mark pos!").withStyle(ChatFormatting.RED), false);
         serverPlayer.displayClientMessage(prefix.copy().withStyle(ChatFormatting.GOLD), false);
         serverPlayer.displayClientMessage(location, false);
     }

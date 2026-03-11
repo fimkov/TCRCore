@@ -4,7 +4,8 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.TCRCapabilityProvider;
 import com.p1nero.tcrcore.capability.TCRPlayer;
 import com.p1nero.tcrcore.capability.TCRQuests;
-import com.p1nero.tcrcore.utils.WaypointUtil;
+import com.p1nero.tcrcore.compat.JourneyMapCompat;
+import com.p1nero.tcrcore.utils.XaeroWaypointUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.yesman.epicskills.registry.entry.EpicSkillsSounds;
 import it.unimi.dsi.fastutil.Pair;
@@ -84,8 +85,11 @@ public class OceanResonanceStoneItem extends ResonanceStoneItem{
                     if(pos1 != null) {
                         pos1 = WorldUtil.getSurfaceBlockPos(serverPlayer.serverLevel(), pos1);
                         tcrPlayer.playDirectionParticle(player.getEyePosition(), new Vec3(pos1.getX(), player.getEyeY(), pos1.getZ()));
-                        if(TCRCoreMod.isIsXaeroLoaded()) {
-                            WaypointUtil.sendWaypoint(serverPlayer, "ribbit_village_mark", Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.RIBBIT_VILLAGE))), pos1, WaypointColor.BLUE);
+                        if(TCRCoreMod.isXaeroMapLoaded()) {
+                            XaeroWaypointUtil.sendWaypoint(serverPlayer, "ribbit_village_mark", Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.RIBBIT_VILLAGE))), pos1, WaypointColor.BLUE);
+                        }
+                        if(TCRCoreMod.isJourneyMapLoaded()) {
+                            JourneyMapCompat.sendWaypoint(serverPlayer, "ribbit_village_mark", Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.RIBBIT_VILLAGE))), pos1, ChatFormatting.BLUE);
                         }
                     } else {
                         player.displayClientMessage(TCRCoreMod.getInfo("resonance_search_failed", WorldUtil.RIBBIT_VILLAGE).withStyle(ChatFormatting.RED), false);
@@ -94,7 +98,7 @@ public class OceanResonanceStoneItem extends ResonanceStoneItem{
                     //保险，俩都找到再消耗
                     if(pos != null && pos1 != null) {
                         itemStack.shrink(1);
-                        if(!TCRCoreMod.isIsXaeroLoaded()) {
+                        if(!TCRCoreMod.isXaeroMapLoaded() && !TCRCoreMod.isJourneyMapLoaded()) {
                             ResonanceStoneItem.handleNoXaeroMap(Component.literal(targetStructure.toString()), pos, serverPlayer);
                             ResonanceStoneItem.handleNoXaeroMap(Component.literal(WorldUtil.RIBBIT_VILLAGE), pos1, serverPlayer);
                         }

@@ -3,9 +3,6 @@ package com.p1nero.tcrcore;
 import com.aetherteam.aether.entity.AetherEntityTypes;
 import com.brass_amber.ba_bt.init.BTEntityType;
 import com.github.L_Ender.cataclysm.init.ModEntities;
-import com.github.L_Ender.cataclysm.init.ModItems;
-import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
-import com.hm.efn.registries.EFNItem;
 import com.mojang.logging.LogUtils;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.p1nero_ec.PEpicCataclysmMod;
@@ -27,7 +24,6 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRStructures;
 import com.simibubi.create.AllItems;
 import com.wintercogs.beyonddimensions.common.init.BDItems;
-import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -37,7 +33,6 @@ import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -45,7 +40,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import org.slf4j.Logger;
 import yesman.epicfight.skill.SkillSlot;
 
@@ -58,8 +52,9 @@ public class TCRCoreMod {
     public static final String MOD_ID = "tcrcore";
     public static final Logger LOGGER = LogUtils.getLogger();
     private static boolean isCheatMod = false;
-    private static boolean isWorldEditLoaded;
-    private static boolean isXaeroLoaded;
+    private static boolean worldEditLoaded;
+    private static boolean xaeroMapLoaded;
+    private static boolean journeyMapLoaded;
 
     public TCRCoreMod(FMLJavaModLoadingContext context) {
         SkillSlot.ENUM_MANAGER.registerEnumCls(TCRCoreMod.MOD_ID, TCRSkillSlots.class);
@@ -80,8 +75,9 @@ public class TCRCoreMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            isWorldEditLoaded = ModList.get().isLoaded("worldedit");
-            isXaeroLoaded = ModList.get().isLoaded("xaerominimap");
+            worldEditLoaded = ModList.get().isLoaded("worldedit");
+            xaeroMapLoaded = ModList.get().isLoaded("xaerominimap");
+            journeyMapLoaded = ModList.get().isLoaded("journeymap");
             TCRPacketHandler.register();
             TCRQuestManager.init();
 //        List<String> cheatModList = List.of("tacz", "projecte", "enchantmentlevelbreak");
@@ -187,14 +183,18 @@ public class TCRCoreMod {
     }
 
     public static boolean isWorldEditLoad() {
-        return isWorldEditLoaded;
+        return worldEditLoaded;
     }
 
     /**
      * 做成联动，低配机需移除
      */
-    public static boolean isIsXaeroLoaded() {
-        return isXaeroLoaded;
+    public static boolean isXaeroMapLoaded() {
+        return xaeroMapLoaded;
+    }
+
+    public static boolean isJourneyMapLoaded() {
+        return journeyMapLoaded;
     }
 
     public static MutableComponent getInfo(String key) {
