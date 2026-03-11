@@ -150,6 +150,12 @@
     },
     {
         "mob": [
+            "minecraft:wither_skeleton"
+        ],
+        "result": "allow"
+    },
+    {
+        "mob": [
             "wom:hollow"
         ],
         "mincount": {
