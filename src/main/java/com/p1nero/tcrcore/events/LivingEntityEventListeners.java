@@ -107,6 +107,7 @@ import yesman.epicfight.client.input.EpicFightKeyMappings;
 import yesman.epicfight.gameasset.Animations;
 import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.EntityPatch;
+import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 
@@ -652,27 +653,6 @@ public class LivingEntityEventListeners {
                 event.getEntity().setGlowingTag(true);
             }
         }
-        if (TCRPlayer.SARDINE_COUNT > 0) {
-            EntityPatch<?> entitypatch = EpicFightCapabilities.getEntityPatch(event.getEntity(), EntityPatch.class);
-            if (entitypatch != null && entitypatch.isInitialized() && !event.getEntity().getTags().contains("tcr-stronger-mob")) {
-                AttributeInstance entityMaxHealth = event.getEntity().getAttribute(Attributes.MAX_HEALTH);
-                AttributeModifier boostedHealth = new AttributeModifier(UUID.fromString("5a70f02c-7ca0-43c5-a766-2be3d68461a2"), "tcr.sardine_health", TCRPlayer.SARDINE_COUNT, AttributeModifier.Operation.MULTIPLY_TOTAL);
-                if (entityMaxHealth != null) {
-                    entityMaxHealth.removeModifier(boostedHealth);
-                    entityMaxHealth.addPermanentModifier(boostedHealth);
-                }
-
-                AttributeInstance entityAttackDamage = event.getEntity().getAttribute(Attributes.ATTACK_DAMAGE);
-                AttributeModifier boostedDamage = new AttributeModifier(UUID.fromString("5a70f02c-7ca0-43c5-a766-2be3d68461a2"), "tcr.sardine_damage", TCRPlayer.SARDINE_COUNT, AttributeModifier.Operation.MULTIPLY_TOTAL);
-                if (entityAttackDamage != null) {
-                    entityAttackDamage.removeModifier(boostedDamage);
-                    entityAttackDamage.addPermanentModifier(boostedDamage);
-                }
-
-                event.getEntity().heal(event.getEntity().getMaxHealth());
-                event.getEntity().addTag("tcr-stronger-mob");
-            }
-        }
     }
 
     @SubscribeEvent
@@ -683,6 +663,30 @@ public class LivingEntityEventListeners {
         }
 
         ServerLevel serverLevel = (ServerLevel) event.getEntity().level();
+
+        if(serverLevel.getServer().isSingleplayer() && TCRPlayer.SARDINE_COUNT > 0) {
+            if (event.getEntity() instanceof LivingEntity living && (living.getType().is(Tags.EntityTypes.BOSSES) || living instanceof Enemy)) {
+                EntityPatch<?> entitypatch = EpicFightCapabilities.getEntityPatch(living, LivingEntityPatch.class);
+                if (entitypatch != null && entitypatch.isInitialized() && !event.getEntity().getTags().contains("tcr-stronger-mob")) {
+                    AttributeInstance entityMaxHealth = living.getAttribute(Attributes.MAX_HEALTH);
+                    AttributeModifier boostedHealth = new AttributeModifier(UUID.fromString("5a70f02c-7ca0-43c5-a766-2be3d68461a2"), "tcr.sardine_health", TCRPlayer.SARDINE_COUNT, AttributeModifier.Operation.MULTIPLY_TOTAL);
+                    if (entityMaxHealth != null) {
+                        entityMaxHealth.removeModifier(boostedHealth);
+                        entityMaxHealth.addPermanentModifier(boostedHealth);
+                    }
+
+                    AttributeInstance entityAttackDamage = living.getAttribute(Attributes.ATTACK_DAMAGE);
+                    AttributeModifier boostedDamage = new AttributeModifier(UUID.fromString("5a70f02c-7ca0-43c5-a766-2be3d68461a2"), "tcr.sardine_damage", TCRPlayer.SARDINE_COUNT, AttributeModifier.Operation.MULTIPLY_TOTAL);
+                    if (entityAttackDamage != null) {
+                        entityAttackDamage.removeModifier(boostedDamage);
+                        entityAttackDamage.addPermanentModifier(boostedDamage);
+                    }
+
+                    living.heal(living.getMaxHealth());
+                    living.addTag("tcr-stronger-mob");
+                }
+            }
+        }
 
         if (event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
             if (WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.RIBBIT_VILLAGE)) {
