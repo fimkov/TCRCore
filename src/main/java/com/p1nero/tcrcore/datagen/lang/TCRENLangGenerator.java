@@ -282,7 +282,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("can_not_guard", "Boss attacks cannot be blocked!");
         this.addInfo("pec_weapon_lock", "Weapon skill locked! Defeat [%s] in [%s] to unlock!");
         this.addInfo("resonance_stone_usage", "Can resonate with the location of the Angel's seal");
-        this.addInfo("resonance_search_failed", "[ERROR]：Failed to Resonate! Please retry after restarting the game! [%s]");
+        this.addInfo("resonance_search_failed", "[ERROR]：Failed to Resonate! Please retry after restarting the game! Please keep the latest.log and report to the author! [%s]");
         this.addInfo("yamato_skill_lock", "[%s] are locked. Requires special enchantment book to unlock!");
         this.addInfo("congratulation", "Congratulations!");
         this.addInfo("open_backpack_tutorial", "Press [%s] to view Backpack");
@@ -579,7 +579,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.AINE.get(), 23, "§aI have no more questions");
         this.addDialogAnswer(TCREntities.AINE.get(), 39, "I am your attending physician, responsible for treating your schizophrenia. As for why I look like this, it's because we're in your mental world. Everything here is as you imagine it.");
         this.addDialogAnswer(TCREntities.AINE.get(), 40, "No need to worry. You've already killed them with your own hands. They are dead forever in your dreams. They won't come back.");
-        this.addDialogAnswer(TCREntities.AINE.get(), 41, "The Black Tide is actually the effect of the medication Risperdal. We use medication to control the activity of your various personalities. And you, as the kindest, purest personality, we chose you as our突破口. The other personalities were too troublesome, so we could only administer the medication to suppress them when you were in control of the body.");
+        this.addDialogAnswer(TCREntities.AINE.get(), 41, "The Black Tide is actually the effect of the medication Risperdal. We use medication to control the activity of your various personalities. And you, as the kindest, purest personality, we chose you as our breakthrough point. The other personalities were too troublesome, so we could only administer the medication to suppress them when you were in control of the body.");
         this.addDialogAnswer(TCREntities.AINE.get(), 42, "In your mental world, the medication manifests as the 'Black Tide.' It helps us restrain the other personalities. However, in your world, only you can truly affect them. So we fabricated the lie of recreation to guide you, step by step, to eliminate them.");
         this.addDialogAnswer(TCREntities.AINE.get(), 43, "From now on, you can live like a normal person! Of course, whenever you want to return here, just tell me!");
         this.addDialogAnswer(TCREntities.AINE.get(), 44, "So, let's go out together!");

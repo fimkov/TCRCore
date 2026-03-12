@@ -280,7 +280,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addInfo("can_not_guard", "Boss攻击将无视防御！");
         this.addInfo("pec_weapon_lock", "武器技能已锁定！在[%s]击败[%s]以解锁！");
         this.addInfo("resonance_stone_usage", "可与使徒封印的位置共鸣。");
-        this.addInfo("resonance_search_failed", "错误：无法共鸣！请重启游戏后再次尝试！[%s]");
+        this.addInfo("resonance_search_failed", "错误：无法共鸣！请重启游戏后再次尝试！请保留latest.log并向作者报告此错误！[%s]");
         this.addInfo("yamato_skill_lock", "[%s]已锁定，需对应附魔书以解锁！");
         this.addInfo("congratulation", "恭喜！");
         this.addInfo("open_backpack_tutorial", "按下 [%s] 以打开随身空间");
