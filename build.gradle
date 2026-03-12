@@ -391,10 +391,10 @@ dependencies {
         jarJar.ranged(it, "[2.3.0,)")
     }
 
-//    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
-//    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
-//    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
-//    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
+    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
 
     runtimeOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")
     compileOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))

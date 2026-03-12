@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.datagen.lang;
 
+import com.brass_amber.ba_bt.init.BTEntityType;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.dodo.dodosmobs.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
@@ -269,6 +270,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.addInfo("talk_to_start", "Talk to start fighting");
         this.addInfo("temp_dragon_flute", "[Temporary Dragon Flute]: It will be consumed after use!");
         this.addInfo("dragon_die_back", "Your dragon has died, no pet bed detected, and has beed saved to a new dragon flute");
         this.addInfo("only_work_on_dragon", "Only work on Dragon!");
@@ -647,6 +649,19 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(ModEntities.BONE_CHIMERA, 2, "This body carries an undying curse. If you help me find release, my bones can be forged into a fine weapon. Are you ready?");
         this.addDialogOption(ModEntities.BONE_CHIMERA, 2, "Ready");
         this.addDialogOption(ModEntities.BONE_CHIMERA, 3, "Wait a while");
+
+        this.addDialogAnswer(BTEntityType.END_GOLEM, 0, "(This man has an extremely powerful aura, he remains silent.)");
+        this.addDialogAnswer(BTEntityType.END_GOLEM, 1, "(It still stands there, unmoved.)");
+        this.addDialogAnswer(BTEntityType.END_GOLEM, 2, "If you want it, you'll have to take it.");
+        this.addDialogAnswer(BTEntityType.END_GOLEM, 3, "But you already knew that.");
+        this.addDialogAnswer(BTEntityType.END_GOLEM, 4, "How many times have we fought.");
+        this.addDialogAnswer(BTEntityType.END_GOLEM, 5, "(A sinister smile)");
+        this.addDialogOption(BTEntityType.END_GOLEM, 0, "Hey, %s, the days you could easily open the portal are over!");
+        this.addDialogOption(BTEntityType.END_GOLEM, 1, "(Sigh) Give me the [%s].");
+        this.addDialogOption(BTEntityType.END_GOLEM, 2, "Continue.");
+        this.addDialogOption(BTEntityType.END_GOLEM, 3, "I had a feeling you’d say that.");
+        this.addDialogOption(BTEntityType.END_GOLEM, 4, "Hard to say. It's the only memory I have of us since we were kids.");
+        this.addDialogOption(BTEntityType.END_GOLEM, 5, "Time to finish this! Once for!");
 
         this.addDialogOption(EntityTypeModule.RIBBIT.get(), -2, "Leave");
         this.addDialogOption(EntityTypeModule.RIBBIT.get(), -1, "Continue");
