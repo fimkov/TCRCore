@@ -92,7 +92,9 @@ public class TCRCoreMod {
             PlayerEventListeners.illegalItems.add(AquamiraeItems.DIVIDER.get());
             PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
             PlayerEventListeners.illegalItems.add(BDItems.NET_FEEDER_ITEM.get());
-            PlayerEventListeners.illegalItems.add(AllItems.CRAFTING_BLUEPRINT.get());
+            if(ModList.get().isLoaded("create")) {
+                PlayerEventListeners.illegalItems.add(AllItems.CRAFTING_BLUEPRINT.get());
+            }
 
             LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(
                     BTEntityType.BT_CULTIST.get(),
