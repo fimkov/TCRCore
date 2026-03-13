@@ -8,6 +8,7 @@ import com.hm.efn.EFN;
 import com.hm.efn.gameasset.EFNSkills;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
 import com.p1nero.battle_field1.worldgen.PBF1Dimensions;
+import com.p1nero.cataclysm_dimension.CataclysmDimensionMod;
 import com.p1nero.cataclysm_dimension.worldgen.CataclysmDimensions;
 import com.p1nero.dpr.gameassets.DPRSkills;
 import com.p1nero.fast_tpa.network.PacketRelay;
@@ -357,7 +358,25 @@ public class PlayerEventListeners {
     @SubscribeEvent
     public static void onPlayerTryToEnterDim(EntityTravelToDimensionEvent event) {
 
+        //维度重置时候的保护
+        if(event.getEntity().level() instanceof ServerLevel serverLevel && CataclysmDimensions.LEVELS.contains(event.getDimension())) {
+            ServerLevel targetLevel = serverLevel.getServer().getLevel(event.getDimension());
+            TCRDimSaveData dimSaveData = TCRDimSaveData.get(targetLevel);
+            if(dimSaveData.isResetting() || CataclysmDimensionMod.RESOURCE_LOCATION_INTEGER_MAP.getOrDefault(targetLevel.dimension().location(), 0) > 0){
+                if(event.getEntity() instanceof ServerPlayer serverPlayer) {
+                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), false);
+                }
+                event.setCanceled(true);
+                return;
+            }
+            if(event.getEntity() instanceof ServerPlayer serverPlayer && serverPlayer.tickCount < 300) {
+                event.setCanceled(true);
+                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", (300 - serverPlayer.tickCount) / 20), false);
+            }
+        }
+
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
+
             //允许创造和旁观进
             if (!serverPlayer.isCreative() && !serverPlayer.isSpectator()) {
 
@@ -448,7 +467,7 @@ public class PlayerEventListeners {
                     TCRDimSaveData.get(serverPlayer.getServer().getLevel(event.getTo())).setBossKilled(false);
                 }
                 //和安聊聊幻境
-                if (!TCRQuests.TALK_TO_AINE_CLOUDLAND.isFinished(serverPlayer)) {
+                if (!TCRQuests.TALK_TO_AINE_CLOUDLAND.isFinished(serverPlayer) && !TCRQuestManager.hasQuest(serverPlayer, TCRQuests.TALK_TO_AINE_CLOUDLAND)) {
                     TCRQuests.TALK_TO_AINE_CLOUDLAND.start(serverPlayer);
                     PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new OpenCustomDialogPacket(OpenCustomDialogPacket.FIRST_ENTER_CLOUDLAND), serverPlayer);
                 }

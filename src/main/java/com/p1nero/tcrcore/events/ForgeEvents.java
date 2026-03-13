@@ -43,6 +43,7 @@ public class ForgeEvents {
     @SubscribeEvent
     public static void onLevelTick(TickEvent.LevelTickEvent event) {
         if(event.phase == TickEvent.Phase.START) {
+            //处理灾变维度的重置的计时器，不能提早进入防止重置失败
             if(event.level instanceof ServerLevel serverLevel && CataclysmDimensions.LEVELS.contains(event.level.dimension())) {
                 TCRDimSaveData dimSaveData = TCRDimSaveData.get(serverLevel);
                 dimSaveData.tickResetting();
@@ -62,25 +63,6 @@ public class ForgeEvents {
     }
 
     @SubscribeEvent
-    public static void onEntityJoinDim(EntityTravelToDimensionEvent event) {
-        if(event.getEntity().level() instanceof ServerLevel serverLevel && CataclysmDimensions.LEVELS.contains(event.getDimension())) {
-            ServerLevel targetLevel = serverLevel.getServer().getLevel(event.getDimension());
-            TCRDimSaveData dimSaveData = TCRDimSaveData.get(targetLevel);
-            if(dimSaveData.isResetting() || CataclysmDimensionMod.RESOURCE_LOCATION_INTEGER_MAP.getOrDefault(targetLevel.dimension().location(), 0) > 0){
-                if(event.getEntity() instanceof ServerPlayer serverPlayer) {
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", dimSaveData.getResetCooldown() / 20), false);
-                }
-                event.setCanceled(true);
-                return;
-            }
-            if(event.getEntity() instanceof ServerPlayer serverPlayer && serverPlayer.tickCount < 300) {
-                event.setCanceled(true);
-                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_demending", (300 - serverPlayer.tickCount) / 20), false);
-            }
-        }
-    }
-
-    @SubscribeEvent
     public static void onStartTracking(PlayerEvent.StartTracking startTracking) {
         BOSS_BAR_MANAGER.entrySet().removeIf(entry -> entry.getKey() == null || !entry.getKey().isAlive());
         BOSS_BAR_MANAGER.forEach(((living, serverBossEvent) -> {
@@ -89,7 +71,6 @@ public class ForgeEvents {
             }
         }));
     }
-
 
     @SubscribeEvent
     public static void onStopTracking(PlayerEvent.StopTracking stopTracking) {

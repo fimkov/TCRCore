@@ -98,7 +98,7 @@ public abstract class AbstractAltarBlockEntity extends BlockEntity {
             }
 
             ItemStack defaultInstance = this.itemInnate.getDefaultInstance();
-            boolean flag = true;
+            boolean flag;
             if(defaultInstance.is(ModItems.ABYSS_EYE.get())) {
                 ServerLevel level = minecraftServer.getLevel(CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY);
                 flag = null != pPlayer.changeDimension(level, new CDTeleporter(new BlockPos(0, 200, 0)));
