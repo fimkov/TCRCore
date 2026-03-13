@@ -543,7 +543,7 @@
 			}]
 			shape: "none"
 			size: 1.5d
-			subtitle: "{quest48244C835D24AF3B.subtitle}"
+			subtitle: "{ftbquests.chapter.shen_mo.quest48244C835D24AF3B.subtitle}"
 			tasks: [{
 				entity: "epicfight_leonidas:leonidas"
 				icon: "epicfight_leonidas:the_lost_helmet"
