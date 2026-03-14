@@ -93,7 +93,7 @@
   "ftbquests.chapter.wu_qi.quest3375755063403535007.subtitle": "クラフトで入手",
   "ftbquests.chapter.wu_qi.quest3431479692052966900.subtitle": "『百兵図』が、この世のあらゆる武器を明らかにした。使い勝手の良いものから鍛造してみよう！§6一部の強力な神器については、魔神アトラスを解放しなければ情報が得られません。§r",
   "ftbquests.chapter.wu_qi.quest3431479692052966900.task.8718992271418887691.title": "百兵図",
-  "ftbquests.chapter.wu_qi.quest3431479692052966900.title": "神秘を内包せし戦闘具",
+  "ftbquests.chapter.wu_qi.quest3431479692052966900.title": "百兵玄冥諭章",
   "ftbquests.chapter.wu_qi.quest3520088244414429018.subtitle": "{info.tcr.iron_golem_name}を倒すとドロップします",
   "ftbquests.chapter.wu_qi.quest3658525919730360002.subtitle": "鍛造で入手",
   "ftbquests.chapter.wu_qi.quest3746410661820674281.description1": "§6複雑なコンボチェイン§rを持ち、極大のダメージを与えます。",
@@ -171,7 +171,7 @@
   "ftbquests.chapter.wu_qi.quest970201556921326311.description2": "§6{entity.cataclysm.maledictus}§rの力を得て{entity.cataclysm.maledictus}のフィニッシャーを解放し、§2{entity.cataclysm.phantom_halberd}§rを召喚して近くのモンスターを吹き飛ばすことが出来る。",
   "ftbquests.chapter.wu_qi.quest970201556921326311.subtitle": "§6{entity.cataclysm.maledictus}§rを倒してドロップするアイテムから鍛造可能。",
   "ftbquests.chapter.wu_qi.questC51C2F3266B0A59.subtitle": "鍛造することで入手",
-  "ftbquests.chapter.wu_qi.title": "§6神秘の武器大全",
+  "ftbquests.chapter.wu_qi.title": "§6百兵玄冥諭章",
   "ftbquests.chapter.xu_zhang.quest711034741643803066.description1": "§6Discord: §dhttps://discord.gg/UfVF8b2GFk&r",
   "ftbquests.chapter.xu_zhang.quest711034741643803066.description10": "§b聖域デザイン：El_mal（玩建造的牢E）, 300wan&r",
   "ftbquests.chapter.xu_zhang.quest711034741643803066.description11": "§bAI：XVIII-ling, 气球恶魔&r",
@@ -294,7 +294,7 @@
   "ftbquests.chapter.zhuang_bei.quest7301166028169305205.description2": "この章では、主にこのMODパックに含まれる多種多様なアーマーについて紹介しています。それぞれのアーマーの特性を確認し、お好みのセットを選択してください。",
   "ftbquests.chapter.zhuang_bei.quest7301166028169305205.subtitle": "古代の文献には、§6{item.fantasy_armor.moon_crystal}§rが全ての鎧の起源であると記されています。",
   "ftbquests.chapter.zhuang_bei.quest7301166028169305205.task.5105524936170208487.title": "百兵図",
-  "ftbquests.chapter.zhuang_bei.quest7301166028169305205.title": "神秘の鎧大全",
+  "ftbquests.chapter.zhuang_bei.quest7301166028169305205.title": "天工護世玄甲譜",
   "ftbquests.chapter.zhuang_bei.quest7402048465957584144.subtitle": "§6{entity.cataclysm.ignis}§rを倒してドロップするアイテムから鍛造可能。",
   "ftbquests.chapter.zhuang_bei.quest7402048465957584144.title": "舞い踊る焔シリーズ",
   "ftbquests.chapter.zhuang_bei.quest7795893636116462062.subtitle": "§6{entity.mowziesmobs.umvuthana}§rを倒すと入手可能。",
@@ -303,5 +303,5 @@
   "ftbquests.chapter.zhuang_bei.quest8905345727084916768.description1": "§d{item.fantasy_armor.moon_crystal}§rを使った鍛造。",
   "ftbquests.chapter.zhuang_bei.quest8905345727084916768.subtitle": "神々の威光に奉仕する者は光の加護を受けるであろう。§6§lアイテムにマウスを合わせると、対応するセット効果が表示されます。",
   "ftbquests.chapter.zhuang_bei.quest8905345727084916768.title": "光に類する者",
-  "ftbquests.chapter.zhuang_bei.title": "§6神秘の鎧大全"
+  "ftbquests.chapter.zhuang_bei.title": "§6天工護世玄甲譜"
 }
