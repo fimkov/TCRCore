@@ -179,7 +179,6 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.addQuest(TCRQuests.TALK_TO_AINE_GAME_CLEAR, "后日谈", "和%s对话", "你，真的读懂[远梦之棺（The Casket of Reveries）]了吗？");
 
-        this.addEffect(TCREffects.INVULNERABLE, "无敌");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "灵魂火");
         this.addEffect(PECEffects.SOUL_INCINERATOR, "灵魂火");
 

@@ -286,24 +286,6 @@ public class PlayerEventListeners {
                 }
             }
             if (event.player instanceof ServerPlayer serverPlayer) {
-                ItemStack mainHandItem = serverPlayer.getMainHandItem();
-                if (illegalItems.contains(mainHandItem.getItem()) && !serverPlayer.isCreative()) {
-                    mainHandItem.shrink(1);
-                    serverPlayer.displayClientMessage(TCRCoreMod.getInfo("illegal_item_tip"), true);
-                }
-
-                if (!serverPlayer.isInvulnerable()) {
-                    if (serverPlayer.hasEffect(TCREffects.INVULNERABLE.get())) {
-                        serverPlayer.setInvulnerable(true);
-                    }
-                } else {
-                    if (!serverPlayer.hasEffect(TCREffects.INVULNERABLE.get()) && !serverPlayer.isCreative() && !serverPlayer.isSpectator()) {
-                        serverPlayer.setInvulnerable(false);
-                    }
-                }
-                if (!serverPlayer.serverLevel().isLoaded(serverPlayer.getOnPos())) {
-                    return;
-                }
                 if (WorldUtil.inMainLand(serverPlayer)) {
                     if (serverPlayer.isSprinting()) {
                         serverPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10, 2, false, false, true));

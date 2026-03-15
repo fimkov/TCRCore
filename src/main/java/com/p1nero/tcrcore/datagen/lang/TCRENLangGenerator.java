@@ -181,7 +181,6 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.addQuest(TCRQuests.TALK_TO_AINE_GAME_CLEAR, "After Story", "Talk to %s", "Have you truly understood [The Casket of Reveries]?");
 
-        this.addEffect(TCREffects.INVULNERABLE, "Invulnerable");
         this.addEffect(TCREffects.SOUL_INCINERATOR, "Soul Fire");
         this.addEffect(PECEffects.SOUL_INCINERATOR, "Soul Fire");
 
