@@ -8,6 +8,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
+import net.mehvahdjukaar.supplementaries.common.block.blocks.BookPileBlock;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -27,8 +28,11 @@ public class BlockEvents {
             return;
         }
         if(event.getPlayer().level() instanceof ServerLevel serverLevel) {
-            //主城不可破坏
+            //主城不可破坏，除了书堆= =
             if(WorldUtil.inMainLand(event.getPlayer()) || WorldUtil.inReal(event.getPlayer())) {
+                if(event.getState().getBlock() instanceof BookPileBlock) {
+                    return;
+                }
                 event.setCanceled(true);
             }
             //不可破坏神像
@@ -84,8 +88,11 @@ public class BlockEvents {
             return;
         }
         if(event.getEntity() != null) {
-            //主城保护
-            if(WorldUtil.inMainLand(event.getEntity())|| WorldUtil.inReal(event.getEntity())) {
+            //主城保护，除了书堆= =
+            if(WorldUtil.inMainLand(event.getEntity()) || WorldUtil.inReal(event.getEntity())) {
+                if(event.getState().getBlock() instanceof BookPileBlock) {
+                    return;
+                }
                 event.setCanceled(true);
             }
             //幻境禁止摆放

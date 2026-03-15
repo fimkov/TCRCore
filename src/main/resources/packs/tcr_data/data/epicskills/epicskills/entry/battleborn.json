@@ -3,12 +3,12 @@
 		{
 			"skill": "efn:efn_dodge",
 			"position_in_screen": [20, 30],
-			"ability_points": 1
+			"ability_points": 0
 		},
 		{
 			"skill": "efn:efn_step",
 			"position_in_screen": [120, 30],
-			"ability_points": 1
+			"ability_points": 0
 		},
         {
             "skill": "epicfight:emergency_escape",
@@ -61,9 +61,9 @@
 			"ability_points": 3
 		},
 		{
-			"skill": "epicfight:hypervitality",
+			"skill": "efn:efn_parry",
 			"position_in_screen": [20, 100],
-			"ability_points": 3
+			"ability_points": 0
 		},
         {
           "skill": "efn:precise_parry",

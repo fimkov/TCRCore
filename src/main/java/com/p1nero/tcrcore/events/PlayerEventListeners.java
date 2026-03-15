@@ -34,13 +34,13 @@ import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.wintercogs.beyonddimensions.api.dimensionnet.DimensionsNet;
 import com.wintercogs.beyonddimensions.api.storage.key.impl.ItemStackKey;
 import com.wintercogs.beyonddimensions.common.init.BDItems;
+import com.wintercogs.beyonddimensions.common.menu.DimensionsNetMenu;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsSkillTrees;
 import com.yesman.epicskills.skilltree.SkillTree;
 import com.yesman.epicskills.world.capability.SkillTreeProgression;
 import com.yungnickyoung.minecraft.betterendisland.world.IDragonFight;
 import net.blay09.mods.waystones.block.ModBlocks;
-import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -163,6 +163,7 @@ public class PlayerEventListeners {
                 serverPlayer.getCapability(SkillTreeProgression.SKILL_TREE_PROGRESSION).ifPresent(skillTreeProgression -> {
                     skillTreeProgression.unlockNode(EpicSkillsSkillTrees.BATTLEBORN, EFNSkills.EFN_DODGE_ROLL, finalServerPlayer);
                     skillTreeProgression.unlockNode(EpicSkillsSkillTrees.BATTLEBORN, EFNSkills.EFN_DODGE_STEP, finalServerPlayer);
+                    skillTreeProgression.unlockNode(EpicSkillsSkillTrees.BATTLEBORN, EFNSkills.EFN_PARRY, finalServerPlayer);
                     skillTreeProgression.unlockNode(dpr, DPRSkills.STAMINA1, finalServerPlayer);
                 });
                 addSkill(serverPlayer, EFNSkills.EFN_DODGE_ROLL, SkillSlots.DODGE);
@@ -226,7 +227,6 @@ public class PlayerEventListeners {
     public static void onPlayerInteractBlock(PlayerInteractEvent.RightClickBlock event) {
 
         if (event.getEntity() instanceof ServerPlayer serverPlayer) {
-
             BlockState blockState = event.getLevel().getBlockState(event.getPos());
             //第一次交互给传送石和提示
             if (blockState.is(ModBlocks.waystone)) {
@@ -679,6 +679,9 @@ public class PlayerEventListeners {
      */
     @SubscribeEvent
     public static void onPlayerOpenContainer(PlayerContainerEvent.Open event) {
+        if(event.getContainer() instanceof DimensionsNetMenu) {
+            return;
+        }
         for (int i = 0; i < event.getContainer().slots.size(); i++) {
             if (illegalItems.contains(event.getContainer().getItems().get(i).getItem())) {
                 event.getContainer().getItems().get(i).setCount(0);

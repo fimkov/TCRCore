@@ -388,6 +388,8 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
         if (code == 12) {
             TCRQuests.TALK_TO_AINE_GAME_CLEAR.finish(serverPlayer);
+            PacketRelay.sendToPlayer(TCRPacketHandler.INSTANCE, new PlayTitlePacket(PlayTitlePacket.TO_BE_CONTINUE), serverPlayer);
+            EntityUtil.playLocalSound(serverPlayer, SoundEvents.UI_TOAST_CHALLENGE_COMPLETE);
         }
 
         //法术交易

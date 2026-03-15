@@ -22,6 +22,7 @@ public record PlayTitlePacket(int id) implements BasePacket {
     public static final int UNLOCK_NEW_CHAPTER = 5;
     public static final int OPEN_BACKPACK_TUTORIAL = 6;
     public static final int UNLOCK_NEW_SKILL = 7;
+    public static final int TO_BE_CONTINUE = 8;
 
     @Override
     public void encode(FriendlyByteBuf buf) {
@@ -62,6 +63,9 @@ public record PlayTitlePacket(int id) implements BasePacket {
                 case UNLOCK_NEW_SKILL -> {
                     Minecraft.getInstance().gui.setTitle(Component.literal(""));
                     Minecraft.getInstance().gui.setSubtitle(TCRCoreMod.getInfo("unlock_new_skill_sub", EpicSkillsKeyMappings.OPEN_SKILL_TREE.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD)));
+                }
+                case TO_BE_CONTINUE -> {
+                    Minecraft.getInstance().gui.setTitle(TCRCoreMod.getInfo("to_be_continue"));
                 }
             }
         }
