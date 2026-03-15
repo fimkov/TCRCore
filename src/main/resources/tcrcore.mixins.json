@@ -10,6 +10,7 @@
     "AltarOfAbyssBlockEntityMixin",
     "Ancient_Remnant_EntityMixin",
     "Apothecarist",
+    "AquamiraeMixin",
     "BackpackInventoryHelperMixin",
     "BaseFireBlockMixin",
     "BedBlockMixin",
