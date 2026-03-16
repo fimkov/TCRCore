@@ -454,7 +454,7 @@ dependencies {
 
     jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20,MC1.21)")
 
-    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
+//    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
 
     compileOnly jarJar("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"){
         jarJar.ranged(it, "[1.0.51,)")

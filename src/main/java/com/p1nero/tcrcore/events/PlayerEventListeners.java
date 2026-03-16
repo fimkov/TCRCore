@@ -286,7 +286,7 @@ public class PlayerEventListeners {
                 }
             }
             if (event.player instanceof ServerPlayer serverPlayer) {
-                if (WorldUtil.inMainLand(serverPlayer)) {
+                if (WorldUtil.inMainLand(serverPlayer) && serverPlayer.isCreative()) {
                     if (serverPlayer.isSprinting()) {
                         serverPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 10, 2, false, false, true));
                     }

@@ -324,7 +324,7 @@ public class TCRQuests {
                 .shortDescParam(TCRItems.CURSED_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN))
                 .descParam(AquamiraeItems.SHIP_GRAVEYARD_ECHO.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
                         ModItems.CURSED_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN),
-                        ModItems.CURSED_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN),
+                        WorldUtil.OVERWORLD_NAME,
                         TCRItems.CURSED_RESONANCE_STONE.get().getDescription());
 
         GET_CURSED_EYE = TCRQuestManager.create("get_cursed_eye")

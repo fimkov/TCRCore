@@ -10,7 +10,6 @@ import com.p1nero.tcrcore.client.TCRKeyMappings;
 import com.p1nero.tcrcore.client.gui.*;
 import com.p1nero.tcrcore.dialog.custom.handler.HandleIronGolemDialog;
 import com.p1nero.tcrcore.dialog.custom.handler.HandleVillagerDialog;
-import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -20,7 +19,6 @@ import net.minecraft.client.gui.screens.LevelLoadingScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraftforge.api.distmarker.Dist;
@@ -119,13 +117,6 @@ public class ClientForgeEvents {
 //            event.getGuiGraphics().fill(0, 0, event.getScreen().width, event.getScreen().height, FastColor.ABGR32.color(255, 255, 255, 255));
         }
 
-    }
-
-    @SubscribeEvent
-    public static void onFovChange(ComputeFovModifierEvent event) {
-        if(event.getPlayer().level().dimension() == TCRDimensions.SANCTUM_LEVEL_KEY && event.getPlayer().hasEffect(MobEffects.MOVEMENT_SPEED)) {
-            event.setNewFovModifier(1.0F);
-        }
     }
 
 }

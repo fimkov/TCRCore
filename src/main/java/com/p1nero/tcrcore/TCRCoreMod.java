@@ -22,7 +22,6 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRStructures;
-import com.simibubi.create.AllItems;
 import com.wintercogs.beyonddimensions.common.init.BDItems;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.ChatFormatting;
@@ -33,6 +32,7 @@ import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.PathPackResources;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -40,6 +40,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import yesman.epicfight.skill.SkillSlot;
 
@@ -93,7 +94,10 @@ public class TCRCoreMod {
             PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
             PlayerEventListeners.illegalItems.add(BDItems.NET_FEEDER_ITEM.get());
             if(ModList.get().isLoaded("create")) {
-                PlayerEventListeners.illegalItems.add(AllItems.CRAFTING_BLUEPRINT.get());
+                Item item = ForgeRegistries.ITEMS.getValue(ResourceLocation.parse("create:crafting_blueprint"));
+                if(item != null) {
+                    PlayerEventListeners.illegalItems.add(item);
+                }
             }
 
             LivingEntityEventListeners.illegalEntityTypes.addAll(List.of(

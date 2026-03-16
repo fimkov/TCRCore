@@ -8,7 +8,6 @@ import com.hm.efn.registries.EFNItem;
 import com.p1nero.p1nero_ec.gameassets.PECAnimations;
 import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.item.TCRItems;
-import com.simibubi.create.foundation.ponder.CreateSceneBuilder;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.createmod.ponder.api.ParticleEmitter;
 import net.createmod.ponder.api.scene.SceneBuilder;
@@ -26,8 +25,7 @@ import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 public class TCRBossesPonderScene {
 
-    public static void addScyllaScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addScyllaScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_scylla", TCRBossEntities.SCYLLA_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -158,8 +156,7 @@ public class TCRBossesPonderScene {
     }
 
 
-    public static void addAncientRemainScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addAncientRemainScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_ancient_remain", TCRBossEntities.ANCIENT_REMNANT_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -289,8 +286,7 @@ public class TCRBossesPonderScene {
         scene.markAsFinished();
     }
 
-    public static void addEnderGuardianScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addEnderGuardianScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_ender_guardian", TCRBossEntities.ENDER_GUARDIAN_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -420,8 +416,7 @@ public class TCRBossesPonderScene {
         scene.markAsFinished();
     }
 
-    public static void addHarbingerScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addHarbingerScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_harbinger", TCRBossEntities.HARBINGER_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -535,8 +530,7 @@ public class TCRBossesPonderScene {
     }
 
 
-    public static void addIgnisScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addIgnisScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_ignis", TCRBossEntities.IGNIS_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -667,8 +661,7 @@ public class TCRBossesPonderScene {
     }
 
 
-    public static void addLeviathanScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addLeviathanScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_leviathan", TCRBossEntities.LEVIATHAN_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -799,8 +792,7 @@ public class TCRBossesPonderScene {
     }
 
 
-    public static void addMaledictusScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addMaledictusScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_maledictus", TCRBossEntities.MALEDICTUS_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
@@ -947,8 +939,7 @@ public class TCRBossesPonderScene {
         scene.markAsFinished();
     }
 
-    public static void addNetheriteScene(SceneBuilder builder, SceneBuildingUtil util) {
-        CreateSceneBuilder scene = new CreateSceneBuilder(builder);
+    public static void addNetheriteScene(SceneBuilder scene, SceneBuildingUtil util) {
         scene.title("add_netherite", TCRBossEntities.NETHERITE_HUMANOID.get().getDescription().getString());
 
         BlockPos altarPos = util.grid().at(2, 0, 2);
