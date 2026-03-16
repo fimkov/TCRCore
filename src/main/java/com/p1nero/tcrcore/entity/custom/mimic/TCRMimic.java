@@ -3,12 +3,14 @@ package com.p1nero.tcrcore.entity.custom.mimic;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.merlin204.mimic.entity.proteus.ProteusEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
@@ -35,6 +37,14 @@ public class TCRMimic extends ProteusEntity {
     @Override
     public void heal(float value) {
 
+    }
+
+    @Override
+    public boolean hurt(@NotNull DamageSource damageSource, float amount) {
+        if(damageSource.is(DamageTypes.FALL)) {
+            return false;
+        }
+        return super.hurt(damageSource, amount);
     }
 
     @Override

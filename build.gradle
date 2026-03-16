@@ -458,8 +458,15 @@ dependencies {
 
     implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
 
-    implementation fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}") { transitive = false }
-    implementation fg.deobf("dev.engine-room.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    compileOnly jarJar("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}"){
+        jarJar.ranged(it, "[1.0.51,)")
+    }
+
+    runtimeOnly fg.deobf("net.createmod.ponder:Ponder-Forge-${minecraft_version}:${ponder_version}") { transitive = false }
+    compileOnly jarJar(fg.deobf("dev.engine-room.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")){
+        jarJar.ranged(it, "[1.0.2,)")
+    }
+    runtimeOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
 
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))

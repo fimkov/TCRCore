@@ -477,10 +477,11 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             if(mimicDim != null) {
                 player.changeDimension(mimicDim, new PositionTeleporter(WraithonMod.PLAYER_SPAWN_POS));
                 if(mimicDim.getEntities(TCREntities.TCR_MIMIC.get(), (Entity::isAlive)).isEmpty()
-                        && mimicDim.getEntities(WraithonEntities.WRAITHON.get(), (Entity::isAlive)).isEmpty()) {
+//                        && mimicDim.getEntities(WraithonEntities.WRAITHON.get(), (Entity::isAlive)).isEmpty()
+                ) {
                     TCRDimSaveData saveData = TCRDimSaveData.get(mimicDim);
                     if(!saveData.isBossSummoned()) {
-                        LivingEntity boss = WraithonEntities.WRAITHON.get().spawn(mimicDim, WraithonMod.WRAITHON_SPAWN_POS, MobSpawnType.MOB_SUMMONED);
+                        LivingEntity boss = TCREntities.TCR_MIMIC.get().spawn(mimicDim, WraithonMod.PLAYER_SPAWN_POS.above(20), MobSpawnType.MOB_SUMMONED);
                         if(boss != null) {
                             saveData.setBossSummoned(true);
                         }

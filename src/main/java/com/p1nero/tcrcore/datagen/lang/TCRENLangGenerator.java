@@ -581,7 +581,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogOption(TCREntities.AINE.get(), 21, "About the truth of the Black Tide");
         this.addDialogOption(TCREntities.AINE.get(), 22, "About the future");
         this.addDialogOption(TCREntities.AINE.get(), 23, "§aI have no more questions");
-        this.addDialogAnswer(TCREntities.AINE.get(), 39, "I am your attending physician, responsible for treating your schizophrenia. As for why I look like this, it's because we're in your mental world. Everything here is as you imagine it.");
+        this.addDialogAnswer(TCREntities.AINE.get(), 39, "I am your attending physician, responsible for treating your DID. As for why I look like this, it's because we're in your mental world. Everything here is as you imagine it.");
         this.addDialogAnswer(TCREntities.AINE.get(), 40, "No need to worry. You've already killed them with your own hands. They are dead forever in your dreams. They won't come back.");
         this.addDialogAnswer(TCREntities.AINE.get(), 41, "The Black Tide is actually the effect of the medication Risperdal. We use medication to control the activity of your various personalities. And you, as the kindest, purest personality, we chose you as our breakthrough point. The other personalities were too troublesome, so we could only administer the medication to suppress them when you were in control of the body.");
         this.addDialogAnswer(TCREntities.AINE.get(), 42, "In your mental world, the medication manifests as the 'Black Tide.' It helps us restrain the other personalities. However, in your world, only you can truly affect them. So we fabricated the lie of recreation to guide you, step by step, to eliminate them.");
