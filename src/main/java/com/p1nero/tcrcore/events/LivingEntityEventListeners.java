@@ -99,7 +99,6 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.sonmok14.fromtheshadows.server.entity.mob.BulldrogiothEntity;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
 import yesman.epicfight.api.animation.AnimationPlayer;
@@ -722,13 +721,6 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(serverPlayer, TCRItems.RETRACEMENT_STONE.get().getDefaultInstance());
                 baseBossEntity.getPersistentData().putBoolean("retracement_stone_given", true);
             });
-        }
-
-        if (event.getEntity() instanceof BulldrogiothEntity bulldrogiothEntity) {
-            if (WorldUtil.isInStructure(bulldrogiothEntity, WorldUtil.RIBBIT_VILLAGE)) {
-                bulldrogiothEntity.setGlowingTag(true);
-                saveSpawnPos(bulldrogiothEntity);
-            }
         }
 
         if (event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {

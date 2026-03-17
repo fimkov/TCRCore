@@ -16,7 +16,6 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.loading.FMLEnvironment;
-import net.sonmok14.fromtheshadows.server.utils.registry.ItemRegistry;
 import org.apache.commons.lang3.SystemUtils;
 
 import java.util.HashSet;
@@ -51,7 +50,6 @@ public class ItemEvents {
                 DIItemRegistry.COLLAR_TAG.get(),
                 DIBlockRegistry.WHITE_PET_BED.get().asItem(),
                 net.blay09.mods.waystones.item.ModItems.warpStone,
-                ItemRegistry.BOTTLE_OF_BLOOD.get(),
                 com.github.dodo.dodosmobs.init.ModItems.CHIERA_CLAW.get(),
                 ModItems.CHITIN_CLAW.get(),
                 ModItems.CORAL_CHUNK.get(),

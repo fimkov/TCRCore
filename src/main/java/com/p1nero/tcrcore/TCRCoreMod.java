@@ -5,6 +5,7 @@ import com.brass_amber.ba_bt.init.BTEntityType;
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.mojang.logging.LogUtils;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
+import com.p1nero.invincible.mixin.AnimationManagerAccessor;
 import com.p1nero.p1nero_ec.PEpicCataclysmMod;
 import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.block.TCRBlocks;
@@ -42,6 +43,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+import yesman.epicfight.api.animation.AnimationManager;
+import yesman.epicfight.api.asset.AssetAccessor;
 import yesman.epicfight.skill.SkillSlot;
 
 import java.util.List;
@@ -56,6 +59,7 @@ public class TCRCoreMod {
     private static boolean worldEditLoaded;
     private static boolean xaeroMapLoaded;
     private static boolean journeyMapLoaded;
+    private static boolean epicParCoolLoaded;
 
     public TCRCoreMod(FMLJavaModLoadingContext context) {
         SkillSlot.ENUM_MANAGER.registerEnumCls(TCRCoreMod.MOD_ID, TCRSkillSlots.class);
@@ -79,6 +83,7 @@ public class TCRCoreMod {
             worldEditLoaded = ModList.get().isLoaded("worldedit");
             xaeroMapLoaded = ModList.get().isLoaded("xaerominimap");
             journeyMapLoaded = ModList.get().isLoaded("journeymap");
+            epicParCoolLoaded = ModList.get().isLoaded("epicparcool");
             TCRPacketHandler.register();
             TCRQuestManager.init();
 //        List<String> cheatModList = List.of("tacz", "projecte", "enchantmentlevelbreak");
@@ -139,6 +144,9 @@ public class TCRCoreMod {
 
             PEpicCataclysmMod.theIncineratorLock = TCRCoreMod.getInfo("pec_weapon_lock", WorldUtil.SAMSARA_NAME,
                     TCRBossEntities.IGNIS_HUMANOID.get().getDescription().copy().withStyle(ChatFormatting.RED)).withStyle(ChatFormatting.RED);
+
+            //强制预加载
+            ((AnimationManagerAccessor)AnimationManager.getInstance()).getAnimationByName().values().forEach(AssetAccessor::get);
 
         });
     }
@@ -201,6 +209,10 @@ public class TCRCoreMod {
 
     public static boolean isJourneyMapLoaded() {
         return journeyMapLoaded;
+    }
+
+    public static boolean isEpicParCoolLoaded() {
+        return epicParCoolLoaded;
     }
 
     public static MutableComponent getInfo(String key) {
