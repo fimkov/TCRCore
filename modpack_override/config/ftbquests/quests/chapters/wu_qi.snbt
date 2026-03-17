@@ -51,40 +51,6 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			icon: {
-				Count: 1
-				id: "fromtheshadows:thirst_for_blood"
-				tag: {
-					Damage: 0
-				}
-			}
-			icon_scale: 1.5d
-			id: "6B63BADC1AD47A2B"
-			rewards: [{
-				id: "60DF997FF72B8E45"
-				item: "fantasy_armor:moon_crystal"
-				type: "item"
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.wu_qi.quest7738234039258348075.subtitle}"
-			tasks: [{
-				id: "67F99AFF3DDE1380"
-				item: {
-					Count: 1
-					id: "fromtheshadows:thirst_for_blood"
-					tag: {
-						Damage: 0
-					}
-				}
-				optional_task: true
-				type: "item"
-			}]
-			x: 6.75d
-			y: 5.25d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
 			description: [
 				"{ftbquests.chapter.wu_qi.quest970201556921326311.description1}"
 				""
@@ -536,7 +502,7 @@
 				type: "item"
 			}]
 			x: 6.75d
-			y: 7.5d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -600,8 +566,8 @@
 				optional_task: true
 				type: "item"
 			}]
-			x: 2.25d
-			y: 3.0d
+			x: -9.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -793,8 +759,8 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 3.0d
+			x: 11.25d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -826,8 +792,8 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 5.25d
+			x: 6.75d
+			y: 7.5d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -859,8 +825,8 @@
 				}
 				type: "item"
 			}]
-			x: 6.75d
-			y: 3.0d
+			x: 4.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1257,72 +1223,6 @@
 			dependencies: ["2F9F109962C8ADF4"]
 			icon: {
 				Count: 1
-				id: "fromtheshadows:crystallized_dagger"
-				tag: {
-					Damage: 0
-				}
-			}
-			icon_scale: 1.5d
-			id: "6A1FB668A7164006"
-			rewards: [{
-				id: "34E92EAA6E174341"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.wu_qi.quest7647031252894498822.subtitle}"
-			tasks: [{
-				id: "202D2895D4AB7546"
-				item: {
-					Count: 1
-					id: "fromtheshadows:crystallized_dagger"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 11.25d
-			y: 5.25d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
-			icon: {
-				Count: 1
-				id: "fromtheshadows:devil_splitter"
-				tag: {
-					Damage: 0
-				}
-			}
-			icon_scale: 1.5d
-			id: "760E96B49663C249"
-			rewards: [{
-				id: "27E7A74C2D2C59C0"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.wu_qi.quest8506902448510845513.subtitle}"
-			tasks: [{
-				id: "33A06A54BFD3FECD"
-				item: {
-					Count: 1
-					id: "fromtheshadows:devil_splitter"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 9.0d
-			y: 5.25d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
-			icon: {
-				Count: 1
 				id: "dodosmobs:amalgam_claws"
 				tag: {
 					Damage: 0
@@ -1349,8 +1249,8 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 7.5d
+			x: 9.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1461,8 +1361,8 @@
 				}
 				type: "item"
 			}]
-			x: -9.0d
-			y: 5.25d
+			x: 2.25d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1487,8 +1387,8 @@
 				}
 				type: "item"
 			}]
-			x: -6.75d
-			y: 5.25d
+			x: 4.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1604,8 +1504,8 @@
 					type: "item"
 				}
 			]
-			x: -4.5d
-			y: 5.25d
+			x: 6.75d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]

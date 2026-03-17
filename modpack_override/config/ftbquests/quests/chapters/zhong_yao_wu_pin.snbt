@@ -39,8 +39,8 @@
 				item: "minecraft:netherite_ingot"
 				type: "item"
 			}]
-			x: -16.0d
-			y: 3.0d
+			x: 14.0d
+			y: -1.0d
 		}
 		{
 			description: [
@@ -126,8 +126,8 @@
 				item: "aquamirae:ship_graveyard_echo"
 				type: "item"
 			}]
-			x: 6.0d
-			y: -9.0d
+			x: -8.0d
+			y: -1.0d
 		}
 		{
 			description: [
@@ -153,26 +153,6 @@
 			y: -1.0d
 		}
 		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest2169869265315588366.description1}"]
-			id: "1E1CEC99B02C690E"
-			invisible: true
-			rewards: [{
-				id: "0B28CF2F97BE551E"
-				type: "xp"
-				xp: 1
-			}]
-			shape: "none"
-			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest2169869265315588366.subtitle}"
-			tasks: [{
-				id: "68589446E31CEBCB"
-				item: "fromtheshadows:crimson_shell"
-				type: "item"
-			}]
-			x: 2.0d
-			y: -9.0d
-		}
-		{
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest1702170312402154650.description1}"]
 			id: "179F52E171F2349A"
 			invisible: true
@@ -190,47 +170,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: -1.0d
-		}
-		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest3488672777360054910.description1}"]
-			id: "306A4168401F1A7E"
-			invisible: true
-			rewards: [{
-				id: "7FCB2FA4CF95DCFF"
-				type: "xp"
-				xp: 1
-			}]
-			shape: "none"
-			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest3488672777360054910.subtitle}"
-			tasks: [{
-				id: "3BA2F11F32F34F31"
-				item: "fromtheshadows:crystallized_blood"
-				type: "item"
-			}]
-			x: 2.0d
 			y: -5.0d
-		}
-		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest7623977956706730271.description1}"]
-			id: "69CDCF8EDCE9C11F"
-			invisible: true
-			rewards: [{
-				id: "78860CD85BDFBDDF"
-				type: "xp"
-				xp: 1
-			}]
-			shape: "none"
-			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest7623977956706730271.subtitle}"
-			tasks: [{
-				id: "0869C255D4AA8C63"
-				item: "fromtheshadows:corrupted_heart"
-				type: "item"
-			}]
-			x: 14.0d
-			y: -1.0d
 		}
 		{
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest7275702007544484942.description1}"]
@@ -273,8 +213,8 @@
 				item: "epicskills:ability_stone"
 				type: "item"
 			}]
-			x: -10.0d
-			y: -10.0d
+			x: 2.0d
+			y: -1.0d
 		}
 		{
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description1}"]
@@ -294,46 +234,6 @@
 				type: "item"
 			}]
 			x: -8.0d
-			y: 3.0d
-		}
-		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest5557331432936050401.description1}"]
-			id: "4D1F9B7E87440EE1"
-			invisible: true
-			rewards: [{
-				id: "6FF415997FE9CB5C"
-				type: "xp"
-				xp: 1
-			}]
-			shape: "none"
-			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest5557331432936050401.subtitle}"
-			tasks: [{
-				id: "4C0B87B68AEB84A1"
-				item: "fdbosses:lightning_core"
-				type: "item"
-			}]
-			x: -12.0d
-			y: 3.0d
-		}
-		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest7990469202542007160.description1}"]
-			id: "6EE3D96786371378"
-			invisible: true
-			rewards: [{
-				id: "67CE06C2F9F5001C"
-				type: "xp"
-				xp: 1
-			}]
-			shape: "none"
-			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest7990469202542007160.subtitle}"
-			tasks: [{
-				id: "68943AAFCB84C2FB"
-				item: "fdbosses:fire_and_ice_core"
-				type: "item"
-			}]
-			x: -4.0d
 			y: 3.0d
 		}
 		{
@@ -477,21 +377,6 @@
 			title: "{item.armourers_workshop.skin-template}"
 			x: -4.0d
 			y: -6.0d
-		}
-		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest36CB2233DCA15781.description1}"]
-			id: "36CB2233DCA15781"
-			invisible: true
-			shape: "none"
-			size: 2.0d
-			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest36CB2233DCA15781.subtitle}"
-			tasks: [{
-				id: "132D3FC6F37CCF23"
-				item: "fdbosses:justice_core"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -1.0d
 		}
 	]
 	title: "{ftbquests.chapter.zhong_yao_wu_pin.title}"

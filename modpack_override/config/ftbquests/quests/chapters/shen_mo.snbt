@@ -242,31 +242,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest3774287354747791257.title}"
-			x: -1.5d
-			y: 2.25d
-		}
-		{
-			dependencies: ["68EDC89BB022788B"]
-			id: "2BF1F71D59A76031"
-			rewards: [{
-				count: 3
-				id: "2E18B89F723C6319"
-				item: "epicskills:ability_stone"
-				type: "item"
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.shen_mo.quest3166583718448422961.subtitle}"
-			tasks: [{
-				entity: "fromtheshadows:nehemoth"
-				icon: "fromtheshadows:horn_of_apocalypse"
-				id: "07C3F9FAB82A74B4"
-				type: "kill"
-				value: 1L
-			}]
-			title: "{ftbquests.chapter.shen_mo.quest3166583718448422961.title}"
-			x: 1.5d
-			y: 2.25d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -445,72 +422,6 @@
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
-			id: "1C6CF37F43D11ED9"
-			rewards: [{
-				count: 5
-				id: "688238FA42AB8CB4"
-				item: "epicskills:ability_stone"
-				type: "item"
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.shen_mo.quest1C6CF37F43D11ED9.subtitle}"
-			tasks: [{
-				advancement: "fdbosses:qliphoth_awakening/chesed"
-				criterion: ""
-				id: "53963CE524608B32"
-				type: "advancement"
-			}]
-			title: "{ftbquests.chapter.shen_mo.quest1C6CF37F43D11ED9.title}"
-			x: 4.5d
-			y: -3.75d
-		}
-		{
-			dependencies: ["68EDC89BB022788B"]
-			id: "4391005A02DF9BA2"
-			rewards: [{
-				count: 5
-				id: "6C5D2912EB871671"
-				item: "epicskills:ability_stone"
-				type: "item"
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.shen_mo.quest4391005A02DF9BA2.subtitle}"
-			tasks: [{
-				advancement: "fdbosses:qliphoth_awakening/malkuth"
-				criterion: ""
-				id: "0281C0F92687FCEE"
-				type: "advancement"
-			}]
-			title: "{ftbquests.chapter.shen_mo.quest4391005A02DF9BA2.title}"
-			x: 0.0d
-			y: -5.25d
-		}
-		{
-			dependencies: ["68EDC89BB022788B"]
-			id: "570C81A5E3AB8E08"
-			rewards: [{
-				count: 5
-				id: "08E8DE35A6B10C03"
-				item: "epicskills:ability_stone"
-				type: "item"
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.shen_mo.quest570C81A5E3AB8E08.subtitle}"
-			tasks: [{
-				advancement: "fdbosses:qliphoth_awakening/geburah"
-				criterion: ""
-				id: "6C582254AFAF6220"
-				type: "advancement"
-			}]
-			title: "{ftbquests.chapter.shen_mo.quest570C81A5E3AB8E08.title}"
-			x: -4.5d
-			y: -3.75d
-		}
-		{
-			dependencies: ["68EDC89BB022788B"]
 			id: "3507A660CAD8962F"
 			rewards: [{
 				count: 5
@@ -529,8 +440,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest3507A660CAD8962F.title}"
-			x: -6.0d
-			y: -0.75d
+			x: -3.75d
+			y: -4.5d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -552,8 +463,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest48244C835D24AF3B.title}"
-			x: 6.0d
-			y: 0.0d
+			x: 4.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -580,8 +491,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest5A48692DDAB580FC.title}"
-			x: -4.5d
-			y: 2.25d
+			x: -3.0d
+			y: -2.25d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -608,8 +519,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest25D9989B6AEDB15A.title}"
-			x: 4.5d
-			y: 2.25d
+			x: 3.0d
+			y: -2.25d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -636,8 +547,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest5BDBD4318ED4E78D.title}"
-			x: -7.5d
-			y: 2.25d
+			x: -6.0d
+			y: -0.75d
 		}
 		{
 			dependencies: ["68EDC89BB022788B"]
@@ -652,14 +563,14 @@
 			subtitle: "{ftbquests.chapter.shen_mo.quest6371E70D0B1FC322.subtitle}"
 			tasks: [{
 				entity: "wom:evil_skeleton"
-				icon: "wom:demon_seal"
+				icon: "minecraft:wither_skeleton_skull"
 				id: "034777CBDEEB5874"
 				type: "kill"
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.shen_mo.quest6371E70D0B1FC322.title}"
-			x: 7.5d
-			y: 2.25d
+			x: 6.0d
+			y: -0.75d
 		}
 	]
 	title: "{ftbquests.chapter.shen_mo.title}"

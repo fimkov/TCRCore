@@ -157,8 +157,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest8905345727084916768.title}"
-			x: 3.0d
-			y: -7.0d
+			x: 4.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -327,8 +327,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest423285769789054440.title}"
-			x: -3.0d
-			y: -7.0d
+			x: -4.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -397,135 +397,7 @@
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest6067430759483142731.title}"
 			x: 0.0d
-			y: -0.75d
-		}
-		{
-			dependencies: ["6552F3D1C32E5C75"]
-			description: ["{ftbquests.chapter.zhuang_bei.quest1691663356384465641.description1}"]
-			icon: {
-				Count: 1
-				id: "fromtheshadows:diabolium_helmet"
-				tag: {
-					Damage: 0
-				}
-			}
-			icon_scale: 1.5d
-			id: "1779FEDC1CD752E9"
-			rewards: [{
-				id: "7CF15E7C0866731A"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest1691663356384465641.subtitle}"
-			tasks: [
-				{
-					id: "7CA52384A2948395"
-					item: {
-						Count: 1
-						id: "fromtheshadows:diabolium_helmet"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "554A5A2845ABD3FA"
-					item: {
-						Count: 1
-						id: "fromtheshadows:diabolium_chest"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "1CC2A5D78D2328D5"
-					item: {
-						Count: 1
-						id: "fromtheshadows:diabolium_leggings"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "1DDE9B5ABAF9FA82"
-					item: {
-						Count: 1
-						id: "fromtheshadows:diabolium_boots"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "{ftbquests.chapter.zhuang_bei.quest1691663356384465641.title}"
-			x: -2.25d
-			y: 0.75d
-		}
-		{
-			dependencies: ["6552F3D1C32E5C75"]
-			icon: {
-				Count: 1
-				id: "fromtheshadows:crust_helmet"
-				tag: {
-					Damage: 0
-				}
-			}
-			icon_scale: 1.5d
-			id: "17F1EC5A58E17BD3"
-			rewards: [{
-				id: "5E29FE89C5F38369"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.zhuang_bei.quest1725420005041994707.subtitle}"
-			tasks: [
-				{
-					id: "786B2CCB8E28EBA8"
-					item: {
-						Count: 1
-						id: "fromtheshadows:crust_helmet"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "18AD35A7F0CA77E8"
-					item: {
-						Count: 1
-						id: "fromtheshadows:crust_chest"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7479B77E6EFB2443"
-					item: {
-						Count: 1
-						id: "fromtheshadows:crust_leggings"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "{ftbquests.chapter.zhuang_bei.quest1725420005041994707.title}"
-			x: 2.25d
-			y: 0.75d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -571,8 +443,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest4373103800617865196.title}"
-			x: 2.0d
-			y: -3.0d
+			x: -5.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -640,7 +512,7 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest7402048465957584144.title}"
-			x: -5.0d
+			x: 2.0d
 			y: -3.0d
 		}
 		{
@@ -778,8 +650,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest3981524518237695884.title}"
-			x: -3.75d
-			y: 3.0d
+			x: -2.25d
+			y: 1.5d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -847,8 +719,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest3452598305336821364.title}"
-			x: -6.0d
-			y: 3.0d
+			x: -5.25d
+			y: 2.25d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -881,7 +753,7 @@
 				type: "item"
 			}]
 			x: 5.0d
-			y: -3.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -921,8 +793,8 @@
 				item: "mowziesmobs:sol_visage"
 				type: "item"
 			}]
-			x: 6.75d
-			y: 3.0d
+			x: 6.0d
+			y: 2.25d
 		}
 		{
 			dependencies: ["6552F3D1C32E5C75"]
@@ -1080,8 +952,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.zhuang_bei.quest4525109753956982642.title}"
-			x: 4.5d
-			y: 3.0d
+			x: 3.0d
+			y: 1.5d
 		}
 	]
 	title: "{ftbquests.chapter.zhuang_bei.title}"
