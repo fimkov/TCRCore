@@ -107,7 +107,7 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
 
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
-        if(this.isInvulnerable()) {
+        if(FMLEnvironment.production) {
             return false;
         }
         if(source.getEntity() instanceof Player player && player.isCreative()) {
@@ -133,11 +133,6 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
         this.goalSelector.addGoal(0, new LookAtConservingPlayerGoal<>(this));
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new LookAtPlayerGoal(this, Player.class, 8.0F));
-    }
-
-    @Override
-    public boolean isInvulnerable() {
-        return FMLEnvironment.production;
     }
 
     @Override

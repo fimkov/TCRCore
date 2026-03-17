@@ -84,7 +84,7 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
 
     @Override
     public boolean hurt(@NotNull DamageSource source, float value) {
-        if(this.isInvulnerable()) {
+        if(FMLEnvironment.production) {
             return false;
         }
         if(source.getEntity() instanceof Player player && player.isCreative()) {
@@ -403,12 +403,6 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
     @Override
     public boolean removeWhenFarAway(double p_21542_) {
         return false;
-    }
-
-
-    @Override
-    public boolean isInvulnerable() {
-        return FMLEnvironment.production;
     }
 
     @Override

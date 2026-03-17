@@ -145,7 +145,7 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
 
     @Override
     public boolean hurt(@NotNull DamageSource damageSource, float p_21017_) {
-        if(this.isInvulnerable()) {
+        if(FMLEnvironment.production) {
             return false;
         }
         if (damageSource.getEntity() instanceof Player player && player.isCreative()) {
@@ -431,11 +431,6 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
     @Override
     public boolean removeWhenFarAway(double p_21542_) {
         return false;
-    }
-
-    @Override
-    public boolean isInvulnerable() {
-        return FMLEnvironment.production;
     }
 
     @Override
