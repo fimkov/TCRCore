@@ -672,7 +672,6 @@ public class TCRBossesPonderScene {
         ItemStack item1 = new ItemStack(TCRItems.ABYSS_CORE.get(), 1);
         ItemStack item2 = new ItemStack(Items.CONDUIT, 1);
         ItemStack item3 = new ItemStack(ModItems.CORAL_CHUNK.get(), 3);
-        ItemStack item4 = new ItemStack(ItemRegistry.RUINED_BOOK.get(), 1);
 
         scene.configureBasePlate(0, 0, 5);
         scene.showBasePlate();
@@ -720,22 +719,6 @@ public class TCRBossesPonderScene {
 
         scene.world().modifyBlockEntity(altarPos, AltarBlockEntity.class, altarBlockEntity -> {
             altarBlockEntity.handleInteraction(null, item3);
-            if(altarBlockEntity.getLevel() != null) {
-                altarBlockEntity.getLevel().sendBlockUpdated(altarBlockEntity.getBlockPos(), altarBlockEntity.getBlockState(), altarBlockEntity.getBlockState(), 3);
-            }
-        });
-
-        scene.idle(20);
-        scene.overlay().showText(20)
-                .text(item4.getItem().getDescription().getString() + " × " + item4.getCount())
-                .attachKeyFrame()
-                .pointAt(altarSurface)
-                .placeNearTarget();
-
-        scene.idle(20);
-
-        scene.world().modifyBlockEntity(altarPos, AltarBlockEntity.class, altarBlockEntity -> {
-            altarBlockEntity.handleInteraction(null, item4);
             if(altarBlockEntity.getLevel() != null) {
                 altarBlockEntity.getLevel().sendBlockUpdated(altarBlockEntity.getBlockPos(), altarBlockEntity.getBlockState(), altarBlockEntity.getBlockState(), 3);
             }
