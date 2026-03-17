@@ -217,7 +217,7 @@
 			y: -1.0d
 		}
 		{
-			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description1}"]
+			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description2}"]
 			id: "2FFEFA3F04B5B20B"
 			invisible: true
 			rewards: [{

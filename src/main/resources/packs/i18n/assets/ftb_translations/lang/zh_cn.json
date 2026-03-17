@@ -221,7 +221,7 @@
   "ftbquests.chapter.zhong_yao_wu_pin.quest2643745248865061760.description2": "在&6特定结构的{block.lootr.lootr_inventory}&r拿取",
   "ftbquests.chapter.zhong_yao_wu_pin.quest2643745248865061760.subtitle": "\u0026b{advancements.aquamirae.find_ice_maze.title}\u0026r中绕梁三日的喇叭声具现化",
   "ftbquests.chapter.zhong_yao_wu_pin.quest271FDED5E61F990E.description1": "完成&6主线&r获取",
-  "ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description1": "所有\u00266幻境之主\u0026r掉落的材料与\u00266{block.minecraft.dragon_egg}\u0026r合成",
+  "ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description2": "所有\u00266幻境之主\u0026r掉落的材料合成",
   "ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.subtitle": "人们称之为——勇者",
   "ftbquests.chapter.zhong_yao_wu_pin.quest39230C6C55DDF6D7.description1": "完成&6主线&r获取",
   "ftbquests.chapter.zhong_yao_wu_pin.quest5944135541529370519.description1": "在\u0026b{advancements.aquamirae.find_ice_maze.title}\u0026r中击杀\u00266发光的{entity.minecraft.pillager}\u0026r掉落",

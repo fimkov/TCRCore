@@ -221,7 +221,7 @@
   "ftbquests.chapter.zhong_yao_wu_pin.quest2643745248865061760.description2": "Obtain from \u00266{block.lootr.lootr_inventory}\u0026r in specific structures",
   "ftbquests.chapter.zhong_yao_wu_pin.quest2643745248865061760.subtitle": "Manifestation of the trumpet sound that lingers for three days in \u0026b{advancements.aquamirae.find_ice_maze.title}\u0026r",
   "ftbquests.chapter.zhong_yao_wu_pin.quest271FDED5E61F990E.description1": "Obtained by completing \u00266main questline\u0026r",
-  "ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description1": "Craft with materials dropped by all \u00266Illusion Masters\u0026r and \u00266{block.minecraft.dragon_egg}\u0026r",
+  "ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.description2": "Craft with materials dropped by all \u00266Cloudland Masters",
   "ftbquests.chapter.zhong_yao_wu_pin.quest3458476712436019723.subtitle": "People call it — Hero",
   "ftbquests.chapter.zhong_yao_wu_pin.quest39230C6C55DDF6D7.description1": "Obtained by completing \u00266main questline\u0026r",
   "ftbquests.chapter.zhong_yao_wu_pin.quest5944135541529370519.description1": "Dropped by killing \u00266glowing {entity.minecraft.pillager}\u0026r in \u0026b{advancements.aquamirae.find_ice_maze.title}\u0026r",
