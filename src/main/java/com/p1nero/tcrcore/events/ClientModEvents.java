@@ -107,13 +107,13 @@ public class ClientModEvents {
 
             BlockTooltipHandler.registerBlockTooltip(TCRBlocks.VOID_ALTAR_BLOCK,
                     TCRCoreMod.getInfo("altar_dim_info"),
-                    TCRCoreMod.getInfo("related_loot", "???", "???"));
+                    TCRCoreMod.getInfo("related_loot", ModEntities.ENDER_GUARDIAN.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE), ModItems.GAUNTLET_OF_GUARD.get().getDescription().copy().withStyle(ChatFormatting.GOLD)));
             BlockTooltipHandler.registerBlockTooltip(TCRBlocks.MECH_ALTAR_BLOCK,
                     TCRCoreMod.getInfo("altar_dim_info"),
-                    TCRCoreMod.getInfo("related_loot", "???", "???"));
+                    TCRCoreMod.getInfo("related_loot", ModEntities.THE_HARBINGER.get().getDescription().copy().withStyle(ChatFormatting.RED), "???"));
             BlockTooltipHandler.registerBlockTooltip(TCRBlocks.MONST_ALTAR_BLOCK,
                     TCRCoreMod.getInfo("altar_dim_info"),
-                    TCRCoreMod.getInfo("related_loot", "???", "???"));
+                    TCRCoreMod.getInfo("related_loot", ModEntities.NETHERITE_MONSTROSITY.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED), ModItems.INFERNAL_FORGE.get().getDescription().copy().withStyle(ChatFormatting.GOLD)));
 
             PonderIndex.addPlugin(new TCRPonderPlugin());
 

@@ -145,9 +145,6 @@ public class TCRCoreMod {
             PEpicCataclysmMod.theIncineratorLock = TCRCoreMod.getInfo("pec_weapon_lock", WorldUtil.SAMSARA_NAME,
                     TCRBossEntities.IGNIS_HUMANOID.get().getDescription().copy().withStyle(ChatFormatting.RED)).withStyle(ChatFormatting.RED);
 
-            //强制预加载
-            ((AnimationManagerAccessor)AnimationManager.getInstance()).getAnimationByName().values().forEach(AssetAccessor::get);
-
         });
     }
 
