@@ -3,7 +3,7 @@
 	"sheath": "epicfight:uchigatana_sheath",
 	"sheath_alter": "epicfightx:uchigatana_sheath_alter",
     "trail": {
-    	"color": [225,225,225],
+    	"color": [175,175,175],
     	"begin_pos": [0.0, 0.0, -0.2],
     	"end_pos": [0.0, 0.0, -1.8],
     	"lifetime": 4,
