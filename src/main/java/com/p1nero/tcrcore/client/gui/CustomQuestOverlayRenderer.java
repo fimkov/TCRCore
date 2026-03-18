@@ -20,12 +20,14 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
+import net.minecraftforge.client.gui.overlay.IGuiOverlay;
 
 import java.util.List;
 import java.util.ArrayList;
 
 @OnlyIn(Dist.CLIENT)
-public class CustomQuestOverlayRenderer {
+public class CustomQuestOverlayRenderer implements IGuiOverlay {
     private static long fadeStartTime = 0;
     private static boolean hasQuest = false;
     private static boolean lastHasQuest = false;
@@ -112,7 +114,8 @@ public class CustomQuestOverlayRenderer {
         updateQuestIndicators(localPlayer, window);
     }
 
-    public static void render(LocalPlayer localPlayer, GuiGraphics guiGraphics, float partialTick) {
+    @Override
+    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         Minecraft minecraft = Minecraft.getInstance();
         float interpolatedTime = timeSinceStateChange + partialTick;
 
@@ -169,7 +172,7 @@ public class CustomQuestOverlayRenderer {
         RenderSystem.disableBlend();
         guiGraphics.pose().popPose();
 
-        renderQuestTargetIndicator(localPlayer, guiGraphics, partialTick);
+        renderQuestTargetIndicator(minecraft.player, guiGraphics, partialTick);
 
     }
 

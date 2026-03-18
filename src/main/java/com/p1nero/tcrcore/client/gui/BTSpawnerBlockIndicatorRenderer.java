@@ -12,11 +12,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
 
 import net.minecraft.util.Mth;
+import net.minecraftforge.client.gui.overlay.ForgeGui;
+import net.minecraftforge.client.gui.overlay.IGuiOverlay;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class BTSpawnerBlockIndicatorRenderer {
+public class BTSpawnerBlockIndicatorRenderer implements IGuiOverlay {
 
     private static final Map<BlockPos, SpawnerIndicatorInfo> TARGET_SPAWNER_BLOCKS = new HashMap<>();
 
@@ -128,7 +131,8 @@ public class BTSpawnerBlockIndicatorRenderer {
         return result;
     }
 
-    public static void render(LocalPlayer localPlayer, GuiGraphics guiGraphics, float partialTick) {
+    @Override
+    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
         if (TARGET_SPAWNER_BLOCKS.isEmpty()) return;
         Minecraft minecraft = Minecraft.getInstance();
         Window window = minecraft.getWindow();

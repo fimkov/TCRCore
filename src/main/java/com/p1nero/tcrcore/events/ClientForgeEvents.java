@@ -83,8 +83,6 @@ public class ClientForgeEvents {
     @SubscribeEvent
     public static void onRenderGui(RenderGuiEvent.Pre event) {
         if(!Minecraft.getInstance().isPaused() && Minecraft.getInstance().screen == null && Minecraft.getInstance().player != null) {
-            CustomQuestOverlayRenderer.render(Minecraft.getInstance().player, event.getGuiGraphics(), event.getPartialTick());
-            BTSpawnerBlockIndicatorRenderer.render(Minecraft.getInstance().player, event.getGuiGraphics(), event.getPartialTick());
             if(Minecraft.getInstance().player.level().dimension() == PBF1Dimensions.SANCTUM_OF_THE_BATTLE_LEVEL_KEY && Minecraft.getInstance().player.isSpectator()) {
                 MutableComponent component = TCRCoreMod.getInfo("exit_spectator_in_pbf1", TCRKeyMappings.EXIT_SPECTATOR.getTranslatedKeyMessage().copy().withStyle(ChatFormatting.GOLD));
                 GuiGraphics guiGraphics = event.getGuiGraphics();

@@ -10,7 +10,9 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import com.p1nero.tcrcore.block.client.AltarBlockRenderer;
 import com.p1nero.tcrcore.block.entity.TCRBlockEntities;
+import com.p1nero.tcrcore.client.gui.BTSpawnerBlockIndicatorRenderer;
 import com.p1nero.tcrcore.client.gui.BlockTooltipHandler;
+import com.p1nero.tcrcore.client.gui.CustomQuestOverlayRenderer;
 import com.p1nero.tcrcore.client.item_renderer.RenderDualBokken;
 import com.p1nero.tcrcore.client.item_renderer.RenderTheIncinerator;
 import com.p1nero.tcrcore.client.ponder.TCRPonderPlugin;
@@ -25,6 +27,7 @@ import com.p1nero.tcrcore.entity.custom.mimic.PTCRMimicRenderer;
 import com.p1nero.tcrcore.entity.custom.mimic.TCRMimicRenderer;
 import com.p1nero.tcrcore.entity.custom.ornn.OrnnlGeoRenderer;
 import com.p1nero.tcrcore.entity.custom.tutorial_golem.TutorialGolemRenderer;
+import com.super_awesome_baby.ares_hud.client.gui.HudOverlay;
 import net.createmod.ponder.foundation.PonderIndex;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -34,6 +37,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -188,4 +193,11 @@ public class ClientModEvents {
         event.addItemRenderer(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "dual_bokken"), RenderDualBokken::new);
         event.addItemRenderer(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "incinerator"), RenderTheIncinerator::new);
     }
+
+    @SubscribeEvent
+    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+        event.registerAboveAll("tcr_quest", new CustomQuestOverlayRenderer());
+        event.registerAboveAll("tcr_bt_spawner_indicator", new BTSpawnerBlockIndicatorRenderer());
+    }
+
 }
