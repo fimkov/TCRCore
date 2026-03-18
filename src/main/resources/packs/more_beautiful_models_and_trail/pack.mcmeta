@@ -1,6 +1,6 @@
 {
     "pack": {
-        "description": "Weapons of minecraft resources",
-        "pack_format": 9
+        "description": "Custom 3D weapon model and trails",
+        "pack_format": 15
     }
 }
