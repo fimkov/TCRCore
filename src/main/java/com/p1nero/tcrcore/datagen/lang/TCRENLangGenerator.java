@@ -185,6 +185,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.add("epicfight.skill_slot.passive4", "Passive 4");
         this.add("epicfight.skill_slot.passive5", "Passive 5");
+        this.add("epicfight.skill_slot.passive5", "Passive 6");
 
         StartScreenHandler.onGenerateEN(this);
         FirstEnterCloudlandScreenHandler.onGenerateEN(this);

@@ -1,11 +1,11 @@
 package com.p1nero.tcrcore;
 
+import artifacts.registry.ModItems;
 import com.aetherteam.aether.entity.AetherEntityTypes;
 import com.brass_amber.ba_bt.init.BTEntityType;
 import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.mojang.logging.LogUtils;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
-import com.p1nero.invincible.mixin.AnimationManagerAccessor;
 import com.p1nero.p1nero_ec.PEpicCataclysmMod;
 import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.block.TCRBlocks;
@@ -97,6 +97,7 @@ public class TCRCoreMod {
             PlayerEventListeners.illegalItems.add(UAItems.BURNING_SOUL.get());
             PlayerEventListeners.illegalItems.add(AquamiraeItems.DIVIDER.get());
             PlayerEventListeners.illegalItems.add(artifacts.registry.ModItems.SCARF_OF_INVISIBILITY.get());
+            PlayerEventListeners.illegalItems.add(ModItems.CROSS_NECKLACE.get());//可能导致招架bug
             PlayerEventListeners.illegalItems.add(BDItems.NET_FEEDER_ITEM.get());
             if(ModList.get().isLoaded("create")) {
                 Item item = ForgeRegistries.ITEMS.getValue(ResourceLocation.parse("create:crafting_blueprint"));

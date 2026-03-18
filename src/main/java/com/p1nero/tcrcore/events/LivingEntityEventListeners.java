@@ -73,6 +73,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -101,6 +103,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
+import reascer.wom.world.entity.mob.EvilSkeleton;
+import reascer.wom.world.entity.mob.Hollow;
+import reascer.wom.world.entity.mob.Lycanth;
+import reascer.wom.world.entity.mob.Saulomonk;
 import yesman.epicfight.api.animation.AnimationPlayer;
 import yesman.epicfight.client.input.EpicFightKeyMappings;
 import yesman.epicfight.gameasset.Animations;
@@ -575,6 +581,13 @@ public class LivingEntityEventListeners {
             }
         }
 
+        if(event.getEntity() instanceof EvilSkeleton
+                || event.getEntity() instanceof Saulomonk) {
+            if(event.getSource().getEntity() instanceof Player player) {
+                player.addEffect(new MobEffectInstance(EFNMobEffectRegistry.SIN_STUN_IMMUNITY.get(), 100, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2));
+            }
+        }
 
         //重生保护
         if (event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {

@@ -6,7 +6,8 @@ import yesman.epicfight.skill.SkillSlot;
 
 public enum TCRSkillSlots implements SkillSlot {
     PASSIVE4(SkillCategories.PASSIVE),
-    PASSIVE5(SkillCategories.PASSIVE);
+    PASSIVE5(SkillCategories.PASSIVE),
+    PASSIVE6(SkillCategories.PASSIVE);
     final SkillCategory category;
     final int id;
 

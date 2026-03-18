@@ -183,6 +183,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.add("epicfight.skill_slot.passive4", "被动4");
         this.add("epicfight.skill_slot.passive5", "被动5");
+        this.add("epicfight.skill_slot.passive5", "被动6");
 
         StartScreenHandler.onGenerateZH(this);
         FirstEnterCloudlandScreenHandler.onGenerateZH(this);
