@@ -1,0 +1,17 @@
+{
+  "loader": "forge:separate_transforms",
+  "base": {
+    "loader": "forge:obj",
+    "model": "epicfight:models/item/obj/uchigatana.obj",
+        "flip_v": true
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "epicfight:item/uchigatana"
+      },
+      "gui_light": "front"
+    }
+  }
+}

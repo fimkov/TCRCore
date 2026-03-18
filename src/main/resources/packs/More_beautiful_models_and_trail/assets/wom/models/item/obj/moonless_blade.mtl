@@ -1,0 +1,12 @@
+# Blender 4.3.0 MTL File: 'None'
+# www.blender.org
+
+newmtl m_4af49ee8-8e39-f4c2-5c62-62a47372abee.001
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd wom:item/moonless_blade_texture
+map_d wom:item/moonless_blade_texture

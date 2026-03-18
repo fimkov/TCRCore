@@ -1,0 +1,11 @@
+{
+    "trail": {
+    	"color": [255, 255, 255],
+    	"begin_pos": [0.0, -0.5, -0.6],
+    	"end_pos": [0.0, -0.5, -1.9],
+    	"lifetime": 6,
+		"interpolations": 1,
+    	"texture_path": "wom:textures/particle/torment/weapon_trail/torment.png",
+		"particle_type": "efn:bloom_trail"
+    }
+}

@@ -1,0 +1,12 @@
+# Blender 4.3.0 MTL File: 'None'
+# www.blender.org
+
+newmtl m_3cc97a3b-46e5-89b9-c94e-4d31fcc213f1
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd wom:item/herrscher_texture
+map_d wom:item/herrscher_texture

@@ -1,0 +1,12 @@
+# Blender 4.3.0 MTL File: 'None'
+# www.blender.org
+
+newmtl m_27272c9d-4caa-6e42-87da-962a415666a8
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 1
+map_Kd wom:item/agony_texture
+map_d wom:item/agony_texture

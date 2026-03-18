@@ -1,0 +1,88 @@
+{
+	"trail_effects": [
+		{
+			"lifetime": 20,
+			"start_time": 0.05,
+			"end_time": 1.0,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"interpolations": 30
+		},
+		{
+    		"begin_pos": [0.0, 0.0, -0.2],
+	    	"end_pos": [0.0, 2.0, -20.4],
+	    	"lifetime": 25,
+			"interpolations": 30,
+	    	"fade_time": 0.001,
+			"start_time": 1.95,
+			"end_time": 2.10,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"texture_path": "wom:textures/particle/satsujin/weapon_trail/satsujin_2.png"
+		},
+		{
+			"color": [0, 0, 0],
+			"begin_pos": [0.0, 0.0, -0.2],
+			"end_pos": [0.0, 2.0, -20.4],
+			"lifetime": 60,
+			"interpolations": 30,
+			"fade_time": 0.001,
+			"start_time": 1.95,
+			"end_time": 2.10,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"texture_path": "wom:textures/particle/satsujin/weapon_trail/end.png"
+		},
+		{
+			"color": [0, 0, 0],
+			"begin_pos": [1.0, 2.0, -20.4],
+			"end_pos": [-1.0,  2.0, -20.4],
+			"lifetime": 60,
+			"interpolations": 30,
+			"fade_time": 0.001,
+			"start_time": 1.95,
+			"end_time": 2.10,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"texture_path": "wom:textures/particle/satsujin/weapon_trail/end.png"
+		},
+		{
+			"begin_pos": [0.0, 0.0, -0.2],
+			"end_pos": [0.0, 2.0, -20.4],
+			"lifetime": 25,
+			"interpolations": 30,
+			"fade_time": 0.001,
+			"start_time": 5.43,
+			"end_time": 5.57,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"texture_path": "wom:textures/particle/satsujin/weapon_trail/satsujin_2.png"
+		},
+		{
+			"color": [0, 0, 0],
+			"begin_pos": [0.0, 0.0, -0.2],
+			"end_pos": [0.0, 2.0, -20.4],
+			"lifetime": 60,
+			"interpolations": 30,
+			"fade_time": 0.001,
+			"start_time": 5.43,
+			"end_time": 5.57,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"texture_path": "wom:textures/particle/satsujin/weapon_trail/end.png"
+		},
+		{
+			"color": [0, 0, 0],
+			"begin_pos": [1.0, 2.0, -20.4],
+			"end_pos": [-1.0,  2.0, -20.4],
+			"lifetime": 60,
+			"interpolations": 30,
+			"fade_time": 0.001,
+			"start_time": 5.43,
+			"end_time": 5.57,
+			"joint": "Tool_R",
+			"item_skin_hand": "main_hand",
+			"texture_path": "wom:textures/particle/satsujin/weapon_trail/end.png"
+		}
+	]
+}

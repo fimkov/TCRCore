@@ -1,0 +1,12 @@
+{
+    "renderer": "wom:solar",
+    "trail": {
+    	"color": [205, 205, 205],
+    	"begin_pos": [0.0, -0.2, -0.8],
+    	"end_pos": [0.0, -0.2, -3.2],
+    	"lifetime": 6,
+		"interpolations": 4,
+    	"texture_path": "wom:textures/particle/solar/weapon_trail/solar.png",
+		"particle_type": "efn:bloom_trail"
+    }
+}

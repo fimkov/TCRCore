@@ -1,0 +1,12 @@
+{
+    "trail": {
+    	"color": [69, 114, 227],
+    	"begin_pos": [0.0, 0.0, 2.0],
+    	"end_pos": [0.0, 0.0, -3.2],
+    	"lifetime": 6,
+		"interpolations": 5,
+    	"texture_path": "wom:textures/particle/staff/weapon_trail/staff.png",
+		"particle_type": "efn:bloom_trail"
+    },
+    "appeared_in_afterimage":false
+}

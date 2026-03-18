@@ -1,0 +1,11 @@
+{
+    "trail": {
+    	"color": [155, 155, 155],
+    	"begin_pos": [0.0, 0.3, -1.6],
+    	"end_pos": [0.0, 0.7, -2.4],
+    	"lifetime": 6,
+		"interpolations": 6,
+    	"texture_path": "wom:textures/particle/antitheus/weapon_trail/antitheus.png",
+		"particle_type": "efn:bloom_trail"
+    }
+}
