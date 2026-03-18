@@ -268,6 +268,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神谕残卷");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.addInfo("more_beautiful_models_and_trail", "定制3D武器刀光制材质拓展，可选");
         this.addInfo("talk_to_start", "对话以开始战斗");
         this.addInfo("temp_dragon_flute", "[临时龙之笛]：使用后将消耗！");
         this.addInfo("dragon_die_back", "您的龙已死亡，未检测到宠物床，已转化为龙之笛。");

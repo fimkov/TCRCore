@@ -215,11 +215,12 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
         DialogNode gift = new DialogNode(dBuilder.ans(4), dBuilder.opt(4))
                 .addLeaf(dBuilder.opt(5, ModEntities.NIGHTFURY.get().getDescription()), 3)
                 .addLeaf(dBuilder.opt(5, ModEntities.DEADLYNADDER.get().getDescription()), 4)
-                .addLeaf(dBuilder.opt(5, ModEntities.GRONCKLE.get().getDescription()), 5)
+//                .addLeaf(dBuilder.opt(5, ModEntities.GRONCKLE.get().getDescription()), 5)
                 .addLeaf(dBuilder.opt(5, ModEntities.SKRILL.get().getDescription()), 6)
                 .addLeaf(dBuilder.opt(5, ModEntities.HIDDEOUS_ZIPPLEBACK.get().getDescription()), 7)
                 .addLeaf(dBuilder.opt(5, ModEntities.MONSTROUSNIGHTMARE.get().getDescription()), 8)
-                .addLeaf(dBuilder.opt(5, ModEntities.WHISPERING_DEATH.get().getDescription()), 9);
+//                .addLeaf(dBuilder.opt(5, ModEntities.WHISPERING_DEATH.get().getDescription()), 9)
+                ;
 
         if (currentQuest.equals(TCRQuests.TALK_TO_FERRY_GIRL_0)) {
             root.addChild(whoAreU);

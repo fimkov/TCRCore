@@ -95,10 +95,11 @@
     "epicfight.ClientAnimatorMixin",
     "epicfight.ControlEngineMixin",
     "epicfight.EFClientConfigMixin",
-    "epicfight.EpicFightCameraAPIMixin",
     "epicfight.RenderEngineEventsMixin",
     "epicfight.SkillTreeScreenAccessor",
-    "epicfight.SkillTreeScreenMixin"
+    "epicfight.SkillTreeScreenMixin",
+    "epicfight.EpicFightCameraAPIMixin",
+    "epicfight.TempEpicFightCameraAPIMixin"
   ],
   "injectors": {
     "defaultRequire": 1

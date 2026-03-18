@@ -19,6 +19,7 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.PlayTitlePacket;
 import com.p1nero.tcrcore.save_data.TCRDimSaveData;
+import com.p1nero.tcrcore.utils.EntityUtil;
 import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.yesman.epicskills.registry.entry.EpicSkillsSkillTrees;
@@ -311,6 +312,7 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             DialogNode c2 = new DialogNode(dBuilder.ans(48), dBuilder.opt(7, ModItems.VOID_EYE.get().getDescription()));
             DialogNode next = new DialogNode(dBuilder.ans(49), dBuilder.opt(16, TCREntities.CHRONOS_SOL.get().getDescription()))
                     .addExecutable(dialogueScreen -> ChronosSolGeoRenderer.useRedTexture = true)
+                    .addExecutable(-1)
                     .addLeaf(dBuilder.opt(17, TCREntities.CHRONOS_SOL.get().getDescription()), 14);
             c1.addChild(next);
             c2.addChild(next);
@@ -337,6 +339,9 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
 
     @Override
     public void handleNpcInteraction(ServerPlayer player, int code) {
+        if(code == -1) {
+            EntityUtil.playLocalSound(player, SoundEvents.WITCH_CELEBRATE);
+        }
         //初次对话，准备启程
         if(code == 1) {
             TCRQuests.TALK_TO_CHRONOS_0.finish(player);
@@ -460,8 +465,9 @@ public class ChronosSolEntity extends PathfinderMob implements IEntityNpc, GeoEn
             ItemUtil.addItemEntity(player, TCRItems.END_RESONANCE_STONE.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor());
         }
 
-        //打战灵
+        //打最终boss
         if(code == 14) {
+            this.setConversingPlayer(null);//保险
             if(TCRQuestManager.hasQuest(player, TCRQuests.TALK_TO_CHRONOS_END)) {
                 TCRQuests.TALK_TO_CHRONOS_END.finish(player, true);
             }

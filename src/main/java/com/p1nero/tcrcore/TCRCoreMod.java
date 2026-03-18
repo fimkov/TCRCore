@@ -175,6 +175,13 @@ public class TCRCoreMod {
                     (path) -> new PathPackResources(path, resourcePath, false), PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
             event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
         }
+        if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+            String name = "more_beautiful_models_and_trail";
+            var resourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource("packs/" + name);
+            var pack = Pack.readMetaAndCreate(name, TCRCoreMod.getInfo("more_beautiful_models_and_trail"), false,
+                    (path) -> new PathPackResources(path, resourcePath, false), PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN);
+            event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
+        }
         //idas为可选
         if (event.getPackType() == PackType.SERVER_DATA && ModList.get().isLoaded("idas")) {
             String name = "idas_modify";

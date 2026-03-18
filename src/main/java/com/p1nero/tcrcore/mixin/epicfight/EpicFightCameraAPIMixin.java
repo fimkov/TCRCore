@@ -17,4 +17,5 @@ public class EpicFightCameraAPIMixin {
             PlayerDataManager.locked.put(Minecraft.getInstance().player, true);
         }
     }
+
 }
