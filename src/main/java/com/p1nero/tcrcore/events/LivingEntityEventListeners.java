@@ -736,7 +736,7 @@ public class LivingEntityEventListeners {
                     }
 
                     AttributeInstance entityAttackDamage = living.getAttribute(Attributes.ATTACK_DAMAGE);
-                    AttributeModifier boostedDamage = new AttributeModifier(UUID.fromString("5a70f02c-7ca0-43c5-a766-2be3d68461a2"), "tcr.sardine_damage", TCRPlayer.SARDINE_COUNT, AttributeModifier.Operation.MULTIPLY_TOTAL);
+                    AttributeModifier boostedDamage = new AttributeModifier(UUID.fromString("5a70f02c-7ca0-43c5-a766-2be3d68461a2"), "tcr.sardine_damage", TCRPlayer.SARDINE_COUNT * 0.1F, AttributeModifier.Operation.MULTIPLY_TOTAL);
                     if (entityAttackDamage != null) {
                         entityAttackDamage.removeModifier(boostedDamage);
                         entityAttackDamage.addPermanentModifier(boostedDamage);
