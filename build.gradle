@@ -236,7 +236,7 @@ dependencies {
     implementation fg.deobf("curse.maven:p1neros-dialogue-lib-1274526:7706756")
     implementation fg.deobf("curse.maven:entity-respawner-1363764:7105518")
 
-    implementation fg.deobf("libs:EpicFight-Nightfall:3.0.5")
+    implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7781340")
     implementation fg.deobf("curse.maven:combat-evolution-1377795:7775614")
     implementation fg.deobf("libs:tcr_bosses:1.0.7")
     implementation fg.deobf("libs:tcrmeshes:1.0.0")
@@ -270,13 +270,12 @@ dependencies {
     implementation fg.deobf("curse.maven:epic-fight-super-golem-1236331:6861276")
     implementation fg.deobf("curse.maven:epic-fight-super-warden-1272352:6640554")
 
-    implementation fg.deobf("curse.maven:kill-cam-1489164:7776526")
+    implementation fg.deobf("curse.maven:kill-cam-1489164:7781259")
 
     implementation fg.deobf("curse.maven:fantasy-armor-1083998:6949888")
 
 //    implementation fg.deobf("curse.maven:parcool-482378:6831668")
 //    implementation fg.deobf("curse.maven:official-epic-fight-x-parcool-1259252:6870242")
-    implementation fg.deobf("curse.maven:epic-fight-impactful-945308:7304553")
 
     implementation fg.deobf("curse.maven:clear-water-286098:4744630")
 
@@ -320,13 +319,13 @@ dependencies {
     implementation fg.deobf("curse.maven:more-hitboxes-1115989:6942239")
     implementation fg.deobf("curse.maven:cataclysm-dimensions-1303494:7748030")
     implementation fg.deobf("curse.maven:lendercataclysm-551586:6906993")
-    implementation fg.deobf("curse.maven:cinematic-cataclysm-1399324:7302287")
+//    implementation fg.deobf("curse.maven:cinematic-cataclysm-1399324:7302287")
     implementation fg.deobf("curse.maven:curios-309927:6418456")
     implementation fg.deobf("curse.maven:lionfish-api-1001614:5922047")
 
-    implementation fg.deobf("curse.maven:qliphoth-awakening-1271707:7653115")
-    implementation fg.deobf("curse.maven:qliphoth-awakening-dimensions-1380154:7549759")
-    implementation fg.deobf("curse.maven:fdlib-1271749:7653103")
+//    implementation fg.deobf("curse.maven:qliphoth-awakening-1271707:7653115")
+//    implementation fg.deobf("curse.maven:qliphoth-awakening-dimensions-1380154:7549759")
+//    implementation fg.deobf("curse.maven:fdlib-1271749:7653103")
 
     implementation fg.deobf("curse.maven:ribbits-622967:6182692")
 
@@ -392,10 +391,10 @@ dependencies {
         jarJar.ranged(it, "[2.3.0,)")
     }
 
-//    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7090494")//FIXME runData时需注释掉
-//    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
-//    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
-//    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7756534")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:item-borders-513769:5903326")//FIXME runData时需注释掉
+    implementation fg.deobf("curse.maven:legendary-tooltips-532127:4662781")//FIXME runData时需注释掉
+    runtimeOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))//FIXME runData时需注释掉
 
     runtimeOnly fg.deobf("curse.maven:domestication-innovation-591149:4911955")
     compileOnly(fg.deobf("curse.maven:armourers-workshop-229523:6965580"))

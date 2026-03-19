@@ -106,9 +106,8 @@ import net.shelmarow.combat_evolution.ai.iml.ILivingEntityData;
 import net.shelmarow.combat_evolution.ai.util.CEPatchUtils;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
+import reascer.wom.main.WeaponsOfMinecraft;
 import reascer.wom.world.entity.mob.EvilSkeleton;
-import reascer.wom.world.entity.mob.Hollow;
-import reascer.wom.world.entity.mob.Lycanth;
 import reascer.wom.world.entity.mob.Saulomonk;
 import yesman.epicfight.api.animation.AnimationPlayer;
 import yesman.epicfight.client.input.EpicFightKeyMappings;
@@ -118,6 +117,7 @@ import yesman.epicfight.world.capabilities.entitypatch.EntityPatch;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
+import yesman.epicfight.world.damagesource.EpicFightDamageSource;
 import yesman.epicfight.world.damagesource.StunType;
 import yesman.epicfight.world.effect.EpicFightMobEffects;
 
@@ -408,11 +408,11 @@ public class LivingEntityEventListeners {
                 });
             }
 
-            if(livingEntity instanceof DragonBase dragonBase) {
-                if(dragonBase.getOwnerUUID() != null) {
+            if (livingEntity instanceof DragonBase dragonBase) {
+                if (dragonBase.getOwnerUUID() != null) {
                     BlockPos bedPos = TameableUtils.getPetBedPos(event.getEntity());
-                    if(bedPos == null) {
-                        if(dragonBase.getOwner() instanceof Player player) {
+                    if (bedPos == null) {
+                        if (dragonBase.getOwner() instanceof Player player) {
                             ItemStack itemStack = TCRItems.DRAGON_FLUTE.get().getDefaultInstance();
                             DragonFluteItem.saveToItem(itemStack, dragonBase);
                             itemStack.getOrCreateTag().putBoolean("tcr_temp", true);
@@ -495,19 +495,19 @@ public class LivingEntityEventListeners {
                 }
 
                 EntityUtil.getNearByEntities(serverPlayer, 20).forEach(entity -> {
-                    if (!(entity instanceof OwnableEntity) && entity instanceof LivingEntity living) {
+                    if (!(entity instanceof OwnableEntity) && entity instanceof LivingEntity living && !(entity instanceof Player)) {
                         //防堆命机制
                         living.setHealth(living.getMaxHealth());
                         living.removeAllEffects();
                         if (living instanceof Bone_Chimera_Entity boneChimeraEntity) {
                             boneChimeraEntity.setStanding(false);//重置阶段
                         }
-                        if(living instanceof TCRMimic tcrMimic) {
+                        if (living instanceof TCRMimic tcrMimic) {
                             tcrMimic.resetMemory();
                         }
-                        if(living instanceof AbstractGolem) {
+                        if (living instanceof AbstractGolem) {
                             LivingEntityPatch<?> livingEntityPatch = EpicFightCapabilities.getEntityPatch(living, LivingEntityPatch.class);
-                            if(livingEntityPatch instanceof ILivingEntityData) {
+                            if (livingEntityPatch instanceof ILivingEntityData) {
                                 CEPatchUtils.setStamina(livingEntityPatch, CEPatchUtils.getMaxStamina(livingEntityPatch));
                             }
                         }
@@ -590,9 +590,9 @@ public class LivingEntityEventListeners {
             }
         }
 
-        if(event.getEntity() instanceof EvilSkeleton
+        if (event.getEntity() instanceof EvilSkeleton
                 || event.getEntity() instanceof Saulomonk) {
-            if(event.getSource().getEntity() instanceof Player player) {
+            if (event.getSource().getEntity() instanceof Player player) {
                 player.addEffect(new MobEffectInstance(EFNMobEffectRegistry.SIN_STUN_IMMUNITY.get(), 100, 0));
                 player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 2));
             }
@@ -623,14 +623,14 @@ public class LivingEntityEventListeners {
         }
 
         //还没对话不能开打
-        if(event.getEntity() instanceof EndGolem endGolem) {
-            if(!endGolem.level().isClientSide) {
-                if(!TCREntityCapabilityProvider.getTCREntityPatch(endGolem).isFighting()) {
-                    if(event.getSource().getEntity() instanceof Player player) {
+        if (event.getEntity() instanceof EndGolem endGolem) {
+            if (!endGolem.level().isClientSide) {
+                if (!TCREntityCapabilityProvider.getTCREntityPatch(endGolem).isFighting()) {
+                    if (event.getSource().getEntity() instanceof Player player) {
                         player.displayClientMessage(TCRCoreMod.getInfo("talk_to_start").withStyle(ChatFormatting.GOLD), true);
                     }
                     LivingEntityPatch<?> entityPatch = EpicFightCapabilities.getEntityPatch(endGolem, LivingEntityPatch.class);
-                    if(entityPatch != null) {
+                    if (entityPatch != null) {
                         CEPatchUtils.addStamina(entityPatch, 999);
                     }
                     event.setCanceled(true);
@@ -645,22 +645,29 @@ public class LivingEntityEventListeners {
      */
     @SubscribeEvent
     public static void onLivingHurt(LivingHurtEvent event) {
-        if(event.getEntity() instanceof BaseBossEntity baseBossEntity) {
-            if(baseBossEntity.getMaxHealth() > 200) {
+        if (event.getEntity() instanceof BaseBossEntity baseBossEntity) {
+            if (baseBossEntity.getMaxHealth() > 200) {
                 float max = baseBossEntity.getMaxHealth() * 0.32F;
-                if(event.getAmount() > max) {
+                if (event.getAmount() > max) {
                     event.setAmount(max);
                 }
             }
         }
-        if(event.getSource().typeHolder().getTagKeys().anyMatch(damageTypeTagKey ->
-            damageTypeTagKey.location().getNamespace().equals(IronsSpellbooks.MODID)
+        if (!(event.getEntity() instanceof Player) && event.getSource().typeHolder().getTagKeys().anyMatch(damageTypeTagKey ->
+                damageTypeTagKey.location().getNamespace().equals(IronsSpellbooks.MODID)
         )) {
             LivingEntityPatch<?> patch = EpicFightCapabilities.getEntityPatch(event.getEntity(), LivingEntityPatch.class);
-            if(patch != null
+            if (patch != null
                     && !event.getEntity().hasEffect(EFNMobEffectRegistry.SIN_STUN_IMMUNITY.get())
                     && !event.getEntity().hasEffect(EpicFightMobEffects.STUN_IMMUNITY.get())) {
                 patch.applyStun(StunType.HOLD, Math.min(2, event.getAmount() * 0.33F));
+            }
+        }
+        //防止连续硬直
+        if(!(event.getEntity() instanceof Player)) {
+            if(event.getSource() instanceof EpicFightDamageSource epicFightDamageSource && epicFightDamageSource.getAnimation().registryName().getNamespace().equals(WeaponsOfMinecraft.MODID)) {
+                event.getEntity().addEffect(new MobEffectInstance(EpicFightMobEffects.STUN_IMMUNITY.get(), 60, 0, false, false, false));
+                event.getEntity().addEffect(new MobEffectInstance(EFNMobEffectRegistry.SIN_STUN_IMMUNITY.get(), 60, 0, false, false, false));
             }
         }
     }
@@ -717,7 +724,7 @@ public class LivingEntityEventListeners {
         ServerLevel serverLevel = (ServerLevel) event.getEntity().level();
 
         //处理多周目的boss加强
-        if(serverLevel.getServer().isSingleplayer() && TCRPlayer.SARDINE_COUNT > 0) {
+        if (serverLevel.getServer().isSingleplayer() && TCRPlayer.SARDINE_COUNT > 0) {
             if (event.getEntity() instanceof LivingEntity living && (living.getType().is(Tags.EntityTypes.BOSSES) || living instanceof Enemy)) {
                 EntityPatch<?> entitypatch = EpicFightCapabilities.getEntityPatch(living, LivingEntityPatch.class);
                 if (entitypatch != null && entitypatch.isInitialized() && !event.getEntity().getTags().contains("tcr-stronger-mob")) {
@@ -742,7 +749,7 @@ public class LivingEntityEventListeners {
         }
 
         //灾变人形送个重置石
-        if(event.getEntity() instanceof BaseBossEntity baseBossEntity && serverLevel.dimension() == PBF1Dimensions.SANCTUM_OF_THE_BATTLE_LEVEL_KEY && !baseBossEntity.getPersistentData().getBoolean("retracement_stone_given")) {
+        if (event.getEntity() instanceof BaseBossEntity baseBossEntity && serverLevel.dimension() == PBF1Dimensions.SANCTUM_OF_THE_BATTLE_LEVEL_KEY && !baseBossEntity.getPersistentData().getBoolean("retracement_stone_given")) {
             serverLevel.players().forEach(serverPlayer -> {
                 ItemUtil.addItemEntity(serverPlayer, TCRItems.RETRACEMENT_STONE.get().getDefaultInstance());
                 baseBossEntity.getPersistentData().putBoolean("retracement_stone_given", true);
@@ -818,9 +825,9 @@ public class LivingEntityEventListeners {
 
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingTickEvent event) {
-        if(event.getEntity() instanceof EndGolem endGolem) {
-            if(!endGolem.level().isClientSide) {
-                if(!TCREntityCapabilityProvider.getTCREntityPatch(endGolem).isFighting()) {
+        if (event.getEntity() instanceof EndGolem endGolem) {
+            if (!endGolem.level().isClientSide) {
+                if (!TCREntityCapabilityProvider.getTCREntityPatch(endGolem).isFighting()) {
                     endGolem.setTarget(null);
                 }
             }

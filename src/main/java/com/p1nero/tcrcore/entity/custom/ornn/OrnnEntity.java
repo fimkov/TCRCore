@@ -312,12 +312,20 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         ItemStack doppelganger = new ItemStack(Items.ENCHANTED_BOOK);
         EnchantmentHelper.setEnchantments(Map.of(EFNEnchantment.YAMATO_DOPPELGANGER.get(), 1), doppelganger);
 
+        ItemStack broad = new ItemStack(Items.ENCHANTED_BOOK);
+        EnchantmentHelper.setEnchantments(Map.of(EFNEnchantment.BROAD_BLADE_ENHANCE.get(), 1), broad);
+
+
         ItemStack skillBook = new ItemStack(EpicFightItems.SKILLBOOK.get());
         SkillBookItem.setContainingSkill(EFNSkills.ZANSETSU, skillBook);
 
         ItemStack skillBook2 = new ItemStack(EpicFightItems.SKILLBOOK.get());
         SkillBookItem.setContainingSkill(EFNSkills.MORTAL_BLADE, skillBook2);
 
+        offers.add(new MerchantOffer(
+                new ItemStack(TCRItems.PROOF_OF_ADVENTURE_PLUS.get(), 1),
+                broad,
+                142857, 0, 0.01f));
         offers.add(new MerchantOffer(
                 new ItemStack(TCRItems.FLAME_FRAGMENT.get(), 1),
                 new ItemStack(TCRItems.NETHERITE_FRAGMENT.get(), 1),

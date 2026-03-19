@@ -19,9 +19,9 @@ import yesman.epicfight.api.model.Armature;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 @Mixin(BasicMultipleAttackAnimation.class)
-public abstract class BasicMultipleAttackAnimationMixin extends AttackAnimation {
+public abstract class WOMBasicMultipleAttackAnimationMixin extends AttackAnimation {
 
-    public BasicMultipleAttackAnimationMixin(float transitionTime, float antic, float preDelay, float contact, float recovery, @Nullable Collider collider, Joint colliderJoint, AnimationManager.AnimationAccessor<? extends AttackAnimation> accessor, AssetAccessor<? extends Armature> armature) {
+    public WOMBasicMultipleAttackAnimationMixin(float transitionTime, float antic, float preDelay, float contact, float recovery, @Nullable Collider collider, Joint colliderJoint, AnimationManager.AnimationAccessor<? extends AttackAnimation> accessor, AssetAccessor<? extends Armature> armature) {
         super(transitionTime, antic, preDelay, contact, recovery, collider, colliderJoint, accessor, armature);
     }
 
