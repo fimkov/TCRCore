@@ -33,8 +33,8 @@
 	[properties.Layout_HOTBAR_1X9]
 		hotbar1x9Properties = "0.3515625000,0.9341317415,0.7815815210"
 		offhand1x9Properties = "0.3031249940,0.9311377406,0.7824444175"
-		centerHud1x9Properties = "0.3486394584,0.8383233547,0.6702424288"
-		xpBar1x9Properties = "0.4829931855,0.8383233547,0.7109642625"
+		centerHud1x9Properties = "0.3486394584,0.8562874198,0.6702424288"
+		xpBar1x9Properties = "0.4829931855,0.8562874198,0.7109642625"
 		statusValueBar1x9Properties = "0.6796875000,0.9520958066,0.7747759819"
 		1x9MainHandOffsets = "1,1,0,0"
 		hotbarEnabled = true
