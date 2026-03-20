@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.capability;
 
 import com.brass_amber.ba_bt.init.BTEntityType;
 import com.github.L_Ender.cataclysm.init.ModItems;
+import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
 import com.github.dodo.dodosmobs.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
 import com.obscuria.aquamirae.registry.AquamiraeEntities;
@@ -224,7 +225,7 @@ public class TCRQuests {
 
         TAME_DRAGON_BACK_TO_FERRY_GIRL = TCRQuestManager.create("tame_dragon_back_to_ferry_girl")
                 .shortDescParam(TCREntities.FERRY_GIRL.get().getDescription())
-                .descParam(TCREntities.FERRY_GIRL.get().getDescription(), TCREntities.FERRY_GIRL.get().getDescription())
+                .descParam(TCREntities.FERRY_GIRL.get().getDescription(), TCREntities.FERRY_GIRL.get().getDescription(), Items.SADDLE.getDescription(), DIItemRegistry.COLLAR_TAG.get().getDescription())
                 .withIcon(SIDE_QUEST_1)
                 .withTrackingPos(new BlockPos(WorldUtil.FERRY_GIRL_POS.above(1)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
