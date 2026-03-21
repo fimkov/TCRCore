@@ -68,6 +68,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.add("unlock_tip.epicskills.prodigy.critical_knowledge", " 击杀50只苦力怕和150只怪物");
         this.add("unlock_tip.epicskills.prodigy.dancing_blade", " 击杀5只女巫和150只怪物");
+        this.add("unlock_tip.epicskills.prodigy.lethal_focus", " 击杀 10 只邪恶骷髅 和 450 只怪物");
 
         this.add("travelerstitles.tcrcore.sanctum", "梦之领域");
         this.add("travelerstitles.tcrcore.real", "永远抵达不到的现实");

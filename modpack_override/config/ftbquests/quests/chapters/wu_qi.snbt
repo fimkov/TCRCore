@@ -472,40 +472,6 @@
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
-			icon: {
-				Count: 1
-				id: "super_golem:golem_heart"
-				tag: {
-					Damage: 0
-				}
-			}
-			icon_scale: 1.5d
-			id: "30D9DD9BAA59B75A"
-			rewards: [{
-				id: "7684D54545EC683F"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "none"
-			size: 1.5d
-			subtitle: "{ftbquests.chapter.wu_qi.quest3520088244414429018.subtitle}"
-			tasks: [{
-				id: "4966A9A9FBCB62AB"
-				item: {
-					Count: 1
-					id: "super_golem:golem_heart"
-					tag: {
-						Damage: 0
-					}
-				}
-				optional_task: true
-				type: "item"
-			}]
-			x: 6.75d
-			y: 5.25d
-		}
-		{
-			dependencies: ["2F9F109962C8ADF4"]
 			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "32C5B1F0B7165EC2"

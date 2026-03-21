@@ -232,6 +232,7 @@ key_key.parcool.openSetting:key.keyboard.unknown:NONE
 key_key.parcool.QuickTurn:key.keyboard.unknown:NONE
 key_key.parcool.Flipping:key.keyboard.unknown:NONE
 key_key.parcool.HangDown:key.mouse.right:NONE
+key_key.irons_spellbooks.spell_bar_modifier:key.keyboard.unknown
 key_keys.armourers_workshop.open-wardrobe:key.keyboard.p:CONTROL
 key_keys.armourers_workshop.undo:key.keyboard.unknown:NONE
 key_key.efn.doppelganger:key.keyboard.v:NONE

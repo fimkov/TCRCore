@@ -69,6 +69,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.add("unlock_tip.epicskills.prodigy.critical_knowledge", " Slaught 50 Creeper and 150 mobs");
         this.add("unlock_tip.epicskills.prodigy.dancing_blade", " Slaught 5 Witches and 150 mobs");
+        this.add("unlock_tip.epicskills.prodigy.lethal_focus", " Slaught 10 Evil Skeleton and 450 mobs");
 
         this.add("travelerstitles.tcrcore.sanctum", "Realm of Dreams");
         this.add("travelerstitles.tcrcore.real", "The Unreal Reality");

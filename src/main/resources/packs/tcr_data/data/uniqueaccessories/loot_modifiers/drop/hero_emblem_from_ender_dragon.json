@@ -1,0 +1,13 @@
+{
+  "type": "uniqueaccessories:add_item",
+  "conditions": [
+    { "condition": "forge:loot_table_id", "loot_table_id": "minecraft:entities/ender_dragon" },
+    {
+      "condition": "uniqueaccessories:config_random_chance",
+      "key": "hero_emblem.ender_dragon",
+      "default": 1.0
+    }
+  ],
+  "item": "minecraft:dragon_head",
+  "count": 1
+}

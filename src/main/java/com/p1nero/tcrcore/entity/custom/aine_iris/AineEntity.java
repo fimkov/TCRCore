@@ -93,6 +93,7 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
     private MerchantOffers bloodOffers = new MerchantOffers();
     private MerchantOffers evocationOffers = new MerchantOffers();
     private MerchantOffers natureOffers = new MerchantOffers();
+    private MerchantOffers ballOffers = new MerchantOffers();
 
     public AineEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
@@ -301,7 +302,8 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                         .addLeaf(SchoolRegistry.ENDER.get().getDisplayName(), -5)
                         .addLeaf(SchoolRegistry.BLOOD.get().getDisplayName(), -6)
                         .addLeaf(SchoolRegistry.EVOCATION.get().getDisplayName(), -7)
-                        .addLeaf(SchoolRegistry.NATURE.get().getDisplayName(), -8);
+                        .addLeaf(SchoolRegistry.NATURE.get().getDisplayName(), -8)
+                        .addLeaf(ItemRegistry.UPGRADE_ORB.get().getDescription(), -9);
                 root.addChild(learnMagic);
                 root.addLeaf(dBuilder.opt(-4), 8);
             }
@@ -396,7 +398,7 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         }
 
         //法术交易
-        if (code <= -1 && code >= -8) {
+        if (code <= -1 && code >= -9) {
             switch (code) {
                 case -1 -> offers = iceOffers;
                 case -2 -> offers = fireOffers;
@@ -406,6 +408,7 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 case -6 -> offers = bloodOffers;
                 case -7 -> offers = evocationOffers;
                 case -8 -> offers = natureOffers;
+                case -9 -> offers = ballOffers;
             }
             this.startTrade(serverPlayer);
         }
@@ -479,6 +482,7 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         bloodOffers = new MerchantOffers();
         evocationOffers = new MerchantOffers();
         natureOffers = new MerchantOffers();
+        ballOffers = new MerchantOffers();
         // 冰霜
         iceOffers.add(new MerchantOffer(
                 new ItemStack(ItemRegistry.FROZEN_BONE_SHARD.get(), 1),
@@ -803,6 +807,52 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(Items.POISONOUS_POTATO, 3),
                 new ItemStack(Items.MOSS_BLOCK, 1),
                 getSpellScroll(SpellRegistry.STOMP_SPELL.get()),
+                142857, 0, 0.01f));
+
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(ItemRegistry.FROZEN_BONE_SHARD.get(), 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.ICE_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(ItemRegistry.BLOODY_VELLUM.get(), 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.BLOOD_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(Items.ENDER_EYE, 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.ENDER_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(Items.POISONOUS_POTATO, 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.NATURE_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(ItemRegistry.LIGHTNING_BOTTLE.get(), 1),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.LIGHTNING_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(Items.EMERALD, 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.EVOCATION_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(Items.NETHERITE_INGOT, 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.PROTECTION_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(ItemRegistry.ARCANE_ESSENCE.get(), 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.MANA_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
+                new ItemStack(TCRItems.SOUL_FRAGMENT.get(), 1),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.COOLDOWN_UPGRADE_ORB.get().getDefaultInstance(),
                 142857, 0, 0.01f));
     }
 

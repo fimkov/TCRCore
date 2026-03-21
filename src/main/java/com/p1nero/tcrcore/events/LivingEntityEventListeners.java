@@ -19,7 +19,6 @@ import com.github.alexthe668.domesticationinnovation.server.entity.TameableUtils
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.Bone_Chimera_Entity;
 import com.hm.efn.registries.EFNItem;
 import com.hm.efn.registries.EFNMobEffectRegistry;
-import com.merlin204.sg.item.SGItems;
 import com.obscuria.aquamirae.Aquamirae;
 import com.obscuria.aquamirae.AquamiraeUtils;
 import com.obscuria.aquamirae.common.entities.CaptainCornelia;
@@ -58,6 +57,8 @@ import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
+import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.kenddie.fantasyarmor.item.FAItems;
 import net.magister.bookofdragons.entity.base.dragon.DragonBase;
 import net.minecraft.ChatFormatting;
@@ -160,7 +161,6 @@ public class LivingEntityEventListeners {
     public static void onEntityDrop(LivingDropsEvent event) {
         LivingEntity entity = event.getEntity();
         if (!entity.level().isClientSide) {
-
             if (entity instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_GOLEM)) {
                 ItemUtil.addItemEntity(entity, TCRItems.DIVINE_FRAGMENT.get(), 1, ChatFormatting.AQUA.getColor());
                 event.setCanceled(true);
@@ -232,6 +232,7 @@ public class LivingEntityEventListeners {
                 } else if (livingEntity instanceof Maledictus_Entity) {
                     if (!PlayerDataManager.cursedEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
+                        ItemUtil.addItemEntity(player, ItemRegistry.FROZEN_BONE_SHARD.get(), 2, ChatFormatting.YELLOW.getColor().intValue());
                         PlayerDataManager.cursedEyeKilled.put(player, true);
                     }
                 } else if (livingEntity instanceof Ancient_Remnant_Entity) {
@@ -304,14 +305,17 @@ public class LivingEntityEventListeners {
                         givePlayerAward(player, 1);
                         FakeSkyGolem fakeSkyGolem = new FakeSkyGolem(player);
                         fakeSkyGolem.setPos(player.position());
+                        fakeSkyGolem.setGlowingTag(true);
                         player.serverLevel().addFreshEntity(fakeSkyGolem);
                         TCRQuests.TALK_TO_SKY_GOLEM.start(player);
                     }
                 } else if (livingEntity instanceof EndGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_VOID_EYE)) {
                         givePlayerAward(player, 2);
+                        ItemUtil.addItemEntity(player, UAItems.HERO_EMBLEM.get(), 1);
                         FakeEndGolem fakeEndGolem = new FakeEndGolem(player);
-                        fakeEndGolem.setPos(player.position());
+                        fakeEndGolem.setPos(player.position().add(0, 3, 0));
+                        fakeEndGolem.setGlowingTag(true);
                         player.serverLevel().addFreshEntity(fakeEndGolem);
                     }
                 } else if (livingEntity instanceof ScyllaHumanoid) {
@@ -431,7 +435,6 @@ public class LivingEntityEventListeners {
             if (livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_GOLEM) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
                 EntityRespawnerMod.addToRespawn(ironGolem, 60, true);
-                ItemUtil.addItemEntity(livingEntity, SGItems.GOLEM_HEART.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 ItemUtil.addItemEntity(livingEntity, TCRItems.DIVINE_FRAGMENT.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 ItemUtil.addItemEntity(livingEntity, BTItems.SKY_MONOLITH_KEY.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
