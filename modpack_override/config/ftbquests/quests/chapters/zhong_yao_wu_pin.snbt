@@ -378,6 +378,25 @@
 			x: -4.0d
 			y: -6.0d
 		}
+		{
+			id: "77EF2682BD801FA4"
+			invisible: true
+			rewards: [{
+				id: "2ADD176C52B6C976"
+				type: "xp"
+				xp: 1
+			}]
+			shape: "none"
+			size: 2.0d
+			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest77EF2682BD801FA4.subtitle}"
+			tasks: [{
+				id: "78B8DC3D1870303F"
+				item: "tcrcore:proof_of_adventure_plus"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 3.0d
+		}
 	]
 	title: "{ftbquests.chapter.zhong_yao_wu_pin.title}"
 }
