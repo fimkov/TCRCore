@@ -59,7 +59,7 @@ public class DragonFluteItem extends SimpleDescriptionItem {
 
     @Override
     public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack itemStack, Player player, @NotNull LivingEntity entity, @NotNull InteractionHand hand) {
-        if (!player.level().isClientSide && !itemStack.getOrCreateTag().contains("entity")) {
+        if (!player.level().isClientSide && !itemStack.getOrCreateTag().contains("entity") && !entity.isVehicle()) {
             if(entity instanceof DragonBase) {
                 saveToItem(player.getItemInHand(hand), entity);
             } else {
