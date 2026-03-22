@@ -44,7 +44,7 @@ public abstract class TakeDamageEventAttackMixin extends AbstractPlayerEvent<Ser
             //反弹凋零伤害
             TakeDamageEvent.Attack attackEvent = ((TakeDamageEvent.Attack)(Object)this);
             if(attackEvent.getDamageSource().getEntity() instanceof WitherBoss witherBoss) {
-                witherBoss.hurt(witherBoss.damageSources().playerAttack(serverPlayer), attackEvent.getDamage() * 0.5F);
+                witherBoss.hurt(witherBoss.damageSources().playerAttack(serverPlayer), witherBoss.getMaxHealth() * 0.06F);
             }
         }
     }
