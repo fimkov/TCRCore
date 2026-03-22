@@ -269,7 +269,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神谕残卷");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
-        this.add("wither_parry_tip", "完美弹反以反击[%s]！");
+        this.addInfo("shake_penalty_warning", "[警告]:连续抖刀将增加耐力消耗！");
+        this.addInfo("wither_parry_tip", "完美弹反以反击[%s]！");
         this.addInfo("more_beautiful_models_and_trail", "定制3D武器刀光制材质拓展，可选");
         this.addInfo("talk_to_start", "对话以开始战斗");
         this.addInfo("temp_dragon_flute", "[临时龙之笛]：使用后将消耗！");

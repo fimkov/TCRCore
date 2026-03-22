@@ -271,7 +271,8 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
-        this.add("wither_parry_tip", "Perfect Parry to hurt [%s]!");
+        this.addInfo("shake_penalty_warning", "[Warning]:Shake will consume more stamina!");
+        this.addInfo("wither_parry_tip", "Perfect Parry to hurt [%s]!");
         this.addInfo("more_beautiful_models_and_trail", "Custom 3D weapon trail texture expansion, optional");
         this.addInfo("talk_to_start", "Talk to start fighting");
         this.addInfo("temp_dragon_flute", "[Temporary Dragon Flute]: It will be consumed after use!");

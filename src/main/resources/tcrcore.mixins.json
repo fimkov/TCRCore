@@ -63,6 +63,7 @@
     "epicfight.DodgeAnimationMixin",
     "epicfight.DodgeLocationIndicatorMixin",
     "epicfight.DodgeSkillMixin",
+    "epicfight.EFNParryingSkillMixin",
     "epicfight.EFXAnimationUtilsMixin",
     "epicfight.EFXLootMixin",
     "epicfight.EmergencyEscapeMixin",

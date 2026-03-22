@@ -2021,6 +2021,11 @@
 		{
 			dependencies: ["0C51C2F3266B0A59"]
 			id: "57E56FB77043E3CB"
+			rewards: [{
+				id: "15E330932CA83D10"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			subtitle: "{ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.subtitle}"
@@ -2042,6 +2047,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			id: "3A35B2F3F4ED6EDC"
+			rewards: [{
+				id: "09C6F96AF32E80A4"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			tasks: [{
@@ -2055,6 +2065,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			id: "48DE5C747A7DFF08"
+			rewards: [{
+				id: "388339CE18F5C207"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			tasks: [{
@@ -2068,6 +2083,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			id: "4F8A5F627755A17A"
+			rewards: [{
+				id: "4E9EC461A20DA8DE"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			tasks: [{
@@ -2081,6 +2101,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			id: "395C30642B3F2BA7"
+			rewards: [{
+				id: "4C1FE3C1E5591BE5"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			tasks: [{
@@ -2094,6 +2119,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			id: "48156D5167648010"
+			rewards: [{
+				id: "601515E69311DFBF"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			tasks: [{
@@ -2107,6 +2137,11 @@
 		{
 			dependencies: ["2F9F109962C8ADF4"]
 			id: "223808CCAFBCA915"
+			rewards: [{
+				id: "36D3E36CA75C01BB"
+				type: "xp"
+				xp: 1
+			}]
 			shape: "none"
 			size: 1.5d
 			tasks: [{
