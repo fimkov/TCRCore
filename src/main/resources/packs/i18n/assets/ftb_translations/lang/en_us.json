@@ -115,6 +115,8 @@
   "ftbquests.chapter.wu_qi.quest5465744286518435450.description1": "Master the §cPower of Flame§r, a heavy and stylish weapon.",
   "ftbquests.chapter.wu_qi.quest5465744286518435450.subtitle": "Defeat the §c{entity.minecraft.wither}§r to obtain §d{item.minecraft.nether_star§r, smithing with the {block.minecraft.smithing_table}.",
   "ftbquests.chapter.wu_qi.quest5576167974382138060.subtitle": "Obtained by crafting",
+  "ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.subtitle": "Unleash the full power of [&4{item.efn.kusabimaru}&r]!",
+  "ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.title": "{skill.efn.mortal_blade}",
   "ftbquests.chapter.wu_qi.quest5850307671537924095.description1": "Works In Progress",
   "ftbquests.chapter.wu_qi.quest5850307671537924095.subtitle": "Obtained by Fused on {block.cataclysm.mechanical_fusion_anvil}",
   "ftbquests.chapter.wu_qi.quest5B90C05F6E086DE3.subtitle": "Obtained from &6specific structure's {block.lootr.lootr_inventory}&r",

@@ -115,6 +115,8 @@
   "ftbquests.chapter.wu_qi.quest5465744286518435450.description1": "掌控\u0026c火焰之力\u0026r，沉重而帅气的武器",
   "ftbquests.chapter.wu_qi.quest5465744286518435450.subtitle": "击败\u0026c{entity.minecraft.wither}\u0026r获取\u0026d{item.minecraft.nether_star}\u0026r在{block.minecraft.smithing_table}锻造",
   "ftbquests.chapter.wu_qi.quest5576167974382138060.subtitle": "合成获得",
+  "ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.subtitle": "解放[&4{item.efn.kusabimaru}&r]的全部力量！",
+  "ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.title": "{skill.efn.mortal_blade}",
   "ftbquests.chapter.wu_qi.quest5850307671537924095.description1": "尚未完工",
   "ftbquests.chapter.wu_qi.quest5850307671537924095.subtitle": "在{block.cataclysm.mechanical_fusion_anvil}中融合获得",
   "ftbquests.chapter.wu_qi.quest5B90C05F6E086DE3.subtitle": "在&6特定结构的{block.lootr.lootr_inventory}&r拿取",

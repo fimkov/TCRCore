@@ -47,7 +47,7 @@
 			}]
 			title: "{ftbquests.chapter.wu_qi.quest3431479692052966900.title}"
 			x: 0.0d
-			y: 6.25d
+			y: 8.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -96,8 +96,8 @@
 				optional_task: true
 				type: "item"
 			}]
-			x: 4.5d
-			y: 0.75d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -123,7 +123,7 @@
 				type: "item"
 			}]
 			x: 9.0d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -142,8 +142,8 @@
 				item: "efn:nf_claw"
 				type: "item"
 			}]
-			x: 2.25d
-			y: 0.75d
+			x: 4.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["42B7E4648BDE15AD"]
@@ -226,10 +226,10 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["48DE5C747A7DFF08"]
 			hide_dependency_lines: false
 			icon: "efn:sword_of_pioneer"
 			icon_scale: 1.5d
@@ -335,9 +335,8 @@
 			y: -8.0d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["223808CCAFBCA915"]
 			hide_dependency_lines: false
-			hide_dependent_lines: true
 			icon: "efn:ruinsgreatsword"
 			icon_scale: 1.5d
 			id: "17897B4EE1A6C899"
@@ -355,12 +354,13 @@
 				optional_task: true
 				type: "item"
 			}]
-			x: 11.25d
+			x: 6.75d
 			y: 0.75d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["395C30642B3F2BA7"]
 			description: ["{ftbquests.chapter.wu_qi.quest8446857425516070955.description1}"]
+			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "753944133C41882B"
 			rewards: [{
@@ -384,12 +384,13 @@
 					type: "item"
 				}
 			]
-			x: -2.25d
+			x: -4.5d
 			y: 0.75d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["4F8A5F627755A17A"]
 			description: ["{ftbquests.chapter.wu_qi.quest6948876923325267382.description1}"]
+			hide_dependency_lines: false
 			icon: "efn:nf_dual_sword"
 			icon_scale: 1.5d
 			id: "606F5EBEBAB63DB6"
@@ -438,7 +439,7 @@
 			]
 			title: "{ftbquests.chapter.wu_qi.quest3746410661820674281.title}"
 			x: -4.5d
-			y: 0.75d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -471,7 +472,7 @@
 			y: -14.5d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["3A35B2F3F4ED6EDC"]
 			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "32C5B1F0B7165EC2"
@@ -532,7 +533,7 @@
 				optional_task: true
 				type: "item"
 			}]
-			x: -9.0d
+			x: 11.25d
 			y: 5.25d
 		}
 		{
@@ -586,7 +587,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -619,7 +620,7 @@
 				type: "item"
 			}]
 			x: -11.25d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -652,7 +653,7 @@
 				type: "item"
 			}]
 			x: -6.75d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -685,7 +686,7 @@
 				type: "item"
 			}]
 			x: 11.25d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -726,7 +727,7 @@
 				type: "item"
 			}]
 			x: 11.25d
-			y: 5.25d
+			y: 7.5d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -759,7 +760,7 @@
 				type: "item"
 			}]
 			x: 6.75d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -792,7 +793,7 @@
 				type: "item"
 			}]
 			x: 4.5d
-			y: 7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1215,11 +1216,12 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
-			y: 5.25d
+			x: -11.25d
+			y: 7.5d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["395C30642B3F2BA7"]
+			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "0C51C2F3266B0A59"
 			rewards: [{
@@ -1235,11 +1237,12 @@
 				item: "efn:kusabimaru"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -2.25d
 			y: 0.75d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["48156D5167648010"]
+			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "079E905C9C12E9C6"
 			rewards: [{
@@ -1255,11 +1258,12 @@
 				item: "efn:crimson_moon"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 2.25d
 			y: 0.75d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["48156D5167648010"]
+			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "122987FF202B9F24"
 			rewards: [{
@@ -1275,7 +1279,7 @@
 				item: "efn:thornwheel"
 				type: "item"
 			}]
-			x: 6.75d
+			x: 0.0d
 			y: 0.75d
 		}
 		{
@@ -1301,7 +1305,7 @@
 				}
 				type: "item"
 			}]
-			x: -11.25d
+			x: 9.0d
 			y: 5.25d
 		}
 		{
@@ -1328,7 +1332,7 @@
 				type: "item"
 			}]
 			x: 2.25d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1354,7 +1358,7 @@
 				type: "item"
 			}]
 			x: 4.5d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1380,7 +1384,7 @@
 				type: "item"
 			}]
 			x: -11.25d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1406,7 +1410,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1432,7 +1436,7 @@
 				type: "item"
 			}]
 			x: -6.75d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1471,7 +1475,7 @@
 				}
 			]
 			x: 6.75d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1497,7 +1501,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1524,7 +1528,7 @@
 				type: "item"
 			}]
 			x: -2.25d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1550,7 +1554,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 3.0d
+			y: 5.25d
 		}
 		{
 			dependencies: ["2F9F109962C8ADF4"]
@@ -1969,7 +1973,8 @@
 			y: -11.0d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["223808CCAFBCA915"]
+			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "4A948CBBF49C9513"
 			rewards: [{
@@ -1986,10 +1991,11 @@
 				type: "item"
 			}]
 			x: 9.0d
-			y: 3.0d
+			y: 0.75d
 		}
 		{
-			dependencies: ["2F9F109962C8ADF4"]
+			dependencies: ["223808CCAFBCA915"]
+			hide_dependency_lines: false
 			icon_scale: 1.5d
 			id: "27A558871393BF23"
 			rewards: [{
@@ -2010,6 +2016,105 @@
 				type: "item"
 			}]
 			x: 11.25d
+			y: 0.75d
+		}
+		{
+			dependencies: ["0C51C2F3266B0A59"]
+			id: "57E56FB77043E3CB"
+			shape: "none"
+			size: 1.5d
+			subtitle: "{ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.subtitle}"
+			tasks: [{
+				id: "688ED697A4A43758"
+				item: {
+					Count: 1
+					id: "epicfight:skillbook"
+					tag: {
+						skill: "efn:mortal_blade"
+					}
+				}
+				type: "item"
+			}]
+			title: "{ftbquests.chapter.wu_qi.quest57E56FB77043E3CB.title}"
+			x: -2.25d
+			y: -0.75d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			id: "3A35B2F3F4ED6EDC"
+			shape: "none"
+			size: 1.5d
+			tasks: [{
+				id: "5E7A13492F7DCF1B"
+				item: "ba_bt:land_golem_eye"
+				type: "item"
+			}]
+			x: -11.25d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			id: "48DE5C747A7DFF08"
+			shape: "none"
+			size: 1.5d
+			tasks: [{
+				id: "2027EAD07A7CCCF7"
+				item: "ba_bt:ocean_golem_eye"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			id: "4F8A5F627755A17A"
+			shape: "none"
+			size: 1.5d
+			tasks: [{
+				id: "6115FE9D6AC4D21F"
+				item: "ba_bt:core_golem_eye"
+				type: "item"
+			}]
+			x: -6.75d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			id: "395C30642B3F2BA7"
+			shape: "none"
+			size: 1.5d
+			tasks: [{
+				id: "60360B6FCC5216BB"
+				item: "ba_bt:nether_golem_eye"
+				type: "item"
+			}]
+			x: -2.25d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			id: "48156D5167648010"
+			shape: "none"
+			size: 1.5d
+			tasks: [{
+				id: "14648B3CAB2FC7B0"
+				item: "ba_bt:sky_golem_eye"
+				type: "item"
+			}]
+			x: 2.25d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2F9F109962C8ADF4"]
+			id: "223808CCAFBCA915"
+			shape: "none"
+			size: 1.5d
+			tasks: [{
+				id: "5F24EB616DF92CB7"
+				item: "ba_bt:end_golem_eye"
+				type: "item"
+			}]
+			x: 9.0d
 			y: 3.0d
 		}
 	]
