@@ -234,6 +234,7 @@ public class LivingEntityEventListeners {
                         givePlayerAward(player, 2);
                         PlayerDataManager.abyssEyeKilled.put(player, true);
                     }
+                    ItemUtil.addItemEntity(player, Items.ECHO_SHARD, 6, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof Maledictus_Entity) {
                     if (!PlayerDataManager.cursedEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
