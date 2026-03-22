@@ -106,116 +106,6 @@
     },
     {
       "ability_points": 3,
-      "conditions": {
-        "type_specific": {
-          "type": "player",
-          "stats": [
-            {
-              "type": "minecraft:killed",
-              "stat": "minecraft:creeper",
-              "value": {
-                "min": 50
-              }
-            },
-            {
-              "type": "minecraft:custom",
-              "stat": "minecraft:mob_kills",
-              "value": {
-                "min": 150
-              }
-            }
-          ]
-        }
-      },
-      "unlock_tip": "unlock_tip.epicskills.prodigy.critical_knowledge",
-      "custom_condition": false,
-      "hidden": false,
-      "position_in_screen": [
-        650,
-        100
-      ],
-      "skill": "wom:critical_knowledge"
-    },
-    {
-      "ability_points": 3,
-      "conditions": {
-        "type_specific": {
-          "type": "player",
-          "stats": [
-            {
-              "type": "minecraft:killed",
-              "stat": "minecraft:witch",
-              "value": {
-                "min": 5
-              }
-            },
-            {
-              "type": "minecraft:custom",
-              "stat": "minecraft:mob_kills",
-              "value": {
-                "min": 150
-              }
-            }
-          ]
-        }
-      },
-      "unlock_tip": "unlock_tip.epicskills.prodigy.dancing_blade",
-      "custom_condition": false,
-      "hidden": false,
-      "position_in_screen": [
-        700,
-        100
-      ],
-      "skill": "wom:dancing_blade"
-    },
-    {
-      "ability_points": 4,
-      "parents": [
-        {
-          "control_points": [
-            [
-              700,
-              200
-            ]
-          ],
-          "skill": "wom:dancing_blade"
-        },
-        {
-          "skill": "wom:critical_knowledge"
-        }
-      ],
-      "conditions": {
-        "type_specific": {
-          "type": "player",
-          "stats": [
-            {
-              "type": "minecraft:killed",
-              "stat": "wom:evil_skeleton",
-              "value": {
-                "min": 10
-              }
-            },
-            {
-              "type": "minecraft:custom",
-              "stat": "minecraft:mob_kills",
-              "value": {
-                "min": 450
-              }
-            }
-          ]
-        }
-      },
-      "unlock_tip": "unlock_tip.epicskills.prodigy.lethal_focus",
-      "custom_condition": false,
-      "hidden": false,
-      "position_in_screen": [
-        650,
-        200
-      ],
-      "skill": "wom:lethal_focus"
-    },
-    {
-      "ability_points": 3,
       "hidden": false,
       "parents": [
         {
@@ -241,26 +131,6 @@
         200
       ],
       "skill": "wom:mindset"
-    },
-    {
-      "ability_points": 4,
-      "hidden": false,
-      "parents": [
-        {
-          "control_points": [
-            [
-              300,
-              250
-            ]
-          ],
-          "skill": "wom:mindset"
-        }
-      ],
-      "position_in_screen": [
-        250,
-        250
-      ],
-      "skill": "wom:adrenaline"
     },
     {
       "ability_points": 4,
@@ -599,11 +469,7 @@
     },
     {
       "ability_points": 4,
-      "parents": [
-        {
-          "skill": "wom:lethal_focus"
-        }
-      ],
+      "parents": [],
       "conditions": {
         "type_specific": {
           "type": "player",
@@ -821,7 +687,6 @@
         {
           "skill": "wom:dopamine"
         }
-
       ],
       "conditions": {
         "type_specific": {
