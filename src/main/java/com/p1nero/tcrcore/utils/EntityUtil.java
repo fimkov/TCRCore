@@ -13,6 +13,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.FireBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
@@ -31,6 +34,37 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class EntityUtil {
+
+    public static void destroyNearby(Entity living, float scale, boolean drop) {
+        if(living == null) {
+            return;
+        }
+        Vec3 offset = living.getLookAngle().normalize().scale(scale);
+        int ox = Mth.floor(living.getX() + offset.x);
+        int oy = Mth.floor(living.getY() + (double)0.25F);
+        int oz = Mth.floor(living.getZ() + offset.z);
+        int width = Mth.ceil(living.getBbWidth() / 2.0F);
+        int height = Mth.ceil(living.getBbHeight());
+        boolean playEffectFlag = false;
+
+        for(int ix = ox - width; ix <= ox + width; ++ix) {
+            for(int iy = oy; iy <= oy + height; ++iy) {
+                for(int iz = oz - width; iz <= oz + width; ++iz) {
+                    BlockPos pos = new BlockPos(ix, iy, iz);
+                    BlockState state = living.level().getBlockState(pos);
+                    if (state.getBlock() instanceof FireBlock) {
+                        living.level().destroyBlock(pos, false, living);
+                    } else {
+                        playEffectFlag |= living.level().destroyBlock(pos, drop, living);
+                    }
+                }
+            }
+        }
+
+        if (playEffectFlag) {
+            living.level().gameEvent(living, GameEvent.BLOCK_DESTROY, living.blockPosition());
+        }
+    }
 
     public static void entityForceExecuteToDie(LivingEntity executor, LivingEntity target) {
         if (executor != null && target != null) {

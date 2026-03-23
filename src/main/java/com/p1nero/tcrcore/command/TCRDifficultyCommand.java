@@ -34,7 +34,9 @@ public class TCRDifficultyCommand {
     private static int setDifficulty(CommandContext<CommandSourceStack> context) {
         CommandSourceStack source = context.getSource();
 
-        if (!source.hasPermission(2)) {
+        MinecraftServer server = source.getServer();
+
+        if (!source.hasPermission(2) && server.isDedicatedServer()) {
             source.sendFailure(TCRCoreMod.getInfo("difficulty_change_failed").withStyle(ChatFormatting.RED));
             return 0;
         }
@@ -46,9 +48,6 @@ public class TCRDifficultyCommand {
             source.sendFailure(TCRCoreMod.getInfo("difficulty_change_failed").withStyle(ChatFormatting.RED));
             return 0;
         }
-
-        // 获取 MinecraftServer 对象
-        MinecraftServer server = source.getServer();
 
         // 通过 TCRMainLevelSaveData 保存难度（传入 MinecraftServer）
         TCRMainLevelSaveData.get(server).setDifficulty(difficulty);

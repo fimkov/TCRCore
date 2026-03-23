@@ -1,8 +1,6 @@
 package com.p1nero.tcrcore.worldgen.structure;
 
-import com.brass_amber.ba_bt.block.block.BTChestBlock;
 import com.brass_amber.ba_bt.entity.block.BTMonolith;
-import com.brass_amber.ba_bt.entity.hostile.golem.NetherGolem;
 import com.brass_amber.ba_bt.init.BTEntityType;
 import com.mojang.serialization.Codec;
 import java.util.HashMap;
@@ -16,22 +14,19 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
-import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructurePieceAccessor;
@@ -42,11 +37,10 @@ import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilde
 import net.minecraft.world.level.levelgen.structure.templatesystem.ProtectedBlockProcessor;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
-import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.NotNull;
 import org.violetmoon.quark.content.mobs.entity.Forgotten;
 import org.violetmoon.quark.content.mobs.module.ForgottenModule;
+import yesman.epicfight.world.item.EpicFightItems;
 
 public class NetherGateOfDisaster extends Structure {
     public static final ResourceLocation GATE_OF_DISASTER_P1 = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "gate_of_disaster_part1");
@@ -168,59 +162,30 @@ public class NetherGateOfDisaster extends Structure {
         @Override
         protected void handleDataMarker(@NotNull String pName, @NotNull BlockPos pPos, @NotNull ServerLevelAccessor pLevel, @NotNull RandomSource pRandom, @NotNull BoundingBox pBox) {
             if (pName.equals("boss_spawn")) {
-                BlockPos above2 = pPos.above(2);
-                BTMonolith bossSpawner = BTEntityType.NETHER_MONOLITH.get().spawn(pLevel.getLevel(), above2, MobSpawnType.SPAWNER);
+                BTMonolith bossSpawner = BTEntityType.NETHER_MONOLITH.get().create(pLevel.getLevel());
                 if (bossSpawner != null) {
-                    bossSpawner.moveTo((double)pPos.getX() + (double)0.5F, pPos.getY() + 2, (double)pPos.getZ() + (double)0.5F, 0.0F, 0.0F);
+                    bossSpawner.moveTo((double)pPos.getX() + (double)0.5F, pPos.getY() + 1, (double)pPos.getZ() + (double)0.5F, 0.0F, 0.0F);
                     pLevel.addFreshEntity(bossSpawner);
                     bossSpawner.setKeyCountInEntity(1);
-                    destroyNearby(bossSpawner, 5);
+                    pLevel.addFreshEntity(bossSpawner);
+//                    destroyNearby(bossSpawner, 5);
                 }
                 BlockPos pos1 = pPos.offset(pRandom.nextInt(5), 2, pRandom.nextInt(5));
-                Forgotten forgotten = ForgottenModule.forgottenType.spawn(pLevel.getLevel(), pos1, MobSpawnType.SPAWNER);
-                if(forgotten != null) {
-                    forgotten.addTag("tcr_drop_nether_golem_key");
-                    forgotten.setGlowingTag(true);
-                    destroyNearby(forgotten, 5);
+                PiglinBrute piglinBrute = EntityType.PIGLIN_BRUTE.create(pLevel.getLevel());
+                if(piglinBrute != null) {
+                    piglinBrute.moveTo((double)pos1.getX() + (double)0.5F, pos1.getY() + 2, (double)pos1.getZ() + (double)0.5F, 0.0F, 0.0F);
+                    piglinBrute.addTag("tcr_drop_nether_golem_key");
+                    piglinBrute.setGlowingTag(true);
+                    piglinBrute.setItemInHand(InteractionHand.MAIN_HAND, EpicFightItems.GOLDEN_TACHI.get().getDefaultInstance());
+                    pLevel.addFreshEntity(piglinBrute);
+//                    destroyNearby(piglinBrute, 5);
                 }
 
+                //清理自己
                 pLevel.setBlock(pPos, Blocks.AIR.defaultBlockState(), 2);
             }
 
         }
 
-        private void destroyNearby(Entity living, float scale) {
-            if(living == null) {
-                return;
-            }
-            Vec3 offset = living.getLookAngle().normalize().scale(scale);
-            int ox = Mth.floor(living.getX() + offset.x);
-            int oy = Mth.floor(living.getY() + (double)0.25F);
-            int oz = Mth.floor(living.getZ() + offset.z);
-            int width = Mth.ceil(living.getBbWidth() / 2.0F);
-            int height = Mth.ceil(living.getBbHeight());
-            boolean playEffectFlag = false;
-
-            for(int ix = ox - width; ix <= ox + width; ++ix) {
-                for(int iy = oy; iy <= oy + height; ++iy) {
-                    for(int iz = oz - width; iz <= oz + width; ++iz) {
-                        BlockPos pos = new BlockPos(ix, iy, iz);
-                        BlockState state = living.level().getBlockState(pos);
-                        boolean isChest = state.getBlock() instanceof BTChestBlock;
-                        if (!isChest) {
-                            playEffectFlag |= living.level().destroyBlock(pos, true, living);
-                            if (state.getBlock() instanceof FireBlock) {
-                                living.level().destroyBlock(pos, false, living);
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (playEffectFlag) {
-                living.level().gameEvent(living, GameEvent.BLOCK_DESTROY, living.blockPosition());
-            }
-        }
-        
     }
 }

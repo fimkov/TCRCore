@@ -30,6 +30,18 @@ public class TCRMainLevelSaveData extends SavedData {
         return difficulty;
     }
 
+    public boolean isHardDifficulty() {
+        return difficulty.equals(Difficulty.HARD);
+    }
+
+    public boolean isEasyDifficulty() {
+        return difficulty.equals(Difficulty.EASY);
+    }
+
+    public boolean isNormalDifficulty() {
+        return difficulty.equals(Difficulty.NORMAL);
+    }
+
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
     }

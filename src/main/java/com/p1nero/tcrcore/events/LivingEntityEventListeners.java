@@ -100,6 +100,7 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Guardian;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
+import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -122,7 +123,6 @@ import net.shelmarow.combat_evolution.ai.iml.ILivingEntityData;
 import net.shelmarow.combat_evolution.ai.util.CEPatchUtils;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
 import org.merlin204.wraithon.worldgen.WraithonDimensions;
-import org.violetmoon.quark.content.mobs.entity.Forgotten;
 import reascer.wom.main.WeaponsOfMinecraft;
 import reascer.wom.world.entity.mob.EvilSkeleton;
 import reascer.wom.world.entity.mob.Saulomonk;
@@ -177,12 +177,7 @@ public class LivingEntityEventListeners {
             if (entity instanceof IronGolem ironGolem && WorldUtil.isInStructure(ironGolem, WorldUtil.SKY_GOLEM)) {
                 ItemUtil.addItemEntity(entity, TCRItems.DIVINE_FRAGMENT.get(), 1, ChatFormatting.AQUA.getColor());
                 event.setCanceled(true);
-            }
-
-            if(entity instanceof Forgotten) {
-                if(entity.getTags().contains("tcr_drop_nether_golem_key")) {
-                    ItemUtil.addItemEntity(entity, BTItems.NETHER_MONOLITH_KEY.get(), 1, ChatFormatting.GOLD.getColor());
-                }
+                return;
             }
 
             if (entity instanceof Pillager) {
@@ -289,6 +284,9 @@ public class LivingEntityEventListeners {
                     //有任务才会掉
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_DESERT_EYE)) {
                         givePlayerAward(player, 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, TCRItems.ARTIFACT_TICKET.get(), 1);
+                        }
                         ItemUtil.addItemEntity(player, ModItems.DESERT_EYE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
@@ -296,6 +294,9 @@ public class LivingEntityEventListeners {
                 } else if (livingEntity instanceof OceanGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_OCEAN_EYE)) {
                         givePlayerAward(player, 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, Items.NAUTILUS_SHELL, 6);
+                        }
                         ItemUtil.addItemEntity(player, ModItems.ABYSS_EYE.get(), 1, ChatFormatting.BLUE.getColor().intValue());
                         ItemUtil.addItemEntity(player, AquamiraeItems.SHIP_GRAVEYARD_ECHO.get(), 1, ChatFormatting.BLUE.getColor().intValue());
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
@@ -311,6 +312,9 @@ public class LivingEntityEventListeners {
                 } else if (livingEntity instanceof CoreGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_FLAME_EYE)) {
                         givePlayerAward(player, 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, UAItems.SUN_STONE.get(), 1);
+                        }
                         ItemUtil.addItemEntity(player, ModItems.FLAME_EYE.get(), 1, ChatFormatting.RED.getColor().intValue());
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
@@ -319,6 +323,9 @@ public class LivingEntityEventListeners {
                 } else if (livingEntity instanceof NetherGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_MONST_EYE)) {
                         givePlayerAward(player, 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, 1, ChatFormatting.DARK_RED.getColor().intValue());
+                        }
                         ItemUtil.addItemEntity(player, ModItems.MONSTROUS_EYE.get(), 1, ChatFormatting.DARK_RED.getColor().intValue());
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
@@ -327,13 +334,20 @@ public class LivingEntityEventListeners {
                 } else if (livingEntity instanceof WitherBoss) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_WITHER_EYE)) {
                         givePlayerAward(player, 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, Items.WITHER_ROSE, 3, ChatFormatting.DARK_RED.getColor().intValue());
+                        }
                         ItemUtil.addItemEntity(player, ModItems.MECH_EYE.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                         ItemUtil.addItemEntity(player, TCRItems.WITHER_SOUL_STONE.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
+                    ItemUtil.addItemEntity(player, Items.WITHER_ROSE, 1, ChatFormatting.DARK_RED.getColor().intValue());
                 } else if (livingEntity instanceof SkyGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_STORM_EYE)) {
                         givePlayerAward(player, 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, TCRItems.RARE_ARTIFACT_TICKET.get(), 1);
+                        }
                         FakeSkyGolem fakeSkyGolem = new FakeSkyGolem(player);
                         fakeSkyGolem.setPos(player.position());
                         fakeSkyGolem.setGlowingTag(true);
@@ -345,7 +359,9 @@ public class LivingEntityEventListeners {
                 } else if (livingEntity instanceof EndGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_VOID_EYE)) {
                         givePlayerAward(player, 2);
-                        ItemUtil.addItemEntity(player, UAItems.HERO_EMBLEM.get(), 1);
+                        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                            ItemUtil.addItemEntity(player, UAItems.HERO_EMBLEM.get(), 1);
+                        }
                         FakeEndGolem fakeEndGolem = new FakeEndGolem(player);
                         fakeEndGolem.setPos(player.position().add(0, 3, 0));
                         fakeEndGolem.setGlowingTag(true);
@@ -529,6 +545,12 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(livingEntity, Items.GUNPOWDER, 6, ChatFormatting.GOLD.getColor());
             }
 
+            if(livingEntity instanceof PiglinBrute) {
+                if(livingEntity.getTags().contains("tcr_drop_nether_golem_key") || WorldUtil.isInStructure(livingEntity, "tcrcore:gate_of_disaster")) {
+                    ItemUtil.addItemEntity(livingEntity, BTItems.NETHER_MONOLITH_KEY.get(), 1, ChatFormatting.GOLD.getColor());
+                }
+            }
+
             //===================服务端玩家===================
             if (livingEntity instanceof ServerPlayer serverPlayer && !event.isCanceled()) {
                 serverPlayer.displayClientMessage(TCRCoreMod.getInfo("death_info"), false);
@@ -600,6 +622,9 @@ public class LivingEntityEventListeners {
     }
 
     public static void givePlayerAward(ServerPlayer player, int count) {
+        if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+            count += 1;
+        }
         ItemUtil.addItemEntity(player, EpicSkillsItems.ABILIITY_STONE.get(), count, ChatFormatting.YELLOW.getColor().intValue());
         if (count > 2) {
             ItemUtil.addItemEntity(player, TCRItems.RARE_ARTIFACT_TICKET.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
@@ -841,6 +866,10 @@ public class LivingEntityEventListeners {
                 player.displayClientMessage(TCRCoreMod.getInfo("wither_parry_tip", witherBoss.getDisplayName()).withStyle(ChatFormatting.GOLD), true);
                 player.displayClientMessage(TCRCoreMod.getInfo("wither_parry_tip", witherBoss.getDisplayName()).withStyle(ChatFormatting.GOLD), false);
             });
+        }
+
+        if(event.getEntity() instanceof NetherGolem netherGolem) {
+            EntityUtil.destroyNearby(netherGolem, 5, true);
         }
 
         if (illegalEntityTypes.contains(event.getEntity().getType())) {

@@ -237,7 +237,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7788590")
     implementation fg.deobf("curse.maven:combat-evolution-1377795:7780749")
-    implementation fg.deobf("libs:tcr_bosses:1.0.15")
+    implementation fg.deobf("libs:tcr_bosses:1.0.18")
     implementation fg.deobf("libs:tcrmeshes:1.0.0")
     implementation fg.deobf("curse.maven:epic-fight-the-mimic-1360684:7717502")
 
@@ -444,7 +444,6 @@ dependencies {
     implementation fg.deobf("curse.maven:fast-tpa-1122207:6680358")
 
     implementation fg.deobf("curse.maven:resourceful-config-714059:6231176")
-    implementation fg.deobf("curse.maven:async-locator-625069:4603343")
 
     implementation fg.deobf("curse.maven:fancy-toasts-1326436:7577035")//优化进度贴图
 

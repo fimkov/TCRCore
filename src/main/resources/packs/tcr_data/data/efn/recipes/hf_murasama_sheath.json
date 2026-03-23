@@ -8,7 +8,7 @@
     ],
     "key":
     {   "A": { "item" : "minecraft:gunpowder" },
-        "B": { "item" : "ba_bt:end_golem_eye" },
+        "B": { "item" : "ba_bt:sky_golem_eye" },
         "C": { "item" : "minecraft:iron_block" },
         "D": { "item" : "minecraft:quartz" },
         "S": { "item" : "minecraft:netherite_ingot" }
