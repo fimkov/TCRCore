@@ -328,6 +328,7 @@
 			icon: "armourers_workshop:skin-library-global"
 			icon_scale: 2.0d
 			id: "750E0B18BC9E9588"
+			invisible: true
 			rewards: [{
 				id: "2FA3B8F1F2634893"
 				type: "xp"
@@ -349,6 +350,7 @@
 			icon: "armourers_workshop:skin-library"
 			icon_scale: 2.0d
 			id: "39230C6C55DDF6D7"
+			invisible: true
 			rewards: [{
 				id: "234EBCB22E5127B6"
 				type: "xp"
@@ -369,6 +371,7 @@
 			icon: "armourers_workshop:skinning-table"
 			icon_scale: 2.0d
 			id: "271FDED5E61F990E"
+			invisible: true
 			rewards: [{
 				id: "15DC219A922F0F62"
 				type: "xp"
@@ -389,6 +392,7 @@
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest6E2FB0C755D9544F.description1}"]
 			icon: "armourers_workshop:skin-template"
 			id: "6E2FB0C755D9544F"
+			invisible: true
 			rewards: [{
 				id: "7C9B18788F4FDE31"
 				type: "xp"
