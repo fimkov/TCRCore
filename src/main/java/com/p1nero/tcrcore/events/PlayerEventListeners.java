@@ -16,7 +16,6 @@ import com.p1nero.p1nero_ec.capability.PECDataManager;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.*;
 import com.p1nero.tcrcore.datagen.TCRAdvancementData;
-import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.entity.custom.fake_npc.fake_boss.FakeBossNpc;
 import com.p1nero.tcrcore.entity.custom.fake_npc.fake_end_golem.FakeEndGolem;
@@ -190,7 +189,7 @@ public class PlayerEventListeners {
             PlayerDataManager.firstJoint.put(serverPlayer, true);
         }
 
-        if (TCRCoreMod.hasCheatMod()) {
+        if (TCRCoreMod.hasCoolMod()) {
             serverPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 9999, 9999));
             serverPlayer.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 9999, 9999));
             serverPlayer.addEffect(new MobEffectInstance(MobEffects.LUCK, 9999, 9999));

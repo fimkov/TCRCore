@@ -1,3 +1,15 @@
 {
-
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "epicfight:uchigatana"
+  },
+  "addition": {
+    "item" : "ba_bt:end_golem_eye"
+  },
+  "result": {
+    "item": "efn:yamato_dmc_in_sheath"
+  },
+  "template": {
+    "item": "ba_bt:end_golem_eye"
+  }
 }

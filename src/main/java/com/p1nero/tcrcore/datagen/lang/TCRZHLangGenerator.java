@@ -30,6 +30,14 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
     @Override
     protected void addTranslations() {
+
+        this.add("button.tcrcore.menu.exit", "退出游戏");
+        this.add("button.tcrcore.menu.mods", "Mods");
+        this.add("button.tcrcore.menu.accessibility", "辅助功能");
+        this.add("button.tcrcore.menu.language", "语言");
+        this.add("button.tcrcore.menu.settings", "设置");
+        this.add("button.tcrcore.menu.discord", "官方Discord");
+
         this.add("skill_tree.tcrcore.magic", "魔法技能");
         this.add("unlock_tip.epicskills.acrobat.spider_techniques", " 击杀50只蜘蛛");
         this.add("unlock_tip.epicskills.acrobat.natural_sprinter", " 击杀2只狼人并冲刺10公里");

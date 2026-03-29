@@ -31,6 +31,13 @@ public class TCRENLangGenerator extends TCRLangProvider {
     @Override
     protected void addTranslations() {
 
+        this.add("button.tcrcore.menu.exit", "Exit");
+        this.add("button.tcrcore.menu.mods", "Mods");
+        this.add("button.tcrcore.menu.accessibility", "Accessibility");
+        this.add("button.tcrcore.menu.language", "Language");
+        this.add("button.tcrcore.menu.settings", "Settings");
+        this.add("button.tcrcore.menu.discord", "Official Discord");
+
         this.add("skill_tree.tcrcore.magic", "Magic Skills");
         this.add("unlock_tip.epicskills.acrobat.spider_techniques", " Slaught 50 Spider");
         this.add("unlock_tip.epicskills.acrobat.natural_sprinter", " Slaught 2 Lycanth and sprint 10 km");

@@ -35,6 +35,11 @@ import java.util.function.Consumer;
 
 public class EntityUtil {
 
+    public static boolean hasNonCreativeOrSpectator(ServerLevel targetLevel) {
+        return targetLevel.players().stream()
+                .anyMatch(p -> !p.isCreative() && !p.isSpectator());
+    }
+
     public static void destroyNearby(Entity living, float scale, boolean drop) {
         if(living == null) {
             return;

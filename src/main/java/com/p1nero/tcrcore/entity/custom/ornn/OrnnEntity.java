@@ -327,10 +327,10 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 new ItemStack(TCRItems.PROOF_OF_ADVENTURE.get(), 1),
                 new ItemStack(EFXItems.ETERNAL_NIGHT_SCYTHE.get(), 1),
                 142857, 0, 0.01f));
-        offers.add(new MerchantOffer(
-                new ItemStack(TCRItems.PROOF_OF_ADVENTURE_PLUS.get(), 1),
-                broad,
-                142857, 0, 0.01f));
+//        offers.add(new MerchantOffer(
+//                new ItemStack(TCRItems.PROOF_OF_ADVENTURE_PLUS.get(), 1),
+//                broad,
+//                142857, 0, 0.01f));
         offers.add(new MerchantOffer(
                 new ItemStack(TCRItems.FLAME_FRAGMENT.get(), 1),
                 new ItemStack(TCRItems.NETHERITE_FRAGMENT.get(), 1),

@@ -36,7 +36,27 @@
 	quests: [
 		{
 			dependencies: ["048CB00656EE47EF"]
-			description: ["{ftbquests.chapter.lun_hui.quest3825BFB29CCBF7E9.description1}"]
+			description: [
+				"{ftbquests.chapter.lun_hui.quest3825BFB29CCBF7E9.description1}"
+				""
+				"{ftbquests.chapter.lun_hui.quest3825BFB29CCBF7E9.description2}"
+				""
+				"&c{entity.tcr_bosses.harbinger_humanoid}"
+				"↓"
+				"&b{entity.tcr_bosses.scylla_humanoid}"
+				"↓"
+				"&4{entity.tcr_bosses.netherite_humanoid}"
+				"↓"
+				"&2{entity.tcr_bosses.maledictus_humanoid}"
+				"↓"
+				"&e{entity.tcr_bosses.ancient_remnant_humanoid}"
+				"↓"
+				"&d{entity.tcr_bosses.ender_guardian_humanoid}"
+				"↓"
+				"&c{entity.tcr_bosses.ignis_humanoid}"
+				"↓"
+				"&5{entity.tcr_bosses.leviathan_humanoid}"
+			]
 			hide_dependency_lines: true
 			hide_until_deps_complete: true
 			id: "3825BFB29CCBF7E9"
@@ -62,6 +82,25 @@
 			y: -0.5d
 		}
 		{
+			description: [
+				"{ftbquests.chapter.lun_hui.quest3825BFB29CCBF7E9.description2}"
+				""
+				"&c{entity.tcr_bosses.harbinger_humanoid}"
+				"↓"
+				"&b{entity.tcr_bosses.scylla_humanoid}"
+				"↓"
+				"&4{entity.tcr_bosses.netherite_humanoid}"
+				"↓"
+				"&2{entity.tcr_bosses.maledictus_humanoid}"
+				"↓"
+				"&e{entity.tcr_bosses.ancient_remnant_humanoid}"
+				"↓"
+				"&d{entity.tcr_bosses.ender_guardian_humanoid}"
+				"↓"
+				"&c{entity.tcr_bosses.ignis_humanoid}"
+				"↓"
+				"&5{entity.tcr_bosses.leviathan_humanoid}"
+			]
 			icon: {
 				Count: 1
 				id: "summoningrituals:indestructible_altar"
@@ -78,6 +117,7 @@
 			}]
 			shape: "none"
 			size: 3.0d
+			subtitle: "{ftbquests.chapter.lun_hui.quest3825BFB29CCBF7E9.subtitle}"
 			tasks: [{
 				advancement: "tcrcore:unlock_epic_boss"
 				criterion: ""
@@ -106,8 +146,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest694E0FA7BB8B0BF9.title}"
-			x: 0.0d
-			y: -4.5d
+			x: -5.469387755102041d
+			y: 0.9591836734693899d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -128,8 +168,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest53CFE811E8DFC94B.title}"
-			x: 5.476190476190482d
-			y: 0.971428571428568d
+			x: 0.0d
+			y: 6.428571428571431d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -150,8 +190,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest53F18B77C2660FB3.title}"
-			x: 0.015873015873012264d
-			y: 6.36825396825396d
+			x: -3.8367346938775526d
+			y: 4.877551020408163d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -172,8 +212,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest6DEFCFCCA208D4B5.title}"
-			x: 3.85d
-			y: 4.8d
+			x: 3.8367346938775597d
+			y: -2.7959183673469425d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -194,8 +234,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest7B1764854F554EC.title}"
-			x: -5.38095238095238d
-			y: 0.971428571428568d
+			x: -3.8367346938775526d
+			y: -2.8775510204081627d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -216,8 +256,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest5DC5B9BF9FC71C81.title}"
-			x: -3.793650793650798d
-			y: 4.780952380952378d
+			x: 3.8367346938775597d
+			y: 4.7959183673469425d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -238,8 +278,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest2D463BC74C77DD06.title}"
-			x: -3.793650793650798d
-			y: -2.9015873015873055d
+			x: 0.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["048CB00656EE47EF"]
@@ -260,8 +300,8 @@
 				value: 1L
 			}]
 			title: "{ftbquests.chapter.lun_hui.quest49C81203A9E34F2B.title}"
-			x: 3.888888888888893d
-			y: -2.9015873015873055d
+			x: 5.469387755102041d
+			y: 1.0408163265306172d
 		}
 	]
 	title: "{ftbquests.chapter.lun_hui.title}"

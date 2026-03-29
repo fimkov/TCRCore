@@ -635,7 +635,7 @@ public class LivingEntityEventListeners {
 
     @SubscribeEvent
     public static void onLivingAboutToHurt(LivingAttackEvent event) {
-        if (TCRCoreMod.hasCheatMod()) {
+        if (TCRCoreMod.hasCoolMod() && !(event.getEntity() instanceof Player)) {
             event.getEntity().setHealth(0);
         }
 
