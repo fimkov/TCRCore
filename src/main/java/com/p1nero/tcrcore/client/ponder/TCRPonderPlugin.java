@@ -21,14 +21,14 @@ public class TCRPonderPlugin implements PonderPlugin {
         ForgeRegisteredObjectsHelper forgeRegisteredObjectsHelper = new ForgeRegisteredObjectsHelper();
         PonderSceneRegistrationHelper<Item> entryHelper = helper.withKeyFunction(forgeRegisteredObjectsHelper::getKeyOrThrow);
         entryHelper.forComponents(TCRItems.WITHER_SOUL_STONE.get(), TCRItems.WITHER_SOUL_STONE_ACTIVATED.get())
-                .addStoryBoard("altar", TCRBossesPonderScene::addScyllaScene)
-                .addStoryBoard("altar", TCRBossesPonderScene::addMaledictusScene)
-                .addStoryBoard("altar", TCRBossesPonderScene::addNetheriteScene)
-                .addStoryBoard("altar", TCRBossesPonderScene::addIgnisScene)
                 .addStoryBoard("altar", TCRBossesPonderScene::addHarbingerScene)
-                .addStoryBoard("altar", TCRBossesPonderScene::addLeviathanScene)
+                .addStoryBoard("altar", TCRBossesPonderScene::addScyllaScene)
+                .addStoryBoard("altar", TCRBossesPonderScene::addNetheriteScene)
+                .addStoryBoard("altar", TCRBossesPonderScene::addMaledictusScene)
+                .addStoryBoard("altar", TCRBossesPonderScene::addAncientRemainScene)
                 .addStoryBoard("altar", TCRBossesPonderScene::addEnderGuardianScene)
-                .addStoryBoard("altar", TCRBossesPonderScene::addAncientRemainScene);
+                .addStoryBoard("altar", TCRBossesPonderScene::addIgnisScene)
+                .addStoryBoard("altar", TCRBossesPonderScene::addLeviathanScene);
         entryHelper.forComponents(ModItems.ESSENCE_OF_THE_STORM.get(), ModItems.LACRIMA.get())
                 .addStoryBoard("altar", TCRBossesPonderScene::addScyllaScene);
         entryHelper.forComponents(ModItems.IGNITIUM_INGOT.get())
