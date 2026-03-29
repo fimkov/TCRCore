@@ -238,6 +238,7 @@
 		}
 		{
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest6795423405472902442.description1}"]
+			icon: "cataclysm:abyssal_sacrifice"
 			id: "5E4E319565966D2A"
 			invisible: true
 			rewards: [{
@@ -248,16 +249,25 @@
 			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest6795423405472902442.subtitle}"
-			tasks: [{
-				id: "7F02CF3CF1D93B5F"
-				item: "cataclysm:abyssal_sacrifice"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "65277488EEAA3E8E"
+					item: "cataclysm:abyssal_sacrifice"
+					optional_task: true
+					type: "item"
+				}
+				{
+					dimension: "cataclysm_dimension:cataclysm_abyssal_depths"
+					id: "2E089F4335D8398E"
+					type: "dimension"
+				}
+			]
 			x: 6.0d
 			y: -5.0d
 		}
 		{
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest8872242641152191514.description1}"]
+			icon: "cataclysm:necklace_of_the_desert"
 			id: "7B2089ACCAF32C1A"
 			invisible: true
 			rewards: [{
@@ -268,16 +278,25 @@
 			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest8872242641152191514.subtitle}"
-			tasks: [{
-				id: "2F747DB2BD8F3BF2"
-				item: "cataclysm:necklace_of_the_desert"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "2F747DB2BD8F3BF2"
+					item: "cataclysm:necklace_of_the_desert"
+					optional_task: true
+					type: "item"
+				}
+				{
+					dimension: "cataclysm_dimension:cataclysm_pharaohs_bane"
+					id: "2E6DBBA5DD13D720"
+					type: "dimension"
+				}
+			]
 			x: 10.0d
 			y: -5.0d
 		}
 		{
 			description: ["{ftbquests.chapter.zhong_yao_wu_pin.quest1310141621149818918.description1}"]
+			icon: "cataclysm:strange_key"
 			id: "122E8EDCEE16E026"
 			invisible: true
 			rewards: [{
@@ -288,11 +307,19 @@
 			shape: "none"
 			size: 2.0d
 			subtitle: "{ftbquests.chapter.zhong_yao_wu_pin.quest1310141621149818918.subtitle}"
-			tasks: [{
-				id: "7A0A165B8D7FF61D"
-				item: "cataclysm:strange_key"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "7A0A165B8D7FF61D"
+					item: "cataclysm:strange_key"
+					optional_task: true
+					type: "item"
+				}
+				{
+					dimension: "cataclysm_dimension:cataclysm_eternal_frosthold"
+					id: "69EA2CF430B79246"
+					type: "dimension"
+				}
+			]
 			x: 14.0d
 			y: -5.0d
 		}
