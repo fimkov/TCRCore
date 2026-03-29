@@ -252,8 +252,8 @@ public class LivingEntityEventListeners {
                         ItemUtil.addItemEntity(livingEntity, TCRItems.DUAL_BOKKEN.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor());
                         PlayerDataManager.cursedEyeKilled.put(player, true);
                     }
-                    ItemUtil.addItemEntity(player, ItemRegistry.FROZEN_BONE_SHARD.get(), 4, ChatFormatting.GOLD.getColor().intValue());
-                    ItemUtil.addItemEntity(player, BMDItems.SOUL_STAR.get(), 4, ChatFormatting.GOLD.getColor().intValue());
+                    ItemUtil.addItemEntity(player, ItemRegistry.FROZEN_BONE_SHARD.get(), 6, ChatFormatting.GOLD.getColor().intValue());
+                    ItemUtil.addItemEntity(player, BMDItems.SOUL_STAR.get(), 2, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof Ancient_Remnant_Entity) {
                     if (!PlayerDataManager.desertEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
@@ -265,6 +265,7 @@ public class LivingEntityEventListeners {
                         PlayerDataManager.voidEyeKilled.put(player, true);
                     }
                     ItemUtil.addItemEntity(player, Items.ENDER_EYE, 4, ChatFormatting.GOLD.getColor().intValue());
+                    ItemUtil.addItemEntity(player, Items.SHULKER_SHELL, 5, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof Netherite_Monstrosity_Entity) {
                     if (!PlayerDataManager.monstEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
@@ -290,7 +291,8 @@ public class LivingEntityEventListeners {
                         ItemUtil.addItemEntity(player, ModItems.DESERT_EYE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
-                    ItemUtil.addItemEntity(player, ItemRegistry.FIREFLY_JAR_ITEM.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
+                    ItemUtil.addItemEntity(player, ItemRegistry.FIREFLY_JAR_ITEM.get(), 3, ChatFormatting.YELLOW.getColor().intValue());
+                    ItemUtil.addItemEntity(player, ItemRegistry.SHRIVING_STONE.get(), 1, ChatFormatting.YELLOW.getColor().intValue());
                 } else if (livingEntity instanceof OceanGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_OCEAN_EYE)) {
                         givePlayerAward(player, 1);

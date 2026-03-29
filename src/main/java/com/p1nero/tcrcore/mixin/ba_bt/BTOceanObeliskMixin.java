@@ -18,7 +18,7 @@ public abstract class BTOceanObeliskMixin extends BTAbstractObelisk  {
         super(entityType, level);
     }
 
-    @Inject(method = "removeAreaBlocks", at = @At("HEAD"), remap = false)
+    @Inject(method = "removeAreaBlocks", at = @At("HEAD"), remap = false, cancellable = true)
     private void tcr$removeAreaBlocks(CallbackInfo ci) {
         int removeSize = this.toRemove.size();
         if (removeSize > 0) {
@@ -29,5 +29,6 @@ public abstract class BTOceanObeliskMixin extends BTAbstractObelisk  {
         } else {
             this.generationState = BTAbstractObelisk.GenerationState.ADD_AREA_FEATURES;
         }
+        ci.cancel();
     }
 }

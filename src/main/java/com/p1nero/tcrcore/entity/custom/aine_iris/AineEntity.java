@@ -815,6 +815,11 @@ public class AineEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 ItemRegistry.ICE_UPGRADE_ORB.get().getDefaultInstance(),
                 142857, 0, 0.01f));
         ballOffers.add(new MerchantOffer(
+                new ItemStack(Items.BLAZE_ROD, 4),
+                new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
+                ItemRegistry.FIRE_UPGRADE_ORB.get().getDefaultInstance(),
+                142857, 0, 0.01f));
+        ballOffers.add(new MerchantOffer(
                 new ItemStack(ItemRegistry.BLOODY_VELLUM.get(), 4),
                 new ItemStack(TCRItems.ARTIFACT_TICKET.get(), 1),
                 ItemRegistry.BLOOD_UPGRADE_ORB.get().getDefaultInstance(),

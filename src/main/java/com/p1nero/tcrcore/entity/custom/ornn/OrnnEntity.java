@@ -304,6 +304,9 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         ItemStack guard = new ItemStack(Items.ENCHANTED_BOOK);
         EnchantmentHelper.setEnchantments(Map.of(EFNEnchantment.YAMATO_GUARD.get(), 1), guard);
 
+        ItemStack scytheEnhance = new ItemStack(Items.ENCHANTED_BOOK);
+        EnchantmentHelper.setEnchantments(Map.of(EFNEnchantment.SCYTHE_ENHANCE.get(), 1), scytheEnhance);
+
         ItemStack summonedSword = new ItemStack(Items.ENCHANTED_BOOK);
         EnchantmentHelper.setEnchantments(Map.of(EFNEnchantment.YAMATO_SUMMONED_SWORD.get(), 1), summonedSword);
 
@@ -316,12 +319,11 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
         ItemStack broad = new ItemStack(Items.ENCHANTED_BOOK);
         EnchantmentHelper.setEnchantments(Map.of(EFNEnchantment.BROAD_BLADE_ENHANCE.get(), 1), broad);
 
+        ItemStack zansetsu = new ItemStack(EpicFightItems.SKILLBOOK.get());
+        SkillBookItem.setContainingSkill(EFNSkills.ZANSETSU, zansetsu);
 
-        ItemStack skillBook = new ItemStack(EpicFightItems.SKILLBOOK.get());
-        SkillBookItem.setContainingSkill(EFNSkills.ZANSETSU, skillBook);
-
-        ItemStack skillBook2 = new ItemStack(EpicFightItems.SKILLBOOK.get());
-        SkillBookItem.setContainingSkill(EFNSkills.MORTAL_BLADE, skillBook2);
+        ItemStack mortalBlade = new ItemStack(EpicFightItems.SKILLBOOK.get());
+        SkillBookItem.setContainingSkill(EFNSkills.MORTAL_BLADE, mortalBlade);
 
         offers.add(new MerchantOffer(
                 new ItemStack(TCRItems.PROOF_OF_ADVENTURE.get(), 1),
@@ -356,11 +358,15 @@ public class OrnnEntity extends PathfinderMob implements IEntityNpc, GeoEntity, 
                 142857, 0, 0.01f));
         offers.add(new MerchantOffer(
                 new ItemStack(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1),
-                skillBook,
+                zansetsu,
+                142857, 0, 0.01f));
+        offers.add(new MerchantOffer(
+                new ItemStack(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), 1),
+                mortalBlade,
                 142857, 0, 0.01f));
         offers.add(new MerchantOffer(
                 new ItemStack(TCRItems.RARE_ARTIFACT_TICKET.get(), 1),
-                skillBook2,
+                scytheEnhance,
                 142857, 0, 0.01f));
         offers.add(new MerchantOffer(
                 new ItemStack(TCRItems.SOUL_FRAGMENT.get(), 1),
