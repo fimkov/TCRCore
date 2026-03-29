@@ -396,6 +396,7 @@
   "info.tcr.no_place_to_ship": "空间不足，无法摆放船只！",
   "info.tcr.no_quest": "暂无任务",
   "info.tcr.nothing_happen_after_bless": "§d无事发生...看来该[神之眼]已经祈福过了",
+  "info.tcr.obey_rule": "你违反了天意",
   "info.tcr.on_full_set": "套装效果",
   "info.tcr.only_work_on_dragon": "只能对龙类使用！",
   "info.tcr.open_backpack_tutorial": "按下 [%s] 以打开随身空间",

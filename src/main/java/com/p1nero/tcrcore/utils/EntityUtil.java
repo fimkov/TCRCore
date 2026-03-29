@@ -28,7 +28,6 @@ import yesman.epicfight.world.capabilities.EpicFightCapabilities;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -36,8 +35,16 @@ import java.util.function.Consumer;
 public class EntityUtil {
 
     public static boolean hasNonCreativeOrSpectator(ServerLevel targetLevel) {
+        if(targetLevel.players().isEmpty()) {
+            return false;
+        }
         return targetLevel.players().stream()
                 .anyMatch(p -> !p.isCreative() && !p.isSpectator());
+    }
+
+    public static int countOfNoneCreativeOrSpectator(ServerLevel targetLevel) {
+        return targetLevel.players().stream()
+                .filter(p -> !p.isCreative() && !p.isSpectator()).toList().size();
     }
 
     public static void destroyNearby(Entity living, float scale, boolean drop) {

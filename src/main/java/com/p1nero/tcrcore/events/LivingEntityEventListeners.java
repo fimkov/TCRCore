@@ -677,6 +677,21 @@ public class LivingEntityEventListeners {
                     baseBossEntity.discard();
                 }
             }
+            //优化多人肘击
+            if(baseBossEntity.level() instanceof ServerLevel serverLevel) {
+                if(serverLevel.players().size() > 1 && event.getSource().getEntity() instanceof Player) {
+                    int playerCount = EntityUtil.countOfNoneCreativeOrSpectator(serverLevel);
+                    if(playerCount > 1) {
+                        if(serverLevel.getEntities(baseBossEntity.getType(), Entity::isAlive).size() < playerCount) {
+                            baseBossEntity.getType().spawn(serverLevel, baseBossEntity.getOnPos(), MobSpawnType.MOB_SUMMONED);
+                            serverLevel.players().forEach(serverPlayer -> {
+                                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("obey_rule").withStyle(ChatFormatting.RED), true);
+                                serverPlayer.displayClientMessage(TCRCoreMod.getInfo("obey_rule").withStyle(ChatFormatting.RED), false);
+                            });
+                        }
+                    }
+                }
+            }
         }
 
         if (event.getEntity() instanceof EvilSkeleton

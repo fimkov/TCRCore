@@ -8,6 +8,7 @@ import com.p1nero.tcrcore.capability.TCRQuests;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -41,7 +42,7 @@ public class DesertAltarBlockEntity extends AbstractAltarBlockEntity {
 
     @Override
     protected ParticleOptions getSpawnerParticle() {
-        return ModParticle.SANDSTORM.get();
+        return ParticleTypes.LAVA;
     }
 
     @Override

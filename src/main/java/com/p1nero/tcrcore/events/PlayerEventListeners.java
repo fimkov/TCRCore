@@ -363,8 +363,7 @@ public class PlayerEventListeners {
                 if (event.getDimension() == PBF1Dimensions.SANCTUM_OF_THE_BATTLE_LEVEL_KEY) {
                     ServerLevel targetLevel = serverPlayer.server.getLevel(PBF1Dimensions.SANCTUM_OF_THE_BATTLE_LEVEL_KEY);
                     if (targetLevel != null) {
-                        boolean hasNonCreativeOrSpectator = targetLevel.players().stream()
-                                .anyMatch(p -> !p.isCreative() && !p.isSpectator());
+                        boolean hasNonCreativeOrSpectator = EntityUtil.hasNonCreativeOrSpectator(targetLevel);
                         if (hasNonCreativeOrSpectator) {
                             serverPlayer.displayClientMessage(TCRCoreMod.getInfo("dim_max_players"), true);
                             serverPlayer.setGameMode(GameType.SPECTATOR);

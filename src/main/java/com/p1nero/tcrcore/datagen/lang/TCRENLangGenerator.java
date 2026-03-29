@@ -278,6 +278,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.addInfo("obey_rule", "You have defied the destiny!!");
         this.addInfo("difficulty_change_success", "Successfully changed game difficulty! Current difficulty: %s");
         this.addInfo("difficulty_change_failed", "Error: Failed to change game difficulty! No admin permission or invalid parameter!");
         this.addInfo("shake_penalty_warning", "[Warning]:Shake will consume more stamina!");
