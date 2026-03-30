@@ -355,7 +355,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:travelers-titles-504908:5065825")
     implementation fg.deobf("curse.maven:yungs-better-end-island-901344:5193815")
-    implementation fg.deobf("curse.maven:yungs-better-ocean-monuments-689238:4883003")
+    implementation fg.deobf("curse.maven:yungs-better-nether-fortresses-817651:5193465")
     implementation fg.deobf("curse.maven:yungs-api-421850:5769971")
 
     implementation fg.deobf("curse.maven:awesome-dungeon-edition-ocean-forge-556490:4601248")
