@@ -1,0 +1,19 @@
+
+["No More Too Many Structures Settings"]
+	#Radius (in blocks) to check for nearby structures/features. 0.0 ~ 1000.0
+	#Range: 0.0 ~ 1000.0
+	checkRadius = 300.0
+	#Maximum number of structures/features allowed within the radius. 0 ~ 16
+	#Range: 0 ~ 16
+	maxNearby = 1
+	#Structures that will never generate (registry names). Example: 'minecraft:shipwreck'
+	blacklistStructures = ["minecraft:shipwreck", "minecraft:mineshaft"]
+	#Features that will never generate (registry names). Example: 'minecraft:tree'
+	blacklistFeatures = []
+	#Enable debug logging for skipped structures/features.
+	debug = false
+	#Structures that will always generate regardless of overlap (registry names). Example: 'minecraft:ancient_city'
+	whitelistStructures = ["cataclysm:soul_black_smith", "cataclysm:burning_arena", "cataclysm:ancient_factory", "cataclysm:sunken_city", "cataclysm:cursed_pyramid", "cataclysm:frosted_prison", "cataclysm:acropolis", "minecraft:ancient_city", "mowziesmobs:frostmaw_spawn", "mowziesmobs:wrought_chamber", "bosses_of_mass_destruction:void_blossom"]
+	#Features that will always generate regardless of overlap (registry names). Example: 'minecraft:tree'
+	whitelistFeatures = []
+
