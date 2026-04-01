@@ -565,11 +565,12 @@ public class PlayerEventListeners {
             }
 
             //离开后后日谈
-            if (event.getFrom().equals(TCRDimensions.REAL_LEVEL_KEY)) {
-                if (!TCRQuestManager.hasFinished(serverPlayer, TCRQuests.TALK_TO_AINE_GAME_CLEAR) && TCRQuestManager.hasFinished(serverPlayer, TCRQuests.KILL_MAD_CHRONOS)) {
-                    TCRQuests.TALK_TO_AINE_GAME_CLEAR.start(serverPlayer);
-                }
-            }
+            //无人看懂的艺术，删了吧ToT
+//            if (event.getFrom().equals(TCRDimensions.REAL_LEVEL_KEY)) {
+//                if (!TCRQuestManager.hasFinished(serverPlayer, TCRQuests.TALK_TO_AINE_GAME_CLEAR) && TCRQuestManager.hasFinished(serverPlayer, TCRQuests.KILL_MAD_CHRONOS)) {
+//                    TCRQuests.TALK_TO_AINE_GAME_CLEAR.start(serverPlayer);
+//                }
+//            }
 
             updateHealth(serverPlayer, event.getFrom());
             updateHealth(serverPlayer, event.getTo());

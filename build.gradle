@@ -271,7 +271,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:kill-cam-1489164:7787111")
 
-    implementation fg.deobf("curse.maven:fantasy-armor-1083998:6949888")
+    implementation fg.deobf("curse.maven:fantasy-armor-1083998:7850802")
 
 //    implementation fg.deobf("curse.maven:parcool-482378:6831668")
 //    implementation fg.deobf("curse.maven:official-epic-fight-x-parcool-1259252:6870242")
@@ -329,7 +329,8 @@ dependencies {
     implementation fg.deobf("curse.maven:ribbits-622967:6182692")
 
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.8.2")
-    implementation fg.deobf("curse.maven:book-of-dragons-1413424:7447643")
+    implementation fg.deobf("curse.maven:azurelib-817423:7797691")
+    implementation fg.deobf("curse.maven:book-of-dragons-1413424:7843883")
 
     implementation fg.deobf("curse.maven:explorers-compass-edited-1203888:6733733")
     implementation fg.deobf("curse.maven:natures-compass-252848:4712189")

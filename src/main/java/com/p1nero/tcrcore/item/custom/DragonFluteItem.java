@@ -41,11 +41,9 @@ public class DragonFluteItem extends SimpleDescriptionItem {
                 if (ridingSuccess) {
                     dragonBase.setTarget(null);
                     dragonBase.getNavigation().stop();
-                    if (dragonBase.getPathfindingManager() != null) {
-                        dragonBase.getPathfindingManager().clearAllWaypoints();
-                    }
                     dragonBase.goalSelector.getRunningGoals().forEach(WrappedGoal::stop);
                     dragonBase.targetSelector.getRunningGoals().forEach(WrappedGoal::stop);
+                    dragonBase.getMoveControl().setWantedPosition(dragonBase.getX(), dragonBase.getY(), dragonBase.getZ(), 0.0F);
                 }
             }
             if(livingEntity != null) {

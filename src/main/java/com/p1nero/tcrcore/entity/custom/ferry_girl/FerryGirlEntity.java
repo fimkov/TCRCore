@@ -1,7 +1,6 @@
 package com.p1nero.tcrcore.entity.custom.ferry_girl;
 
 import artifacts.item.ArtifactItem;
-import com.github.alexthe668.domesticationinnovation.server.block.DIBlockRegistry;
 import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.component.DialogNode;
@@ -24,8 +23,12 @@ import net.genzyuro.uniqueaccessories.item.UAUniqueCurioItem;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.magister.bookofdragons.entity.ModEntities;
 import net.magister.bookofdragons.entity.base.dragon.DragonBase;
-import net.magister.bookofdragons.entity.util.DragonVariantConfig;
+import net.magister.bookofdragons.entity.data.DragonVariantConfig;
 import net.magister.bookofdragons.event.DragonDiscoveryEventHandler;
+import net.magister.bookofdragons.genetics.GeneticsCrossover;
+import net.magister.bookofdragons.genetics.GeneticsSpawner;
+import net.magister.bookofdragons.genetics.config.SpeciesGeneticsConfig;
+import net.magister.bookofdragons.genetics.config.SpeciesGeneticsConfigRegistry;
 import net.magister.bookofdragons.item.ModItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -43,6 +46,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
@@ -317,6 +321,16 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
                     }
 
                     dragonBase.setVariant(inheritedVariant);
+                    try {
+                        String dragonType = dragonBase.getDragonType().name().toLowerCase();
+                        SpeciesGeneticsConfig geneticsConfig = SpeciesGeneticsConfigRegistry.getConfig(dragonType);
+                        GeneticsSpawner spawner = new GeneticsSpawner(this.random);
+                        GeneticsSpawner.SpawnResult result = spawner.generateWildGenotype(geneticsConfig, dragonType);
+                        dragonBase.setGenotypeAndDraws(result.genotype, result.paletteDraws);
+                        dragonBase.recalculateStats();
+                    } catch (Exception e) {
+                        TCRCoreMod.LOGGER.error("[GENETICS ERROR] Failed to generate genotype for {}: {}", dragonBase.getDragonType(), e.getMessage(), e);
+                    }
                     dragonBase.tame(serverPlayer);
                     dragonBase.setAge(-24000);
                     dragonBase.startSpawnAnimation();
@@ -335,7 +349,6 @@ public class FerryGirlEntity extends PathfinderMob implements IEntityNpc, GeoEnt
             ItemUtil.addItemEntity(serverPlayer, ModItems.BOOK_OF_DRAGONS.get().getDefaultInstance());
             ItemUtil.addItemEntity(serverPlayer, TCRItems.DRAGON_FLUTE.get().getDefaultInstance());
             ItemUtil.addItemEntity(serverPlayer, ModItems.RATTLE_STAFF.get().getDefaultInstance());
-            ItemUtil.addItemEntity(serverPlayer, DIBlockRegistry.WHITE_PET_BED.get().asItem().getDefaultInstance());
             TCRQuests.TAME_DRAGON.start(serverPlayer, false);
             PlayerDataManager.ferryGirlGiftGet.put(serverPlayer, true);
         }
