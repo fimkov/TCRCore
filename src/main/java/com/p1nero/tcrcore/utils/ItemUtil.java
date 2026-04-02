@@ -7,6 +7,7 @@ import com.google.common.collect.ImmutableList;
 import com.hm.efn.registries.EFNItem;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.entity.custom.CustomColorItemEntity;
+import com.p1nero.tcrcore.item.TCRItems;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.core.BlockPos;
@@ -48,7 +49,8 @@ public class ItemUtil {
                 EpicSkillsItems.ABILIITY_STONE.get()
         ));
         eyesItems.addAll(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()));
-
+        netherBetterWeaponItems.addAll(List.of(TCRItems.EMBERFANG.get(), TCRItems.MAGMAHEART.get(), TCRItems.CINDERWYRM.get(), TCRItems.PURGING_SWALLOW.get(), TCRItems.ASHEN_CRESCENT.get()));
+        aetherBetterWeaponItems.addAll(List.of(TCRItems.LUX_JADAE.get(), TCRItems.GLACIS_JADAE.get(), TCRItems.MONS_JADAE.get(), TCRItems.IRIS_JADAE.get()));
     }
 
     public static boolean isEyeItem(ItemStack stack) {

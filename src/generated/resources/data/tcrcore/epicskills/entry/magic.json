@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        260,
+        150
+      ],
+      "skill": "efs_iss:blood_into_mana"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        231,
+        221
+      ],
+      "skill": "efs_iss:magic_sword"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        160,
+        250
+      ],
+      "skill": "efs_iss:rapid_chant"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        89,
+        221
+      ],
+      "skill": "efs_iss:breathe_again"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        60,
+        150
+      ],
+      "skill": "efs_iss:against_magic"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        89,
+        79
+      ],
+      "skill": "efs_iss:reserve_mana"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        160,
+        50
+      ],
+      "skill": "efs_iss:hasty_casting"
+    },
+    {
+      "ability_points": 3,
+      "hidden": false,
+      "position_in_screen": [
+        231,
+        79
+      ],
+      "skill": "efs_iss:mana_shield"
+    },
+    {
+      "ability_points": 5,
+      "hidden": false,
+      "parents": [
+        {
+          "control_points": [
+            [
+              210,
+              150
+            ]
+          ],
+          "skill": "efs_iss:blood_into_mana"
+        },
+        {
+          "control_points": [
+            [
+              195,
+              185
+            ]
+          ],
+          "skill": "efs_iss:magic_sword"
+        },
+        {
+          "control_points": [
+            [
+              160,
+              200
+            ]
+          ],
+          "skill": "efs_iss:rapid_chant"
+        },
+        {
+          "control_points": [
+            [
+              124,
+              185
+            ]
+          ],
+          "skill": "efs_iss:breathe_again"
+        },
+        {
+          "control_points": [
+            [
+              110,
+              150
+            ]
+          ],
+          "skill": "efs_iss:against_magic"
+        },
+        {
+          "control_points": [
+            [
+              124,
+              114
+            ]
+          ],
+          "skill": "efs_iss:reserve_mana"
+        },
+        {
+          "control_points": [
+            [
+              160,
+              100
+            ]
+          ],
+          "skill": "efs_iss:hasty_casting"
+        },
+        {
+          "control_points": [
+            [
+              195,
+              114
+            ]
+          ],
+          "skill": "efs_iss:mana_shield"
+        }
+      ],
+      "position_in_screen": [
+        160,
+        150
+      ],
+      "skill": "tcrcore:regen_mana"
+    }
+  ]
+}

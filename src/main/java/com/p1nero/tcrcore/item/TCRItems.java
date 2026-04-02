@@ -194,5 +194,4 @@ public class TCRItems {
     public static final RegistryObject<Item> MONS_JADAE = REGISTRY.register("mons_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉岳（原名：白金大剑）
     public static final RegistryObject<Item> IRIS_JADAE = REGISTRY.register("iris_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉虹（原名：白金枪）
 
-
 }

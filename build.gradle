@@ -227,7 +227,7 @@ dependencies {
     implementation fg.deobf("libs:p1nero_bow:20.13.1.4")
     implementation fg.deobf("curse.maven:p1neros-epic-x-cataclysm-1325059:7842335")
     implementation fg.deobf("curse.maven:epicfight-extra-1434276:7739310")
-    implementation fg.deobf("libs:ares_hud:1.0.0")
+    implementation fg.deobf("curse.maven:ares-hud-1477275:7849085")
     implementation fg.deobf("libs:better_trident_model:1.0.0")
     implementation fg.deobf("curse.maven:sword-soaring-1011068:7305158")
     implementation fg.deobf("curse.maven:epic-fight-dodge-parry-reward-1304607:7685159")

@@ -3,14 +3,18 @@ package com.p1nero.tcrcore.datagen.loot;
 import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.entity.TCREntities;
 import com.p1nero.tcrcore.item.TCRItems;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.LootTableReference;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
@@ -93,6 +97,24 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                 )
         );
         this.add(TCRBossEntities.IGNIS_SHIELD.get(), emptyLootTable());
+        //TODO
+        this.add(TCRBossEntities.GOLDEN_EXECUTOR.get(), emptyLootTable());
+        this.add(TCRBossEntities.VALKYRIE.get(), emptyLootTable());
+        this.add(TCRBossEntities.GILDED_HUNTER.get(), emptyLootTable());
+        this.add(TCRBossEntities.EVENING_GHOST.get(), emptyLootTable());
+        this.add(TCRBossEntities.CITADEL_KEEPER.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .add(LootItem.lootTableItem(ItemRegistry.CINDER_ESSENCE.get())
+                                .setWeight(75)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                        .add(LootItem.lootTableItem(ItemRegistry.CINDER_ESSENCE.get())
+                                .setWeight(25)
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .add(LootItem.lootTableItem(Items.NETHERITE_SCRAP)
+                                .when(LootItemRandomChanceCondition.randomChance(0.2f))))); // 20% 概率出现
     }
 
     public LootTable.Builder emptyLootTable() {

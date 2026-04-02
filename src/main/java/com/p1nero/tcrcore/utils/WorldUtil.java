@@ -72,16 +72,19 @@ public class WorldUtil {
     public static final Vec3 CENTER_POS = new Vec3(-19, 75, -79);
     public static final Vec3 CHRONOS_SOL_POS = new Vec3(-186, 85, -191);
     public static final BlockPos CHRONOS_SOL_BLOCK_POS = new BlockPos(-186, 85, -191);
-    public static final String RIBBIT_VILLAGE = "ribbits:ribbit_village";
-    public static final String BONE_CHIMERA_STRUCTURE = "dodosmobs:jungle_prison";
-    public static final String AQUAMIRAE_SHIP_STRUCTURE = "aquamirae:ship";
-    public static final String SKY_GOLEM = "lost_aether_content:platinum_dungeon";
-    public static final String OCEAN_GOLEM = "ba_bt:ocean_tower";
     public static final String LAND_GOLEM = "ba_bt:land_tower";
+    public static final String BONE_CHIMERA_STRUCTURE = "dodosmobs:jungle_prison";
+    public static final String OCEAN_GOLEM = "ba_bt:ocean_tower";
+    public static final String RIBBIT_VILLAGE = "ribbits:ribbit_village";
+    public static final String AQUAMIRAE_SHIP_STRUCTURE = "aquamirae:ship";
     public static final String CORE_GOLEM = "ba_bt:core_tower";
+    public static final String NETHER_KEY_1 = "betterfortresses:fortress";
+    public static final String NETHER_KEY_2 = "irons_spellbooks:citadel";
     public static final String NETHER_GOLEM = "tcrcore:gate_of_disaster";
+    public static final String AETHER_KEY_1 = "aether:silver_dungeon";
+    public static final String AETHER_KEY_2 = "aether:gold_dungeon";
+    public static final String SKY_GOLEM = "lost_aether_content:platinum_dungeon";
     public static final String STRONG_HOLD = "tlc:lost_castle";
-    public static Vec2i storm, flame, abyss, cursed, desert;
 
     public static List<MapColor> surfaceMaterials = Arrays.asList(MapColor.WATER, MapColor.ICE);
 

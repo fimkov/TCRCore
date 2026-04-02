@@ -218,6 +218,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addSkill("water_avoid", "避水咒", "可在水下自由呼吸！");
         this.addSkill("fire_avoid", "避火咒", "免疫火焰伤害！");
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
+        this.addSkill("regen_mana", "魔力回复", "完美闪避或完美招架后将恢复总魔力的%d%%点魔力！");
 
         this.add(TCRItems.RETRACEMENT_STONE.get(), "回溯之石");
         this.addItemUsageInfo(TCRItems.RETRACEMENT_STONE.get(), "使用后将重置[%s]内的所有实体！");

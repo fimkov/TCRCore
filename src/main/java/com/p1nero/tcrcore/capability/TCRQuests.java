@@ -101,6 +101,9 @@ public class TCRQuests {
     public static Quest TALK_TO_CHRONOS_8;
     public static Quest GO_TO_NETHER;
     public static Quest USE_NETHER_RESONANCE_STONE;
+    public static Quest GET_NETHER_MONOLITH_KEY_1;//肘下界堡垒
+    public static Quest CRAFT_CALLER;//制作铃铛，召唤boss
+    public static Quest GET_NETHER_MONOLITH_KEY_2;//肘铁魔法城堡
     public static Quest GET_MONST_EYE;
     public static Quest TALK_TO_CHRONOS_9;
 
@@ -114,6 +117,8 @@ public class TCRQuests {
     public static Quest TALK_TO_CHRONOS_11;
     public static Quest GO_TO_AETHER;
     public static Quest USE_AETHER_RESONANCE_STONE;
+    public static Quest GET_AETHER_MONOLITH_KEY_1;//肘女武神殿
+    public static Quest GET_AETHER_MONOLITH_KEY_2;//肘烈阳殿
     public static Quest GET_STORM_EYE;
     public static Quest TALK_TO_SKY_GOLEM;
     public static Quest TALK_TO_CHRONOS_12;

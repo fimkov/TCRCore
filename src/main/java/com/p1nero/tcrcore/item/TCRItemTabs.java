@@ -55,5 +55,14 @@ public class TCRItemTabs {
                 output.accept(TCRItems.STONE_OF_REINCARNATION.get());
                 output.accept(TCRItems.RESET_SKILL_STONE.get());
                 output.accept(TCRItems.RETRACEMENT_STONE.get());
+                output.accept(TCRItems.EMBERFANG.get());
+                output.accept(TCRItems.MAGMAHEART.get());
+                output.accept(TCRItems.CINDERWYRM.get());
+                output.accept(TCRItems.PURGING_SWALLOW.get());
+                output.accept(TCRItems.ASHEN_CRESCENT.get());
+                output.accept(TCRItems.LUX_JADAE.get());
+                output.accept(TCRItems.GLACIS_JADAE.get());
+                output.accept(TCRItems.MONS_JADAE.get());
+                output.accept(TCRItems.IRIS_JADAE.get());
             }).build());
 }

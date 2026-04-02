@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.datagen;
 
 import com.p1nero.tcrcore.TCRCoreMod;
+import com.p1nero.tcrcore.gameassets.TCRSkills;
 import com.yesman.epicskills.common.data.SkillTreeProvider;
 import com.yesman.epicskills.skilltree.SkillTree;
 import net.minecraft.data.PackOutput;
@@ -61,9 +62,9 @@ public class TCRSkillTreeProvider extends SkillTreeProvider {
                     .done();
         }
 
-        SkillTreePageBuilder.SkillTreeNodeBuilder nodeBuilder = pageBuilder.newNode(EFSISSSkills.CONNECT_ROOT)
+        SkillTreePageBuilder.SkillTreeNodeBuilder nodeBuilder = pageBuilder.newNode(TCRSkills.REGEN_MANA)
                 .position(centerX, centerY)
-                .abilityPointsRequirement(10);
+                .abilityPointsRequirement(5);
 
         // 为每个外围技能添加父节点，转折点设置在中心点与技能点的中点
         for (int i = 0; i < skills.length; i++) {

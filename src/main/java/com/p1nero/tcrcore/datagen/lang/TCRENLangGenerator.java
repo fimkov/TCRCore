@@ -219,6 +219,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addSkill("water_avoid", "Water Avoidance Charm", "Allows breathing underwater!");
         this.addSkill("fire_avoid", "Fire Avoidance Charm", "Immunity to fire damage!");
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
+        this.addSkill("regen_mana", "Mana Regeneration", "After a perfect dodge or perfect parry, restore %d%% of max mana!");
 
         this.add(TCRItems.RETRACEMENT_STONE.get(), "Retracement Stone");
         this.addItemUsageInfo(TCRItems.RETRACEMENT_STONE.get(), "After use, it will clear all entities in [%s] !");
