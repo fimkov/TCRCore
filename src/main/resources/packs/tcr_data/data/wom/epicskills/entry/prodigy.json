@@ -10,7 +10,7 @@
               "type": "minecraft:custom",
               "stat": "minecraft:sprint_one_cm",
               "value": {
-                "min": 0
+                "min": 0.008
               }
             }
           ]
@@ -106,6 +106,116 @@
     },
     {
       "ability_points": 3,
+      "conditions": {
+        "type_specific": {
+          "type": "player",
+          "stats": [
+            {
+              "type": "minecraft:killed",
+              "stat": "wom:saulomonk",
+              "value": {
+                "min": 1000
+              }
+            },
+            {
+              "type": "minecraft:killed",
+              "stat": "wom:evil_skeleton",
+              "value": {
+                "min": 1000
+              }
+            }
+          ]
+        }
+      },
+      "unlock_tip": "unlock_tip.epicskills.prodigy.critical_knowledge",
+      "custom_condition": false,
+      "hidden": false,
+      "position_in_screen": [
+        650,
+        100
+      ],
+      "skill": "wom:critical_knowledge"
+    },
+    {
+      "ability_points": 3,
+      "conditions": {
+        "type_specific": {
+          "type": "player",
+          "stats": [
+            {
+              "type": "minecraft:killed",
+              "stat": "wom:saulomonk",
+              "value": {
+                "min": 100
+              }
+            },
+            {
+              "type": "minecraft:killed",
+              "stat": "wom:evil_skeleton",
+              "value": {
+                "min": 100
+              }
+            }
+          ]
+        }
+      },
+      "unlock_tip": "unlock_tip.epicskills.prodigy.dancing_blade",
+      "custom_condition": false,
+      "hidden": false,
+      "position_in_screen": [
+        700,
+        100
+      ],
+      "skill": "wom:dancing_blade"
+    },
+    {
+      "ability_points": 4,
+      "parents": [
+        {
+          "control_points": [
+            [
+              700,
+              200
+            ]
+          ],
+          "skill": "wom:dancing_blade"
+        },
+        {
+          "skill": "wom:critical_knowledge"
+        }
+      ],
+      "conditions": {
+        "type_specific": {
+          "type": "player",
+          "stats": [
+            {
+              "type": "minecraft:killed",
+              "stat": "wom:saulomonk",
+              "value": {
+                "min": 2000
+              }
+            },
+            {
+              "type": "minecraft:killed",
+              "stat": "wom:evil_skeleton",
+              "value": {
+                "min": 2000
+              }
+            }
+          ]
+        }
+      },
+      "unlock_tip": "unlock_tip.epicskills.prodigy.lethal_focus",
+      "custom_condition": false,
+      "hidden": false,
+      "position_in_screen": [
+        650,
+        200
+      ],
+      "skill": "wom:lethal_focus"
+    },
+    {
+      "ability_points": 3,
       "hidden": false,
       "parents": [
         {
@@ -131,6 +241,26 @@
         200
       ],
       "skill": "wom:mindset"
+    },
+    {
+      "ability_points": 4,
+      "hidden": false,
+      "parents": [
+        {
+          "control_points": [
+            [
+              300,
+              250
+            ]
+          ],
+          "skill": "wom:mindset"
+        }
+      ],
+      "position_in_screen": [
+        250,
+        250
+      ],
+      "skill": "wom:adrenaline"
     },
     {
       "ability_points": 4,
@@ -175,7 +305,7 @@
               "type": "minecraft:killed",
               "stat": "minecraft:ender_dragon",
               "value": {
-                "min": 0
+                "min": 1
               }
             }
           ]
@@ -469,7 +599,11 @@
     },
     {
       "ability_points": 4,
-      "parents": [],
+      "parents": [
+        {
+          "skill": "wom:lethal_focus"
+        }
+      ],
       "conditions": {
         "type_specific": {
           "type": "player",
@@ -523,7 +657,7 @@
               "type": "minecraft:killed",
               "stat": "minecraft:wither",
               "value": {
-                "min": 0
+                "min": 1
               }
             }
           ]
@@ -687,6 +821,7 @@
         {
           "skill": "wom:dopamine"
         }
+
       ],
       "conditions": {
         "type_specific": {

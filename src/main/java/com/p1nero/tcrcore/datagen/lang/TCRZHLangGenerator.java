@@ -39,44 +39,41 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add("button.tcrcore.menu.discord", "官方Discord");
 
         this.add("skill_tree.tcrcore.magic", "魔法技能");
-        this.add("unlock_tip.epicskills.acrobat.spider_techniques", " 击杀50只蜘蛛");
-        this.add("unlock_tip.epicskills.acrobat.natural_sprinter", " 击杀2只狼人并冲刺10公里");
-        this.add("unlock_tip.epicskills.acrobat.aqua_maneuvre", " 击杀3只远古守卫者并游泳3公里");
 
-        this.add("unlock_tip.epicskills.prodigy.shooting_style", " 击杀2只末影人");
-        this.add("unlock_tip.epicskills.prodigy.punishment_kick", " 击杀25只末影人");
+        this.add("unlock_tip.epicskills.prodigy.critical_knowledge", "击杀1000只索罗蒙僧和击杀1000只邪恶骷髅");
+        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "击杀100只索罗蒙僧和击杀100只邪恶骷髅");
+        this.add("unlock_tip.epicskills.prodigy.lethal_focus", "击杀2000只索罗蒙僧和击杀2000只邪恶骷髅");
 
-        this.add("unlock_tip.epicskills.prodigy.arrow_tenacity", " 击杀5只骷髅");
-        this.add("unlock_tip.epicskills.prodigy.dodge_master", " 击杀50只骷髅");
+        this.add("unlock_tip.epicskills.prodigy.shooting_style", "击杀2只末影人");
+        this.add("unlock_tip.epicskills.prodigy.punishment_kick", "击杀25只末影人");
 
-        this.add("unlock_tip.epicskills.prodigy.ender_step", " 击杀50只末影人");
-        this.add("unlock_tip.epicskills.prodigy.ender_obscuris", " 击杀250只末影人");
-        this.add("unlock_tip.epicskills.prodigy.time_travel", " 击杀1000只末影人");
+        this.add("unlock_tip.epicskills.prodigy.arrow_tenacity", "击杀5只骷髅");
+        this.add("unlock_tip.epicskills.prodigy.dodge_master", "击杀50只骷髅");
 
-        this.add("unlock_tip.epicskills.prodigy.buster_parade", " 击杀10只 活尸");
-        this.add("unlock_tip.epicskills.prodigy.perfect_bulwark", " 击杀50只守卫者");
-        this.add("unlock_tip.epicskills.prodigy.avatar_of_might", " 击杀50只 活尸");
+        this.add("unlock_tip.epicskills.prodigy.ender_step", "击杀50只末影人");
+        this.add("unlock_tip.epicskills.prodigy.ender_obscuris", "击杀250只末影人");
+        this.add("unlock_tip.epicskills.prodigy.time_travel", "击杀1000只末影人");
 
-        this.add("unlock_tip.epicskills.prodigy.precise_roll", " 冲刺4公里");
-        this.add("unlock_tip.epicskills.prodigy.bull_charge", " 击杀40只劫掠兽");
+        this.add("unlock_tip.epicskills.prodigy.buster_parade", "击杀10只活尸");
+        this.add("unlock_tip.epicskills.prodigy.perfect_bulwark", "击杀50只守卫者");
+        this.add("unlock_tip.epicskills.prodigy.avatar_of_might", "击杀50只活尸");
 
-        this.add("unlock_tip.epicskills.prodigy.shulker_cloak", " 击杀36只潜影贝");
-        this.add("unlock_tip.epicskills.prodigy.soul_protection", " 击杀60只凋灵骷髅");
-        this.add("unlock_tip.epicskills.prodigy.vampirize", " 击杀20只邪恶骷髅");
-        this.add("unlock_tip.epicskills.prodigy.dopamine", " 击杀27只狼人");
-        this.add("unlock_tip.epicskills.prodigy.lunatic_vivacity", " 击杀9只恶魂");
-        this.add("unlock_tip.epicskills.prodigy.voodoo_magic", " 击杀10只唤魔者");
-        this.add("unlock_tip.epicskills.prodigy.manipulator", " 击杀6只 索罗蒙僧");
+        this.add("unlock_tip.epicskills.prodigy.precise_roll", "冲刺4公里");
+        this.add("unlock_tip.epicskills.prodigy.bull_charge", "击杀40只劫掠兽");
 
-        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_you", " 击杀100只邪恶骷髅");
-        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_me", " 击杀100只 索罗蒙僧");
+        this.add("unlock_tip.epicskills.prodigy.shulker_cloak", "击杀36只潜影贝");
+        this.add("unlock_tip.epicskills.prodigy.soul_protection", "击杀60只凋灵骷髅");
+        this.add("unlock_tip.epicskills.prodigy.vampirize", "击杀20只邪恶骷髅");
+        this.add("unlock_tip.epicskills.prodigy.dopamine", "击杀27只狼人");
+        this.add("unlock_tip.epicskills.prodigy.lunatic_vivacity", "击杀9只恶魂");
+        this.add("unlock_tip.epicskills.prodigy.voodoo_magic", "击杀10只唤魔者");
+        this.add("unlock_tip.epicskills.prodigy.manipulator", "击杀6只索罗蒙僧");
 
-        this.add("unlock_tip.epicskills.prodigy.inner_growth", " 击败末影龙");
-        this.add("unlock_tip.epicskills.prodigy.shadow_step", " 击败凋灵");
+        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_you", "击杀100只邪恶骷髅");
+        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_me", "击杀100只索罗蒙僧");
 
-        this.add("unlock_tip.epicskills.prodigy.critical_knowledge", " 击杀50只苦力怕和150只怪物");
-        this.add("unlock_tip.epicskills.prodigy.dancing_blade", " 击杀5只女巫和150只怪物");
-        this.add("unlock_tip.epicskills.prodigy.lethal_focus", " 击杀 10 只邪恶骷髅 和 450 只怪物");
+        this.add("unlock_tip.epicskills.prodigy.inner_growth", "击败末影龙");
+        this.add("unlock_tip.epicskills.prodigy.shadow_step", "击败凋灵");
 
         this.add("travelerstitles.tcrcore.sanctum", "梦之领域");
         this.add("travelerstitles.tcrcore.real", "永远抵达不到的现实");
