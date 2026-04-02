@@ -17,6 +17,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.registries.DeferredRegister;
@@ -178,4 +180,17 @@ public class TCRItems {
     public static final RegistryObject<Item> MAGIC_BOTTLE = REGISTRY.register("magic_bottle", () -> new BlueBottleItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
 
     public static final RegistryObject<Item> THE_INCINERATOR_SOUL = REGISTRY.register("the_incinerator_soul", () -> new The_Incinerator((new Item.Properties()).stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
+
+    // 地狱 · 紫金武器（炽焰熔岩风格）
+    public static final RegistryObject<Item> EMBERFANG = REGISTRY.register("emberfang", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金短刃（匕首模板）
+    public static final RegistryObject<Item> MAGMAHEART = REGISTRY.register("magmaheart", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金斧
+    public static final RegistryObject<Item> CINDERWYRM = REGISTRY.register("cinderwyrm", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金长刀（太刀模板）
+    public static final RegistryObject<Item> PURGING_SWALLOW = REGISTRY.register("purging_swallow", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金雁翎（打刀模板）
+    public static final RegistryObject<Item> ASHEN_CRESCENT = REGISTRY.register("ashen_crescent", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金戟（关刀模板）
+
+    // 天域 · 玉系武器（神圣光曜风格）
+    public static final RegistryObject<Item> LUX_JADAE = REGISTRY.register("lux_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉曜（原名：白金剑）
+    public static final RegistryObject<Item> GLACIS_JADAE = REGISTRY.register("glacis_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉霜（原名：白金长剑）
+    public static final RegistryObject<Item> MONS_JADAE = REGISTRY.register("mons_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉岳（原名：白金大剑）
+    public static final RegistryObject<Item> IRIS_JADAE = REGISTRY.register("iris_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉虹（原名：白金枪）
 }

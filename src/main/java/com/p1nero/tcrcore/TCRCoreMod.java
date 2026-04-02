@@ -21,6 +21,7 @@ import com.p1nero.tcrcore.gameassets.TCRSkillSlots;
 import com.p1nero.tcrcore.item.TCRItemTabs;
 import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
+import com.p1nero.tcrcore.utils.ItemUtil;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRStructures;
 import com.wintercogs.beyonddimensions.common.init.BDItems;
@@ -43,8 +44,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
-import yesman.epicfight.api.animation.AnimationManager;
-import yesman.epicfight.api.asset.AssetAccessor;
 import yesman.epicfight.skill.SkillSlot;
 
 import java.util.List;
@@ -119,7 +118,7 @@ public class TCRCoreMod {
                     ModEntities.DEEPLING.get()
             ));
 
-            ItemEvents.initAdditionalInfoItems();
+            ItemUtil.initAdditionalInfoItems();
 
             PEpicCataclysmMod.astrapeLock = TCRCoreMod.getInfo("pec_weapon_lock", WorldUtil.SAMSARA_NAME,
                     TCRBossEntities.SCYLLA_HUMANOID.get().getDescription().copy().withStyle(ChatFormatting.AQUA)).withStyle(ChatFormatting.RED);

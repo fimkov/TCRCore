@@ -1,13 +1,16 @@
 package com.p1nero.tcrcore.utils;
 
+import com.github.L_Ender.cataclysm.init.ModItems;
+import com.github.alexthe668.domesticationinnovation.server.block.DIBlockRegistry;
+import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
 import com.google.common.collect.ImmutableList;
+import com.hm.efn.registries.EFNItem;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.entity.custom.CustomColorItemEntity;
+import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +19,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 
 /**
@@ -24,6 +29,39 @@ import java.util.function.Predicate;
  * 做一些通用的物品栏处理
 */
 public class ItemUtil {
+
+    public static Set<Item> additionalInfoItems = new HashSet<>();
+    public static Set<Item> eyesItems = new HashSet<>();
+    public static Set<Item> netherBetterWeaponItems = new HashSet<>();
+    public static Set<Item> aetherBetterWeaponItems = new HashSet<>();
+
+    public static void initAdditionalInfoItems() {
+        additionalInfoItems.addAll(List.of(
+                DIItemRegistry.COLLAR_TAG.get(),
+                DIBlockRegistry.WHITE_PET_BED.get().asItem(),
+                net.blay09.mods.waystones.item.ModItems.warpStone,
+                com.github.dodo.dodosmobs.init.ModItems.CHIERA_CLAW.get(),
+                ModItems.CHITIN_CLAW.get(),
+                ModItems.CORAL_CHUNK.get(),
+                Items.DRAGON_EGG,
+                EFNItem.DEEPDARK_HEART.get(),
+                EpicSkillsItems.ABILIITY_STONE.get()
+        ));
+        eyesItems.addAll(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()));
+
+    }
+
+    public static boolean isEyeItem(ItemStack stack) {
+        return eyesItems.contains(stack.getItem());
+    }
+
+    public static boolean isBetterNetherWeaponItems(ItemStack stack) {
+        return netherBetterWeaponItems.contains(stack.getItem());
+    }
+
+    public static boolean isBetterAetherWeaponItems(ItemStack stack) {
+        return aetherBetterWeaponItems.contains(stack.getItem());
+    }
 
     public static List<NonNullList<ItemStack>> getCompartments(Player player){
         return ImmutableList.of(player.getInventory().items, player.getInventory().armor, player.getInventory().offhand);

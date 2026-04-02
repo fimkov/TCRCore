@@ -6,11 +6,11 @@ import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
 import com.hm.efn.registries.EFNItem;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.PlayerDataManager;
+import com.p1nero.tcrcore.utils.ItemUtil;
 import com.yesman.epicskills.registry.entry.EpicSkillsItems;
 import net.genzyuro.uniqueaccessories.registry.UAItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,15 +18,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.apache.commons.lang3.SystemUtils;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 @Mod.EventBusSubscriber(modid = TCRCoreMod.MOD_ID)
 public class ItemEvents {
-
-    public static Set<Item> additionalInfoItems = new HashSet<>();
-    public static Set<Item> eyes = new HashSet<>();
 
     @SubscribeEvent
     public static void onItemDesc(ItemTooltipEvent event) {
@@ -35,7 +31,7 @@ public class ItemEvents {
         if(!FMLEnvironment.production && SystemUtils.IS_OS_MAC) {
             event.getToolTip().add(1, Component.literal(BuiltInRegistries.ITEM.getKey(event.getItemStack().getItem()).toString()));
         }
-        if(additionalInfoItems.contains(event.getItemStack().getItem())) {
+        if(ItemUtil.additionalInfoItems.contains(event.getItemStack().getItem())) {
             event.getToolTip().add(1, Component.translatable(event.getItemStack().getItem().getDescriptionId() + ".tcr_info"));
         }
 
@@ -45,22 +41,4 @@ public class ItemEvents {
 
     }
 
-    public static void initAdditionalInfoItems() {
-        ItemEvents.additionalInfoItems.addAll(List.of(
-                DIItemRegistry.COLLAR_TAG.get(),
-                DIBlockRegistry.WHITE_PET_BED.get().asItem(),
-                net.blay09.mods.waystones.item.ModItems.warpStone,
-                com.github.dodo.dodosmobs.init.ModItems.CHIERA_CLAW.get(),
-                ModItems.CHITIN_CLAW.get(),
-                ModItems.CORAL_CHUNK.get(),
-                Items.DRAGON_EGG,
-                EFNItem.DEEPDARK_HEART.get(),
-                EpicSkillsItems.ABILIITY_STONE.get()
-//                net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.MAGNET_UPGRADE.get(),
-//                net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_MAGNET_UPGRADE.get(),
-//                net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.PICKUP_UPGRADE.get(),
-//                net.p3pp3rf1y.sophisticatedbackpacks.init.ModItems.ADVANCED_PICKUP_UPGRADE.get()
-        ));
-        ItemEvents.eyes.addAll(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()));
-    }
 }

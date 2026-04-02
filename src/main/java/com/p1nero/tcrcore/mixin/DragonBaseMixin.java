@@ -40,6 +40,9 @@ public abstract class DragonBaseMixin extends TamableAnimal implements GeoEntity
     @Shadow
     public abstract boolean isTame();
 
+    @Shadow(remap = false)
+    public abstract int getGrowthStage();
+
     protected DragonBaseMixin(EntityType<? extends TamableAnimal> p_21803_, Level p_21804_) {
         super(p_21803_, p_21804_);
     }
@@ -70,9 +73,9 @@ public abstract class DragonBaseMixin extends TamableAnimal implements GeoEntity
     /**
      * 龙养大后
      */
-    @Inject(method = "setGrowthStage", at = @At("HEAD"), remap = false)
-    private void tcr$setGrowthStage(int stage, CallbackInfo ci) {
-        if (stage >= 2) {
+    @Inject(method = "setGrowthProgress", at = @At("HEAD"), remap = false)
+    private void tcr$setGrowthProgress(int progress, CallbackInfo ci) {
+        if (this.getGrowthStage() >= 2) {
             if (this.getOwner() instanceof ServerPlayer player) {
                 if (!TCRQuests.TAME_DRAGON_BACK_TO_FERRY_GIRL.isFinished(player) && TCRQuestManager.hasQuest(player, TCRQuests.TAME_DRAGON)) {
                     TCRQuests.TAME_DRAGON.finish(player, true);

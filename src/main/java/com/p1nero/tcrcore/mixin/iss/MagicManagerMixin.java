@@ -11,15 +11,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * 仅主城才能回蓝
+ * OUT
  */
 @Mixin(MagicManager.class)
 public class MagicManagerMixin {
 
-    @Inject(method = "regenPlayerMana", at = @At("HEAD"), cancellable = true, remap = false)
-    private void tcr$regenPlayerMana(ServerPlayer serverPlayer, MagicData playerMagicData, CallbackInfoReturnable<Boolean> cir) {
-        if(!WorldUtil.inMainLand(serverPlayer)) {
-            cir.setReturnValue(false);
-        }
-    }
+//    @Inject(method = "regenPlayerMana", at = @At("HEAD"), cancellable = true, remap = false)
+//    private void tcr$regenPlayerMana(ServerPlayer serverPlayer, MagicData playerMagicData, CallbackInfoReturnable<Boolean> cir) {
+//        if(!WorldUtil.inMainLand(serverPlayer)) {
+//            cir.setReturnValue(false);
+//        }
+//    }
 
 }

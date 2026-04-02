@@ -275,6 +275,16 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "Oracle Fragment");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.add(TCRItems.EMBERFANG.get(), "Emberfang");
+        this.add(TCRItems.MAGMAHEART.get(), "Magmaheart");
+        this.add(TCRItems.CINDERWYRM.get(), "Cinderwyrm");
+        this.add(TCRItems.PURGING_SWALLOW.get(), "Purging Swallow");
+        this.add(TCRItems.ASHEN_CRESCENT.get(), "Ashen Crescent");
+        this.add(TCRItems.LUX_JADAE.get(), "Lux Jadae");
+        this.add(TCRItems.GLACIS_JADAE.get(), "Glacis Jadae");
+        this.add(TCRItems.MONS_JADAE.get(), "Mons Jadae");
+        this.add(TCRItems.IRIS_JADAE.get(), "Iris Jadae");
+
         this.addInfo("obey_rule", "You have defied the destiny!!");
         this.addInfo("difficulty_change_success", "Successfully changed game difficulty! Current difficulty: %s");
         this.addInfo("difficulty_change_failed", "Error: Failed to change game difficulty! No admin permission or invalid parameter!");

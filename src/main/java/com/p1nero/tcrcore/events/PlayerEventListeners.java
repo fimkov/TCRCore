@@ -237,7 +237,7 @@ public class PlayerEventListeners {
             }
 
             //和女神像交互的处理
-            if (blockState.is(com.github.L_Ender.cataclysm.init.ModBlocks.GODDESS_STATUE.get()) && ItemEvents.eyes.contains(serverPlayer.getMainHandItem().getItem())) {
+            if (blockState.is(com.github.L_Ender.cataclysm.init.ModBlocks.GODDESS_STATUE.get()) && ItemUtil.eyesItems.contains(serverPlayer.getMainHandItem().getItem())) {
                 TCRPlayer tcrPlayer = TCRCapabilityProvider.getTCRPlayer(serverPlayer);
                 ServerLevel serverLevel = serverPlayer.serverLevel();
                 BlockPos blessPos = event.getPos();

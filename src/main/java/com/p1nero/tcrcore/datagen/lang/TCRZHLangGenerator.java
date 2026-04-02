@@ -274,6 +274,16 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "神谕残卷");
         this.addItemUsageInfo(TCRItems.ANCIENT_ORACLE_FRAGMENT.get(), "§c§kI'm Your...");
 
+        this.add(TCRItems.EMBERFANG.get(), "紫金短刃");
+        this.add(TCRItems.MAGMAHEART.get(), "紫金斧");
+        this.add(TCRItems.CINDERWYRM.get(), "紫金长刀");
+        this.add(TCRItems.PURGING_SWALLOW.get(), "紫金雁翎");
+        this.add(TCRItems.ASHEN_CRESCENT.get(), "紫金戟");
+        this.add(TCRItems.LUX_JADAE.get(), "玉曜");
+        this.add(TCRItems.GLACIS_JADAE.get(), "玉霜");
+        this.add(TCRItems.MONS_JADAE.get(), "玉岳");
+        this.add(TCRItems.IRIS_JADAE.get(), "玉虹");
+
         this.addInfo("obey_rule", "你违反了天意");
         this.addInfo("difficulty_change_success", "成功改变游戏难度！当前难度为：%s");
         this.addInfo("difficulty_change_failed", "错误：改变游戏难度失败！无管理员权限或参数错误！");
