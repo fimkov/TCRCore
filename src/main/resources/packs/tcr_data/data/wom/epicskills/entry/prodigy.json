@@ -114,46 +114,14 @@
               "type": "minecraft:killed",
               "stat": "wom:saulomonk",
               "value": {
-                "min": 1000
+                "min": 50
               }
             },
             {
               "type": "minecraft:killed",
               "stat": "wom:evil_skeleton",
               "value": {
-                "min": 1000
-              }
-            }
-          ]
-        }
-      },
-      "unlock_tip": "unlock_tip.epicskills.prodigy.critical_knowledge",
-      "custom_condition": false,
-      "hidden": false,
-      "position_in_screen": [
-        650,
-        100
-      ],
-      "skill": "wom:critical_knowledge"
-    },
-    {
-      "ability_points": 3,
-      "conditions": {
-        "type_specific": {
-          "type": "player",
-          "stats": [
-            {
-              "type": "minecraft:killed",
-              "stat": "wom:saulomonk",
-              "value": {
-                "min": 100
-              }
-            },
-            {
-              "type": "minecraft:killed",
-              "stat": "wom:evil_skeleton",
-              "value": {
-                "min": 100
+                "min": 50
               }
             }
           ]
@@ -167,52 +135,6 @@
         100
       ],
       "skill": "wom:dancing_blade"
-    },
-    {
-      "ability_points": 4,
-      "parents": [
-        {
-          "control_points": [
-            [
-              700,
-              200
-            ]
-          ],
-          "skill": "wom:dancing_blade"
-        },
-        {
-          "skill": "wom:critical_knowledge"
-        }
-      ],
-      "conditions": {
-        "type_specific": {
-          "type": "player",
-          "stats": [
-            {
-              "type": "minecraft:killed",
-              "stat": "wom:saulomonk",
-              "value": {
-                "min": 2000
-              }
-            },
-            {
-              "type": "minecraft:killed",
-              "stat": "wom:evil_skeleton",
-              "value": {
-                "min": 2000
-              }
-            }
-          ]
-        }
-      },
-      "unlock_tip": "unlock_tip.epicskills.prodigy.lethal_focus",
-      "custom_condition": false,
-      "hidden": false,
-      "position_in_screen": [
-        650,
-        200
-      ],
-      "skill": "wom:lethal_focus"
     },
     {
       "ability_points": 3,

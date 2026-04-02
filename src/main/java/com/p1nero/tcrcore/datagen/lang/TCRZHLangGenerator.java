@@ -40,9 +40,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
 
         this.add("skill_tree.tcrcore.magic", "魔法技能");
 
-        this.add("unlock_tip.epicskills.prodigy.critical_knowledge", "击杀1000只索罗蒙僧和击杀1000只邪恶骷髅");
-        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "击杀100只索罗蒙僧和击杀100只邪恶骷髅");
-        this.add("unlock_tip.epicskills.prodigy.lethal_focus", "击杀2000只索罗蒙僧和击杀2000只邪恶骷髅");
+        this.add("unlock_tip.epicskills.prodigy.critical_knowledge", "当前没有做此事的命运");
+        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "击杀50只索罗蒙僧和击杀50只邪恶骷髅");
+        this.add("unlock_tip.epicskills.prodigy.lethal_focus", "当前没有做此事的命运");
 
         this.add("unlock_tip.epicskills.prodigy.shooting_style", "击杀2只末影人");
         this.add("unlock_tip.epicskills.prodigy.punishment_kick", "击杀25只末影人");

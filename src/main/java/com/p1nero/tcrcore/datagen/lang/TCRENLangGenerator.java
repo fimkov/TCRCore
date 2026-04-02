@@ -40,9 +40,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
 
         this.add("skill_tree.tcrcore.magic", "Magic Skills");
 
-        this.add("unlock_tip.epicskills.prodigy.critical_knowledge", "Slaught 1000 Saulomnk and 1000 Evil Skeleton");
-        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "Slaught 100 Saulomnk and 100 Evil Skeleton");
-        this.add("unlock_tip.epicskills.prodigy.lethal_focus", "Slaught 2000 Saulomnk and 2000 Evil Skeleton");
+        this.add("unlock_tip.epicskills.prodigy.critical_knowledge", "You are not destined to do this");
+        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "Slaught 50 Saulomnk and 50 Evil Skeleton");
+        this.add("unlock_tip.epicskills.prodigy.lethal_focus", "You are not destined to do this");
 
         this.add("unlock_tip.epicskills.prodigy.shooting_style", "Slaught 2 Enderman");
         this.add("unlock_tip.epicskills.prodigy.punishment_kick", "Slaught 25 Enderman");
