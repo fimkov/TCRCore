@@ -167,32 +167,32 @@ public class TCRQuests {
 
         PUT_FLAME_EYE_ON_ALTAR = TCRQuestManager.create("put_flame_eye_on_altar")
                 .withIcon(SIDE_QUEST_1)
-                .shortDescParam(ModItems.FLAME_EYE.get().getDescription())
-                .descParam(ModItems.FLAME_EYE.get().getDescription())
+                .shortDescParam(ModItems.FLAME_EYE.get().getDescription().copy().withStyle(ChatFormatting.RED))
+                .descParam(ModItems.FLAME_EYE.get().getDescription().copy().withStyle(ChatFormatting.RED))
                 .withTrackingPos(new BlockPos(WorldUtil.FLAME_EYE_ALTAR_POS.above()), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         PUT_MECH_EYE_ON_ALTAR = TCRQuestManager.create("put_mech_eye_on_altar")
                 .withIcon(SIDE_QUEST_1)
-                .shortDescParam(ModItems.MECH_EYE.get().getDescription())
-                .descParam(ModItems.MECH_EYE.get().getDescription())
+                .shortDescParam(ModItems.MECH_EYE.get().getDescription().copy().withStyle(ChatFormatting.GOLD))
+                .descParam(ModItems.MECH_EYE.get().getDescription().copy().withStyle(ChatFormatting.GOLD))
                 .withTrackingPos(new BlockPos(WorldUtil.MECH_EYE_ALTAR_POS.above()), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         PUT_STORM_EYE_ON_ALTAR = TCRQuestManager.create("put_storm_eye_on_altar")
                 .withIcon(SIDE_QUEST_1)
-                .shortDescParam(ModItems.STORM_EYE.get().getDescription())
-                .descParam(ModItems.STORM_EYE.get().getDescription())
+                .shortDescParam(ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
+                .descParam(ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
                 .withTrackingPos(new BlockPos(WorldUtil.STORM_EYE_ALTAR_POS.above()), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         PUT_VOID_EYE_ON_ALTAR = TCRQuestManager.create("put_void_eye_on_altar")
                 .withIcon(SIDE_QUEST_1)
-                .shortDescParam(ModItems.VOID_EYE.get().getDescription())
-                .descParam(ModItems.VOID_EYE.get().getDescription())
+                .shortDescParam(ModItems.VOID_EYE.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE))
+                .descParam(ModItems.VOID_EYE.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE))
                 .withTrackingPos(new BlockPos(WorldUtil.VOID_EYE_ALTAR_POS.above()), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         PUT_MONST_EYE_ON_ALTAR = TCRQuestManager.create("put_monst_eye_on_altar")
                 .withIcon(SIDE_QUEST_1)
-                .shortDescParam(ModItems.MONSTROUS_EYE.get().getDescription())
-                .descParam(ModItems.MONSTROUS_EYE.get().getDescription())
+                .shortDescParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
+                .descParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
                 .withTrackingPos(new BlockPos(WorldUtil.MONST_EYE_ALTAR_POS.above()), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         BLESS_ON_THE_GODNESS_STATUE = TCRQuestManager.create("bless_on_the_godness_statue")
@@ -448,7 +448,7 @@ public class TCRQuests {
 
         TALK_TO_CHRONOS_9 = TCRQuestManager.create("talk_to_chronos_9")
                 .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
-                .descParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                .descParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED),
                         TCREntities.CHRONOS_SOL.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
@@ -539,8 +539,8 @@ public class TCRQuests {
                         WorldUtil.END_NAME);
 
         GET_VOID_EYE = TCRQuestManager.create("get_void_eye")
-                .shortDescParam(ModItems.VOID_EYE.get().getDescription())
-                .descParam(ModItems.VOID_EYE.get().getDescription(),
+                .shortDescParam(ModItems.VOID_EYE.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE))
+                .descParam(ModItems.VOID_EYE.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE),
                         WorldUtil.END_NAME);
 
         TALK_TO_ORNN_YAMATO = TCRQuestManager.create("talk_to_ornn_yamato")
@@ -551,7 +551,7 @@ public class TCRQuests {
 
         TALK_TO_CHRONOS_END = TCRQuestManager.create("talk_to_chronos_end")
                 .shortDescParam(TCREntities.CHRONOS_SOL.get().getDescription())
-                .descParam(ModItems.VOID_EYE.get().getDescription())
+                .descParam(ModItems.VOID_EYE.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE))
                 .withTrackingPos(new BlockPos(WorldUtil.CHRONOS_SOL_BLOCK_POS.above(4)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         KILL_MAD_CHRONOS = TCRQuestManager.create("kill_mad_chronos")
