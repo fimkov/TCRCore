@@ -4,6 +4,7 @@ import com.mojang.datafixers.util.Pair;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.yungnickyoung.minecraft.yungsapi.criteria.SafeStructureLocationPredicate;
+import net.minecraft.Util;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
@@ -72,6 +73,7 @@ public class WorldUtil {
     public static final Vec3 CENTER_POS = new Vec3(-19, 75, -79);
     public static final Vec3 CHRONOS_SOL_POS = new Vec3(-186, 85, -191);
     public static final BlockPos CHRONOS_SOL_BLOCK_POS = new BlockPos(-186, 85, -191);
+
     public static final String LAND_GOLEM = "ba_bt:land_tower";
     public static final String BONE_CHIMERA_STRUCTURE = "dodosmobs:jungle_prison";
     public static final String OCEAN_GOLEM = "ba_bt:ocean_tower";
@@ -89,6 +91,10 @@ public class WorldUtil {
     public static List<MapColor> surfaceMaterials = Arrays.asList(MapColor.WATER, MapColor.ICE);
 
     private static final Pattern LOCATE_PATTERN = Pattern.compile(".*?\\[\\s*(-?\\d+)\\s*,\\s*~\\s*,\\s*(-?\\d+)\\s*\\].*");
+
+    public static MutableComponent getStructureName(String id) {
+        return Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(id)));
+    }
 
     public static boolean inMainLand(Entity entity) {
         return entity.level().dimension() == TCRDimensions.SANCTUM_LEVEL_KEY;

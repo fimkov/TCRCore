@@ -155,6 +155,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_8, "地狱之章", "和%s对话", "经过漫长的等待，%s已完成充能。快回去找%s吧！她在圣殿里等你。");
         this.addQuest(TCRQuests.GO_TO_NETHER, "地狱之章", "前往[%s]", "散落在[%s]的神之眼皆已寻回，共鸣石或许无法在[%s]发挥作用。按%s所说，使用[%s]点燃黑曜石框架打开%s吧！");
         this.addQuest(TCRQuests.USE_NETHER_RESONANCE_STONE, "地狱之章", "使用[%s]", "你已经抵达[%s]，快使用[%s]吧！它将为我们指引[%s]的位置！到底有什么样的冒险在等着我们呢？");
+        this.addQuest(TCRQuests.GET_NETHER_MONOLITH_KEY_1, "地狱之章", "合成[%s]，夺取[%s]", "共鸣石上的古老碑文所示，要想激活[%s]，需获取[%s]。而其一便散落在[%s]。提示：合成[%s]以召唤[%s]的守护者：[%s]，夺回[%s]吧！");
+        this.addQuest(TCRQuests.GET_NETHER_MONOLITH_KEY_2, "地狱之章", "夺取[%s]", "共鸣石上的古老碑文所示，要想激活[%s]，需获取[%s]。而其二便散落在[%s]。前往[%s]击败[%s]的守护者：[%s]，夺回[%s]吧！");
         this.addQuest(TCRQuests.GET_MONST_EYE, "地狱之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！ \n\n§a[提示]：建议装备[%s]");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_9, "地狱之章", "和%s对话", "[%s]已经寻回，快回主城找%s汇报吧！她将告诉我们下一步该做什么。");
 

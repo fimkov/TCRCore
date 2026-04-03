@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.capability;
 
 import com.brass_amber.ba_bt.init.BTEntityType;
+import com.brass_amber.ba_bt.init.BTItems;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
 import com.github.dodo.dodosmobs.init.ModEntities;
@@ -15,6 +16,8 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.yungnickyoung.minecraft.ribbits.module.EntityTypeModule;
+import io.redspace.ironsspellbooks.registries.EntityRegistry;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -101,8 +104,7 @@ public class TCRQuests {
     public static Quest TALK_TO_CHRONOS_8;
     public static Quest GO_TO_NETHER;
     public static Quest USE_NETHER_RESONANCE_STONE;
-    public static Quest GET_NETHER_MONOLITH_KEY_1;//肘下界堡垒
-    public static Quest CRAFT_CALLER;//制作铃铛，召唤boss
+    public static Quest GET_NETHER_MONOLITH_KEY_1;//制作铃铛，召唤boss，肘下界堡垒
     public static Quest GET_NETHER_MONOLITH_KEY_2;//肘铁魔法城堡
     public static Quest GET_MONST_EYE;
     public static Quest TALK_TO_CHRONOS_9;
@@ -248,7 +250,7 @@ public class TCRQuests {
         BONE_CHIMERA_QUEST = TCRQuestManager.create("bone_chimera_quest")
                 .withIcon(SIDE_QUEST_1)
                 .descParam(TCRItems.LAND_RESONANCE_STONE.get().getDescription(), TCRItems.MYSTERIOUS_WEAPONS.get().getDescription())
-                .shortDescParam(Component.translatable("structure.dodosmobs.jungle_prison"));
+                .shortDescParam(WorldUtil.getStructureName(WorldUtil.BONE_CHIMERA_STRUCTURE));
 
         TALK_TO_ORNN_1 = TCRQuestManager.create("talk_to_ornn_1")
                 .withIcon(SIDE_QUEST_1)
@@ -292,7 +294,7 @@ public class TCRQuests {
 
         RIBBITS_QUEST = TCRQuestManager.create("ribbits_quest")
                 .withIcon(SIDE_QUEST_1)
-                .shortDescParam(Component.translatable("structure.ribbits.ribbit_village"))
+                .shortDescParam(WorldUtil.getStructureName(WorldUtil.RIBBIT_VILLAGE))
                 .descParam(TCRItems.OCEAN_RESONANCE_STONE.get().getDescription(),
                         Component.translatable(TCRSkills.WATER_AVOID.getTranslationKey()),
                         artifacts.registry.ModItems.CHARM_OF_SINKING.get().getDescription());
@@ -414,6 +416,29 @@ public class TCRQuests {
                 .descParam(WorldUtil.NETHER_NAME, TCRItems.NETHER_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED),
                         ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED));
 
+        GET_NETHER_MONOLITH_KEY_1 = TCRQuestManager.create("get_nether_monolith_key_1")
+                .shortDescParam(ItemRegistry.CINDEROUS_SOULCALLER.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
+                .descParam(
+                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        WorldUtil.getStructureName(WorldUtil.NETHER_KEY_1),
+                        ItemRegistry.CINDEROUS_SOULCALLER.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        EntityRegistry.FIRE_BOSS.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
+
+        GET_NETHER_MONOLITH_KEY_2 = TCRQuestManager.create("get_nether_monolith_key_2")
+                .shortDescParam(BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
+                .descParam(
+                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        WorldUtil.getStructureName(WorldUtil.NETHER_KEY_2),
+                        WorldUtil.getStructureName(WorldUtil.NETHER_KEY_2),
+                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        EntityRegistry.FIRE_BOSS.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
+
         GET_MONST_EYE = TCRQuestManager.create("get_monst_eye")
                 .shortDescParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
                 .descParam(TCRItems.NETHER_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED),
@@ -495,7 +520,7 @@ public class TCRQuests {
                         WorldUtil.END_NAME,
                         WorldUtil.OVERWORLD_NAME,
                         WorldUtil.END_NAME,
-                        Component.translatable("structure.integrated_stronghold.stronghold"),
+                        WorldUtil.getStructureName(WorldUtil.STRONG_HOLD),
                         WorldUtil.END_NAME);
 
         USE_END_RESONANCE_STONE = TCRQuestManager.create("use_end_resonance_stone")
@@ -504,13 +529,13 @@ public class TCRQuests {
                         WorldUtil.END_NAME,
                         WorldUtil.OVERWORLD_NAME,
                         WorldUtil.END_NAME,
-                        Component.translatable("structure.integrated_stronghold.stronghold"),
+                        WorldUtil.getStructureName(WorldUtil.STRONG_HOLD),
                         WorldUtil.END_NAME);
 
         GO_TO_THE_END = TCRQuestManager.create("go_to_the_end")
                 .shortDescParam(WorldUtil.END_NAME)
                 .descParam(TCRItems.END_RESONANCE_STONE.get().getDescription(),
-                        Component.translatable("structure.integrated_stronghold.stronghold"),
+                        WorldUtil.getStructureName(WorldUtil.STRONG_HOLD),
                         WorldUtil.END_NAME);
 
         GET_VOID_EYE = TCRQuestManager.create("get_void_eye")
