@@ -15,9 +15,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.StructureManager;
@@ -38,18 +35,16 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.ProtectedBloc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import org.jetbrains.annotations.NotNull;
-import org.violetmoon.quark.content.mobs.entity.Forgotten;
-import org.violetmoon.quark.content.mobs.module.ForgottenModule;
 import yesman.epicfight.world.item.EpicFightItems;
 
-public class NetherGateOfDisaster extends Structure {
+public class NetherGateOfDisasterStructure extends Structure {
     public static final ResourceLocation GATE_OF_DISASTER_P1 = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "gate_of_disaster_part1");
     public static final ResourceLocation GATE_OF_DISASTER_P2 = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "gate_of_disaster_part2");
     public static final ResourceLocation GATE_OF_DISASTER_P3 = ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "gate_of_disaster_part3");
-    public static final Codec<NetherGateOfDisaster> CODEC = simpleCodec(NetherGateOfDisaster::new);
+    public static final Codec<NetherGateOfDisasterStructure> CODEC = simpleCodec(NetherGateOfDisasterStructure::new);
     private static final Map<ResourceLocation, BlockPos> OFFSET = new HashMap<>();
 
-    protected NetherGateOfDisaster(Structure.StructureSettings pSettings) {
+    protected NetherGateOfDisasterStructure(Structure.StructureSettings pSettings) {
         super(pSettings);
     }
 
@@ -118,7 +113,7 @@ public class NetherGateOfDisaster extends Structure {
         }
 
         private static BlockPos makePosition(ResourceLocation location, BlockPos pos) {
-            return pos.offset(NetherGateOfDisaster.OFFSET.get(location));
+            return pos.offset(NetherGateOfDisasterStructure.OFFSET.get(location));
         }
 
         @Override
@@ -169,16 +164,6 @@ public class NetherGateOfDisaster extends Structure {
                     bossSpawner.setKeyCountInEntity(1);
                     pLevel.addFreshEntity(bossSpawner);
 //                    destroyNearby(bossSpawner, 5);
-                }
-                BlockPos pos1 = pPos.offset(pRandom.nextInt(5), 2, pRandom.nextInt(5));
-                PiglinBrute piglinBrute = EntityType.PIGLIN_BRUTE.create(pLevel.getLevel());
-                if(piglinBrute != null) {
-                    piglinBrute.moveTo((double)pos1.getX() + (double)0.5F, pos1.getY() + 2, (double)pos1.getZ() + (double)0.5F, 0.0F, 0.0F);
-                    piglinBrute.addTag("tcr_drop_nether_golem_key");
-                    piglinBrute.setGlowingTag(true);
-                    piglinBrute.setItemInHand(InteractionHand.MAIN_HAND, EpicFightItems.GOLDEN_TACHI.get().getDefaultInstance());
-                    pLevel.addFreshEntity(piglinBrute);
-//                    destroyNearby(piglinBrute, 5);
                 }
 
                 //清理自己

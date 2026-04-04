@@ -492,6 +492,26 @@ public class TCRQuests {
                 .descParam(TCRItems.SKY_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
                         ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA));
 
+        GET_AETHER_MONOLITH_KEY_1 = TCRQuestManager.create("get_aether_monolith_key_1")
+                .shortDescParam(BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
+                .descParam(BTEntityType.SKY_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        WorldUtil.getStructureName(WorldUtil.AETHER_KEY_1),
+                        WorldUtil.getStructureName(WorldUtil.AETHER_KEY_1),
+                        BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        TCRBossEntities.VALKYRIE.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA));
+
+        GET_AETHER_MONOLITH_KEY_2 = TCRQuestManager.create("get_aether_monolith_key_2")
+                .shortDescParam(BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
+                .descParam(BTEntityType.SKY_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        WorldUtil.getStructureName(WorldUtil.AETHER_KEY_2),
+                        WorldUtil.getStructureName(WorldUtil.AETHER_KEY_2),
+                        BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        TCRBossEntities.GILDED_HUNTER.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        BTItems.SKY_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.AQUA));
+
         GET_STORM_EYE = TCRQuestManager.create("get_storm_eye")
                 .shortDescParam(ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
                 .descParam(TCRItems.SKY_RESONANCE_STONE.get().getDescription().copy().withStyle(ChatFormatting.AQUA),

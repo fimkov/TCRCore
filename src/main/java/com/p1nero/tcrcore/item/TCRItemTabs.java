@@ -66,5 +66,14 @@ public class TCRItemTabs {
                 output.accept(TCRItems.GLACIS_JADAE.get());
                 output.accept(TCRItems.MONS_JADAE.get());
                 output.accept(TCRItems.IRIS_JADAE.get());
+                output.accept(TCRItems.MAGIC_DAGGER.get());
+                output.accept(TCRItems.MAGIC_AXE.get());
+                output.accept(TCRItems.MAGIC_TACHI.get());
+                output.accept(TCRItems.MAGIC_KATANA.get());
+                output.accept(TCRItems.MAGIC_HALBERD.get());
+                output.accept(TCRItems.MAGIC_SWORD.get());
+                output.accept(TCRItems.MAGIC_LONGSWORD.get());
+                output.accept(TCRItems.MAGIC_GREATSWORD.get());
+                output.accept(TCRItems.MAGIC_SPEAR.get());
             }).build());
 }

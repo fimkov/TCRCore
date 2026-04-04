@@ -44,6 +44,11 @@ import com.p1nero.tcr_bosses.entity.cataclysm.leviathan.LeviathanHumanoid;
 import com.p1nero.tcr_bosses.entity.cataclysm.maledictus.MaledictusHumanoid;
 import com.p1nero.tcr_bosses.entity.cataclysm.netherite.NetheriteHumanoid;
 import com.p1nero.tcr_bosses.entity.cataclysm.scylla.ScyllaHumanoid;
+import com.p1nero.tcr_bosses.entity.custom.BaseSmallBossEntity;
+import com.p1nero.tcr_bosses.entity.custom.aether.gilded_hunter.GildedHunterEntity;
+import com.p1nero.tcr_bosses.entity.custom.aether.valkyrie.ValkyrieQueenEntity;
+import com.p1nero.tcr_bosses.entity.custom.nether.evening_ghost.EveningGhostEntity;
+import com.p1nero.tcr_bosses.entity.custom.nether.golden_executor.GoldenExecutorEntity;
 import com.p1nero.tcr_bosses.mixins.AbstractGolemInvoker;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.*;
@@ -320,6 +325,20 @@ public class LivingEntityEventListeners {
                     }
                     ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 1, ChatFormatting.RED.getColor().intValue());
                     ItemUtil.addItemEntity(player, ItemRegistry.CINDER_ESSENCE.get(), 1, ChatFormatting.RED.getColor().intValue());
+                } else if (livingEntity instanceof GoldenExecutorEntity) {
+                    if (TCRQuestManager.hasQuest(player, TCRQuests.GET_NETHER_MONOLITH_KEY_1)) {
+                        TCRQuests.GET_NETHER_MONOLITH_KEY_1.finish(player, true);
+                    }
+                    if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                        ItemUtil.addItemEntity(player, ItemRegistry.BLOODY_VELLUM.get(), 1, ChatFormatting.DARK_RED.getColor().intValue());
+                    }
+                } else if (livingEntity instanceof EveningGhostEntity) {
+                    if (TCRQuestManager.hasQuest(player, TCRQuests.GET_NETHER_MONOLITH_KEY_2)) {
+                        TCRQuests.GET_NETHER_MONOLITH_KEY_2.finish(player, true);
+                    }
+                    if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                        ItemUtil.addItemEntity(player, Items.NETHERITE_SCRAP, 3, ChatFormatting.DARK_RED.getColor().intValue());
+                    }
                 } else if (livingEntity instanceof NetherGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_MONST_EYE)) {
                         givePlayerAward(player, 1);
@@ -330,7 +349,6 @@ public class LivingEntityEventListeners {
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
                     ItemUtil.addItemEntity(player, EFNItem.DUSKFIRE_INGOT.get(), 1, ChatFormatting.RED.getColor().intValue());
-                    ItemUtil.addItemEntity(player, ItemRegistry.BLOODY_VELLUM.get(), 1, ChatFormatting.RED.getColor().intValue());
                 } else if (livingEntity instanceof WitherBoss) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_WITHER_EYE)) {
                         givePlayerAward(player, 1);
@@ -342,6 +360,20 @@ public class LivingEntityEventListeners {
                         player.connection.send(new ClientboundSoundPacket(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE), SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1.0F, 1.0F, player.getRandom().nextInt()));
                     }
                     ItemUtil.addItemEntity(player, Items.WITHER_ROSE, 1, ChatFormatting.DARK_RED.getColor().intValue());
+                } else if (livingEntity instanceof ValkyrieQueenEntity) {
+                    if (TCRQuestManager.hasQuest(player, TCRQuests.GET_AETHER_MONOLITH_KEY_1)) {
+                        TCRQuests.GET_AETHER_MONOLITH_KEY_1.finish(player, true);
+                    }
+                    if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                        ItemUtil.addItemEntity(player, ItemRegistry.LIGHTNING_BOTTLE.get(), 2, ChatFormatting.AQUA.getColor().intValue());
+                    }
+                } else if (livingEntity instanceof GildedHunterEntity) {
+                    if (TCRQuestManager.hasQuest(player, TCRQuests.GET_AETHER_MONOLITH_KEY_2)) {
+                        TCRQuests.GET_AETHER_MONOLITH_KEY_2.finish(player, true);
+                    }
+                    if(TCRMainLevelSaveData.get(player.serverLevel()).isHardDifficulty()) {
+                        ItemUtil.addItemEntity(player, Items.DIAMOND, 5, ChatFormatting.AQUA.getColor().intValue());
+                    }
                 } else if (livingEntity instanceof SkyGolem) {
                     if (TCRQuestManager.hasQuest(player, TCRQuests.GET_STORM_EYE)) {
                         givePlayerAward(player, 1);
@@ -481,13 +513,30 @@ public class LivingEntityEventListeners {
                 }
             }
 
-            //云鲸塔的顺便掉个钥匙
             if (livingEntity instanceof IronGolem ironGolem && WorldUtil.isInStructure(livingEntity, WorldUtil.SKY_GOLEM) && !livingEntity.getPersistentData().getBoolean("already_respawn")) {
                 //秽土转生
                 EntityRespawnerMod.addToRespawn(ironGolem, 60, true);
                 ItemUtil.addItemEntity(livingEntity, TCRItems.DIVINE_FRAGMENT.get(), 1, ChatFormatting.GOLD.getColor().intValue());
-                ItemUtil.addItemEntity(livingEntity, BTItems.SKY_MONOLITH_KEY.get(), 1, ChatFormatting.GOLD.getColor().intValue());
                 livingEntity.getPersistentData().putBoolean("already_respawn", true);
+            }
+
+            if(livingEntity instanceof EveningGhostEntity entity) {
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
+                if(soulEntity != null) {
+                    soulEntity.setPos(entity.getSpawnPos().above().getCenter());
+                }
+            }
+            if(livingEntity instanceof ValkyrieQueenEntity entity) {
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
+                if(soulEntity != null) {
+                    soulEntity.setPos(entity.getSpawnPos().above().getCenter());
+                }
+            }
+            if(livingEntity instanceof GildedHunterEntity entity) {
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
+                if(soulEntity != null) {
+                    soulEntity.setPos(entity.getSpawnPos().above().getCenter());
+                }
             }
 
             //末影龙似了直接连战末地傀儡
@@ -864,6 +913,13 @@ public class LivingEntityEventListeners {
                 ItemUtil.addItemEntity(serverPlayer, TCRItems.RETRACEMENT_STONE.get().getDefaultInstance());
                 baseBossEntity.getPersistentData().putBoolean("retracement_stone_given", true);
             });
+        }
+
+        //设置出生点方便复活
+        if(event.getEntity() instanceof BaseSmallBossEntity boss) {
+            if(!boss.hasSpawnPos()) {
+                boss.setSpawnPos(boss.getOnPos());
+            }
         }
 
         if (event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {

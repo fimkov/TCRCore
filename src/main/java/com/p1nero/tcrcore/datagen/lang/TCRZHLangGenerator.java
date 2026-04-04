@@ -170,6 +170,8 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_11, "天域之章", "和%s对话", "经过漫长的等待，%s已完成充能。快回去找%s吧！她在圣殿里等你。");
         this.addQuest(TCRQuests.GO_TO_AETHER, "天域之章", "前往[%s]", "以生命之源（%s）浇灌%s所筑之框，即可开启天堂之门！");
         this.addQuest(TCRQuests.USE_AETHER_RESONANCE_STONE, "天域之章", "使用[%s]", "收集神之眼的旅途至今，仅剩天域使徒（Sky Angel），和虚无使徒（Void Angel）的神之眼尚未归还...");
+        this.addQuest(TCRQuests.GET_AETHER_MONOLITH_KEY_1, "天域之章", "夺取[%s]", "共鸣石上的古老碑文所示，要想激活[%s]，需获取[%s]。而其一便散落在[%s]。前往[%s]击败[%s]的守护者：[%s]，夺回[%s]吧！");
+        this.addQuest(TCRQuests.GET_AETHER_MONOLITH_KEY_2, "天域之章", "夺取[%s]", "共鸣石上的古老碑文所示，要想激活[%s]，需获取[%s]。而其二便散落在[%s]。前往[%s]击败[%s]的守护者：[%s]，夺回[%s]吧！");
         this.addQuest(TCRQuests.GET_STORM_EYE, "天域之章", "寻回[%s]", "[%s]为我们标记了[%s]所散落的位置，快出发去寻回[%s]吧！");
         this.addQuest(TCRQuests.TALK_TO_SKY_GOLEM, "天域之章", "和%s对话", "%s似乎...没有完全消散，祂似乎恢复了神智，和%s交流看看吧！");
         this.addQuest(TCRQuests.TALK_TO_CHRONOS_12, "天域之章", "和%s对话", "[%s]已经寻回，并且了解了自己的故事...快回主城找%s汇报吧！她将告诉我们下一步该做什么。");

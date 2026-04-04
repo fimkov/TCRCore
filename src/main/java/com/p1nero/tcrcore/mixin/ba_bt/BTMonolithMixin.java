@@ -55,18 +55,6 @@ public abstract class BTMonolithMixin extends Entity {
     private void tcr$interact(Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
         if (this.monolithType != null) {
             Item itemInHand = player.getItemInHand(hand).getItem();
-            if(this.monolithType.equals(BTEntityType.END_MONOLITH.get())
-            ||this.monolithType.equals(BTEntityType.NETHER_MONOLITH.get())) {
-                //直接生
-                if (!player.isCreative() && itemInHand.equals(this.correctMonolithKey)) {
-                    player.getItemInHand(hand).shrink(1);
-                }
-                this.setKeyCountInEntity(3);
-                this.setEyeSlotDisplayed();
-                this.playKeyInteractionSound();
-                cir.setReturnValue(InteractionResult.sidedSuccess(this.getCommandSenderWorld().isClientSide()));
-                return;
-            }
             if (itemInHand.equals(this.correctMonolithKey)) {
                 int min = this.monolithType.equals(BTEntityType.LAND_MONOLITH.get()) ? 2 : 1;
                 if(this.getKeyCountInEntity() == min) {
@@ -78,6 +66,17 @@ public abstract class BTMonolithMixin extends Entity {
                     this.setEyeSlotDisplayed();
                     cir.setReturnValue(InteractionResult.sidedSuccess(this.getCommandSenderWorld().isClientSide()));
                 }
+            }
+
+            if(this.monolithType.equals(BTEntityType.END_MONOLITH.get())) {
+                //末地的不用钥匙，直接生，但是也可以损耗一下钥匙hhh
+                if (!player.isCreative() && itemInHand.equals(this.correctMonolithKey)) {
+                    player.getItemInHand(hand).shrink(1);
+                }
+                this.setKeyCountInEntity(3);
+                this.setEyeSlotDisplayed();
+                this.playKeyInteractionSound();
+                cir.setReturnValue(InteractionResult.sidedSuccess(this.getCommandSenderWorld().isClientSide()));
             }
         }
     }
