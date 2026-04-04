@@ -15,7 +15,7 @@
     "BaseFireBlockMixin",
     "BedBlockMixin",
     "BoatItemMixin",
-    "Bone_ChimeraMixin",
+    "dodosmob.Bone_ChimeraMixin",
     "CaptainCorneliaMixin",
     "DragonBaseMixin",
     "DrownedMixin",

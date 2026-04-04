@@ -223,6 +223,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addSkill("perfect_dodge", "Dodge Effect", "Play a cool animation when perfect dodge!");
         this.addSkill("regen_mana", "Mana Regeneration", "After a perfect dodge or perfect parry, restore %d%% of max mana!");
 
+        this.add(TCRItems.BLOOD_LOTUS.get(), "Blood-Lotus of Carnage");
+        this.addItemUsageInfo(TCRItems.BLOOD_LOTUS.get(), "High-tier material. Can upgrade certain basic weapons into high-tier weapons.");
+        this.add(TCRItems.NINE_HEAVEN_DARKSTEEL.get(), "Nine Heavens Darksteel");
+        this.addItemUsageInfo(TCRItems.NINE_HEAVEN_DARKSTEEL.get(), "High-tier material. Can upgrade certain basic weapons into high-tier weapons.");
         this.add(TCRItems.RETRACEMENT_STONE.get(), "Retracement Stone");
         this.addItemUsageInfo(TCRItems.RETRACEMENT_STONE.get(), "After use, it will clear all entities in [%s] !");
         this.add(TCRItems.RESET_SKILL_STONE.get(), "Reset Skill Stone");
@@ -439,6 +443,10 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRBossEntities.MALEDICTUS_HUMANOID.get(), "Anima Essentia");
         this.add(TCRBossEntities.NETHERITE_HUMANOID.get(), "Infernus Abyssus");
 
+        this.add(TCRBossEntities.GOLDEN_EXECUTOR.get(), "Golden Executor");
+        this.add(TCRBossEntities.VALKYRIE.get(), "Valkyrie Queen");
+        this.add(TCRBossEntities.EVENING_GHOST.get(), "Evening Ghost");
+        this.add(TCRBossEntities.GILDED_HUNTER.get(), "Gilded Hunter");
 
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "Man, are you ready？");
         this.addDialogOption(EntityType.IRON_GOLEM, 0, "Yes");

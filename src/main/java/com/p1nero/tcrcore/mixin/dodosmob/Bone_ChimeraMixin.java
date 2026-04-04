@@ -1,4 +1,4 @@
-package com.p1nero.tcrcore.mixin;
+package com.p1nero.tcrcore.mixin.dodosmob;
 
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.Bone_Chimera_Entity;
 import com.github.dodo.dodosmobs.entity.InternalAnimationMonster.IABossMonsters.IABoss_monster;
@@ -9,6 +9,9 @@ import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
@@ -22,6 +25,7 @@ import static com.p1nero.tcrcore.events.ForgeEvents.BOSS_BAR_MANAGER;
 
 /**
  * 对话控制开打
+ * 改数值
  */
 @Mixin(Bone_Chimera_Entity.class)
 public abstract class Bone_ChimeraMixin extends IABoss_monster {
@@ -66,6 +70,17 @@ public abstract class Bone_ChimeraMixin extends IABoss_monster {
         if(!level().isClientSide) {
             tcr$bossBar.removeAllPlayers();
         }
+    }
+
+    @Inject(method = "aptrgangr", at = @At("HEAD"), cancellable = true, remap = false)
+    private static void tcr$aptrgangr(CallbackInfoReturnable<AttributeSupplier.Builder> cir) {
+        cir.setReturnValue(Monster.createMonsterAttributes()
+                .add(Attributes.FOLLOW_RANGE, 30.0F)
+                .add(Attributes.MOVEMENT_SPEED, 0.28F)
+                .add(Attributes.ATTACK_DAMAGE, 3.0F)
+                .add(Attributes.MAX_HEALTH, 100.0F)
+                .add(Attributes.ARMOR, 8.0F)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1.0F));
     }
 
 }

@@ -43,7 +43,8 @@ public class TCRItemModelProvider extends ItemModelProvider {
         simpleItem(TCRItems.SKY_RESONANCE_STONE);
         simpleItem(TCRItems.END_RESONANCE_STONE);
         simpleItem(TCRItems.MAGIC_BOTTLE);
-        withExistingItemTexture(TCRItems.NECROMANCY_SCROLL, ItemRegistry.MAGIC_CLOTH);
+//        withExistingItemTexture(TCRItems.NECROMANCY_SCROLL, ItemRegistry.MAGIC_CLOTH);
+        simpleItem(TCRItems.NECROMANCY_SCROLL);
         simpleItem(TCRItems.DIVINE_FRAGMENT);
         simpleItem(TCRItems.ABYSS_FRAGMENT);
         simpleItem(TCRItems.DESERT_FRAGMENT);
@@ -58,6 +59,8 @@ public class TCRItemModelProvider extends ItemModelProvider {
         simpleItem(TCRItems.STONE_OF_REINCARNATION);
         simpleItem(TCRItems.RESET_SKILL_STONE);
         simpleItem(TCRItems.RETRACEMENT_STONE);
+        simpleItem(TCRItems.BLOOD_LOTUS);
+        simpleItem(TCRItems.NINE_HEAVEN_DARKSTEEL);
     }
 
     // Thank you kaupenjoe & El_Redstoniano!

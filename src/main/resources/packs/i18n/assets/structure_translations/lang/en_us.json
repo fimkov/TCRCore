@@ -7,6 +7,11 @@
   "structure.lost_aether_content.platinum_dungeon": "Platinum Dungeon",
   "structure.tcrcore.underworld_arena": "Infernal Arena",
   "structure.integrated_stronghold.stronghold": "Gate of the End",
+  "structure.betterfortresses.fortress": "Nether Fortress",
+  "structure.irons_spellbooks.citadel": "Magic Citadel",
+  "structure.aether.silver_dungeon": "Valkyrie Sanctum",
+  "structure.aether.gold_dungeon": "Gold Dungeon",
+
   "_comment": "Dodo's mob",
   "structure.dodosmobs.jungle_prison": "Chimera's Prison",
   "_comment": "ribbits",

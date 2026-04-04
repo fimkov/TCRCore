@@ -214,6 +214,12 @@ public class TCRItems {
 
     public static final RegistryObject<Item> THE_INCINERATOR_SOUL = REGISTRY.register("the_incinerator_soul", () -> new The_Incinerator((new Item.Properties()).stacksTo(1).rarity(Rarity.EPIC).fireResistant()));
 
+    // 血戮莲华
+    public static final RegistryObject<Item> BLOOD_LOTUS = REGISTRY.register("blood_lotus", () -> new SimpleDescriptionItem(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+
+    // 九天玄铁
+    public static final RegistryObject<Item> NINE_HEAVEN_DARKSTEEL = REGISTRY.register("nine_heaven_darksteel", () -> new SimpleDescriptionItem(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+
     // 地狱 · 紫金武器（炽焰熔岩风格）
     public static final RegistryObject<Item> EMBERFANG = REGISTRY.register("emberfang", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金短刃（匕首模板）
     public static final RegistryObject<Item> MAGMAHEART = REGISTRY.register("magmaheart", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金斧

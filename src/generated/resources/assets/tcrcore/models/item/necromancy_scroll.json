@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "irons_spellbooks:item/magic_cloth"
+    "layer0": "tcrcore:item/necromancy_scroll"
   }
 }

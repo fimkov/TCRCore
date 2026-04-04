@@ -8,6 +8,7 @@ import com.github.dodo.dodosmobs.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
 import com.obscuria.aquamirae.registry.AquamiraeEntities;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
+import com.p1nero.tcr_bosses.entity.TCRBossEntities;
 import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.capability.TCRQuestManager.Quest;
 import com.p1nero.tcrcore.entity.TCREntities;
@@ -425,8 +426,8 @@ public class TCRQuests {
                         WorldUtil.getStructureName(WorldUtil.NETHER_KEY_1),
                         ItemRegistry.CINDEROUS_SOULCALLER.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
                         BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                        EntityRegistry.FIRE_BOSS.get().getDescription().copy().withStyle(ChatFormatting.RED),
-                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
+                        TCRBossEntities.GOLDEN_EXECUTOR.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
 
         GET_NETHER_MONOLITH_KEY_2 = TCRQuestManager.create("get_nether_monolith_key_2")
                 .shortDescParam(BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
@@ -436,8 +437,8 @@ public class TCRQuests {
                         WorldUtil.getStructureName(WorldUtil.NETHER_KEY_2),
                         WorldUtil.getStructureName(WorldUtil.NETHER_KEY_2),
                         BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
-                        EntityRegistry.FIRE_BOSS.get().getDescription().copy().withStyle(ChatFormatting.RED),
-                        BTEntityType.NETHER_MONOLITH.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
+                        TCRBossEntities.EVENING_GHOST.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        BTItems.NETHER_MONOLITH_KEY.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
 
         GET_MONST_EYE = TCRQuestManager.create("get_monst_eye")
                 .shortDescParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))

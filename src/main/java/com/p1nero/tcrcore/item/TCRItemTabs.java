@@ -55,6 +55,8 @@ public class TCRItemTabs {
                 output.accept(TCRItems.STONE_OF_REINCARNATION.get());
                 output.accept(TCRItems.RESET_SKILL_STONE.get());
                 output.accept(TCRItems.RETRACEMENT_STONE.get());
+                output.accept(TCRItems.BLOOD_LOTUS.get());
+                output.accept(TCRItems.NINE_HEAVEN_DARKSTEEL.get());
                 output.accept(TCRItems.EMBERFANG.get());
                 output.accept(TCRItems.MAGMAHEART.get());
                 output.accept(TCRItems.CINDERWYRM.get());

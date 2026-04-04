@@ -330,7 +330,8 @@ dependencies {
 
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:4.8.2")
     implementation fg.deobf("curse.maven:azurelib-817423:7797691")
-    implementation fg.deobf("curse.maven:book-of-dragons-1413424:7843883")
+    implementation fg.deobf("curse.maven:book-of-dragons-1413424:7870334")//1.31
+//    implementation fg.deobf("curse.maven:book-of-dragons-1413424:7447643")//1.21
 
     implementation fg.deobf("curse.maven:explorers-compass-edited-1203888:6733733")
     implementation fg.deobf("curse.maven:natures-compass-252848:4712189")

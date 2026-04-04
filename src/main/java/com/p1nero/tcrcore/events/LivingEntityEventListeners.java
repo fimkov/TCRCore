@@ -471,6 +471,7 @@ public class LivingEntityEventListeners {
                     BlockPos bedPos = TameableUtils.getPetBedPos(event.getEntity());
                     if (bedPos == null) {
                         if (dragonBase.getOwner() instanceof Player player) {
+                            dragonBase.setHealth(dragonBase.getMaxHealth());
                             ItemStack itemStack = TCRItems.DRAGON_FLUTE.get().getDefaultInstance();
                             DragonFluteItem.saveToItem(itemStack, dragonBase);
                             itemStack.getOrCreateTag().putBoolean("tcr_temp", true);

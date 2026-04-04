@@ -222,6 +222,10 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addSkill("perfect_dodge", "闪避特效", "完美闪避时将有帅气的动作！");
         this.addSkill("regen_mana", "魔力回复", "完美闪避或完美招架后将恢复总魔力的%d%%点魔力！");
 
+        this.add(TCRItems.BLOOD_LOTUS.get(), "血戮莲华");
+        this.addItemUsageInfo(TCRItems.BLOOD_LOTUS.get(), "高阶材料，可将部分基础武器进阶为高阶武器。");
+        this.add(TCRItems.NINE_HEAVEN_DARKSTEEL.get(), "九天玄铁");
+        this.addItemUsageInfo(TCRItems.NINE_HEAVEN_DARKSTEEL.get(), "高阶材料，可将部分基础武器进阶为高阶武器");
         this.add(TCRItems.RETRACEMENT_STONE.get(), "回溯之石");
         this.addItemUsageInfo(TCRItems.RETRACEMENT_STONE.get(), "使用后将重置[%s]内的所有实体！");
         this.add(TCRItems.RESET_SKILL_STONE.get(), "重置技能石");
@@ -439,6 +443,11 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRBossEntities.ANCIENT_REMNANT_HUMANOID.get(), "坤岳|Terra-Montis");
         this.add(TCRBossEntities.MALEDICTUS_HUMANOID.get(), "魂兮|Anima-Essentia");
         this.add(TCRBossEntities.NETHERITE_HUMANOID.get(), "狱渊|Infernus-Abyssus");
+
+        this.add(TCRBossEntities.GOLDEN_EXECUTOR.get(), "黄金处刑者");
+        this.add(TCRBossEntities.VALKYRIE.get(), "女武神之王");
+        this.add(TCRBossEntities.EVENING_GHOST.get(), "暮色幽灵");
+        this.add(TCRBossEntities.GILDED_HUNTER.get(), "镀金狩猎者");
 
 
         this.addDialogAnswer(EntityType.IRON_GOLEM, 0, "人类，准备好接受试炼了？");
