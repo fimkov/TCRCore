@@ -773,5 +773,16 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.FAKE_END_GOLEM.get(), 4, "收下吧，[%s]，我将在世界之尽头等你！");
         this.addDialogOption(TCREntities.FAKE_END_GOLEM.get(), 4, "...");
 
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), -1, "[返回]");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), -2, "[离开]");
+        this.addDialogAnswer(TCRBossEntities.VALKYRIE.get(), 0, "凡人，可是共鸣石指引你来此？");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 0, "你是何人？");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 1, "关于[%s]");
+        this.addDialogAnswer(TCRBossEntities.VALKYRIE.get(), 1, "吾乃%s，奉命于此守护[%s]。千年了，我们从未等来传说中的那位救世主。");
+        this.addDialogAnswer(TCRBossEntities.VALKYRIE.get(), 2, "%s？还请阁下击败神殿中的诸位护卫拿到十枚[%s]，证明自己的实力吧，我拭目以待。");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 2, "我没资格啊，我没资格(%s)");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 3, "§a[开启挑战]");
+
+
     }
 }

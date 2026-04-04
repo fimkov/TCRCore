@@ -920,6 +920,9 @@ public class LivingEntityEventListeners {
             if(!boss.hasSpawnPos()) {
                 boss.setSpawnPos(boss.getOnPos());
             }
+            if(boss instanceof ValkyrieQueenEntity) {
+                boss.setInFighting(false);//对话开启
+            }
         }
 
         if (event.getEntity() instanceof Bone_Chimera_Entity boneChimeraEntity) {

@@ -772,5 +772,14 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addDialogAnswer(TCREntities.FAKE_END_GOLEM.get(), 4, "Accept it, [%s]. I will wait for you at the world's end!");
         this.addDialogOption(TCREntities.FAKE_END_GOLEM.get(), 4, "...");
 
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), -1, "[Back]");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), -2, "[Leave]");
+        this.addDialogAnswer(TCRBossEntities.VALKYRIE.get(), 0, "Mortal, did the resonance stone guide you here?");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 0, "Who are you?");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 1, "About [%s]");
+        this.addDialogAnswer(TCRBossEntities.VALKYRIE.get(), 1, "I am %s, ordered to guard [%s] here. For a thousand years, we have never awaited the legendary savior.");
+        this.addDialogAnswer(TCRBossEntities.VALKYRIE.get(), 2, "%s? Very well then. Bring me ten %s from my subordinates to prove your worth, then we'll see.");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 2, "[You have no destiny to do this.(%s)]");
+        this.addDialogOption(TCRBossEntities.VALKYRIE.get(), 3, "§a[Start Challenge]");
     }
 }
