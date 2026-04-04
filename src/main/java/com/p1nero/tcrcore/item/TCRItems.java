@@ -221,16 +221,35 @@ public class TCRItems {
     public static final RegistryObject<Item> NINE_HEAVEN_DARKSTEEL = REGISTRY.register("nine_heaven_darksteel", () -> new SimpleDescriptionItem(new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
 
     // 地狱 · 紫金武器（炽焰熔岩风格）
-    public static final RegistryObject<Item> EMBERFANG = REGISTRY.register("emberfang", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金短刃（匕首模板）
-    public static final RegistryObject<Item> MAGMAHEART = REGISTRY.register("magmaheart", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金斧
-    public static final RegistryObject<Item> CINDERWYRM = REGISTRY.register("cinderwyrm", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金长刀（太刀模板）
-    public static final RegistryObject<Item> PURGING_SWALLOW = REGISTRY.register("purging_swallow", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金雁翎（打刀模板）
-    public static final RegistryObject<Item> ASHEN_CRESCENT = REGISTRY.register("ashen_crescent", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金戟（关刀模板）
+    public static final RegistryObject<Item> EMBERFANG = REGISTRY.register("emberfang", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金短刃（匕首模板）
+    public static final RegistryObject<Item> MAGMAHEART = REGISTRY.register("magmaheart", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金斧
+    public static final RegistryObject<Item> CINDERWYRM = REGISTRY.register("cinderwyrm", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金长刀（太刀模板）
+    public static final RegistryObject<Item> PURGING_SWALLOW = REGISTRY.register("purging_swallow", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金雁翎（打刀模板）
+    public static final RegistryObject<Item> ASHEN_CRESCENT = REGISTRY.register("ashen_crescent", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金戟（关刀模板）
 
     // 天域 · 玉系武器（神圣光曜风格）
-    public static final RegistryObject<Item> LUX_JADAE = REGISTRY.register("lux_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉曜（原名：白金剑）
-    public static final RegistryObject<Item> GLACIS_JADAE = REGISTRY.register("glacis_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉霜（原名：白金长剑）
-    public static final RegistryObject<Item> MONS_JADAE = REGISTRY.register("mons_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉岳（原名：白金大剑）
-    public static final RegistryObject<Item> IRIS_JADAE = REGISTRY.register("iris_jadae", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉虹（原名：白金枪）
+    public static final RegistryObject<Item> LUX_JADAE = REGISTRY.register("lux_jadae", () -> new AetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉曜（原名：白金剑）
+    public static final RegistryObject<Item> GLACIS_JADAE = REGISTRY.register("glacis_jadae", () -> new AetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉霜（原名：白金长剑）
+    public static final RegistryObject<Item> MONS_JADAE = REGISTRY.register("mons_jadae", () -> new AetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉岳（原名：白金大剑）
+    public static final RegistryObject<Item> IRIS_JADAE = REGISTRY.register("iris_jadae", () -> new AetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 玉虹（原名：白金枪）
+
+    public static final RegistryObject<Item> MAGIC_DAGGER = REGISTRY.register("magic_dagger",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_AXE = REGISTRY.register("magic_axe",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_TACHI = REGISTRY.register("magic_tachi",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_KATANA = REGISTRY.register("magic_katana",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_HALBERD = REGISTRY.register("magic_halberd",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_SWORD = REGISTRY.register("magic_sword",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_LONGSWORD = REGISTRY.register("magic_longsword",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_GREATSWORD = REGISTRY.register("magic_greatsword",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_SPEAR = REGISTRY.register("magic_spear",
+            () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
 
 }

@@ -291,6 +291,16 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.MONS_JADAE.get(), "玉岳");
         this.add(TCRItems.IRIS_JADAE.get(), "玉虹");
 
+        this.add(TCRItems.MAGIC_DAGGER.get(), "夜无痕");
+        this.add(TCRItems.MAGIC_AXE.get(), "断山河");
+        this.add(TCRItems.MAGIC_TACHI.get(), "天外天");
+        this.add(TCRItems.MAGIC_KATANA.get(), "一念生");
+        this.add(TCRItems.MAGIC_HALBERD.get(), "破千军");
+        this.add(TCRItems.MAGIC_SWORD.get(), "君子诺");
+        this.add(TCRItems.MAGIC_LONGSWORD.get(), "孤星落");
+        this.add(TCRItems.MAGIC_GREATSWORD.get(), "镇九州");
+        this.add(TCRItems.MAGIC_SPEAR.get(), "贯长空");
+
         this.addInfo("obey_rule", "你违反了天意");
         this.addInfo("difficulty_change_success", "成功改变游戏难度！当前难度为：%s");
         this.addInfo("difficulty_change_failed", "错误：改变游戏难度失败！无管理员权限或参数错误！");

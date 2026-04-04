@@ -41,36 +41,36 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add("skill_tree.tcrcore.magic", "Magic Skills");
 
         this.add("unlock_tip.epicskills.prodigy.critical_knowledge", "You are not destined to do this");
-        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "Slaught 50 Saulomnk and 50 Evil Skeleton");
+        this.add("unlock_tip.epicskills.prodigy.dancing_blade", "Kill 50 Saulomnk and 50 Evil Skeleton");
         this.add("unlock_tip.epicskills.prodigy.lethal_focus", "You are not destined to do this");
 
-        this.add("unlock_tip.epicskills.prodigy.shooting_style", "Slaught 2 Enderman");
-        this.add("unlock_tip.epicskills.prodigy.punishment_kick", "Slaught 25 Enderman");
+        this.add("unlock_tip.epicskills.prodigy.shooting_style", "Kill 2 Enderman");
+        this.add("unlock_tip.epicskills.prodigy.punishment_kick", "Kill 25 Enderman");
 
-        this.add("unlock_tip.epicskills.prodigy.arrow_tenacity", "Slaught 5 skeleton");
-        this.add("unlock_tip.epicskills.prodigy.dodge_master", "Slaught 50 skeleton");
+        this.add("unlock_tip.epicskills.prodigy.arrow_tenacity", "Kill 5 skeleton");
+        this.add("unlock_tip.epicskills.prodigy.dodge_master", "Kill 50 skeleton");
 
-        this.add("unlock_tip.epicskills.prodigy.ender_step", "Slaught 50 Enderman");
-        this.add("unlock_tip.epicskills.prodigy.ender_obscuris", "Slaught 250 Enderman");
-        this.add("unlock_tip.epicskills.prodigy.time_travel", "Slaught 1000 Enderman");
+        this.add("unlock_tip.epicskills.prodigy.ender_step", "Kill 50 Enderman");
+        this.add("unlock_tip.epicskills.prodigy.ender_obscuris", "Kill 250 Enderman");
+        this.add("unlock_tip.epicskills.prodigy.time_travel", "Kill 1000 Enderman");
 
-        this.add("unlock_tip.epicskills.prodigy.buster_parade", "Slaught 10 Hollow");
-        this.add("unlock_tip.epicskills.prodigy.perfect_bulwark", "Slaught 50 guardian");
-        this.add("unlock_tip.epicskills.prodigy.avatar_of_might", "Slaught 50 Hollow");
+        this.add("unlock_tip.epicskills.prodigy.buster_parade", "Kill 10 Hollow");
+        this.add("unlock_tip.epicskills.prodigy.perfect_bulwark", "Kill 50 guardian");
+        this.add("unlock_tip.epicskills.prodigy.avatar_of_might", "Kill 50 Hollow");
 
         this.add("unlock_tip.epicskills.prodigy.precise_roll", "Sprint 4 km");
-        this.add("unlock_tip.epicskills.prodigy.bull_charge", "Slaught 20 Ravager");
+        this.add("unlock_tip.epicskills.prodigy.bull_charge", "Kill 20 Ravager");
 
-        this.add("unlock_tip.epicskills.prodigy.shulker_cloak", "Slaught 36 shulker");
-        this.add("unlock_tip.epicskills.prodigy.soul_protection", "Slaught 60 Wither Skeleton");
-        this.add("unlock_tip.epicskills.prodigy.vampirize", "Slaught 20 Evil Skeleton");
-        this.add("unlock_tip.epicskills.prodigy.dopamine", "Slaught 27 Lycanth");
-        this.add("unlock_tip.epicskills.prodigy.lunatic_vivacity", "Slaught 9 Ghast");
-        this.add("unlock_tip.epicskills.prodigy.voodoo_magic", "Slaught 10 Evoker");
-        this.add("unlock_tip.epicskills.prodigy.manipulator", "Slaught 6 Saulomnk");
+        this.add("unlock_tip.epicskills.prodigy.shulker_cloak", "Kill 36 shulker");
+        this.add("unlock_tip.epicskills.prodigy.soul_protection", "Kill 60 Wither Skeleton");
+        this.add("unlock_tip.epicskills.prodigy.vampirize", "Kill 20 Evil Skeleton");
+        this.add("unlock_tip.epicskills.prodigy.dopamine", "Kill 27 Lycanth");
+        this.add("unlock_tip.epicskills.prodigy.lunatic_vivacity", "Kill 9 Ghast");
+        this.add("unlock_tip.epicskills.prodigy.voodoo_magic", "Kill 10 Evoker");
+        this.add("unlock_tip.epicskills.prodigy.manipulator", "Kill 6 Saulomnk");
 
-        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_you", "Slaught 100 Evil Skeleton");
-        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_me", "Slaught 100 Saulomnk");
+        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_you", "Kill 100 Evil Skeleton");
+        this.add("unlock_tip.epicskills.prodigy.all_eyes_on_me", "Kill 100 Saulomnk");
 
         this.add("unlock_tip.epicskills.prodigy.inner_growth", "Elimate the Ender Dragon");
         this.add("unlock_tip.epicskills.prodigy.shadow_step", "Elimate the Wither");
@@ -287,10 +287,21 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.CINDERWYRM.get(), "Cinderwyrm");
         this.add(TCRItems.PURGING_SWALLOW.get(), "Purging Swallow");
         this.add(TCRItems.ASHEN_CRESCENT.get(), "Ashen Crescent");
+
         this.add(TCRItems.LUX_JADAE.get(), "Lux Jadae");
         this.add(TCRItems.GLACIS_JADAE.get(), "Glacis Jadae");
         this.add(TCRItems.MONS_JADAE.get(), "Mons Jadae");
         this.add(TCRItems.IRIS_JADAE.get(), "Iris Jadae");
+
+        this.add(TCRItems.MAGIC_DAGGER.get(), "Nightveil");
+        this.add(TCRItems.MAGIC_AXE.get(), "Landsever");
+        this.add(TCRItems.MAGIC_TACHI.get(), "Empyrean");
+        this.add(TCRItems.MAGIC_KATANA.get(), "Thoughtspring");
+        this.add(TCRItems.MAGIC_HALBERD.get(), "Legionfall");
+        this.add(TCRItems.MAGIC_SWORD.get(), "Honorbound");
+        this.add(TCRItems.MAGIC_LONGSWORD.get(), "Starfall");
+        this.add(TCRItems.MAGIC_GREATSWORD.get(), "Ninehold");
+        this.add(TCRItems.MAGIC_SPEAR.get(), "Heavenrend");
 
         this.addInfo("obey_rule", "You have defied the destiny!!");
         this.addInfo("difficulty_change_success", "Successfully changed game difficulty! Current difficulty: %s");

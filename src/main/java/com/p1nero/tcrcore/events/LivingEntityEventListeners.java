@@ -1,5 +1,6 @@
 package com.p1nero.tcrcore.events;
 
+import com.aetherteam.aether.entity.monster.dungeon.Mimic;
 import com.brass_amber.ba_bt.block.block.BTChestBlock;
 import com.brass_amber.ba_bt.entity.block.BTMonolith;
 import com.brass_amber.ba_bt.entity.hostile.golem.*;
@@ -95,10 +96,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.IronGolem;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
-import net.minecraft.world.entity.monster.Drowned;
-import net.minecraft.world.entity.monster.Enemy;
-import net.minecraft.world.entity.monster.Guardian;
-import net.minecraft.world.entity.monster.Pillager;
+import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.minecraft.world.entity.monster.piglin.PiglinBrute;
 import net.minecraft.world.entity.player.Player;
@@ -880,6 +878,16 @@ public class LivingEntityEventListeners {
             }
         }
 
+        //替换苦力怕，宝箱怪太粪了
+        if(event.getEntity() instanceof Mimic mimic) {
+            event.setCanceled(true);
+            Creeper creeper = EntityType.CREEPER.spawn(serverLevel, mimic.getOnPos().above(), MobSpawnType.MOB_SUMMONED);
+            if(creeper != null) {
+                creeper.getPersistentData().putString("DeathLootTable", mimic.getType().getDefaultLootTable().toString());
+            }
+        }
+
+        //凋零提示
         if(event.getEntity() instanceof WitherBoss witherBoss) {
             EntityUtil.nearPlayerDo(witherBoss, 32, player -> {
                 player.displayClientMessage(TCRCoreMod.getInfo("wither_parry_tip", witherBoss.getDisplayName()).withStyle(ChatFormatting.GOLD), true);
@@ -887,6 +895,7 @@ public class LivingEntityEventListeners {
             });
         }
 
+        //防止玄武岩卡
         if(event.getEntity() instanceof NetherGolem netherGolem) {
             EntityUtil.destroyNearby(netherGolem, 5, true);
         }

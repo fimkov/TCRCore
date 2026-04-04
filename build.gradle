@@ -263,6 +263,7 @@ dependencies {
     implementation fg.deobf("curse.maven:kambrik-455585:4654401")
     implementation fg.deobf("curse.maven:bountiful-309516:5937417")
     implementation fg.deobf("libs:bountiful_npc:1.0.3")
+//    implementation fg.deobf("libs:no_more_too_many_structures:1.0.0")
 
     implementation fg.deobf("curse.maven:global-shaderpack-properties-1344473:6982618")//全局光影包配置，添加灾变维度用。
 
@@ -297,8 +298,8 @@ dependencies {
 
     implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
 
-    implementation fg.deobf("curse.maven:cupboard-326652:5470032")
-    implementation fg.deobf("curse.maven:respawning-structures-forge-fabric-969937:7513125")//结构重置
+//    implementation fg.deobf("curse.maven:cupboard-326652:5470032")
+//    implementation fg.deobf("curse.maven:respawning-structures-forge-fabric-969937:7513125")//结构重置
 
     //主要boss
     implementation fg.deobf("curse.maven:aether-255308:6134920")
