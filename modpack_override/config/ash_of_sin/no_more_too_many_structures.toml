@@ -1,19 +1,20 @@
 
 ["No More Too Many Structures Settings"]
+	only_overlap = false
 	#Radius (in blocks) to check for nearby structures/features. 0.0 ~ 1000.0
 	#Range: 0.0 ~ 1000.0
-	checkRadius = 100.0
+	checkRadius = 200.0
 	#Maximum number of structures/features allowed within the radius. 0 ~ 16
 	#Range: 0 ~ 16
 	maxNearby = 1
+	#Structures that will always generate regardless of overlap (registry names). Example: 'minecraft:ancient_city'
+	whitelistStructures = []
+	#Features that will always generate regardless of overlap (registry names). Example: 'minecraft:tree'
+	whitelistFeatures = []
 	#Structures that will never generate (registry names). Example: 'minecraft:shipwreck'
-	blacklistStructures = ["minecraft:shipwreck", "minecraft:shipwreck_beached", "minecraft:mineshaft", "minecraft:mineshaft_mesa"]
+	blacklistStructures = ["minecraft:shipwreck", "minecraft:mineshaft"]
 	#Features that will never generate (registry names). Example: 'minecraft:tree'
 	blacklistFeatures = []
 	#Enable debug logging for skipped structures/features.
 	debug = false
-	#Structures that will always generate regardless of overlap (registry names). Example: 'minecraft:ancient_city'
-	whitelistStructures = ["ba_bt:land_tower", "ba_bt:ocean_tower", "ba_bt:core_tower", "dodosmobs:jungle_prison", "ribbits:ribbit_village", "tcrcore:gate_of_disaster", "lost_aether_content:platinum_dungeon", "tlc:lost_castle", "cataclysm:soul_black_smith", "cataclysm:ruined_citadel", "cataclysm:burning_arena", "cataclysm:ancient_factory", "cataclysm:sunken_city", "cataclysm:cursed_pyramid", "cataclysm:frosted_prison", "cataclysm:acropolis", "minecraft:ancient_city", "minecraft:end_city", "minecraft:buried_treasure", "minecraft:ocean_ruin", "minecraft:ocean_ruin_cold", "minecraft:ocean_ruin_warm", "aquamirae:ship", "aquamirae:shelter", "dungeons_arise:foundry", "dungeons_arise:keep_kayra", "dungeons_arise:scorched_mines", "dungeons_arise:shiraz_palace", "mowziesmobs:frostmaw_spawn", "mowziesmobs:wrought_chamber", "mowziesmobs:umvuthana_grove", "mowziesmobs:monastery", "bosses_of_mass_destruction:gauntlet_arena", "bosses_of_mass_destruction:obsidilith_arena", "bosses_of_mass_destruction:void_blossom"]
-	#Features that will always generate regardless of overlap (registry names). Example: 'minecraft:tree'
-	whitelistFeatures = []
 
