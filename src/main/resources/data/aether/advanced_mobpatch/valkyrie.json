@@ -1,0 +1,694 @@
+{
+    "model": "epicfight:entity/biped",
+    "armature": "epicfight:entity/biped",
+    "renderer": "minecraft:zombie",
+    "isHumanoid": true,
+    "faction": "undead",
+    "attributes": {
+		"impact": 2,          
+        "armor_negation": 0,    
+        "max_strikes": 1,        
+        "chasing_speed": 0.1,    
+        "max_stamina": 50, 
+         "stamina_regan_multiply": 0.5,
+        "stamina_regan_delay": 100,  
+         "has_stun_reduction":false, 
+         "max_stun_shield": 0,    
+         "stun_shield_regan_multiply":0, 
+         "stun_shield_regan_delay": 999999,   
+		 "guard_radius": 4,	
+         "stamina_lose_multiply": 2,
+		 "attack_radius": 2
+    },
+    "default_livingmotions": {
+        "idle": "epicfight:biped/living/idle",
+        "walk": "epicfight:biped/living/walk",
+        "chase": "epicfight:biped/living/walk",
+        "mount": "epicfight:biped/living/mount",
+        "fall": "epicfight:biped/living/fall",
+        "death": "epicfight:biped/living/death"
+    },
+	"humanoid_weapon_motions": [  
+              { 
+                  "weapon_categories": ["fist"],  
+                  "style":"common", 
+                  "livingmotions": {
+                        "chase": "epicfight:biped/living/run",  
+                        "walk": "epicfight:biped/living/walk"    
+                  }
+              }
+            ],
+    "stun_command_list":[ 										
+           {"command":"", "stun_type": "short", "execute_at_target":false}
+          ],
+	"custom_guard_motion": [   
+		{ 
+			"weapon_categories": ["sword","dagger","axe", "hoe", "shovel","pickaxe"], 
+			"style":"one_hand", 	
+			"guard": "indestructible:guard/guard_sword",
+	        "stamina_cost_multiply": 10, 	
+			"parry_cost_multiply": 5,    
+	        "can_block_projectile" : true     
+	    },
+		{ 
+			"weapon_categories": ["dagger"], 
+			"style":"two_hand", 	
+		    "guard": "indestructible:guard/guard_dualsword",
+		    "stamina_cost_multiply": 40, 	
+			"parry_cost_multiply": 5,    
+		    "can_block_projectile" : true     
+		},
+		{ 
+			"weapon_categories": ["sword"], 
+			"style":"two_hand", 	
+		    "guard": "indestructible:guard/guard_dualsword",
+		    "stamina_cost_multiply": 20, 	
+			"parry_cost_multiply": 5,    
+		    "can_block_projectile" : true     
+		},
+		{ 
+			"weapon_categories": ["fist"], 
+			"style":"common", 	
+	    	"guard": "indestructible:guard/guard_dualsword",
+		    "stamina_cost_multiply": 50, 	
+			"parry_cost_multiply": 5,  
+		    "can_block_projectile" : false     
+		},
+		{ 
+		    "weapon_cegories": ["greatsword"], 
+		    "style":"common", 	
+		    "guard": "indestructible:guard/guard_greatsword",
+	        "stamina_cost_multiply": 30, 	
+			"parry_cost_multiply": 5,    
+	        "can_block_projectile" : false     
+	    },
+		{ 
+		   "weapon_categories": ["uchigatana"], 
+		   "style":"common", 	
+		   "guard": "indestructible:guard/guard_katana",
+	       "stamina_cost_multiply": 10, 	  
+		   "parry_cost_multiply": 5,  
+	       "can_block_projectile" : true    
+	    },
+		{ 
+		  "weapon_categories": ["longsword","tachi"], 
+		  "style":"common", 	
+		  "guard": "indestructible:guard/guard_longsword",
+		  "parry_cost_multiply": 10,  
+	      "stamina_cost_multiply": 1.5, 	  
+	      "can_block_projectile" : true  
+	    },
+		{ 
+		  "weapon_categories": ["spear","trident"], 
+		  "style":"common", 	
+		  "guard": "indestructible:guard/guard_spear",
+		  "stamina_cost_multiply": 10, 	  
+		  "parry_cost_multiply": 5,  
+		  "can_block_projectile" : false     
+		}
+       ],
+  "stun_animations": {
+		"short": "epicfight:biped/combat/hit_short",
+		"long": "epicfight:biped/combat/hit_long",
+		"knockdown": "epicfight:biped/combat/knockdown",
+		"fall": "epicfight:biped/living/landing",
+		"neutralize": "epicfight:biped/skill/guard_break1"
+    },
+    "combat_behavior": [
+		{
+			"weapon_categories": ["sword"],
+			"style": "common",
+			"behavior_series": [
+				{
+					"weight": 1.5,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate":"indestructible:attack_level", "min": 1, "max": 1}, {"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "efn:biped/dodge/step_b", 		 								
+							"stamina": 10,
+				         	"play_speed": 1.1
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:guard_break", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 回家种田更适合你，哈哈哈", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:guard_break", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 我劝你放弃吧，你太弱了", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:guard_break", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 你还是回家玩小匕首去吧，哈哈哈", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:knock_down", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 回家种田更适合你，哈哈哈", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:knock_down", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 我劝你放弃吧，你太弱了", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:knock_down", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 你还是回家玩小匕首去吧，哈哈哈", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [	
+						{
+							"conditions": [
+								{"predicate":"indestructible:knock_down", "invert": false},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/hf_murasama/living/hf_murasama_taunt", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/playsound aether:entity.valkyrie.interact master @e[type=minecraft:player,distance=0..5] ~ ~ ~", "execute_at_target":false},
+								 {"time":0.1, "command":"/effect give @s minecraft:slowness 5 255 true", "execute_at_target":false},
+								 {"time":0.1, "command":"/say 菜就多练，伙计", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [	
+						{
+							"conditions": [
+								 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 3.0, "max": 6.0}
+							],
+							"animation": "efn:biped/nf_shortsword/nf_shortsword_dash", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate":"indestructible:attack_level", "min": 1, "max": 1}, {"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "efn:biped/dodge/step_b", 		 								
+							"stamina": 10,
+				         	"play_speed": 1.1
+						},
+						{
+							"conditions": [
+								 {"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "efn:biped/nf_shortsword/nf_shortsword_dash", 
+				         	"play_speed": 0.8, 			
+							 "convert_time": 0.6,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate":"indestructible:attack_level", "min": 1, "max": 1}, {"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "efn:biped/dodge/step_l", 
+							"stamina": 10,		
+				         	"play_speed": 1		
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate": "indestructible:stamina", "stamina": 0.11, "comparator": "greater_ratio"},{"predicate":"indestructible:attack_level", "min": 1, "max": 1}, {"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "efn:biped/dodge/step_r", 
+							"stamina": 10,		
+				         	"play_speed": 1		
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": true,
+					"looping": false,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:phase", "min": 0, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"}, {"predicate":"indestructible:attack_level", "min": 1, "max": 1}, {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
+							],
+							"guard": 20, 			
+							"counter": "efn:biped/yamato/biped_hitback_1",
+							"counter_cost": 10, 		
+							"counter_chance": 0.4, 	
+							"cancel_after_counter":true,
+							"stun_immunity_time": 3,
+							"counter_speed": 1 			
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
+							],
+							"guard": 20, 			
+							"counter": "wom:biped/skill/enderblaster_onehand_dash",
+							"counter_cost": 10, 		
+							"counter_chance": 0.4, 	
+							"cancel_after_counter":true,
+							"stun_immunity_time": 3,
+							"counter_speed": 1 			
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
+							],
+							"guard": 20, 			
+							"counter": "efn:biped/nf_shortsword/nf_shortsword_auto5",
+							"counter_cost": 10, 		
+							"counter_chance": 0.4, 	
+							"cancel_after_counter":true,
+							"stun_immunity_time": 3,
+							"counter_speed": 1 			
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": true,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
+							],
+							"guard": 20, 			
+							"counter": "efn:biped/hf_murasama/combat/hf_murasama_counter",
+							"counter_cost": 10, 		
+							"counter_chance": 0.4, 	
+							"cancel_after_counter":true,
+							"stun_immunity_time": 3,
+							"counter_speed": 1 			
+						}
+                    ]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":60,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"epicfight:within_eye_height"},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "epicfightx:biped/combat/sword_auto1", 
+							"convert_time": 0.6,		
+							"stamina": 0,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false},
+								 {"time":0.1, "command":"/combat_evolution entity @s phase add 1", "execute_at_target":false}
+							 ]		
+						},
+						{
+							"conditions": [
+								  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "epicfightx:biped/combat/sword_auto2", 	
+							"convert_time": 0.2,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]			
+						},
+						{
+							"conditions": [
+								  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "epicfightx:biped/combat/sword_auto3", 	
+							"convert_time": 0.2,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]			
+						},
+						{
+							"conditions": [
+								  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "epicfightx:biped/combat/sword_auto4", 	
+							"convert_time": 0.8,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ],								
+							 "hit_command_list": [									
+								 {"command":"/indestructible @s set_phase 5", "execute_at_target":false}
+							 ]				
+						},
+						{
+							"conditions": [
+								{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"wander": 10,             
+							"inaction_time": 10,	   
+							"x_axis": -1,		   
+							"z_axis": 270    	  
+						}
+                    ]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":60,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"epicfight:within_eye_height"},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "efn:biped/nf_shortsword/nf_shortsword_auto1", 
+							"convert_time": 0.6,		
+							"stamina": 0,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false},
+								 {"time":0.1, "command":"/combat_evolution entity @s phase add 1", "execute_at_target":false}
+							 ]		
+						},
+						{
+							"conditions": [
+								  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "efn:biped/nf_shortsword/nf_shortsword_auto2", 	
+							"convert_time": 0.2,			
+							"stamina": 10,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]			
+						},
+						{
+							"conditions": [
+								  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "efn:biped/nf_shortsword/nf_shortsword_auto3", 	
+							"convert_time": 0.2,			
+							"stamina": 10,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]			
+						},
+						{
+							"conditions": [
+								  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "efn:biped/nf_shortsword/nf_shortsword_auto4", 	
+							"convert_time": 0.6,			
+							"stamina": 10,
+				         	"play_speed": 0.8,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ],								
+							 "hit_command_list": [									
+								 {"command":"/indestructible @s set_phase 10", "execute_at_target":false}
+							 ]				
+						},
+						{
+							"conditions": [
+								{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"wander": 10,             
+							"inaction_time": 10,	   
+							"x_axis": -1,		   
+							"z_axis": 270    	  
+						}
+                    ]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":600,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:phase", "min": 5, "max": 5},{"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "epicfightx:biped/skill/sweeping_edge",
+							"set_phase": 0, 
+							"convert_time": 0.1,		
+							"stamina": 10,
+				         	"play_speed": 1.1,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]				
+						}
+                    ]                 
+				},
+				{
+					"weight": 1.5,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":200,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:phase", "min": 10, "max": 15},{"predicate":"epicfight:within_eye_height"},  {"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "efn:biped/nf_sword/nf_sword_skill",
+							"set_phase": 0, 
+							"convert_time": 0.1,		
+							"stamina": 10,
+				         	"play_speed": 1.1,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=aether:valkyrie,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false}
+							 ]				
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":50,
+					"behaviors": [				
+						{
+							"conditions": [
+								{"predicate": "indestructible:stamina", "stamina": 0.1, "comparator": "less_ratio"},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"wander": 80,             
+							"inaction_time": 30,	   
+							"x_axis": -0.1,		   
+							"z_axis": 270    	  
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [				
+						{
+							"conditions": [
+								{"predicate":"indestructible:phase", "min": 20, "max": 20},{"predicate": "epicfight:health", "health":0.99, "comparator":  "less_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"wander": 30,     
+							"set_phase": 0,        
+							"inaction_time": 30,	   
+							"x_axis": -0.1,		   
+							"z_axis": 1    	  
+						}
+                    ]                 
+				},
+				{
+					"weight": 100,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [				
+						{
+							"conditions": [
+								{"predicate": "indestructible:stamina", "stamina": 0.1, "comparator": "less_ratio"},{"predicate": "epicfight:health", "health":0.99, "comparator":  "greater_ratio"},{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"wander": 30,             
+							"inaction_time": 30,	   
+							"x_axis": -0.1,		   
+							"z_axis": 1    	  
+						}
+                    ]                 
+				}
+			]
+        },
+		{
+			"weapon_categories": ["fist"],
+			"style": "common",
+			"behavior_series": [
+				{
+					"weight": 1.5,
+					"canBeInterrupted": true,
+					"looping": false,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"epicfight:within_distance", "min": 0.0, "max": 32.0}
+							],
+							"animation": "efn:biped/nf_skill/biped_flashblock1", 								
+							"command_list": [									
+								{"time":0.1, "command":"/item replace entity @s weapon.mainhand with efn:nf_shortsword", "execute_at_target":false}
+							]			
+						}
+                    ]                 
+				}
+			]
+        }
+    ]
+}
