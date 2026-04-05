@@ -133,8 +133,9 @@ public class TCRItems {
                                 if (TCRCoreMod.isJourneyMapLoaded()) {
                                     JourneyMapCompat.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.MONSTROUS_EYE.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.NETHER_GOLEM)))), pos, ChatFormatting.DARK_RED);
                                 }
-                                //地狱钥匙位置1
-                            })), new MultiResonanceStoneItem.TargetProperties(ResourceLocation.parse(WorldUtil.NETHER_KEY_1), 35, Level.NETHER, (serverPlayer) ->
+                            }))
+                            , //地狱钥匙位置1
+                            new MultiResonanceStoneItem.TargetProperties(ResourceLocation.parse(WorldUtil.NETHER_KEY_1), 35, Level.NETHER, (serverPlayer) ->
                             TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_NETHER_RESONANCE_STONE) || serverPlayer.isCreative(),
                             ((pos, serverPlayer) ->
                             {
@@ -155,7 +156,8 @@ public class TCRItems {
                                 if (TCRCoreMod.isJourneyMapLoaded()) {
                                     JourneyMapCompat.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", BTItems.NETHER_MONOLITH_KEY.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.NETHER_KEY_2)))), pos, ChatFormatting.DARK_RED);
                                 }
-                            }))),
+                            }))
+                    ),
                     (serverPlayer -> {
                         TCRQuests.USE_NETHER_RESONANCE_STONE.finish(serverPlayer, true);
                         TCRQuests.GET_MONST_EYE.start(serverPlayer);
@@ -178,8 +180,10 @@ public class TCRItems {
                                 if (TCRCoreMod.isJourneyMapLoaded()) {
                                     JourneyMapCompat.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.STORM_EYE.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.SKY_GOLEM)))), pos, ChatFormatting.AQUA);
                                 }
-                                //天域钥匙位置1
-                            })), new MultiResonanceStoneItem.TargetProperties(ResourceLocation.parse(WorldUtil.AETHER_KEY_1), ResonanceStoneItem.SURFACE, AetherDimensions.AETHER_LEVEL, (serverPlayer) ->
+
+                            }))
+                            //天域钥匙位置1
+                            , new MultiResonanceStoneItem.TargetProperties(ResourceLocation.parse(WorldUtil.AETHER_KEY_1), ResonanceStoneItem.SURFACE, AetherDimensions.AETHER_LEVEL, (serverPlayer) ->
                             TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_AETHER_RESONANCE_STONE) || serverPlayer.isCreative(),
                             ((pos, serverPlayer) ->
                             {
@@ -200,7 +204,8 @@ public class TCRItems {
                                 if (TCRCoreMod.isJourneyMapLoaded()) {
                                     JourneyMapCompat.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", BTItems.SKY_MONOLITH_KEY.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.AETHER_KEY_2)))), pos, ChatFormatting.AQUA);
                                 }
-                            }))),
+                            }))
+                    ),
                     (serverPlayer -> {
                         TCRQuests.USE_AETHER_RESONANCE_STONE.finish(serverPlayer, true);
                         TCRQuests.GET_STORM_EYE.start(serverPlayer);
@@ -253,6 +258,8 @@ public class TCRItems {
     public static final RegistryObject<Item> MAGMAHEART = REGISTRY.register("magmaheart", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金斧
     public static final RegistryObject<Item> CINDERWYRM = REGISTRY.register("cinderwyrm", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金长刀（太刀模板）
     public static final RegistryObject<Item> PURGING_SWALLOW = REGISTRY.register("purging_swallow", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金雁翎（打刀模板）
+    public static final RegistryObject<Item> PURGING_SWALLOW_SHEATH = REGISTRY.register("purging_swallow_sheath", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> PURGING_SWALLOW_SHEATH_ALTER = REGISTRY.register("purging_swallow_sheath_alter", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> ASHEN_CRESCENT = REGISTRY.register("ashen_crescent", () -> new NetherMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC))); // 紫金戟（关刀模板）
 
     // 天域 · 玉系武器（神圣光曜风格）
@@ -269,6 +276,9 @@ public class TCRItems {
             () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> MAGIC_KATANA = REGISTRY.register("magic_katana",
             () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_KATANA_SHEATH = REGISTRY.register("magic_katana_sheath", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> MAGIC_KATANA_SHEATH_ALTER = REGISTRY.register("magic_katana_sheath_alter", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
+
     public static final RegistryObject<Item> MAGIC_HALBERD = REGISTRY.register("magic_halberd",
             () -> new AllMagicSwordItem(Tiers.NETHERITE, 3, -2.4F, new Item.Properties().stacksTo(1).fireResistant().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> MAGIC_SWORD = REGISTRY.register("magic_sword",

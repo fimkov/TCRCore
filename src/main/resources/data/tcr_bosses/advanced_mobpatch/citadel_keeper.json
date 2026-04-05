@@ -284,26 +284,6 @@
 								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
 							],
 							"guard": 20, 			
-							"counter": "efn:biped/yamato/dmcyamato_stomp",
-							"counter_cost": 10, 		
-							"counter_chance": 0.4, 	
-							"cancel_after_counter":true,
-							"stun_immunity_time": 3,
-							"counter_speed": 1 			
-						}
-                    ]                 
-				},
-				{
-					"weight": 100,
-					"canBeInterrupted": true,
-					"looping": false,
-					"cooldown":50,
-					"behaviors": [					
-						{
-							"conditions": [
-								{"predicate":"indestructible:attack_level", "min": 1, "max": 1},{"predicate": "indestructible:stamina", "stamina": 0.05, "comparator": "greater_ratio"},{"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 4.0}
-							],
-							"guard": 20, 			
 							"counter": "efn:biped/hf_murasama/skill/hf_murasama_dash_y_sp",
 							"counter_cost": 10, 		
 							"counter_chance": 0.4, 	
@@ -569,10 +549,32 @@
                     ]                 
 				},
 				{
+					"weight": 80,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown":400,
+					"behaviors": [					
+						{
+							"conditions": [
+								{"predicate":"indestructible:phase", "min": 10, "max": 15},{"predicate":"epicfight:within_eye_height"},  {"predicate":"epicfight:within_distance", "min": 0.0, "max": 5.0}
+							],
+							"animation": "efn:biped/yamato/dmcyamato_stomp",
+							"set_phase": 0, 
+							"convert_time": 0.1,		
+							"stamina": 10,
+				         	"play_speed": 1.1,								
+							 "command_list": [									
+								 {"time":0.1, "command":"/execute as @e[type=tcr_bosses:citadel_keeper,distance=1..10] at @s run indestructible @s set_phase 20", "execute_at_target":false},
+								 {"time":0.9, "command":"/indestructible @s play 'epicfight:biped/skill/guard_break2' 0.1 1.0", "execute_at_target":false}
+							 ]				
+						}
+                    ]                 
+				},
+				{
 					"weight": 100,
 					"canBeInterrupted": false,
 					"looping": false,
-					"cooldown":600,
+					"cooldown":800,
 					"behaviors": [					
 						{
 							"conditions": [
@@ -594,7 +596,7 @@
 					"weight": 100,
 					"canBeInterrupted": false,
 					"looping": false,
-					"cooldown":600,
+					"cooldown":800,
 					"behaviors": [					
 						{
 							"conditions": [

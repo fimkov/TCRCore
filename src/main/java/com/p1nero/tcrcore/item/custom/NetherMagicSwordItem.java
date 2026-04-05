@@ -24,10 +24,10 @@ public class NetherMagicSwordItem extends SwordItem {
 
     public NetherMagicSwordItem(Tier tier, int damage, float atkSpeed, Properties properties) {
         super(tier, damage, atkSpeed, properties);
-        this.attackDamage = (float)damage + tier.getAttackDamageBonus();
+        this.attackDamage = -1;
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", this.attackDamage, AttributeModifier.Operation.ADDITION));
-        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", atkSpeed, AttributeModifier.Operation.ADDITION));
+        builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -4, AttributeModifier.Operation.ADDITION));
         builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(BASE_MAX_MANA_UUID, "Weapon modifier", 50, AttributeModifier.Operation.ADDITION));
         builder.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(BASE_MAGIC_BOOST_UUID, "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));
         builder.put(AttributeRegistry.BLOOD_SPELL_POWER.get(), new AttributeModifier(BASE_MAGIC_BOOST_UUID, "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE));

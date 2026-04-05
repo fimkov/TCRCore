@@ -35,6 +35,7 @@ public class ItemUtil {
     public static Set<Item> eyesItems = new HashSet<>();
     public static Set<Item> netherBetterWeaponItems = new HashSet<>();
     public static Set<Item> aetherBetterWeaponItems = new HashSet<>();
+    public static Set<Item> magicBetterWeaponItems = new HashSet<>();
 
     public static void initAdditionalInfoItems() {
         additionalInfoItems.addAll(List.of(
@@ -51,6 +52,17 @@ public class ItemUtil {
         eyesItems.addAll(List.of(ModItems.MONSTROUS_EYE.get(), ModItems.VOID_EYE.get(), ModItems.MECH_EYE.get(), ModItems.ABYSS_EYE.get(), ModItems.STORM_EYE.get(), ModItems.CURSED_EYE.get(), ModItems.FLAME_EYE.get(), ModItems.DESERT_EYE.get()));
         netherBetterWeaponItems.addAll(List.of(TCRItems.EMBERFANG.get(), TCRItems.MAGMAHEART.get(), TCRItems.CINDERWYRM.get(), TCRItems.PURGING_SWALLOW.get(), TCRItems.ASHEN_CRESCENT.get()));
         aetherBetterWeaponItems.addAll(List.of(TCRItems.LUX_JADAE.get(), TCRItems.GLACIS_JADAE.get(), TCRItems.MONS_JADAE.get(), TCRItems.IRIS_JADAE.get()));
+        magicBetterWeaponItems.addAll(List.of(
+                TCRItems.MAGIC_AXE.get(),
+                TCRItems.MAGIC_DAGGER.get(),
+                TCRItems.MAGIC_HALBERD.get(),
+                TCRItems.MAGIC_TACHI.get(),
+                TCRItems.MAGIC_KATANA.get(),
+                TCRItems.MAGIC_SWORD.get(),
+                TCRItems.MAGIC_LONGSWORD.get(),
+                TCRItems.MAGIC_GREATSWORD.get(),
+                TCRItems.MAGIC_SPEAR.get()
+        ));
     }
 
     public static boolean isEyeItem(ItemStack stack) {
@@ -63,6 +75,10 @@ public class ItemUtil {
 
     public static boolean isBetterAetherWeaponItems(ItemStack stack) {
         return aetherBetterWeaponItems.contains(stack.getItem());
+    }
+
+    public static boolean isBetterMagicWeaponItems(ItemStack stack) {
+        return magicBetterWeaponItems.contains(stack.getItem());
     }
 
     public static List<NonNullList<ItemStack>> getCompartments(Player player){

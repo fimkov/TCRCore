@@ -402,6 +402,7 @@
   "info.tcr.kill_arterius": "[%s]: 异界之人，果然有几分本事！看来预言是对的！这几块[%s§f]，赠予你罢！",
   "info.tcr.lock_tutorial": "按下§6[%s§6]§r以锁定目标",
   "info.tcr.lock_tutorial_sub": "§c晃动鼠标以切换锁定目标！再次按下以解除锁定！",
+  "info.tcr.magic_sword_desc": "释放战技时将无视冷却无视法力值，自动释放所携带的魔法，但法术等级减半。",
   "info.tcr.map_pos_marked_press_to_open": "已标记地点，按 [%s] 查看地图",
   "info.tcr.more_beautiful_models_and_trail": "定制3D武器刀光制材质拓展，可选",
   "info.tcr.need_to_unlock_waystone": "仍有传送石碑未激活！",

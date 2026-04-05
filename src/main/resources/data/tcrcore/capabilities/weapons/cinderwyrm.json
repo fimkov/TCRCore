@@ -1,0 +1,14 @@
+{
+	"attributes":
+	{
+		"common":
+		{
+			"armor_negation":12.5,
+			"damage_bonus":10.0,
+			"max_strikes":3,
+			"speed_bonus":1.2,
+			"impact":3.1
+		}
+	},
+	"type":"epicfight:tachi"
+}
