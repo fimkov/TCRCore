@@ -1,0 +1,11 @@
+{
+    "trail": {
+    	"color": [150, 150, 150],
+    	"begin_pos": [0.0, 0.0, -0.2],
+    	"end_pos": [0.0, -0.2, -1.7],
+    	"lifetime": 6,
+		"interpolations": 24,
+    	"texture_path": "wom:textures/particle/herrscher/weapon_trail/basic.png",
+    	"particle_type": "efn:bloom_trail"
+    }
+}

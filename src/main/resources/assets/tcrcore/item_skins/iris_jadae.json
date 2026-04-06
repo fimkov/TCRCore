@@ -1,0 +1,15 @@
+{
+  "renderer": "epic_fight_avalon:mesh_item",
+  "texture": "tcrcore:textures/item/weapon/iris_jadae.png",
+  "mesh_main":"tcrcore:weapon/iris_jadae",
+  "trail": {
+    "color": [128, 128, 128],
+    "begin_pos": [0.0, 0.0, -0.1],
+    "end_pos": [0.0, 0.2, -2.75],
+    "lifetime": 4,
+    "interpolations": 5,
+    "texture_path": "tcrcore:textures/trail/swing_trailsky.png",
+    "particle_type": "efn:bloom_trail"
+  },
+  "appeared_in_afterimage":false
+}

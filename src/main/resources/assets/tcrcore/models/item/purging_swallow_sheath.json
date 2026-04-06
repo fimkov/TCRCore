@@ -1,0 +1,82 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "tcrcore:item/weapon/purging_swallow_sheath",
+		"particle": "tcrcore:item/weapon/purging_swallow"
+	},
+	"elements": [
+		{
+			"from": [7.5, 8.6, 6.9],
+			"to": [8.5, 10.3, 9.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.4, -16, 7]},
+			"faces": {
+				"north": {"uv": [4, 4.5, 4.25, 4.9375], "texture": "#0"},
+				"east": {"uv": [4, 0, 4.5625, 0.4375], "texture": "#0"},
+				"south": {"uv": [4.5, 4.25, 4.75, 4.6875], "texture": "#0"},
+				"west": {"uv": [4, 0.5, 4.5625, 0.9375], "texture": "#0"},
+				"up": {"uv": [4.5, 4.0625, 4.25, 3.5], "texture": "#0"},
+				"down": {"uv": [4.5, 4.25, 4.25, 4.8125], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, -0.4, 6.9],
+			"to": [8.5, 2.3, 9.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.4, -25, 7]},
+			"faces": {
+				"north": {"uv": [4, 1, 4.25, 1.6875], "texture": "#0"},
+				"east": {"uv": [3.25, 0, 3.8125, 0.6875], "texture": "#0"},
+				"south": {"uv": [4, 1.75, 4.25, 2.4375], "texture": "#0"},
+				"west": {"uv": [3.25, 0.75, 3.8125, 1.4375], "texture": "#0"},
+				"up": {"uv": [4.75, 1.5625, 4.5, 1], "texture": "#0"},
+				"down": {"uv": [4.75, 1.75, 4.5, 2.3125], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.6, 0.2, 7],
+			"to": [8.4, 27.6, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.4, 1, 7]},
+			"faces": {
+				"north": {"uv": [2, 0, 2.1875, 6.875], "texture": "#0"},
+				"east": {"uv": [0, 0, 0.5, 6.875], "texture": "#0"},
+				"south": {"uv": [2.25, 0, 2.4375, 6.875], "texture": "#0"},
+				"west": {"uv": [0.5, 0, 1, 6.875], "texture": "#0"},
+				"up": {"uv": [4.9375, 5, 4.75, 4.5], "texture": "#0"},
+				"down": {"uv": [5.1875, 0.5, 5, 1], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 25.6, 6.9],
+			"to": [8.5, 28.3, 9.1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7.4, 1, 7]},
+			"faces": {
+				"north": {"uv": [4.25, 1, 4.5, 1.6875], "texture": "#0"},
+				"east": {"uv": [3.25, 1.5, 3.8125, 2.1875], "texture": "#0"},
+				"south": {"uv": [4.25, 1.75, 4.5, 2.4375], "texture": "#0"},
+				"west": {"uv": [3.25, 2.25, 3.8125, 2.9375], "texture": "#0"},
+				"up": {"uv": [4.75, 4.0625, 4.5, 3.5], "texture": "#0"},
+				"down": {"uv": [4, 4.5, 3.75, 5.0625], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-180, 0, 0],
+			"translation": [0, -5.75, 0.5]
+		},
+		"gui": {
+			"rotation": [90, 53.75, 90],
+			"translation": [3.75, 4.75, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [7, -16, 2.1],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

@@ -1,0 +1,17 @@
+{
+  "loader": "forge:separate_transforms",
+  "base": {
+    "loader": "forge:obj",
+    "model": "tcrcore:models/item/obj/magic_longsword.obj",
+        "flip_v": true
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "tcrcore:item/magic_longsword"
+      },
+      "gui_light": "front"
+    }
+  }
+}
