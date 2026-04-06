@@ -15,7 +15,6 @@
     "BaseFireBlockMixin",
     "BedBlockMixin",
     "BoatItemMixin",
-    "dodosmob.Bone_ChimeraMixin",
     "CaptainCorneliaMixin",
     "DragonBaseMixin",
     "DrownedMixin",
@@ -54,6 +53,7 @@
     "ba_bt.CoreMatterBlockMixin",
     "ba_bt.CoreTowerMixin",
     "ba_bt.LandTowerMixin",
+    "dodosmob.Bone_ChimeraMixin",
     "domesticationinnovation.CommonProxyMixin",
     "epicfight.AdvancedCombatGoalMixin",
     "epicfight.AnimatedAttackGoalMixin",
@@ -81,6 +81,7 @@
     "iss.ScrollItemMixin"
   ],
   "client": [
+    "ftbq.QuestScreenMixin",
     "AltarRendererMixin",
     "AquamiraeClientMixin",
     "CataclysmClientEventMixin",
