@@ -1,0 +1,11 @@
+{
+    "trail": {
+    	"color": [125,125,125],
+    	"begin_pos": [0.0, 0.0, -0.6],
+    	"end_pos": [0.0, 0.0, -1.6],
+    	"lifetime": 5,
+		"interpolations": 1,
+    	"texture_path": "tcrcore:textures/trail/magictrail.png",
+    	"particle_type": "efn:bloom_trail"
+    }
+}
