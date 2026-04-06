@@ -24,6 +24,7 @@ public class FlameAltarBlockEntity extends AbstractAltarBlockEntity {
         super.onPlayerInteract(pState, pLevel, pPos, pPlayer, pHand, pHit);
         if(pPlayer instanceof ServerPlayer serverPlayer && TCRQuestManager.hasQuest(pPlayer, TCRQuests.PUT_FLAME_EYE_ON_ALTAR)) {
             TCRQuests.PUT_FLAME_EYE_ON_ALTAR.finish(serverPlayer, true);
+            TCRQuests.KILL_FLAME_EYE.start(serverPlayer);
         }
     }
 

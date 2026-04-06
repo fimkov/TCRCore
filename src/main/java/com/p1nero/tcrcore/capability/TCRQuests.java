@@ -2,9 +2,9 @@ package com.p1nero.tcrcore.capability;
 
 import com.brass_amber.ba_bt.init.BTEntityType;
 import com.brass_amber.ba_bt.init.BTItems;
+import com.github.L_Ender.cataclysm.init.ModEntities;
 import com.github.L_Ender.cataclysm.init.ModItems;
 import com.github.alexthe668.domesticationinnovation.server.item.DIItemRegistry;
-import com.github.dodo.dodosmobs.init.ModEntities;
 import com.hm.efn.registries.EFNItem;
 import com.obscuria.aquamirae.registry.AquamiraeEntities;
 import com.obscuria.aquamirae.registry.AquamiraeItems;
@@ -17,7 +17,6 @@ import com.p1nero.tcrcore.item.TCRItems;
 import com.p1nero.tcrcore.utils.WorldUtil;
 import com.p1nero.tcrcore.worldgen.TCRDimensions;
 import com.yungnickyoung.minecraft.ribbits.module.EntityTypeModule;
-import io.redspace.ironsspellbooks.registries.EntityRegistry;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -44,6 +43,16 @@ public class TCRQuests {
     public static Quest PUT_STORM_EYE_ON_ALTAR;
     public static Quest PUT_VOID_EYE_ON_ALTAR;
     public static Quest PUT_MONST_EYE_ON_ALTAR;
+
+    public static Quest KILL_DESERT_EYE;
+    public static Quest KILL_ABYSS_EYE;
+    public static Quest KILL_CURSED_EYE;
+    public static Quest KILL_FLAME_EYE;
+    public static Quest KILL_MECH_EYE;
+    public static Quest KILL_STORM_EYE;
+    public static Quest KILL_VOID_EYE;
+    public static Quest KILL_MONST_EYE;
+
     //去女神像处祈福
     public static Quest BLESS_ON_THE_GODNESS_STATUE;
     //向安了解幻境
@@ -147,6 +156,60 @@ public class TCRQuests {
         WAIT_RESONANCE_STONE_CHARGE = TCRQuestManager.create("wait_resonance_stone_charge")
                 .shortDescParam(TCRItems.RESONANCE_STONE.get().getDescription())
                 .descParam(TCRItems.RESONANCE_STONE.get().getDescription());
+
+        KILL_DESERT_EYE = TCRQuestManager.create("kill_desert_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.ANCIENT_REMNANT.get().getDescription().copy().withStyle(ChatFormatting.YELLOW))
+                .descParam(ModItems.DESERT_EYE.get().getDescription().copy().withStyle(ChatFormatting.YELLOW),
+                        ModEntities.ANCIENT_REMNANT.get().getDescription().copy().withStyle(ChatFormatting.YELLOW),
+                        ModItems.NECKLACE_OF_THE_DESERT.get().getDescription().copy().withStyle(ChatFormatting.YELLOW),
+                        ModEntities.ANCIENT_REMNANT.get().getDescription().copy().withStyle(ChatFormatting.YELLOW));
+        KILL_MECH_EYE = TCRQuestManager.create("kill_mech_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.THE_HARBINGER.get().getDescription().copy().withStyle(ChatFormatting.GOLD))
+                .descParam(ModItems.MECH_EYE.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        ModEntities.THE_HARBINGER.get().getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        Items.NETHER_STAR.getDescription().copy().withStyle(ChatFormatting.GOLD),
+                        ModEntities.THE_HARBINGER.get().getDescription().copy().withStyle(ChatFormatting.GOLD));
+        KILL_MONST_EYE = TCRQuestManager.create("kill_monst_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.NETHERITE_MONSTROSITY.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED))
+                .descParam(ModItems.MONSTROUS_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED),
+                        ModEntities.NETHERITE_MONSTROSITY.get().getDescription().copy().withStyle(ChatFormatting.DARK_RED));
+        KILL_STORM_EYE = TCRQuestManager.create("kill_storm_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.SCYLLA.get().getDescription().copy().withStyle(ChatFormatting.AQUA))
+                .descParam(ModItems.STORM_EYE.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        ModEntities.SCYLLA.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        ModItems.CERAUNUS.get().getDescription().copy().withStyle(ChatFormatting.AQUA),
+                        ModEntities.SCYLLA.get().getDescription().copy().withStyle(ChatFormatting.AQUA));
+        KILL_ABYSS_EYE = TCRQuestManager.create("kill_abyss_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.THE_LEVIATHAN.get().getDescription().copy().withStyle(ChatFormatting.BLUE))
+                .descParam(ModItems.ABYSS_EYE.get().getDescription().copy().withStyle(ChatFormatting.BLUE),
+                        ModEntities.THE_LEVIATHAN.get().getDescription().copy().withStyle(ChatFormatting.BLUE),
+                        ModItems.ABYSSAL_SACRIFICE.get().getDescription().copy().withStyle(ChatFormatting.BLUE),
+                        ModEntities.THE_LEVIATHAN.get().getDescription().copy().withStyle(ChatFormatting.BLUE));
+        KILL_CURSED_EYE = TCRQuestManager.create("kill_cursed_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.MALEDICTUS.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN))
+                .descParam(ModItems.CURSED_EYE.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN),
+                        ModEntities.MALEDICTUS.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN),
+                        ModItems.STRANGE_KEY.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN),
+                        ModEntities.MALEDICTUS.get().getDescription().copy().withStyle(ChatFormatting.DARK_GREEN));
+        KILL_FLAME_EYE = TCRQuestManager.create("kill_flame_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.IGNIS.get().getDescription().copy().withStyle(ChatFormatting.RED))
+                .descParam(ModItems.FLAME_EYE.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        ModEntities.IGNIS.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        ModItems.BURNING_ASHES.get().getDescription().copy().withStyle(ChatFormatting.RED),
+                        ModEntities.IGNIS.get().getDescription().copy().withStyle(ChatFormatting.RED));
+        KILL_VOID_EYE = TCRQuestManager.create("kill_void_eye")
+                .withIcon(SIDE_QUEST_1)
+                .shortDescParam(ModEntities.ENDER_GUARDIAN.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE))
+                .descParam(ModItems.VOID_EYE.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE),
+                        ModEntities.ENDER_GUARDIAN.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE),
+                        ModEntities.ENDER_GUARDIAN.get().getDescription().copy().withStyle(ChatFormatting.LIGHT_PURPLE));
 
         PUT_DESERT_EYE_ON_ALTAR = TCRQuestManager.create("put_desert_eye_on_altar")
                 .withIcon(SIDE_QUEST_1)
@@ -256,7 +319,7 @@ public class TCRQuests {
         TALK_TO_ORNN_1 = TCRQuestManager.create("talk_to_ornn_1")
                 .withIcon(SIDE_QUEST_1)
                 .shortDescParam(TCREntities.ORNN.get().getDescription())
-                .descParam(ModEntities.BONE_CHIMERA.get().getDescription(), TCRItems.MYSTERIOUS_WEAPONS.get().getDescription(),TCREntities.ORNN.get().getDescription())
+                .descParam(com.github.dodo.dodosmobs.init.ModEntities.BONE_CHIMERA.get().getDescription(), TCRItems.MYSTERIOUS_WEAPONS.get().getDescription(),TCREntities.ORNN.get().getDescription())
                 .withTrackingPos(new BlockPos(WorldUtil.ORNN_POS.above(3)), TCRDimensions.SANCTUM_LEVEL_KEY);
 
         TALK_TO_CHRONOS_1 = TCRQuestManager.create("talk_to_chronos_1")

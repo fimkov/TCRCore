@@ -41,16 +41,10 @@ public class BlockEvents {
                 event.setCanceled(true);
             }
             if(CataclysmDimensions.LEVELS.contains(event.getPlayer().level().dimension())) {
-                //利维坦和末影守卫得挖进去
-                if(event.getPlayer().level().dimension() == CataclysmDimensions.CATACLYSM_ABYSSAL_DEPTHS_LEVEL_KEY) {
-                    return;
-                }
-                if(event.getPlayer().level().dimension() == CataclysmDimensions.CATACLYSM_BASTION_LOST_LEVEL_KEY) {
-                    return;
-                }
                 if(!TCRDimSaveData.get(serverLevel).isBossKilled()) {
-                    event.getPlayer().displayClientMessage(TCRCoreMod.getInfo("dim_block_no_interact"), true);
+                    event.getPlayer().displayClientMessage(TCRCoreMod.getInfo("c"), true);
                     event.setCanceled(true);
+                    serverLevel.destroyBlock(event.getPos(), false);
                 }
             }
             //在呱呱村庄打爆紫水晶块概率出遗忘者

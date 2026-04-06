@@ -27,6 +27,7 @@ public class DesertAltarBlockEntity extends AbstractAltarBlockEntity {
         super.onPlayerInteract(pState, pLevel, pPos, pPlayer, pHand, pHit);
         if(pPlayer instanceof ServerPlayer serverPlayer && TCRQuestManager.hasQuest(pPlayer, TCRQuests.PUT_DESERT_EYE_ON_ALTAR)) {
             TCRQuests.PUT_DESERT_EYE_ON_ALTAR.finish(serverPlayer, true);
+            TCRQuests.KILL_DESERT_EYE.start(serverPlayer);
         }
     }
 

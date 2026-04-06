@@ -88,6 +88,15 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addBiome(TCRBiomes.AIR, "");
         this.addBiome(TCRBiomes.REAL, "");
 
+        this.addQuest(TCRQuests.KILL_DESERT_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Defeat mini-bosses to obtain [%s] and use them to awaken [%s] in the deepest part of the pyramid maze. Keep moving downward!");
+        this.addQuest(TCRQuests.KILL_MECH_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Use [%s] to awaken [%s] sleeping deep in the factory.");
+        this.addQuest(TCRQuests.KILL_MONST_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!");
+        this.addQuest(TCRQuests.KILL_STORM_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Interact with [%s] at the top to awaken [%s].");
+        this.addQuest(TCRQuests.KILL_ABYSS_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Craft [%s] and use it to awaken the sleeping [%s].");
+        this.addQuest(TCRQuests.KILL_CURSED_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Defeat mini-bosses to obtain [%s], then you can open the door deep in the maze and challenge [%s]!");
+        this.addQuest(TCRQuests.KILL_FLAME_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Defeat mini-bosses to obtain [%s], then summon [%s] at the altar.");
+        this.addQuest(TCRQuests.KILL_VOID_EYE, "Cloudland Chapter", "Defeat [%s]", "With the power of [%s], we have opened a new cloudland. Defeat the cloudland boss [%s] to obtain powerful materials!\n\n§aHint: Keep moving downward! [%s] is waiting for you deep in the fortress.");
+
         this.addQuest(TCRQuests.WAIT_RESONANCE_STONE_CHARGE, "Interlude", "Wait for [%s] to charge", "[%s]'s energy has been depleted, and recharging will take some time. Before it finishes charging, go do something else!");
         this.addQuest(TCRQuests.PUT_DESERT_EYE_ON_ALTAR, "Interlude", "Place [%s] on the altar", "[%s] has been retrieved. Hurry and return it to the altar in the Sanctum corridor!");
         this.addQuest(TCRQuests.PUT_ABYSS_EYE_ON_ALTAR, "Interlude", "Place [%s] on the altar", "[%s] has been retrieved. Hurry and return it to the altar in the Sanctum corridor!");
@@ -369,6 +378,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("wraithon_start_tip", "§d[Wraithon]: §6Outsider, your journey ends here!");
         this.addInfo("wraithon_end_tip", "§d[Wraithon]: §6This... is impossible...");
         this.addInfo("dim_block_no_interact", "§cBoss has not been defeated! Cannot interact with the cloudland blocks yet!");
+        this.addInfo("dim_block_no_interact_no_drop", "§cBoss has not been defeated! Break block will not drop anything!!");
         this.addInfo("altar_dim_info", "Cloudland Info:");
         this.addInfo("related_loot", "Monster: [%s] | Related Loot: [%s]");
         this.add(TCRBlocks.CURSED_ALTAR_BLOCK.get(), "Cursed Altar");

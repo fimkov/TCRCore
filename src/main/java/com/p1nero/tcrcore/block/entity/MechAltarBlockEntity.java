@@ -28,6 +28,7 @@ public class MechAltarBlockEntity extends AbstractAltarBlockEntity {
         super.onPlayerInteract(pState, pLevel, pPos, pPlayer, pHand, pHit);
         if(pPlayer instanceof ServerPlayer serverPlayer && TCRQuestManager.hasQuest(pPlayer, TCRQuests.PUT_MECH_EYE_ON_ALTAR)) {
             TCRQuests.PUT_MECH_EYE_ON_ALTAR.finish(serverPlayer, true);
+            TCRQuests.KILL_MECH_EYE.start(serverPlayer);
         }
     }
 

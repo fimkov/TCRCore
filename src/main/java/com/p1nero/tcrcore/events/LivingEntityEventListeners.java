@@ -235,18 +235,21 @@ public class LivingEntityEventListeners {
                     if (!PlayerDataManager.stormEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.stormEyeKilled.put(player, true);
+                        TCRQuests.KILL_STORM_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, ItemRegistry.LIGHTNING_BOTTLE.get(), 4, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof Ignis_Entity) {
                     if (!PlayerDataManager.flameEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.flameEyeKilled.put(player, true);
+                        TCRQuests.KILL_FLAME_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, Items.BLAZE_ROD, 4, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof The_Leviathan_Entity) {
                     if (!PlayerDataManager.abyssEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.abyssEyeKilled.put(player, true);
+                        TCRQuests.KILL_ABYSS_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, Items.ECHO_SHARD, 6, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof Maledictus_Entity) {
@@ -254,6 +257,7 @@ public class LivingEntityEventListeners {
                         givePlayerAward(player, 2);
                         ItemUtil.addItemEntity(livingEntity, TCRItems.DUAL_BOKKEN.get(), 1, ChatFormatting.LIGHT_PURPLE.getColor());
                         PlayerDataManager.cursedEyeKilled.put(player, true);
+                        TCRQuests.KILL_CURSED_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, ItemRegistry.FROZEN_BONE_SHARD.get(), 6, ChatFormatting.GOLD.getColor().intValue());
                     ItemUtil.addItemEntity(player, BMDItems.SOUL_STAR.get(), 2, ChatFormatting.GOLD.getColor().intValue());
@@ -261,11 +265,13 @@ public class LivingEntityEventListeners {
                     if (!PlayerDataManager.desertEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.desertEyeKilled.put(player, true);
+                        TCRQuests.KILL_DESERT_EYE.finish(player, true);
                     }
                 } else if (livingEntity instanceof Ender_Guardian_Entity) {
                     if (!PlayerDataManager.voidEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.voidEyeKilled.put(player, true);
+                        TCRQuests.KILL_VOID_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, Items.ENDER_EYE, 4, ChatFormatting.GOLD.getColor().intValue());
                     ItemUtil.addItemEntity(player, Items.SHULKER_SHELL, 5, ChatFormatting.GOLD.getColor().intValue());
@@ -273,12 +279,14 @@ public class LivingEntityEventListeners {
                     if (!PlayerDataManager.monstEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.monstEyeKilled.put(player, true);
+                        TCRQuests.KILL_MONST_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, Items.NETHERITE_INGOT, 1, ChatFormatting.GOLD.getColor().intValue());
                 } else if (livingEntity instanceof The_Harbinger_Entity) {
                     if (!PlayerDataManager.mechEyeKilled.get(player)) {
                         givePlayerAward(player, 2);
                         PlayerDataManager.mechEyeKilled.put(player, true);
+                        TCRQuests.KILL_MECH_EYE.finish(player, true);
                     }
                     ItemUtil.addItemEntity(player, Items.NETHER_STAR, 1, ChatFormatting.GOLD.getColor().intValue());
                 }
