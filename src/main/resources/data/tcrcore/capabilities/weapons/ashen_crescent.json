@@ -6,9 +6,9 @@
 			"armor_negation":15.0,
 			"damage_bonus":15.0,
 			"max_strikes":5,
-			"speed_bonus":0.85,
+			"speed_bonus":0.9,
 			"impact":4.7
 		}
 	},
-	"type":"falchionmoveset:falchion"
+	"type":"tcrcore:falchion"
 }

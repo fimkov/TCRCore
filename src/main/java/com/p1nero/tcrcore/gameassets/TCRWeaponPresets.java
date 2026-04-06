@@ -1,12 +1,18 @@
 package com.p1nero.tcrcore.gameassets;
 
+import com.asanginxst.epicfightx.gameassets.animations.AnimationsX;
+import com.asanginxst.epicfightx.gameassets.animations.ExtraAnimations;
 import com.hm.efn.gameasset.animations.EFNGreatSwordAnimations;
+import com.nameless.falchion.gameasset.FalchionAnimations;
+import com.nameless.falchion.gameasset.FalchionSkills;
 import com.p1nero.p1nero_ec.gameassets.PECSkills;
 import com.p1nero.tcrcore.TCRCoreMod;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import yesman.epicfight.api.animation.AnimationManager;
 import yesman.epicfight.api.animation.LivingMotions;
 import yesman.epicfight.api.collider.MultiOBBCollider;
 import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
@@ -44,9 +50,33 @@ public class TCRWeaponPresets {
                     .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.WALK, EFNGreatSwordAnimations.NG_GREATSWOED_WALK)
                     .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.RUN, EFNGreatSwordAnimations.NG_GREATSWORD_RUN);
 
+    public static final Function<Item, CapabilityItem.Builder> FALCHION = (item) ->
+            WeaponCapability.builder().category(CapabilityItem.WeaponCategories.SPEAR)
+                    .styleProvider((playerpatch) -> CapabilityItem.Styles.TWO_HAND)
+                    .collider(ColliderPreset.SPEAR)
+                    .hitSound(EpicFightSounds.BLADE_HIT.get())
+                    .canBePlacedOffhand(false)
+                    .newStyleCombo(CapabilityItem.Styles.TWO_HAND,
+                            AnimationsX.SPEAR_TWOHAND_AUTO1,
+                            AnimationsX.SPEAR_TWOHAND_AUTO2,
+                            ExtraAnimations.SPEAR_TWOHAND_AUTO3,
+                            ExtraAnimations.SPEAR_TWOHAND_AUTO4,
+                            ExtraAnimations.SPEAR_TWOHAND_AUTO5,
+                            Animations.SPEAR_DASH,
+                            Animations.SPEAR_TWOHAND_AIR_SLASH)
+                    .newStyleCombo(CapabilityItem.Styles.MOUNT, Animations.SPEAR_MOUNT_ATTACK)
+                    .innateSkill(CapabilityItem.Styles.TWO_HAND,
+                            (itemstack) -> FalchionSkills.FALCHION_ART)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.IDLE, AnimationsX.BIPED_HOLD_SPEAR)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.WALK, AnimationsX.BIPED_WALK_SPEAR)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.CHASE, AnimationsX.BIPED_RUN_SPEAR)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.RUN, AnimationsX.BIPED_RUN_SPEAR)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.SWIM, AnimationsX.BIPED_HOLD_SPEAR)
+                    .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.BLOCK, AnimationsX.SPEAR_GUARD);
+
 
     @SubscribeEvent
     public static void register(WeaponCapabilityPresetRegistryEvent event) {
-        event.getTypeEntry().put(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "the_incinerator"), THE_INCINERATOR);
+        event.getTypeEntry().put(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "falchion"), FALCHION);
     }
 }

@@ -88,14 +88,14 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addBiome(TCRBiomes.AIR, "");
         this.addBiome(TCRBiomes.REAL, "");
 
-        this.addQuest(TCRQuests.KILL_DESERT_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：击败小头目以获得[%s]，以在金字塔迷宫最深处唤醒[%s]，不断向下前进吧！");
-        this.addQuest(TCRQuests.KILL_MECH_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：使用[%s]以唤醒沉睡在工厂深处的[%s]");
+        this.addQuest(TCRQuests.KILL_DESERT_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r击败小头目以获得[%s]，以在金字塔迷宫最深处唤醒[%s]，不断向下前进吧！");
+        this.addQuest(TCRQuests.KILL_MECH_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r使用[%s]以唤醒沉睡在工厂深处的[%s]");
         this.addQuest(TCRQuests.KILL_MONST_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！");
-        this.addQuest(TCRQuests.KILL_STORM_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：在顶端与[%s]交互即可唤醒[%s]");
-        this.addQuest(TCRQuests.KILL_ABYSS_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：合成[%s]，并以之唤醒沉睡的[%s]");
-        this.addQuest(TCRQuests.KILL_CURSED_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：击败小头目以获得[%s]，即可打开迷宫深处的大门，挑战[%s]！");
-        this.addQuest(TCRQuests.KILL_FLAME_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：击败小头目以获得[%s]，即可在祭坛召唤[%s]");
-        this.addQuest(TCRQuests.KILL_VOID_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a提示：不断向下前进吧！[%s]在堡垒的深处等着你！");
+        this.addQuest(TCRQuests.KILL_STORM_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r在顶端与[%s]交互即可唤醒[%s]");
+        this.addQuest(TCRQuests.KILL_ABYSS_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r合成[%s]，并以之唤醒沉睡的[%s]");
+        this.addQuest(TCRQuests.KILL_CURSED_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r击败小头目以获得[%s]，即可打开迷宫深处的大门，挑战[%s]！");
+        this.addQuest(TCRQuests.KILL_FLAME_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r击败小头目以获得[%s]，即可在祭坛召唤[%s]");
+        this.addQuest(TCRQuests.KILL_VOID_EYE, "幻境之章", "击败[%s]", "借助[%s]的力量，我们开启了一个新的幻境。击败幻境首领[%s]，获取强力的材料吧！\n\n§a[提示]：§r不断向下前进吧！[%s]在堡垒的深处等着你！");
 
         this.addQuest(TCRQuests.WAIT_RESONANCE_STONE_CHARGE, "间章", "等待[%s]充能", "[%s]的能量已经耗尽，重新充能需要一段时间。在充能完成之前先去做点别的事吧！");
         this.addQuest(TCRQuests.PUT_DESERT_EYE_ON_ALTAR, "间章", "将[%s]置于祭坛上", "[%s]已经寻回，快将它归位到圣殿长廊的祭坛上吧！");
