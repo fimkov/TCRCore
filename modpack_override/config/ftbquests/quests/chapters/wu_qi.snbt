@@ -14,7 +14,7 @@
 		x: 0.1428571428571388d
 		y: -5.946428571428569d
 	}]
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -484,19 +484,12 @@
 			shape: "none"
 			size: 1.5d
 			subtitle: "{ftbquests.chapter.wu_qi.quest3658525919730360002.subtitle}"
-			tasks: [
-				{
-					id: "59F8C4F178149A3A"
-					item: "efn:nf_shortsword"
-					optional_task: true
-					type: "item"
-				}
-				{
-					id: "272DEA67F468439A"
-					item: "efn:nf_shortsword_2"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "59F8C4F178149A3A"
+				item: "efn:nf_shortsword"
+				optional_task: true
+				type: "item"
+			}]
 			x: -11.25d
 			y: 0.75d
 		}
