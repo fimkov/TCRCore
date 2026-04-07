@@ -152,7 +152,21 @@
         "mob": [
             "minecraft:wither_skeleton"
         ],
-        "result": "allow"
+        "mincount": {
+            "amount": 6,
+            "perplayer": true
+        },
+        "result": "deny"
+    },
+    {
+        "mob": [
+            "minecraft:warden"
+        ],
+        "mincount": {
+            "amount": 6,
+            "perplayer": true
+        },
+        "result": "deny"
     },
     {
         "mob": [
