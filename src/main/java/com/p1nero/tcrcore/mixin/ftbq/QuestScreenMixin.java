@@ -37,6 +37,7 @@ public class QuestScreenMixin {
                 String id = EFPPonderPlugin.getWeaponPresetId(stack);
                 if(id != null) {
                     EFMSkillsPonderManager.setHoveredWeapon(id);
+                    EFMSkillsPonderManager.setHoveredItem(stack);
                     list.add(EFMSkillsPonderManager.getPonderTooltip());
                 }
             }

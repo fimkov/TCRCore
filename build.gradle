@@ -205,7 +205,6 @@ dependencies {
 //    implementation fg.deobf("libs:pbf:1.1.0")
     implementation fg.deobf("curse.maven:p1neros-primal-arena-dimension-1369741:7147163")
     implementation fg.deobf("curse.maven:summoningrituals-671040:5446506")
-    compileOnly fg.deobf("libs:c2meF:0.2.0")
 //    implementation ("curse.maven:preloading-tricks-1372086:7210447")
 //    implementation fg.deobf("curse.maven:accelerated-rendering-1314021:7196153")
 
@@ -293,7 +292,6 @@ dependencies {
     implementation fg.deobf("curse.maven:obscure-api-638417:7171906")
 
     //ftb
-    implementation fg.deobf("libs:ftbquestlocalizer:3.2.2")
     implementation fg.deobf("curse.maven:ftb-quests-forge-289412:6829212")
     implementation fg.deobf("curse.maven:ftb-library-forge-404465:6807424")
     implementation fg.deobf("curse.maven:ftb-teams-forge-404468:6130786")
