@@ -80,7 +80,7 @@ public abstract class CaptainCorneliaMixin extends Monster {
     @Inject(method = "dropEquipment", at = @At("HEAD"), cancellable = true)
     private void tcr$dropEquipment(CallbackInfo ci) {
         if(level() instanceof ServerLevel server) {
-            ItemStack map = Aquamirae.getStructureMap(Aquamirae.SHELTER, server, this);
+            ItemStack map = Aquamirae.createStructureMap(Aquamirae.SHELTER, server, this);
             if (!map.isEmpty()) {
                 ItemEntity item = new ItemEntity(EntityType.ITEM, server);
                 item.setItem(map);
