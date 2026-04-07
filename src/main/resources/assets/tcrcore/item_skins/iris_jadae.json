@@ -4,10 +4,10 @@
   "mesh_main":"tcrcore:weapon/iris_jadae",
   "trail": {
     "color": [128, 128, 128],
-    "begin_pos": [0.0, 0.0, -0.1],
-    "end_pos": [0.0, 0.2, -2.75],
-    "lifetime": 4,
-    "interpolations": 5,
+    "begin_pos": [0.0, 0.0, -0.9],
+    "end_pos": [0.0, 0.1, -2.35],
+    "lifetime": 5,
+    "interpolations": 1,
     "texture_path": "tcrcore:textures/trail/swing_trailsky.png",
     "particle_type": "efn:bloom_trail"
   },

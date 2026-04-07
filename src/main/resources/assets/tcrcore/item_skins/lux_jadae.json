@@ -2,10 +2,10 @@
 {
   "trail": {
     "color": [128, 128, 128],
-    "begin_pos": [0.0, 0.1, -0.2],
-    "end_pos": [0.0, 0.3, -1.25],
-    "lifetime": 4,
-    "interpolations": 5,
+    "begin_pos": [0.0, 0.0, 0.0],
+    "end_pos": [0.0, 0.0, -1.3],
+    "lifetime": 5,
+    "interpolations": 1,
     "texture_path": "tcrcore:textures/trail/swing_trailsky.png",
     "particle_type": "efn:bloom_trail"
   },

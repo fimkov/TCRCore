@@ -2,8 +2,8 @@
     "trail": {
     	"color": [125,125,125],
     	"begin_pos": [0.0, 0.0, -0.2],
-    	"end_pos": [0.0, 0.0, -2.0],
-    	"lifetime": 4,
+    	"end_pos": [0.0, 0.0, -1.95],
+    	"lifetime": 5,
 		"interpolations": 5,
     	"texture_path": "tcrcore:textures/trail/swing_trailnether.png",
     	"particle_type": "efn:bloom_trail"
