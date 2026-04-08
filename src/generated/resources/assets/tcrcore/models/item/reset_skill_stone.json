@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tcrcore:item/reset_skill_stone"
+  }
+}

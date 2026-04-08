@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "result": {
+    "item": "tcrcore:lux_jadae"
+  },
+  "template": {
+    "item": "tcrcore:nine_heaven_darksteel"
+  }
+}

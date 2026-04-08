@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tcrcore:ancient_oracle_fragment"
+  },
+  "base": {
+    "item": "tcrcore:ashen_crescent"
+  },
+  "result": {
+    "item": "tcrcore:magic_halberd"
+  },
+  "template": {
+    "item": "minecraft:nether_star"
+  }
+}

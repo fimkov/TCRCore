@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tcrcore:ancient_oracle_fragment"
+  },
+  "base": {
+    "item": "tcrcore:mons_jadae"
+  },
+  "result": {
+    "item": "tcrcore:magic_greatsword"
+  },
+  "template": {
+    "item": "minecraft:nether_star"
+  }
+}

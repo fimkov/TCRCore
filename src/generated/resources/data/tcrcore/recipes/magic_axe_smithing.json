@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tcrcore:ancient_oracle_fragment"
+  },
+  "base": {
+    "item": "tcrcore:magmaheart"
+  },
+  "result": {
+    "item": "tcrcore:magic_axe"
+  },
+  "template": {
+    "item": "minecraft:nether_star"
+  }
+}

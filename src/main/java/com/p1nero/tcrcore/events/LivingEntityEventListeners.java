@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.events;
 
 import com.aetherteam.aether.entity.monster.dungeon.Mimic;
+import com.aetherteam.aether.entity.monster.dungeon.Valkyrie;
 import com.brass_amber.ba_bt.block.block.BTChestBlock;
 import com.brass_amber.ba_bt.entity.block.BTMonolith;
 import com.brass_amber.ba_bt.entity.hostile.golem.*;
@@ -487,6 +488,10 @@ public class LivingEntityEventListeners {
                     serverPlayer.displayClientMessage(clickToReturn, false);
                 }));
 
+            }
+
+            if(livingEntity instanceof Valkyrie) {
+                livingEntity.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);//防止掉落
             }
 
             //打似战灵爆mimic

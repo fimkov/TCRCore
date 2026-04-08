@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "epicfight:netherite_spear"
+  },
+  "result": {
+    "item": "tcrcore:iris_jadae"
+  },
+  "template": {
+    "item": "tcrcore:nine_heaven_darksteel"
+  }
+}
