@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tcrcore:proof_of_adventure_plus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wither_soul_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tcrcore:wither_soul_stone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wither_soul_stone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tcrcore:proof_of_adventure_plus"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tcrcore:ancient_oracle_fragment"
+  },
+  "base": {
+    "item": "tcrcore:purging_swallow"
+  },
+  "result": {
+    "item": "tcrcore:magic_katana"
+  },
+  "template": {
+    "item": "minecraft:nether_star"
+  }
+}

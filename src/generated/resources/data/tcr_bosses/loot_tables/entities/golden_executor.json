@@ -1,0 +1,4 @@
+{
+  "type": "minecraft:entity",
+  "random_sequence": "tcr_bosses:entities/golden_executor"
+}
