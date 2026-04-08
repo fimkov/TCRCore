@@ -14,7 +14,6 @@ import com.p1nero.tcrcore.capability.TCRQuestManager;
 import com.p1nero.tcrcore.client.sound.TCRSounds;
 import com.p1nero.tcrcore.effect.TCREffects;
 import com.p1nero.tcrcore.entity.TCREntities;
-import com.p1nero.tcrcore.events.ItemEvents;
 import com.p1nero.tcrcore.events.LivingEntityEventListeners;
 import com.p1nero.tcrcore.events.PlayerEventListeners;
 import com.p1nero.tcrcore.gameassets.TCRSkillSlots;
@@ -70,7 +69,7 @@ public class TCRCoreMod {
         TCRBlocks.REGISTRY.register(bus);
         TCRBlockEntities.REGISTRY.register(bus);
         TCRItems.REGISTRY.register(bus);
-        TCRItemTabs.REGISTRY.register(bus);
+        TCRItemTabs.TABS.register(bus);
         TCREffects.REGISTRY.register(bus);
         TCRStructures.STRUCTURE_TYPES.register(bus);
         TCRStructures.STRUCTURE_PIECE.register(bus);

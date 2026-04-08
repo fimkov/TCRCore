@@ -553,6 +553,7 @@
   "item.tcrcore.wither_soul_stone_activated.usage": "可打开前往[%s]的大门。",
   "item.waystones.warp_stone.tcr_info": "点击物品栏中的传送卷轴按钮以进行传送。",
   "itemGroup.tcr.items": "远梦之棺 —— 核心 物品",
+  "itemGroup.tcr.weapons": "远梦之棺 —— 核心 武器",
   "key.categories.tcrcore": "远梦之棺 —— 核心",
   "key.tcrcore.exit_spectator": "退出观察者模式",
   "key.tcrcore.riptide": "激流",

@@ -220,6 +220,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addTCRItemInfo(EpicSkillsItems.ABILIITY_STONE.get(), "Right-click to use and gain skill points");
 
         this.add("itemGroup.tcr.items", "The Casket of Reveries — Core Items");
+        this.add("itemGroup.tcr.weapons", "The Casket of Reveries — Weapons");
         this.add("key.categories." + TCRCoreMod.MOD_ID, "The Casket of Reveries — Core");
         this.addKeyMapping(TCRKeyMappings.RIPTIDE, "Riptide");
         this.addKeyMapping(TCRKeyMappings.SHOW_QUESTS, "Show/Hide Task");

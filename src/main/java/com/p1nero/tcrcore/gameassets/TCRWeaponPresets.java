@@ -64,10 +64,9 @@ public class TCRWeaponPresets {
                             ExtraAnimations.SPEAR_TWOHAND_AUTO4,
                             ExtraAnimations.SPEAR_TWOHAND_AUTO5,
                             Animations.SPEAR_DASH,
-                            EFNFalchionAnimations.FALCHION_AIRSLASH)
+                            AnimationsX.SPEAR_TWOHAND_AIR_SLASH)
                     .newStyleCombo(CapabilityItem.Styles.MOUNT, Animations.SPEAR_MOUNT_ATTACK)
-                    .innateSkill(CapabilityItem.Styles.TWO_HAND,
-                            (itemstack) -> FalchionSkills.FALCHION_ART)
+                    .innateSkill(CapabilityItem.Styles.TWO_HAND, (itemstack) -> FalchionSkills.FALCHION_ART)
                     .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.IDLE, AnimationsX.BIPED_HOLD_SPEAR)
                     .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.WALK, AnimationsX.BIPED_WALK_SPEAR)
                     .livingMotionModifier(CapabilityItem.Styles.TWO_HAND, LivingMotions.CHASE, AnimationsX.BIPED_RUN_SPEAR)

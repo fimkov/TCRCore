@@ -8,6 +8,8 @@ import net.createmod.ponder.api.registration.PonderPlugin;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import org.arc.epic_ponder.client.ponder.EFPPonderPlugin;
+import org.arc.epic_ponder.client.ponder.EFPWeaponScenes;
 import org.jetbrains.annotations.NotNull;
 
 public class TCRPonderPlugin implements PonderPlugin {
@@ -45,6 +47,9 @@ public class TCRPonderPlugin implements PonderPlugin {
                 .addStoryBoard("altar", TCRBossesPonderScene::addHarbingerScene);
         entryHelper.forComponents(TCRItems.ABYSS_CORE.get())
                 .addStoryBoard("altar", TCRBossesPonderScene::addLeviathanScene);
+        EFPPonderPlugin.registerWeapon(helper, "tcrcore:falchion",
+                TCRWeaponScenes::showcaseFalchionBasicAttackCombo,
+                TCRWeaponScenes::showcaseFalchionArt);
     }
 
 }

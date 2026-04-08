@@ -219,6 +219,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.addTCRItemInfo(EpicSkillsItems.ABILIITY_STONE.get(), "右键使用以获取技能点");
 
         this.add("itemGroup.tcr.items", "远梦之棺 —— 核心 物品");
+        this.add("itemGroup.tcr.weapons", "远梦之棺 —— 核心 武器");
         this.add("key.categories." + TCRCoreMod.MOD_ID, "远梦之棺 —— 核心");
         this.addKeyMapping(TCRKeyMappings.RIPTIDE, "激流");
         this.addKeyMapping(TCRKeyMappings.SHOW_QUESTS, "隐藏/显示指引");

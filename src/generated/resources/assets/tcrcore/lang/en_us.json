@@ -553,6 +553,7 @@
   "item.tcrcore.wither_soul_stone_activated.usage": "Can open a gateway to the §6[Infinite Samsara]§r.",
   "item.waystones.warp_stone.tcr_info": "Click the §6[Scroll]§r button in the inventory to teleport to activated waystones!",
   "itemGroup.tcr.items": "The Casket of Reveries — Core Items",
+  "itemGroup.tcr.weapons": "The Casket of Reveries — Weapons",
   "key.categories.tcrcore": "The Casket of Reveries — Core",
   "key.tcrcore.exit_spectator": "Exit Spectator Mode",
   "key.tcrcore.riptide": "Riptide",
