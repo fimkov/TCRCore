@@ -934,7 +934,7 @@ public class LivingEntityEventListeners {
             if(!boss.hasSpawnPos()) {
                 boss.setSpawnPos(boss.getOnPos());
             }
-            if(boss instanceof ValkyrieQueenEntity) {
+            if(boss instanceof ValkyrieQueenEntity && !boss.getTags().contains("started")) {
                 boss.setInFighting(false);//限对话开启
                 boss.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
             }

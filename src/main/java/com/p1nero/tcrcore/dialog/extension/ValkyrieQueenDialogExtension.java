@@ -80,6 +80,7 @@ public class ValkyrieQueenDialogExtension implements IEntityDialogueExtension<Va
                     advancedCapability.setPhase(1);
                 }
             });
+            valkyrieQueenEntity.getTags().add("started");
         }
         removeConservingPlayer(valkyrieQueenEntity);
     }
