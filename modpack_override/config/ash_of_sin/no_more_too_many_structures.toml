@@ -1,6 +1,6 @@
 
 ["No More Too Many Structures Settings"]
-	only_overlap = false
+	only_overlap = true
 	#Radius (in blocks) to check for nearby structures/features. 0.0 ~ 1000.0
 	#Range: 0.0 ~ 1000.0
 	checkRadius = 50.0

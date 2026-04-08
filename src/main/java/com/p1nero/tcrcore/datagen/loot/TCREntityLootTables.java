@@ -99,9 +99,9 @@ public class TCREntityLootTables extends EntityLootSubProvider {
         );
         this.add(TCRBossEntities.IGNIS_SHIELD.get(), emptyLootTable());
 
-        this.add(TCRBossEntities.GOLDEN_EXECUTOR.get(), LootTable.lootTable()
+        this.add(TCRBossEntities.GILDED_HUNTER.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(TCRItems.NINE_HEAVEN_DARKSTEEL.get())
                                 .setWeight(75)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
@@ -109,35 +109,35 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.SKY_MONOLITH_KEY.get()))));
         this.add(TCRBossEntities.VALKYRIE.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(TCRItems.NINE_HEAVEN_DARKSTEEL.get())
                                 .setWeight(75)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
                         .add(LootItem.lootTableItem(TCRItems.NINE_HEAVEN_DARKSTEEL.get())
                                 .setWeight(25)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))))
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.SKY_MONOLITH_KEY.get()))));
-        this.add(TCRBossEntities.GILDED_HUNTER.get(),  LootTable.lootTable()
+        this.add(TCRBossEntities.GOLDEN_EXECUTOR.get(),  LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(TCRItems.BLOOD_LOTUS.get())
                                 .setWeight(75)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F))))
                         .add(LootItem.lootTableItem(TCRItems.BLOOD_LOTUS.get())
                                 .setWeight(25)
-                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
+                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))))
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.NETHER_MONOLITH_KEY.get()))));
         this.add(TCRBossEntities.EVENING_GHOST.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(TCRItems.BLOOD_LOTUS.get())
                                 .setWeight(75)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
@@ -145,11 +145,11 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.NETHER_MONOLITH_KEY.get()))));
         this.add(TCRBossEntities.CITADEL_KEEPER.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(ItemRegistry.CINDER_ESSENCE.get())
                                 .setWeight(75)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))))
@@ -157,9 +157,9 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
                 .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1.0F)) // 固定抽取一次
+                        .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(Items.NETHERITE_SCRAP)
-                                .when(LootItemRandomChanceCondition.randomChance(0.2f))))); // 20% 概率出现
+                                .when(LootItemRandomChanceCondition.randomChance(0.2f))))); 
     }
 
     public LootTable.Builder emptyLootTable() {

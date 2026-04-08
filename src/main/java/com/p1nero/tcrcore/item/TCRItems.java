@@ -134,7 +134,7 @@ public class TCRItems {
                                     JourneyMapCompat.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", ModItems.MONSTROUS_EYE.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.NETHER_GOLEM)))), pos, ChatFormatting.DARK_RED);
                                 }
                             }))
-                            , //地狱钥匙位置1
+                            , //地狱钥匙位置1魔法城堡
                             new MultiResonanceStoneItem.TargetProperties(ResourceLocation.parse(WorldUtil.NETHER_KEY_1), 35, Level.NETHER, (serverPlayer) ->
                             TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_NETHER_RESONANCE_STONE) || serverPlayer.isCreative(),
                             ((pos, serverPlayer) ->
@@ -145,7 +145,7 @@ public class TCRItems {
                                 if (TCRCoreMod.isJourneyMapLoaded()) {
                                     JourneyMapCompat.sendWaypoint(serverPlayer, "eye_pos_mark", TCRCoreMod.getInfo("eye_pos_mark", BTItems.NETHER_MONOLITH_KEY.get().getDescription(), Component.translatable(Util.makeDescriptionId("structure", ResourceLocation.parse(WorldUtil.NETHER_KEY_1)))), pos, ChatFormatting.DARK_RED);
                                 }
-                                //地狱钥匙位置2
+                                //地狱钥匙位置2地狱堡垒
                             })), new MultiResonanceStoneItem.TargetProperties(ResourceLocation.parse(WorldUtil.NETHER_KEY_2), 35, Level.NETHER, (serverPlayer) ->
                             TCRQuestManager.hasQuest(serverPlayer, TCRQuests.USE_NETHER_RESONANCE_STONE) || serverPlayer.isCreative(),
                             ((pos, serverPlayer) ->

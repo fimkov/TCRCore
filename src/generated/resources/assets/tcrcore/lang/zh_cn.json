@@ -361,6 +361,7 @@
   "info.tcr.altar_dim_info": "幻境信息：",
   "info.tcr.attack_to_restart": "§c攻击Boss以再次发起挑战",
   "info.tcr.boss_killed_ready_return": "§6幻境英灵已击败！已解锁方块交互！",
+  "info.tcr.boss_will_respawn": "Boss将在 %ds 后重生...",
   "info.tcr.can_not_do_this_too_early": "§6当前没有做此事的命运。",
   "info.tcr.can_not_dodge": "Boss攻击将无视闪避！",
   "info.tcr.can_not_enter_before_finish": "§6当前没有进入幻镜的命运。",

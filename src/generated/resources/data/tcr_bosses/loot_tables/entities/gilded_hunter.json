@@ -13,7 +13,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "tcrcore:blood_lotus",
+          "name": "tcrcore:nine_heaven_darksteel",
           "weight": 75
         },
         {
@@ -25,7 +25,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "tcrcore:blood_lotus",
+          "name": "tcrcore:nine_heaven_darksteel",
           "weight": 25
         }
       ],
@@ -36,7 +36,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ba_bt:nether_monolith_key"
+          "name": "ba_bt:sky_monolith_key"
         }
       ],
       "rolls": 1.0

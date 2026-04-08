@@ -361,6 +361,7 @@
   "info.tcr.altar_dim_info": "Cloudland Info:",
   "info.tcr.attack_to_restart": "§cAttack to restart",
   "info.tcr.boss_killed_ready_return": "§6Boss has been defeated! Block interaction unlocked!",
+  "info.tcr.boss_will_respawn": "Boss will respawn in %ds...",
   "info.tcr.can_not_do_this_too_early": "§6You are not destined to do this.",
   "info.tcr.can_not_dodge": "Boss attacks cannot be dodged!",
   "info.tcr.can_not_enter_before_finish": "§6You are not destined to enter this cloudland.",
