@@ -3,6 +3,7 @@ package com.p1nero.tcrcore.dialog.extension;
 import com.aetherteam.aether.client.AetherSoundEvents;
 import com.aetherteam.aether.item.AetherItems;
 import com.brass_amber.ba_bt.init.BTItems;
+import com.nameless.indestructible.world.capability.Utils.IAdvancedCapability;
 import com.p1nero.dialog_lib.api.component.DialogNode;
 import com.p1nero.dialog_lib.api.component.DialogueComponentBuilder;
 import com.p1nero.dialog_lib.api.entity.EntityDialogueExtension;
@@ -21,6 +22,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import yesman.epicfight.world.capabilities.EpicFightCapabilities;
+import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 @EntityDialogueExtension(modId = TCRCoreMod.MOD_ID)
 public class ValkyrieQueenDialogExtension implements IEntityDialogueExtension<ValkyrieQueenEntity> {
@@ -72,6 +75,11 @@ public class ValkyrieQueenDialogExtension implements IEntityDialogueExtension<Va
         if(i == 1) {
             ItemUtil.searchAndConsumeItem(serverPlayer,AetherItems.VICTORY_MEDAL.get(), 10);
             valkyrieQueenEntity.setInFighting(true);
+            EpicFightCapabilities.getUnparameterizedEntityPatch(valkyrieQueenEntity, LivingEntityPatch.class).ifPresent(entityPatch -> {
+                if(entityPatch instanceof IAdvancedCapability advancedCapability) {
+                    advancedCapability.setPhase(1);
+                }
+            });
         }
         removeConservingPlayer(valkyrieQueenEntity);
     }

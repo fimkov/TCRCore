@@ -90,6 +90,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -929,7 +930,8 @@ public class LivingEntityEventListeners {
                 boss.setSpawnPos(boss.getOnPos());
             }
             if(boss instanceof ValkyrieQueenEntity) {
-                boss.setInFighting(false);//对话开启
+                boss.setInFighting(false);//限对话开启
+                boss.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
             }
         }
 
