@@ -1,6 +1,7 @@
 package com.p1nero.tcrcore.events;
 
 import com.aetherteam.aether.entity.monster.dungeon.Mimic;
+import com.aetherteam.aether.entity.monster.dungeon.Valkyrie;
 import com.brass_amber.ba_bt.block.block.BTChestBlock;
 import com.brass_amber.ba_bt.entity.block.BTMonolith;
 import com.brass_amber.ba_bt.entity.hostile.golem.*;
@@ -90,6 +91,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -488,6 +490,10 @@ public class LivingEntityEventListeners {
 
             }
 
+            if(livingEntity instanceof Valkyrie) {
+                livingEntity.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);//防止掉落
+            }
+
             //打似战灵爆mimic
             if (livingEntity instanceof WraithonEntity) {
                 if (serverLevel.getEntities(TCREntities.TCR_MIMIC.get(), (Entity::isAlive)).isEmpty()) {
@@ -532,18 +538,21 @@ public class LivingEntityEventListeners {
                 SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
                 if(soulEntity != null) {
                     soulEntity.setPos(entity.getSpawnPos().above().getCenter());
+                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 30).withStyle(ChatFormatting.GOLD), false));
                 }
             }
             if(livingEntity instanceof ValkyrieQueenEntity entity) {
                 SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
                 if(soulEntity != null) {
                     soulEntity.setPos(entity.getSpawnPos().above().getCenter());
+                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 30).withStyle(ChatFormatting.GOLD), false));
                 }
             }
             if(livingEntity instanceof GildedHunterEntity entity) {
                 SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
                 if(soulEntity != null) {
                     soulEntity.setPos(entity.getSpawnPos().above().getCenter());
+                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 30).withStyle(ChatFormatting.GOLD), false));
                 }
             }
 
@@ -565,6 +574,7 @@ public class LivingEntityEventListeners {
                     SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(boneChimeraEntity, 200, true);
                     if (boneChimeraEntity.getPersistentData().contains("spawnX") && soulEntity != null) {
                         soulEntity.setPos(readSpawnPos(boneChimeraEntity));
+                        EntityUtil.nearPlayerDo(boneChimeraEntity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 10).withStyle(ChatFormatting.GOLD), false));
                     }
                     livingEntity.getPersistentData().putBoolean("already_respawn", true);
                 }
@@ -928,8 +938,9 @@ public class LivingEntityEventListeners {
             if(!boss.hasSpawnPos()) {
                 boss.setSpawnPos(boss.getOnPos());
             }
-            if(boss instanceof ValkyrieQueenEntity) {
-                boss.setInFighting(false);//对话开启
+            if(boss instanceof ValkyrieQueenEntity && !boss.getTags().contains("started")) {
+                boss.setInFighting(false);//限对话开启
+                boss.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
             }
         }
 

@@ -80,8 +80,8 @@ public class WorldUtil {
     public static final String RIBBIT_VILLAGE = "ribbits:ribbit_village";
     public static final String AQUAMIRAE_SHIP_STRUCTURE = "aquamirae:ship";
     public static final String CORE_GOLEM = "ba_bt:core_tower";
-    public static final String NETHER_KEY_1 = "betterfortresses:fortress";
-    public static final String NETHER_KEY_2 = "irons_spellbooks:citadel";
+    public static final String NETHER_KEY_1 = "irons_spellbooks:citadel";
+    public static final String NETHER_KEY_2 = "betterfortresses:fortress";
     public static final String NETHER_GOLEM = "tcrcore:gate_of_disaster";
     public static final String AETHER_KEY_1 = "aether:silver_dungeon";
     public static final String AETHER_KEY_2 = "aether:gold_dungeon";

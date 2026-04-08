@@ -2,14 +2,14 @@
   "loader": "forge:separate_transforms",
   "base": {
     "loader": "forge:obj",
-    "model": "tcrcore:models/item/obj/magic_helberd.obj",
+    "model": "tcrcore:models/item/obj/magic_halberd.obj",
         "flip_v": true
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "tcrcore:item/magic_helberd"
+        "layer0": "tcrcore:item/magic_halberd"
       },
       "gui_light": "front"
     }

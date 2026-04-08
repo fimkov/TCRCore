@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.gameassets;
 
 import com.asanginxst.epicfightx.gameassets.animations.AnimationsX;
 import com.asanginxst.epicfightx.gameassets.animations.ExtraAnimations;
+import com.hm.efn.gameasset.animations.EFNFalchionAnimations;
 import com.hm.efn.gameasset.animations.EFNGreatSwordAnimations;
 import com.nameless.falchion.gameasset.FalchionAnimations;
 import com.nameless.falchion.gameasset.FalchionSkills;
@@ -63,7 +64,7 @@ public class TCRWeaponPresets {
                             ExtraAnimations.SPEAR_TWOHAND_AUTO4,
                             ExtraAnimations.SPEAR_TWOHAND_AUTO5,
                             Animations.SPEAR_DASH,
-                            Animations.SPEAR_TWOHAND_AIR_SLASH)
+                            EFNFalchionAnimations.FALCHION_AIRSLASH)
                     .newStyleCombo(CapabilityItem.Styles.MOUNT, Animations.SPEAR_MOUNT_ATTACK)
                     .innateSkill(CapabilityItem.Styles.TWO_HAND,
                             (itemstack) -> FalchionSkills.FALCHION_ART)
@@ -77,6 +78,7 @@ public class TCRWeaponPresets {
 
     @SubscribeEvent
     public static void register(WeaponCapabilityPresetRegistryEvent event) {
+        event.getTypeEntry().put(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "the_incinerator"), THE_INCINERATOR);
         event.getTypeEntry().put(ResourceLocation.fromNamespaceAndPath(TCRCoreMod.MOD_ID, "falchion"), FALCHION);
     }
 }

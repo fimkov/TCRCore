@@ -21,6 +21,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import yesman.epicfight.world.capabilities.EpicFightCapabilities;
+import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 @EntityDialogueExtension(modId = TCRCoreMod.MOD_ID)
 public class ValkyrieQueenDialogExtension implements IEntityDialogueExtension<ValkyrieQueenEntity> {
@@ -72,6 +74,7 @@ public class ValkyrieQueenDialogExtension implements IEntityDialogueExtension<Va
         if(i == 1) {
             ItemUtil.searchAndConsumeItem(serverPlayer,AetherItems.VICTORY_MEDAL.get(), 10);
             valkyrieQueenEntity.setInFighting(true);
+            valkyrieQueenEntity.getTags().add("started");
         }
         removeConservingPlayer(valkyrieQueenEntity);
     }

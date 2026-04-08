@@ -18,6 +18,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
 
 import java.util.List;
 import java.util.UUID;
@@ -35,6 +36,7 @@ public class AllMagicSwordItem extends SwordItem {
         super(tier, damage, atkSpeed, properties);
         this.attackDamage = -1;
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        builder.put(EpicFightAttributes.IMPACT.get(), new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", -0.5, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", this.attackDamage, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -4, AttributeModifier.Operation.ADDITION));
         builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(BASE_MAX_MANA_UUID, "Weapon modifier", 100, AttributeModifier.Operation.ADDITION));

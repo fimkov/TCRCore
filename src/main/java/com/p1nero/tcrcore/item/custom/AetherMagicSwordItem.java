@@ -10,6 +10,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import org.jetbrains.annotations.NotNull;
+import yesman.epicfight.world.entity.ai.attribute.EpicFightAttributes;
 
 import java.util.UUID;
 
@@ -26,6 +27,7 @@ public class AetherMagicSwordItem extends SwordItem {
         super(tier, damage, atkSpeed, properties);
         this.attackDamage = -1;
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+        builder.put(EpicFightAttributes.IMPACT.get(), new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", -0.5, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Weapon modifier", this.attackDamage, AttributeModifier.Operation.ADDITION));
         builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Weapon modifier", -4, AttributeModifier.Operation.ADDITION));
         builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(BASE_MAX_MANA_UUID, "Weapon modifier", 50, AttributeModifier.Operation.ADDITION));

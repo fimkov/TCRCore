@@ -5,7 +5,6 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.network.TCRPacketHandler;
 import com.p1nero.tcrcore.network.packet.clientbound.RefreshClientQuestsPacket;
 import com.p1nero.tcrcore.utils.XaeroWaypointUtil;
-import dev.ftb.mods.ftbquests.quest.Quest;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;

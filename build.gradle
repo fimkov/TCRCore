@@ -239,7 +239,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:epicfight-nightfall-1307848:7788590")
     implementation fg.deobf("curse.maven:combat-evolution-1377795:7780749")
-    implementation fg.deobf("libs:tcr_bosses:1.1.0")
+    implementation fg.deobf("libs:tcr_bosses:1.1.4")
     implementation fg.deobf("libs:tcrmeshes:1.0.0")
     implementation fg.deobf("curse.maven:epic-fight-the-mimic-1360684:7717502")
 
@@ -288,7 +288,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:patchouli-306770:6164575")
 
-    implementation fg.deobf("curse.maven:aquamirae-536254:7681754")
+    implementation fg.deobf("curse.maven:aquamirae-536254:7890786")
     implementation fg.deobf("curse.maven:obscure-api-638417:7171906")
 
     //ftb
@@ -390,8 +390,10 @@ dependencies {
         jarJar.ranged(it, "[0.3.7-beta.1,)")
     }
 
-    implementation(fg.deobf(jarJar("org.arc:efp:1.0"))) {
-        jarJar.ranged(it, "[1.0,)")
+    implementation fg.deobf('libs:epic_ponder:1.0.0')
+
+    compileOnly(jarJar("org.arc:epic_ponder:1.0.0")) {
+        jarJar.ranged(it, "[1.0.0,)")
     }
 
 //    implementation fg.deobf("curse.maven:epic-knights-armor-and-weapons-509041:7756534")//FIXME runData时需注释掉
