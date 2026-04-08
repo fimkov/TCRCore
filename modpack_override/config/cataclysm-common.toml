@@ -353,7 +353,7 @@
 			health_multiplier = 3.6
 			#Scale mob attack damage by this value
 			#Range: 0.1 ~ 1000000.0
-			attack_multiplier = 2.4375
+			attack_multiplier = 1.4375
 
 		[mobs.ender_guardian.cap_config]
 			#Damage Cap
@@ -571,7 +571,7 @@
 			health_multiplier = 3.07
 			#Scale mob attack damage by this value
 			#Range: 0.1 ~ 1000000.0
-			attack_multiplier = 2.4375
+			attack_multiplier = 1.4375
 
 		[mobs.harbinger.cap_config]
 			#Damage Cap
@@ -835,7 +835,7 @@
 			health_multiplier = 2.8571
 			#Scale mob attack damage by this value
 			#Range: 0.1 ~ 1000000.0
-			attack_multiplier = 3.0
+			attack_multiplier = 1.4
 
 		[mobs.maledictus.cap_config]
 			#Damage Cap
@@ -912,7 +912,7 @@
 			health_multiplier = 3.07
 			#Scale mob attack damage by this value
 			#Range: 0.1 ~ 1000000.0
-			attack_multiplier = 2.4
+			attack_multiplier = 1.4
 
 		[mobs.scylla.cap_config]
 			#Damage Cap
