@@ -55,7 +55,6 @@
     "ba_bt.LandTowerMixin",
     "dodosmob.Bone_ChimeraMixin",
     "domesticationinnovation.CommonProxyMixin",
-    "indestructible.AdvancedCombatGoalMixin",
     "epicfight.AnimatedAttackGoalMixin",
     "epicfight.AttackAnimationMixin",
     "epicfight.AvalonAttackAnimationMixin",
@@ -75,13 +74,13 @@
     "epicfight.SkillTreeGameEventsMixin",
     "epicfight.TakeDamageEventAttackMixin",
     "epicfight.WOMBasicMultipleAttackAnimationMixin",
+    "indestructible.AdvancedCombatGoalMixin",
     "iss.AdditionalWanderingTradesMixin",
     "iss.ArcaneAnvilMenuMixin",
     "iss.MagicManagerMixin",
     "iss.ScrollItemMixin"
   ],
   "client": [
-    "ftbq.QuestScreenMixin",
     "AltarRendererMixin",
     "AquamiraeClientMixin",
     "CataclysmClientEventMixin",
@@ -103,7 +102,8 @@
     "epicfight.EFClientConfigMixin",
     "epicfight.RenderEngineEventsMixin",
     "epicfight.SkillTreeScreenAccessor",
-    "epicfight.SkillTreeScreenMixin"
+    "epicfight.SkillTreeScreenMixin",
+    "ftbq.QuestScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

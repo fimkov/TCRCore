@@ -374,7 +374,9 @@ dependencies {
     implementation fg.deobf("curse.maven:beyond-dimensions-1222890:7719949")
 
     implementation fg.deobf("curse.maven:trashslot-235577:6319121")
-
+//    implementation fg.deobf("curse.maven:corgilib-693313:6616784")
+//    implementation fg.deobf("curse.maven:oh-the-trees-youll-grow-962544:7864095")
+//    implementation fg.deobf("curse.maven:oh-the-biomes-weve-gone-1070751:7759426")
     implementation fg.deobf("curse.maven:biomes-o-plenty-220318:6364065")
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")

@@ -57,9 +57,9 @@ public class WorldUtil {
 
     //一些关键定位
     public static final Vec3i BED_POS = new Vec3i(0, 64, 0);
-    public static final Vec3i ORNN_POS = new Vec3i(-224, 80, -99);
-    public static final BlockPos ORNN_BLOCK_POS = new BlockPos(-224, 80, -99);
-    public static final BlockPos SMITH_BLOCK_POS = new BlockPos(-226, 77, -100);
+    public static final Vec3i ORNN_POS = new Vec3i(-236, 80, -99);
+    public static final BlockPos ORNN_BLOCK_POS = new BlockPos(-236, 80, -99);
+    public static final BlockPos SMITH_BLOCK_POS = new BlockPos(-236, 77, -100);
     public static final Vec3i AINE_POS = new Vec3i(-115, 80, -127);
     public static final BlockPos AINE_BLOCK_POS = new BlockPos(-115, 80, -127);
     public static final BlockPos ARCANE_ANVIL_BLOCK_POS = new BlockPos(-115, 77, -127);
@@ -67,12 +67,12 @@ public class WorldUtil {
     public static final BlockPos FERRY_GIRL_BLOCK_POS = new BlockPos(80, 74, -133);
     public static final Vec3i FERRY_GIRL_PORTAL_POS = new Vec3i(80, 73, -138);
     public static final Vec3i START_POS = new Vec3i(-3, 75, -190);
-    public static final Vec3i GODNESS_STATUE_POS = new Vec3i(-169, 86, -118);
+    public static final Vec3i GODNESS_STATUE_POS = new Vec3i(-176, 86, -118);
     public static final Vec3 GOLEM_CENTER_POS_VEC3 = new Vec3(78, 75, -190);
     public static final Vec3i GOLEM_CENTER_POS_VEC3I = new Vec3i(78, 75, -190);
     public static final Vec3 CENTER_POS = new Vec3(-19, 75, -79);
-    public static final Vec3 CHRONOS_SOL_POS = new Vec3(-186, 85, -191);
-    public static final BlockPos CHRONOS_SOL_BLOCK_POS = new BlockPos(-186, 85, -191);
+    public static final Vec3 CHRONOS_SOL_POS = new Vec3(-211, 85, -191);
+    public static final BlockPos CHRONOS_SOL_BLOCK_POS = new BlockPos(-211, 85, -191);
 
     public static final String LAND_GOLEM = "ba_bt:land_tower";
     public static final String BONE_CHIMERA_STRUCTURE = "dodosmobs:jungle_prison";
