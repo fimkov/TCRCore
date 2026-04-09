@@ -1,8 +1,8 @@
 {
     "trail": {
-    	"color": [125,125,125],
-    	"begin_pos": [0.0, 0.0, -0.1],
-    	"end_pos": [0.0, 0.0, -2.2],
+    	"color": [100,100,100],
+    	"begin_pos": [0.0, 0.0, -0.0],
+    	"end_pos": [0.0, 0.0, -1.6],
     	"lifetime": 4,
 		"interpolations": 1,
     	"texture_path": "tcrcore:textures/trail/magictrail.png",
