@@ -535,24 +535,24 @@ public class LivingEntityEventListeners {
             }
 
             if(livingEntity instanceof EveningGhostEntity entity) {
-                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 1200, true);
                 if(soulEntity != null) {
                     soulEntity.setPos(entity.getSpawnPos().above().getCenter());
-                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 30).withStyle(ChatFormatting.GOLD), false));
+                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 60).withStyle(ChatFormatting.GOLD), false));
                 }
             }
             if(livingEntity instanceof ValkyrieQueenEntity entity) {
-                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 1200, true);
                 if(soulEntity != null) {
                     soulEntity.setPos(entity.getSpawnPos().above().getCenter());
-                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 30).withStyle(ChatFormatting.GOLD), false));
+                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 60).withStyle(ChatFormatting.GOLD), false));
                 }
             }
             if(livingEntity instanceof GildedHunterEntity entity) {
-                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 600, true);
+                SoulEntity soulEntity = EntityRespawnerMod.addToRespawn(entity, 1200, true);
                 if(soulEntity != null) {
                     soulEntity.setPos(entity.getSpawnPos().above().getCenter());
-                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 30).withStyle(ChatFormatting.GOLD), false));
+                    EntityUtil.nearPlayerDo(entity, 32, player -> player.displayClientMessage(TCRCoreMod.getInfo("boss_will_respawn", 60).withStyle(ChatFormatting.GOLD), false));
                 }
             }
 

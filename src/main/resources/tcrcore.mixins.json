@@ -55,7 +55,7 @@
     "ba_bt.LandTowerMixin",
     "dodosmob.Bone_ChimeraMixin",
     "domesticationinnovation.CommonProxyMixin",
-    "epicfight.AdvancedCombatGoalMixin",
+    "indestructible.AdvancedCombatGoalMixin",
     "epicfight.AnimatedAttackGoalMixin",
     "epicfight.AttackAnimationMixin",
     "epicfight.AvalonAttackAnimationMixin",

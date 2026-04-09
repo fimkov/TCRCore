@@ -1,4 +1,4 @@
-package com.p1nero.tcrcore.mixin.epicfight;
+package com.p1nero.tcrcore.mixin.indestructible;
 
 import com.nameless.indestructible.world.ai.CombatBehaviors.WanderMotionSet;
 import com.nameless.indestructible.world.ai.goal.AdvancedCombatGoal;
