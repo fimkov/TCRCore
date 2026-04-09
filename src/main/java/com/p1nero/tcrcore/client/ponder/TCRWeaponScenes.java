@@ -26,17 +26,16 @@ public class TCRWeaponScenes {
         EFPSceneUtils.setupStandardScene(builder, 11, "falchion_art", "tcrcore.ponder.falchion_art.title");
         ElementLink<EntityElement> attacker = EFPSceneUtils.spawnDummyActor(builder, 5.5, 1, 5.5, 180, new ItemStack(TCRItems.ASHEN_CRESCENT.get()));
         world.modifyEntityMovement(attacker, true);
-        //TODO 文本1
+
         builder.overlay().showText(50)
-                .text("通过方向键使用不同技能")
+                .text("tcrcore.ponder.falchion_art.text_1")
                 .pointAt(util.vector().centerOf(5, 2, 5))
                 .placeNearTarget()
                 .attachKeyFrame();
         builder.idle(40);
 
-        //TODO 文本2:前进技能
         builder.overlay().showText(50)
-                .text("前进键 + 技能: 二连挑击")
+                .text("tcrcore.ponder.falchion_art.text_2")
                 .pointAt(util.vector().centerOf(5, 0, 5))
                 .placeNearTarget()
                 .attachKeyFrame();
@@ -52,9 +51,8 @@ public class TCRWeaponScenes {
         //待机 10tick
         builder.idle(10);
 
-        //TODO 文本3:方向键左右技能
         builder.overlay().showText(50)
-                .text("左右方向键 + 技能: 全程霸体的快速斩击")
+                .text("tcrcore.ponder.falchion_art.text_3")
                 .pointAt(util.vector().centerOf(5, 0, 5))
                 .placeNearTarget()
                 .attachKeyFrame();
@@ -70,9 +68,8 @@ public class TCRWeaponScenes {
         //待机 10tick
         builder.idle(10);
 
-        //TODO 文本4:后退技能
         builder.overlay().showText(50)
-                .text("后退键 + 技能: 可击倒目标的横扫劈砍连招")
+                .text("tcrcore.ponder.falchion_art.text_4")
                 .pointAt(util.vector().centerOf(5, 0, 5))
                 .placeNearTarget()
                 .attachKeyFrame();

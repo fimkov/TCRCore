@@ -31,6 +31,9 @@ public class TCRENLangGenerator extends TCRLangProvider {
     @Override
     protected void addTranslations() {
 
+        this.addTCRPonderText("falchion_basic_attack_combo", "Basic Attack Combo", "Basic Attacks", "Dash Attack", "Jump Attack");
+        this.addTCRPonderText("falchion_art", "Skill", "Use different skills with direction keys", "Forward + Skill: Double upward slash", "Left/Right + Skill: Fast slash with full super armor", "Backward + Skill: Sweeping slash combo that can knock down enemies");
+
         this.add("button.tcrcore.menu.exit", "Exit");
         this.add("button.tcrcore.menu.mods", "Mods");
         this.add("button.tcrcore.menu.accessibility", "Accessibility");

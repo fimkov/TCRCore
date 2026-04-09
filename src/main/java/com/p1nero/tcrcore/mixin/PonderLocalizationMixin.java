@@ -2,6 +2,7 @@ package com.p1nero.tcrcore.mixin;
 
 import com.p1nero.tcrcore.TCRCoreMod;
 import net.createmod.ponder.foundation.registration.PonderLocalization;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,7 +21,7 @@ public class PonderLocalizationMixin {
     @Inject(method = "getSpecific", at = @At("HEAD"), cancellable = true, remap = false)
     private void tcr$getSpecific(ResourceLocation sceneId, String k, CallbackInfoReturnable<String> cir) {
         if(sceneId.getNamespace().equals(TCRCoreMod.MOD_ID)) {
-            cir.setReturnValue(specific.get(sceneId).get(k));
+            cir.setReturnValue(I18n.get(specific.get(sceneId).get(k)));//套一层，万一是翻译键也能用
         }
     }
 

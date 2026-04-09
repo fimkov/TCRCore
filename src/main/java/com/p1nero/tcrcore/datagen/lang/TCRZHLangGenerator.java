@@ -31,6 +31,9 @@ public class TCRZHLangGenerator extends TCRLangProvider {
     @Override
     protected void addTranslations() {
 
+        this.addTCRPonderText("falchion_basic_attack_combo", "基础连段演示", "普通攻击连段", "冲刺攻击派生", "跳跃攻击派生");
+        this.addTCRPonderText("falchion_art", "武技", "通过方向键使用不同技能", "前进键 + 技能: 二连挑击", "左右方向键 + 技能: 全程霸体的快速斩击", "后退键 + 技能: 可击倒目标的横扫劈砍连招");
+
         this.add("button.tcrcore.menu.exit", "退出游戏");
         this.add("button.tcrcore.menu.mods", "Mods");
         this.add("button.tcrcore.menu.accessibility", "辅助功能");

@@ -25,6 +25,13 @@ public abstract class TCRLangProvider extends LanguageProvider implements Dialog
         super(output, TCRCoreMod.MOD_ID, locate);
     }
 
+    public void addTCRPonderText(String key, String title, String ...texts) {
+        this.add("tcrcore.ponder." + key + ".title", title);
+        for(int i = 0; i < texts.length; i++) {
+            this.add("tcrcore.ponder." + key + ".text_" + i, texts[i]);
+        }
+    }
+
     public void addKeyMapping(KeyMapping key, String name) {
         this.add(key.getName(), name);
     }
