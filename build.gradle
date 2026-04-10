@@ -217,8 +217,8 @@ dependencies {
     implementation fg.deobf("curse.maven:melody-938643:5109692")
 
     implementation fg.deobf("curse.maven:fluid-tick-structure-processor-1369713:7133622")
-//    implementation fg.deobf("maven.modrinth:epic-fight:${epicfight_version}")
-    implementation fg.deobf("libs:epic-fight:20.14.14.1")
+    implementation fg.deobf("maven.modrinth:epic-fight:${epicfight_version}")
+//    implementation fg.deobf("libs:epic-fight:20.14.14.1")
 //    implementation fg.deobf("maven.modrinth:epic-fight-skill-tree:${epicskills_version}")
     implementation fg.deobf("libs:epicfight-skilltree:20.2.6.6")
     implementation fg.deobf("curse.maven:p1nero-better-structure-block-970671:6817772")
