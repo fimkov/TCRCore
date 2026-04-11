@@ -380,7 +380,7 @@ dependencies {
     implementation fg.deobf("curse.maven:biomes-o-plenty-220318:6364065")
     implementation fg.deobf("curse.maven:terrablender-563928:6290448")
     implementation fg.deobf("curse.maven:glitchcore-955399:5787839")
-
+    implementation fg.deobf("curse.maven:mixinbooster-980731:7711418")
     dependencies {
         compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
         implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0")) {
