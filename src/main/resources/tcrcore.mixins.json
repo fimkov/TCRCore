@@ -53,6 +53,7 @@
     "ba_bt.CoreMatterBlockMixin",
     "ba_bt.CoreTowerMixin",
     "ba_bt.LandTowerMixin",
+    "ba_bt.LandTowerStructureMixin",
     "dodosmob.Bone_ChimeraMixin",
     "domesticationinnovation.CommonProxyMixin",
     "epicfight.AnimatedAttackGoalMixin",

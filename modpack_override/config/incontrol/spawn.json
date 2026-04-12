@@ -150,68 +150,10 @@
     },
     {
         "mob": [
-            "minecraft:wither_skeleton"
-        ],
-        "mincount": {
-            "amount": 6,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
-            "minecraft:warden"
-        ],
-        "mincount": {
-            "amount": 6,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
-            "wom:hollow"
-        ],
-        "mincount": {
-            "amount": 6,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "mob": [
             "wom:saulomonk"
         ],
         "mincount": {
             "amount": 6,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "dimension": [
-            "minecraft:overworld",
-            "minecraft:the_nether",
-            "minecraft:the_end"
-        ],
-        "hostile": true,
-        "mincount": {
-            "amount": 39,
-            "hostile": true,
-            "perplayer": true
-        },
-        "result": "deny"
-    },
-    {
-        "dimension": [
-            "minecraft:overworld",
-            "minecraft:the_nether",
-            "minecraft:the_end"
-        ],
-        "passive": true,
-        "mincount": {
-            "amount": 39,
-            "passive": true,
             "perplayer": true
         },
         "result": "deny"
