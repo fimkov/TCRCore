@@ -404,7 +404,7 @@
   "info.tcr.kill_arterius": "[%s]: Otherworlder, you are indeed formidable! It seems the prophecy is true! Then, I shall bestow these pieces of [%s] upon you!",
   "info.tcr.lock_tutorial": "§6[[%s§6]§r to lock on",
   "info.tcr.lock_tutorial_sub": "§cMove the mouse to switch targets!",
-  "info.tcr.magic_sword_desc": "When using weapon innate skill, it will ignore cooldown and mana cost, automatically casting the equipped magic with half level.",
+  "info.tcr.magic_sword_desc": "When playing air attack or dash attack, it will ignore cooldown and mana cost, automatically casting the equipped magic with half level.",
   "info.tcr.map_pos_marked_press_to_open": "Labeled location, press [%s] to view the map.",
   "info.tcr.more_beautiful_models_and_trail": "Custom 3D weapon trail texture expansion, optional",
   "info.tcr.need_to_unlock_waystone": "Some waystones remain inactive!",

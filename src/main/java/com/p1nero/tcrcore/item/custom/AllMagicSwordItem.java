@@ -53,6 +53,6 @@ public class AllMagicSwordItem extends SwordItem {
     public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> list, @NotNull TooltipFlag flag) {
         super.appendHoverText(stack, level, list, flag);
         list.add(Component.literal("<Oda赞助>").withStyle(ChatFormatting.GREEN));
-        list.add(TCRCoreMod.getInfo("magic_sword_desc").withStyle(ChatFormatting.GRAY));
+        list.add(TCRCoreMod.getInfo("magic_sword_desc").withStyle(ChatFormatting.GOLD));
     }
 }

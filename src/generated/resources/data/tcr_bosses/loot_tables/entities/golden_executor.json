@@ -50,6 +50,26 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "irons_spellbooks:decrepit_key"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "irons_spellbooks:divine_soulshard"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "tcr_bosses:entities/golden_executor"

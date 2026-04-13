@@ -124,6 +124,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.shelmarow.combat_evolution.ai.iml.ILivingEntityData;
 import net.shelmarow.combat_evolution.ai.util.CEPatchUtils;
 import org.merlin204.wraithon.entity.wraithon.WraithonEntity;
@@ -936,7 +937,11 @@ public class LivingEntityEventListeners {
         //设置出生点方便复活
         if(event.getEntity() instanceof BaseSmallBossEntity boss) {
             if(!boss.hasSpawnPos()) {
-                boss.setSpawnPos(boss.getOnPos());
+                if(FMLEnvironment.production) {
+                    boss.setSpawnPos(boss.getOnPos());
+                } else {
+                    TCRCoreMod.LOGGER.info("开发环境，跳过设置[{}]的出生点", boss.getDisplayName().getString());
+                }
             }
             if(boss instanceof ValkyrieQueenEntity && !boss.getTags().contains("started")) {
                 boss.setInFighting(false);//限对话开启

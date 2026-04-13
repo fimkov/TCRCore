@@ -317,7 +317,7 @@ public class TCRZHLangGenerator extends TCRLangProvider {
         this.add(TCRItems.MAGIC_SPEAR.get(), "贯长空");
 
         this.addInfo("boss_will_respawn", "Boss将在 %ds 后重生...");
-        this.addInfo("magic_sword_desc", "释放战技时将无视冷却无视法力值，自动释放所携带的魔法，但法术等级减半。");
+        this.addInfo("magic_sword_desc", "释放冲刺或跳跃攻击时将无视冷却无视法力值，自动释放所携带的魔法，但法术等级减半。");
         this.addInfo("obey_rule", "你违反了天意");
         this.addInfo("difficulty_change_success", "成功改变游戏难度！当前难度为：%s");
         this.addInfo("difficulty_change_failed", "错误：改变游戏难度失败！无管理员权限或参数错误！");

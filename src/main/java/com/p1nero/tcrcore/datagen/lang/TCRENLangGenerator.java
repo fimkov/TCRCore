@@ -319,7 +319,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.add(TCRItems.MAGIC_SPEAR.get(), "Heavenrend");
 
         this.addInfo("boss_will_respawn", "Boss will respawn in %ds...");
-        this.addInfo("magic_sword_desc", "When using weapon innate skill, it will ignore cooldown and mana cost, automatically casting the equipped magic with half level.");
+        this.addInfo("magic_sword_desc", "When playing air attack or dash attack, it will ignore cooldown and mana cost, automatically casting the equipped magic with half level.");
         this.addInfo("obey_rule", "You have defied the destiny!!");
         this.addInfo("difficulty_change_success", "Successfully changed game difficulty! Current difficulty: %s");
         this.addInfo("difficulty_change_failed", "Error: Failed to change game difficulty! No admin permission or invalid parameter!");

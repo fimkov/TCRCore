@@ -404,7 +404,7 @@
   "info.tcr.kill_arterius": "[%s]：異世界人よ、あなたは実に恐るべき存在だ！どうやら予言は真であるらしい！ならば、この[%s]の欠片をあなたに授けよう！",
   "info.tcr.lock_tutorial": "§6[[%s§6]§rでロックオンする",
   "info.tcr.lock_tutorial_sub": "§cマウスを動かしてターゲットを切り替えます。",
-  "info.tcr.magic_sword_desc": "武器の固有スキルを発動すると、クールダウンとマナコストを無視して装備済みの魔法を放つ。なお、魔法は半分のレベルで発動される。",
+  "info.tcr.magic_sword_desc": "武器のジャンプ攻撃とダッシュ攻撃をするとをすると、クールダウンとマナコストを無視して装備済みの魔法を放つ。なお、魔法は半分のレベルで発動される。",
   "info.tcr.map_pos_marked_press_to_open": "目的地が登録されました。地図を表示するには[%s]を押してください。",
   "info.tcr.more_beautiful_models_and_trail": "カスタム3Dウェポンの軌跡テクスチャ拡張（オプション機能）",
   "info.tcr.need_to_unlock_waystone": "一部のウェイストーンは非活性化のままです。",

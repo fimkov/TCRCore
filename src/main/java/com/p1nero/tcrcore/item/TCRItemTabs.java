@@ -4,6 +4,7 @@ import com.p1nero.tcrcore.TCRCoreMod;
 import com.p1nero.tcrcore.block.TCRBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +18,7 @@ public class TCRItemTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.tcr.items"))
                     .icon(() -> new ItemStack(TCRItems.ANCIENT_ORACLE_FRAGMENT.get()))
+                    .withTabsBefore(TCRCoreMod.prefix("weapons"))
                     .displayItems((params, output) -> {
                         output.accept(TCRBlocks.CURSED_ALTAR_BLOCK.get());
                         output.accept(TCRBlocks.ABYSS_ALTAR_BLOCK.get());
@@ -67,6 +69,7 @@ public class TCRItemTabs {
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.tcr.weapons"))
                     .icon(() -> new ItemStack(TCRItems.GLACIS_JADAE.get()))
+                    .withTabsAfter(TCRCoreMod.prefix("items"))
                     .displayItems((params, output) -> {
                         output.accept(TCRItems.EMBERFANG.get());
                         output.accept(TCRItems.MAGMAHEART.get());

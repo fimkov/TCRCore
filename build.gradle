@@ -208,7 +208,7 @@ dependencies {
 //    implementation ("curse.maven:preloading-tricks-1372086:7210447")
 //    implementation fg.deobf("curse.maven:accelerated-rendering-1314021:7196153")
 
-    implementation fg.deobf("maven.modrinth:epicfight-extra:1.1.5-mc1.20.1-forge")
+    implementation fg.deobf("maven.modrinth:epicfight-extra:1.1.8-mc1.20.1-forge")
     implementation fg.deobf("curse.maven:epic-fight-guandao-moveset-900642:7416260")
     implementation fg.deobf("curse.maven:weapons-of-miracles-epicfight-918614:7517612")
     implementation fg.deobf("curse.maven:fancymenu-367706:6918987")

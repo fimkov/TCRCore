@@ -143,7 +143,13 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(ItemRegistry.ARCANE_ESSENCE.get())))
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
-                        .add(LootItem.lootTableItem(BTItems.NETHER_MONOLITH_KEY.get()))));
+                        .add(LootItem.lootTableItem(BTItems.NETHER_MONOLITH_KEY.get())))
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ItemRegistry.DECREPIT_KEY.get())))
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(ItemRegistry.DIVINE_SOULSHARD.get()))));
         this.add(TCRBossEntities.EVENING_GHOST.get(), LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
