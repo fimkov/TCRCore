@@ -36,6 +36,16 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "irons_spellbooks:arcane_essence"
+        }
+      ],
+      "rolls": 12.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
           "name": "ba_bt:sky_monolith_key"
         }
       ],

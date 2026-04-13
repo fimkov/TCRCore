@@ -109,6 +109,9 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
                 .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(12.0F))
+                        .add(LootItem.lootTableItem(ItemRegistry.ARCANE_ESSENCE.get())))
+                .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.SKY_MONOLITH_KEY.get()))));
         this.add(TCRBossEntities.VALKYRIE.get(), LootTable.lootTable()
@@ -120,6 +123,9 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(TCRItems.NINE_HEAVEN_DARKSTEEL.get())
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))))
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(24.0F))
+                        .add(LootItem.lootTableItem(ItemRegistry.ARCANE_ESSENCE.get())))
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.SKY_MONOLITH_KEY.get()))));
@@ -133,6 +139,9 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0F)))))
                 .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(24.0F))
+                        .add(LootItem.lootTableItem(ItemRegistry.ARCANE_ESSENCE.get())))
+                .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.NETHER_MONOLITH_KEY.get()))));
         this.add(TCRBossEntities.EVENING_GHOST.get(), LootTable.lootTable()
@@ -144,6 +153,9 @@ public class TCREntityLootTables extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(TCRItems.BLOOD_LOTUS.get())
                                 .setWeight(25)
                                 .apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0F)))))
+                .withPool(LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(12.0F))
+                        .add(LootItem.lootTableItem(ItemRegistry.ARCANE_ESSENCE.get())))
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(1.0F))
                         .add(LootItem.lootTableItem(BTItems.NETHER_MONOLITH_KEY.get()))));

@@ -44,10 +44,12 @@ public class TCRMainLevelSaveData extends SavedData {
 
     public void setDifficulty(Difficulty difficulty) {
         this.difficulty = difficulty;
+        setDirty();
     }
 
     public void setVillagePos(BlockPos villagePos) {
         this.villagePos = villagePos;
+        setDirty();
     }
 
     public BlockPos getVillagePos() {
@@ -92,7 +94,7 @@ public class TCRMainLevelSaveData extends SavedData {
     public static TCRMainLevelSaveData get(ServerLevel worldIn) {
         ServerLevel world = worldIn.getServer().getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
         if(world == null) {
-            throw new IllegalStateException("没主城玩几把");
+            throw new IllegalStateException("主城维度丢失！");
         }
         DimensionDataStorage dataStorage = world.getDataStorage();
         TCRMainLevelSaveData levelSaveData = dataStorage.computeIfAbsent(TCRMainLevelSaveData::decode, TCRMainLevelSaveData::create, TCRMainLevelSaveData.NAME);
@@ -104,7 +106,7 @@ public class TCRMainLevelSaveData extends SavedData {
     public static TCRMainLevelSaveData get(MinecraftServer server) {
         ServerLevel world = server.getLevel(TCRDimensions.SANCTUM_LEVEL_KEY);
         if(world == null) {
-            throw new IllegalStateException("没主城玩个蛋");
+            throw new IllegalStateException("主城维度丢失！");
         }
         DimensionDataStorage dataStorage = world.getDataStorage();
         TCRMainLevelSaveData levelSaveData = dataStorage.computeIfAbsent(TCRMainLevelSaveData::decode, TCRMainLevelSaveData::create, TCRMainLevelSaveData.NAME);

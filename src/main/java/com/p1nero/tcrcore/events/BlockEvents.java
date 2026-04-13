@@ -90,8 +90,12 @@ public class BlockEvents {
                 event.setCanceled(true);
             }
             //幻境禁止摆放
-            if(CataclysmDimensions.LEVELS.contains(event.getEntity().level().dimension())) {
-                event.setCanceled(true);
+            if(event.getEntity().level() instanceof ServerLevel serverLevel) {
+                if(CataclysmDimensions.LEVELS.contains(serverLevel.dimension())) {
+                    if(!TCRDimSaveData.get(serverLevel).isBossKilled()) {
+                        event.setCanceled(true);
+                    }
+                }
             }
         }
     }
