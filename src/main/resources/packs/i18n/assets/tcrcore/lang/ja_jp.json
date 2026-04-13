@@ -395,7 +395,7 @@
   "info.tcr.finish_all_eye": "§d全ての祭壇に火が灯されました！§r",
   "info.tcr.get_mimic_invite": "[%s]：異界の者よ、君は信ずるに値すると確信した！この§6[%s§6]§fを受け取るがいい！",
   "info.tcr.godness_statue_pos": "女神像",
-  "info.tcr.hit_barrier": "%sその資格はない。おぉその資格はない。",
+  "info.tcr.hit_barrier": "その資格はない。おぉその資格はない。",
   "info.tcr.hurt_damage": "[ %s ]のダメージを与えた！",
   "info.tcr.i18n_pack": "国際化パックの制作に参加した全ての翻訳者に感謝します！",
   "info.tcr.illegal_item_tip": "§c想定されていないアイテムを検知",
