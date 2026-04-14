@@ -338,7 +338,7 @@ public class TCRENLangGenerator extends TCRLangProvider {
         this.addInfo("i18n_pack", "I18n pack, thanks to all translators!");
         this.addInfo("can_not_dodge", "Boss attacks cannot be dodged!");
         this.addInfo("can_not_guard", "Boss attacks cannot be blocked!");
-        this.addInfo("pec_weapon_lock", "Weapon skill locked! Defeat [%s] in [%s] to unlock!");
+        this.addInfo("pec_weapon_lock", "Weapon skill locked! In [%s] defeat [%s]  to unlock!");
         this.addInfo("resonance_stone_usage", "Can resonate with the location of the Angel's seal");
         this.addInfo("resonance_search_failed", "[ERROR]：Failed to Resonate! Please retry after restarting the game! Please keep the latest.log and report to the author! [%s]");
         this.addInfo("yamato_skill_lock", "[%s] are locked. Requires special enchantment book to unlock!");
